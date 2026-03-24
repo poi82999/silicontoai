@@ -18,6 +18,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Normalize shell scripts for WSL
+        shell: powershell
+        run: |
+          $workspaceWin = "${{ github.workspace }}" -replace '\\','/'
+          $workspace = wsl wslpath -u "$workspaceWin"
+          wsl bash -lc "cd '$workspace' && find scripts -name '*.sh' -print0 | xargs -0 sed -i 's/\r$//'"
+          wsl bash -lc "cd '$workspace' && chmod +x scripts/*.sh"
+
       - name: Run one-shot L5 signoff
         shell: powershell
         run: |
