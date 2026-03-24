@@ -12,18 +12,20 @@ jobs:
     runs-on:
       - self-hosted
       - windows
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
       - name: Run one-shot L5 signoff
-        shell: pwsh
+        shell: powershell
         run: |
           $workspace = wsl wslpath '${{ github.workspace }}'
           wsl bash -lc "cd '$workspace' && make l5-signoff"
 
       - name: Run repeatability check
-        shell: pwsh
+        shell: powershell
         run: |
           $workspace = wsl wslpath '${{ github.workspace }}'
           wsl bash -lc "cd '$workspace' && make l5-repeatability"
