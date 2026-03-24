@@ -1,6 +1,0 @@
-package=reference_acc_forwarding_same_addr_core
-coverage_points_total=2
-coverage_points_hit=2
-coverage_points_missed=0
-cp_forwarding_hit_seen=HIT note=core_runner_same_address_forwarding
-cp_drain_request_seen=HIT note=core_runner_drain_request

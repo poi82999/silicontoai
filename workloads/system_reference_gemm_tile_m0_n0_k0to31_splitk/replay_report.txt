@@ -1,8 +1,0 @@
-package=system_reference_gemm_tile_m0_n0_k0to31_splitk
-k_passes=2
-drained_rows=16
-checked_lanes=256
-dma_done_count=4
-npu_done_count=4
-mismatch_count=0
-status=PASS

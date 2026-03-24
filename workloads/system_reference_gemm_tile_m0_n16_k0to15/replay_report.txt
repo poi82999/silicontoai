@@ -1,8 +1,0 @@
-package=system_reference_gemm_tile_m0_n16_k0to15
-k_passes=1
-drained_rows=16
-checked_lanes=256
-dma_done_count=2
-npu_done_count=2
-mismatch_count=0
-status=PASS

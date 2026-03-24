@@ -78,7 +78,7 @@ verify:
 
 clean-artifacts:
 	@if [ "$(OS)" = "Windows_NT" ]; then \
-		cd scripts && clean_artifacts.bat; \
+		cmd.exe /c "cd /d $(shell wslpath -w $(CURDIR) 2>/dev/null || printf '%s' '$(CURDIR)')\\scripts && call clean_artifacts.bat"; \
 	else \
 		bash scripts/clean_artifacts.sh; \
 	fi
@@ -91,8 +91,7 @@ concat:
 clean:
 	$(MAKE) -C scripts clean
 	@if [ "$(OS)" = "Windows_NT" ]; then \
-		if exist sim rd /s /q sim; \
-		if exist xsim.dir rd /s /q xsim.dir; \
+		cmd.exe /c "cd /d $(shell wslpath -w $(CURDIR) 2>/dev/null || printf '%s' '$(CURDIR)') && if exist sim rd /s /q sim & if exist xsim.dir rd /s /q xsim.dir"; \
 	else \
 		rm -rf sim xsim.dir; \
 	fi

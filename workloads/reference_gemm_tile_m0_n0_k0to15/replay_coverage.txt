@@ -1,6 +1,0 @@
-package=reference_gemm_tile_m0_n0_k0to15
-coverage_points_total=2
-coverage_points_hit=1
-coverage_points_missed=1
-cp_forwarding_hit_seen=MISS note=core_runner_same_address_forwarding
-cp_drain_request_seen=HIT note=core_runner_drain_request

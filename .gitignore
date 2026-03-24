@@ -12,12 +12,24 @@ sim/
 
 # Verilator build output
 build/
+build_system/
 
 # Concatenated source dump (regenerate with: python tools/concat.py)
 all_source_codes.txt
 
+# Root simulation and replay artifacts
+/replay_chain_summary.txt
+/dfx_runtime.txt
+/xelab.log
+/xsim.log
+/xvlog.log
+scripts/dfx_runtime.txt
+
+# Package-local replay artifacts
+workloads/**/replay_*
+
 # Editor / OS temp files
-.vscode/settings.json
+.vscode/
 Thumbs.db
 *.swp
 *.swo

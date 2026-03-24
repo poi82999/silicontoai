@@ -1,9 +1,0 @@
-package=system_negative_invalid_dma_bytes
-k_passes=1
-drained_rows=0
-checked_lanes=0
-dma_done_count=0
-npu_done_count=0
-mismatch_count=0
-status=PACKAGE_ERROR
-detail=Package error: weights_total_bytes does not match weight payload size
