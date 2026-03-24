@@ -1,0 +1,15 @@
+package=system_reference_forwarding_same_addr_m0_n0_k0to15
+coverage_points_total=11
+coverage_points_hit=6
+coverage_points_missed=5
+cp_dma_start_seen=HIT note=weight_launches=1 activation_launches=1
+cp_dma_done_seen=HIT note=dma_done_count=2
+cp_weight_load_mode_start_seen=HIT note=preload_launches=1
+cp_execute_mode_start_seen=HIT note=execute_launches=1
+cp_forwarding_hit_seen=HIT note=observed_internal_forward_en=1
+cp_drain_request_seen=HIT note=drained_rows=1
+cp_split_k_seen=MISS note=k_tile_count=1
+cp_multiburst_dma_seen=MISS note=weight_total_bursts=1 activation_total_bursts=1
+cp_n_tile_seen=MISS note=n_tile_base=0
+cp_m_tile_seen=MISS note=m_tile_base=0
+cp_negative_validation_seen=MISS note=status=PASS

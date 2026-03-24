@@ -1,0 +1,37 @@
+name: L5 Signoff
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+      - master
+
+jobs:
+  l5-signoff:
+    runs-on:
+      - self-hosted
+      - windows
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Run one-shot L5 signoff
+        shell: pwsh
+        run: |
+          $workspace = wsl wslpath '${{ github.workspace }}'
+          wsl bash -lc "cd '$workspace' && make l5-signoff"
+
+      - name: Run repeatability check
+        shell: pwsh
+        run: |
+          $workspace = wsl wslpath '${{ github.workspace }}'
+          wsl bash -lc "cd '$workspace' && make l5-repeatability"
+
+      - name: Upload L5 signoff artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: l5-signoff-artifacts
+          path: |
+            sim/verify/l5_signoff
+            sim/verify/l5_repeatability

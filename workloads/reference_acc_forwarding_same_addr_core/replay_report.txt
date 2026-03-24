@@ -1,0 +1,6 @@
+package=reference_acc_forwarding_same_addr_core
+k_passes=1
+drained_rows=1
+checked_lanes=16
+mismatch_count=0
+status=PASS

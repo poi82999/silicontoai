@@ -1,0 +1,10 @@
+package=system_reference_gemm_tile_m16_n0_k0to15
+assertions_total=6
+assertions_passed=6
+assertions_failed=0
+ap_expected_dma_done_count=PASS note=observed=2 expected=2
+ap_expected_npu_done_count=PASS note=observed=2 expected=2
+ap_expected_drained_rows=PASS note=observed=16 expected=16
+ap_no_data_mismatches=PASS note=mismatch_count=0
+ap_expected_forwarding_hit=PASS note=expect_forwarding_hit=0 observed=0
+ap_status_is_expected=PASS note=status=PASS

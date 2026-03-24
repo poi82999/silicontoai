@@ -1,0 +1,45 @@
+{
+  "manifest_version": "0.1",
+  "package_id": "reference_gemm_tile_m0_n0_k0to31_splitk",
+  "op_type": "gemm_tile",
+  "description": "Human-readable split-K reference package with two K passes over one 16-column output tile.",
+  "source": {
+    "origin": "split_k_reference",
+    "notes": "Two identical 16-wide K passes accumulate into one 16x16 output tile."
+  },
+  "shape": {
+    "m": 16,
+    "k": 32,
+    "n": 16
+  },
+  "tile": {
+    "m_tile_base": 0,
+    "n_tile_base": 0,
+    "tile_rows": 16,
+    "tile_cols": 16
+  },
+  "files": {
+    "activations": "activations.json",
+    "weights": "weights.json",
+    "golden": "golden.json"
+  },
+  "execution": {
+    "seq_len": 16,
+    "k_tile_count": 2,
+    "require_weight_preload": true,
+    "acc_clear_policy": "first_pass_overwrite",
+    "drain_addresses": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+  },
+  "format": {
+    "activation_layout": "row_major_16xint8_vectors",
+    "weight_layout": "k_major_rows_of_16_columns",
+    "golden_layout": "drain_address_to_16xint32_vector_map",
+    "lane_order": "lane0_to_lowest_column_offset",
+    "endianness": "little",
+    "payload_encoding": "json"
+  },
+  "compare": {
+    "mode": "exact",
+    "require_exact_match": true
+  }
+}

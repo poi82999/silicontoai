@@ -1,0 +1,6 @@
+package=reference_gemm_tile_m0_n0_k0to15
+k_passes=1
+drained_rows=16
+checked_lanes=256
+mismatch_count=0
+status=PASS

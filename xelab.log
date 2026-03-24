@@ -1,0 +1,21 @@
+Vivado Simulator v2025.2
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/AMDDesignTools/2025.2/Vivado/bin/unwrapped/win64.o/xelab.exe -top tb_system_top -snapshot snap_final 
+Multi-threading is on. Using 10 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module work.dma_controller(AXI_DATA_WIDTH=12...
+Compiling module work.dp_sram_bank
+Compiling module work.systolic_data_setup_default
+Compiling module work.mac_pe
+Compiling module work.systolic_array_16x16_default
+Compiling module work.psum_accumulator_buffer_default
+Compiling module work.npu_core_top
+Compiling module work.npu_system_top
+Compiling module work.tb_system_top
+Built simulation snapshot snap_final

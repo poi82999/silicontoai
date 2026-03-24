@@ -1,0 +1,37 @@
+[t=20] [SYSTEM REPLAY] dma_weights pass=0 src_addr=0 burst_len=15 total_bursts=1
+[t=58] [SYSTEM REPLAY] dma_done phase=dma_weights_pass_0 count=1
+[t=58] [SYSTEM REPLAY] swap_before_weight_preload pass=0
+[t=60] [SYSTEM REPLAY] preload_weights pass=0
+[t=98] [SYSTEM REPLAY] npu_done phase=preload_pass_0 count=1
+[t=100] [SYSTEM REPLAY] dma_activations pass=0 src_addr=8192 burst_len=15 total_bursts=1
+[t=138] [SYSTEM REPLAY] dma_done phase=dma_activations_pass_0 count=2
+[t=138] [SYSTEM REPLAY] swap_before_execute pass=0
+[t=140] [SYSTEM REPLAY] execute pass=0 acc_clear=1 acc_addr_override=off
+[t=244] [SYSTEM REPLAY] npu_done phase=execute_pass_0 count=2
+[t=246] [SYSTEM REPLAY] dma_weights pass=1 src_addr=256 burst_len=15 total_bursts=1
+[t=284] [SYSTEM REPLAY] dma_done phase=dma_weights_pass_1 count=3
+[t=284] [SYSTEM REPLAY] swap_before_weight_preload pass=1
+[t=286] [SYSTEM REPLAY] preload_weights pass=1
+[t=324] [SYSTEM REPLAY] npu_done phase=preload_pass_1 count=3
+[t=326] [SYSTEM REPLAY] dma_activations pass=1 src_addr=8448 burst_len=15 total_bursts=1
+[t=364] [SYSTEM REPLAY] dma_done phase=dma_activations_pass_1 count=4
+[t=364] [SYSTEM REPLAY] swap_before_execute pass=1
+[t=366] [SYSTEM REPLAY] execute pass=1 acc_clear=0 acc_addr_override=off
+[t=470] [SYSTEM REPLAY] npu_done phase=execute_pass_1 count=4
+[t=472] [SYSTEM REPLAY] flush cycles=35
+[t=548] [SYSTEM REPLAY] drain addr=0 data0=2400 data15=2400
+[t=554] [SYSTEM REPLAY] drain addr=1 data0=2400 data15=2400
+[t=560] [SYSTEM REPLAY] drain addr=2 data0=2400 data15=2400
+[t=566] [SYSTEM REPLAY] drain addr=3 data0=2400 data15=2400
+[t=572] [SYSTEM REPLAY] drain addr=4 data0=2400 data15=2400
+[t=578] [SYSTEM REPLAY] drain addr=5 data0=2400 data15=2400
+[t=584] [SYSTEM REPLAY] drain addr=6 data0=2400 data15=2400
+[t=590] [SYSTEM REPLAY] drain addr=7 data0=2400 data15=2400
+[t=596] [SYSTEM REPLAY] drain addr=8 data0=2400 data15=2400
+[t=602] [SYSTEM REPLAY] drain addr=9 data0=2400 data15=2400
+[t=608] [SYSTEM REPLAY] drain addr=10 data0=2400 data15=2400
+[t=614] [SYSTEM REPLAY] drain addr=11 data0=2400 data15=2400
+[t=620] [SYSTEM REPLAY] drain addr=12 data0=2400 data15=2400
+[t=626] [SYSTEM REPLAY] drain addr=13 data0=2400 data15=2400
+[t=632] [SYSTEM REPLAY] drain addr=14 data0=2400 data15=2400
+[t=638] [SYSTEM REPLAY] drain addr=15 data0=2400 data15=2400

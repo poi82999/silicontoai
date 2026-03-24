@@ -1,0 +1,23 @@
+# Vivado / xsim artifacts
+*.jou
+*.backup.jou
+*.backup.log
+*.pb
+*.wdb
+xsim.dir/
+scripts/*.log
+
+# Simulation output logs (stored in sim/)
+sim/
+
+# Verilator build output
+build/
+
+# Concatenated source dump (regenerate with: python tools/concat.py)
+all_source_codes.txt
+
+# Editor / OS temp files
+.vscode/settings.json
+Thumbs.db
+*.swp
+*.swo

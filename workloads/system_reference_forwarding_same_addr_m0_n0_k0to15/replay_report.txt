@@ -1,0 +1,8 @@
+package=system_reference_forwarding_same_addr_m0_n0_k0to15
+k_passes=1
+drained_rows=1
+checked_lanes=16
+dma_done_count=2
+npu_done_count=2
+mismatch_count=0
+status=PASS

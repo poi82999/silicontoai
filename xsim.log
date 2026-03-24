@@ -1,0 +1,148 @@
+#-----------------------------------------------------------
+# xsim v2025.2 (64-bit)
+# SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025
+# IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+# SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+# Start of session at: Fri Mar 20 17:15:52 2026
+# Process ID         : 22936
+# Current directory  : C:/projects/silicontoai
+# Command line       : xsim.exe -mode tcl -source {xsim.dir/snap_final/xsim_script.tcl}
+# Log file           : C:/projects/silicontoai/xsim.log
+# Journal file       : C:/projects/silicontoai\xsim.jou
+# Running On         : DESKTOP-MUOA85M
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26200
+# Processor Detail   : Intel(R) Core(TM) 5 120U
+# CPU Frequency      : 2496 MHz
+# CPU Physical cores : 10
+# CPU Logical cores  : 12
+# Host memory        : 34027 MB
+# Swap memory        : 2147 MB
+# Total Virtual      : 36175 MB
+# Available Virtual  : 16236 MB
+#-----------------------------------------------------------
+source xsim.dir/snap_final/xsim_script.tcl
+# xsim {snap_final} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+----------------------------------------
+ 1. Setup Phase: Load Weights into Bank 0
+----------------------------------------
+[SUCCESS] Weight DMA Downloaded
+----------------------------------------
+ 2. Swap Banks
+----------------------------------------
+----------------------------------------
+ 3. NPU Execute Phase: Load Weights into MAC PEs
+----------------------------------------
+[DBG @255000] state=1 exec_cnt=0 sram_ren=1 valid_q=0 flush_cnt=0
+[DBG @265000] state=1 exec_cnt=1 sram_ren=1 valid_q=0 flush_cnt=0
+[DBG @275000] state=1 exec_cnt=2 sram_ren=1 valid_q=0 flush_cnt=0
+[DBG @285000] state=1 exec_cnt=3 sram_ren=1 valid_q=0 flush_cnt=0
+[DBG @295000] state=1 exec_cnt=4 sram_ren=1 valid_q=0 flush_cnt=0
+[DBG @305000] state=1 exec_cnt=5 sram_ren=1 valid_q=0 flush_cnt=0
+[DBG @315000] state=1 exec_cnt=6 sram_ren=1 valid_q=0 flush_cnt=0
+[DBG @325000] state=1 exec_cnt=7 sram_ren=1 valid_q=0 flush_cnt=0
+[DBG @335000] state=1 exec_cnt=8 sram_ren=1 valid_q=0 flush_cnt=0
+[DBG @345000] state=1 exec_cnt=9 sram_ren=1 valid_q=0 flush_cnt=0
+[DBG @355000] state=1 exec_cnt=10 sram_ren=1 valid_q=0 flush_cnt=0
+[DBG @365000] state=1 exec_cnt=11 sram_ren=1 valid_q=0 flush_cnt=0
+[DBG @375000] state=1 exec_cnt=12 sram_ren=1 valid_q=0 flush_cnt=0
+[DBG @385000] state=1 exec_cnt=13 sram_ren=1 valid_q=0 flush_cnt=0
+[DBG @395000] state=1 exec_cnt=14 sram_ren=1 valid_q=0 flush_cnt=0
+[DBG @405000] state=1 exec_cnt=15 sram_ren=1 valid_q=0 flush_cnt=0
+[DBG @415000] state=2 exec_cnt=16 sram_ren=0 valid_q=0 flush_cnt=0
+[DBG @425000] state=2 exec_cnt=16 sram_ren=0 valid_q=0 flush_cnt=0
+[DBG @435000] state=5 exec_cnt=16 sram_ren=0 valid_q=0 flush_cnt=0
+[DBG @445000] state=5 exec_cnt=16 sram_ren=0 valid_q=0 flush_cnt=0
+[SUCCESS] NPU Weight Loaded into PEs
+----------------------------------------
+ 4. Setup Phase: Load Acts into Bank 1
+----------------------------------------
+[DBG @455000] state=5 exec_cnt=16 sram_ren=0 valid_q=0 flush_cnt=0
+[SUCCESS] Activation DMA Downloaded
+----------------------------------------
+ 5. Swap Banks
+----------------------------------------
+----------------------------------------
+ 6. NPU Execute Phase: Run MAC Array
+----------------------------------------
+[DBG @695000] state=3 exec_cnt=0 sram_ren=1 valid_q=1 flush_cnt=0
+[DBG @705000] state=3 exec_cnt=1 sram_ren=1 valid_q=1 flush_cnt=0
+[DBG @715000] state=3 exec_cnt=2 sram_ren=1 valid_q=1 flush_cnt=0
+[DBG @725000] state=3 exec_cnt=3 sram_ren=1 valid_q=1 flush_cnt=0
+[DBG @735000] state=3 exec_cnt=4 sram_ren=1 valid_q=1 flush_cnt=0
+[DBG @745000] state=3 exec_cnt=5 sram_ren=1 valid_q=1 flush_cnt=0
+[DBG @755000] state=3 exec_cnt=6 sram_ren=1 valid_q=1 flush_cnt=0
+[DBG @765000] state=3 exec_cnt=7 sram_ren=1 valid_q=1 flush_cnt=0
+[DBG @775000] state=3 exec_cnt=8 sram_ren=1 valid_q=1 flush_cnt=0
+[DBG @785000] state=3 exec_cnt=9 sram_ren=1 valid_q=1 flush_cnt=0
+[DBG @795000] state=3 exec_cnt=10 sram_ren=1 valid_q=1 flush_cnt=0
+[DBG @805000] state=3 exec_cnt=11 sram_ren=1 valid_q=1 flush_cnt=0
+[DBG @815000] state=3 exec_cnt=12 sram_ren=1 valid_q=1 flush_cnt=0
+[DBG @825000] state=3 exec_cnt=13 sram_ren=1 valid_q=1 flush_cnt=0
+[DBG @835000] state=3 exec_cnt=14 sram_ren=1 valid_q=1 flush_cnt=0
+[DBG @845000] state=3 exec_cnt=15 sram_ren=1 valid_q=1 flush_cnt=0
+[DBG @855000] state=4 exec_cnt=16 sram_ren=0 valid_q=1 flush_cnt=0
+[DBG @865000] state=4 exec_cnt=16 sram_ren=0 valid_q=0 flush_cnt=1
+[DBG @875000] state=4 exec_cnt=16 sram_ren=0 valid_q=0 flush_cnt=2
+[DBG @885000] state=4 exec_cnt=16 sram_ren=0 valid_q=0 flush_cnt=3
+[DBG @895000] state=4 exec_cnt=16 sram_ren=0 valid_q=0 flush_cnt=4
+[DBG @905000] state=4 exec_cnt=16 sram_ren=0 valid_q=0 flush_cnt=5
+[DBG @915000] state=4 exec_cnt=16 sram_ren=0 valid_q=0 flush_cnt=6
+[DBG @925000] state=4 exec_cnt=16 sram_ren=0 valid_q=0 flush_cnt=7
+[DBG @935000] state=4 exec_cnt=16 sram_ren=0 valid_q=0 flush_cnt=8
+[DBG @945000] state=4 exec_cnt=16 sram_ren=0 valid_q=0 flush_cnt=9
+[DBG @955000] state=4 exec_cnt=16 sram_ren=0 valid_q=0 flush_cnt=10
+[DBG @965000] state=4 exec_cnt=16 sram_ren=0 valid_q=0 flush_cnt=11
+[DBG @975000] state=4 exec_cnt=16 sram_ren=0 valid_q=0 flush_cnt=12
+[DBG @985000] state=4 exec_cnt=16 sram_ren=0 valid_q=0 flush_cnt=13
+[DBG @995000] state=4 exec_cnt=16 sram_ren=0 valid_q=0 flush_cnt=14
+[DBG @1005000] state=4 exec_cnt=16 sram_ren=0 valid_q=0 flush_cnt=15
+[NPU CORE] Bottom Valid Output: Addr=0, Data0=1200, Data15=1200
+[DBG @1015000] state=4 exec_cnt=16 sram_ren=0 valid_q=0 flush_cnt=16
+[NPU CORE] Bottom Valid Output: Addr=0, Data0=1200, Data15=1200
+[DBG @1025000] state=4 exec_cnt=16 sram_ren=0 valid_q=0 flush_cnt=17
+[NPU CORE] Bottom Valid Output: Addr=1, Data0=1200, Data15=1200
+[DBG @1035000] state=4 exec_cnt=16 sram_ren=0 valid_q=0 flush_cnt=18
+[NPU CORE] Bottom Valid Output: Addr=2, Data0=1200, Data15=1200
+[DBG @1045000] state=4 exec_cnt=16 sram_ren=0 valid_q=0 flush_cnt=19
+[NPU CORE] Bottom Valid Output: Addr=3, Data0=1200, Data15=1200
+[DBG @1055000] state=4 exec_cnt=16 sram_ren=0 valid_q=0 flush_cnt=20
+[NPU CORE] Bottom Valid Output: Addr=4, Data0=1200, Data15=1200
+[DBG @1065000] state=4 exec_cnt=16 sram_ren=0 valid_q=0 flush_cnt=21
+[NPU CORE] Bottom Valid Output: Addr=5, Data0=1200, Data15=1200
+[DBG @1075000] state=4 exec_cnt=16 sram_ren=0 valid_q=0 flush_cnt=22
+[NPU CORE] Bottom Valid Output: Addr=6, Data0=1200, Data15=1200
+[DBG @1085000] state=4 exec_cnt=16 sram_ren=0 valid_q=0 flush_cnt=23
+[NPU CORE] Bottom Valid Output: Addr=7, Data0=1200, Data15=1200
+[DBG @1095000] state=4 exec_cnt=16 sram_ren=0 valid_q=0 flush_cnt=24
+[NPU CORE] Bottom Valid Output: Addr=8, Data0=1200, Data15=1200
+[DBG @1105000] state=4 exec_cnt=16 sram_ren=0 valid_q=0 flush_cnt=25
+[NPU CORE] Bottom Valid Output: Addr=9, Data0=1200, Data15=1200
+[DBG @1115000] state=4 exec_cnt=16 sram_ren=0 valid_q=0 flush_cnt=26
+[NPU CORE] Bottom Valid Output: Addr=10, Data0=1200, Data15=1200
+[DBG @1125000] state=4 exec_cnt=16 sram_ren=0 valid_q=0 flush_cnt=27
+[NPU CORE] Bottom Valid Output: Addr=11, Data0=1200, Data15=1200
+[DBG @1135000] state=4 exec_cnt=16 sram_ren=0 valid_q=0 flush_cnt=28
+[NPU CORE] Bottom Valid Output: Addr=12, Data0=1200, Data15=1200
+[DBG @1145000] state=4 exec_cnt=16 sram_ren=0 valid_q=0 flush_cnt=29
+[NPU CORE] Bottom Valid Output: Addr=13, Data0=1200, Data15=1200
+[DBG @1155000] state=4 exec_cnt=16 sram_ren=0 valid_q=0 flush_cnt=30
+[NPU CORE] Bottom Valid Output: Addr=14, Data0=1200, Data15=1200
+[DBG @1165000] state=4 exec_cnt=16 sram_ren=0 valid_q=0 flush_cnt=31
+[NPU CORE] Bottom Valid Output: Addr=15, Data0=1200, Data15=1200
+[DBG @1175000] state=4 exec_cnt=16 sram_ren=0 valid_q=0 flush_cnt=32
+[DBG @1185000] state=4 exec_cnt=16 sram_ren=0 valid_q=0 flush_cnt=33
+[DBG @1195000] state=4 exec_cnt=16 sram_ren=0 valid_q=0 flush_cnt=34
+[DBG @1205000] state=5 exec_cnt=16 sram_ren=0 valid_q=0 flush_cnt=35
+[DBG @1215000] state=5 exec_cnt=16 sram_ren=0 valid_q=0 flush_cnt=35
+[SUCCESS] NPU Array Execution and 35-Cycle Flush Completed
+----------------------------------------
+ 7. Read Output and Verify
+----------------------------------------
+[DBG @1225000] state=5 exec_cnt=16 sram_ren=0 valid_q=0 flush_cnt=35
+ [FAIL] Mismatch at col 0: Expected 1200, Got x
+$finish called at time : 1255 ns : File "C:/projects/silicontoai/tb/tb_system_top.sv" Line 187
+exit
+INFO: [Common 17-206] Exiting xsim at Fri Mar 20 17:15:54 2026...

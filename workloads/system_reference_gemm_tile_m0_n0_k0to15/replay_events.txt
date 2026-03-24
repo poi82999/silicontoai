@@ -1,0 +1,27 @@
+[t=20] [SYSTEM REPLAY] dma_weights pass=0 src_addr=0 burst_len=15 total_bursts=1
+[t=58] [SYSTEM REPLAY] dma_done phase=dma_weights_pass_0 count=1
+[t=58] [SYSTEM REPLAY] swap_before_weight_preload pass=0
+[t=60] [SYSTEM REPLAY] preload_weights pass=0
+[t=98] [SYSTEM REPLAY] npu_done phase=preload_pass_0 count=1
+[t=100] [SYSTEM REPLAY] dma_activations pass=0 src_addr=8192 burst_len=15 total_bursts=1
+[t=138] [SYSTEM REPLAY] dma_done phase=dma_activations_pass_0 count=2
+[t=138] [SYSTEM REPLAY] swap_before_execute pass=0
+[t=140] [SYSTEM REPLAY] execute pass=0 acc_clear=1 acc_addr_override=off
+[t=244] [SYSTEM REPLAY] npu_done phase=execute_pass_0 count=2
+[t=246] [SYSTEM REPLAY] flush cycles=35
+[t=322] [SYSTEM REPLAY] drain addr=0 data0=1200 data15=1200
+[t=328] [SYSTEM REPLAY] drain addr=1 data0=1200 data15=1200
+[t=334] [SYSTEM REPLAY] drain addr=2 data0=1200 data15=1200
+[t=340] [SYSTEM REPLAY] drain addr=3 data0=1200 data15=1200
+[t=346] [SYSTEM REPLAY] drain addr=4 data0=1200 data15=1200
+[t=352] [SYSTEM REPLAY] drain addr=5 data0=1200 data15=1200
+[t=358] [SYSTEM REPLAY] drain addr=6 data0=1200 data15=1200
+[t=364] [SYSTEM REPLAY] drain addr=7 data0=1200 data15=1200
+[t=370] [SYSTEM REPLAY] drain addr=8 data0=1200 data15=1200
+[t=376] [SYSTEM REPLAY] drain addr=9 data0=1200 data15=1200
+[t=382] [SYSTEM REPLAY] drain addr=10 data0=1200 data15=1200
+[t=388] [SYSTEM REPLAY] drain addr=11 data0=1200 data15=1200
+[t=394] [SYSTEM REPLAY] drain addr=12 data0=1200 data15=1200
+[t=400] [SYSTEM REPLAY] drain addr=13 data0=1200 data15=1200
+[t=406] [SYSTEM REPLAY] drain addr=14 data0=1200 data15=1200
+[t=412] [SYSTEM REPLAY] drain addr=15 data0=1200 data15=1200

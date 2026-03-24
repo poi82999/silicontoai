@@ -1,0 +1,47 @@
+{
+  "manifest_version": "0.1",
+  "package_id": "reference_acc_forwarding_same_addr_core",
+  "op_type": "accumulator_forwarding_stress",
+  "description": "Core replay package that forces four back-to-back writes to the same accumulator address so same-address forwarding is exercised.",
+  "source": {
+    "origin": "core_forwarding_directed_reference",
+    "notes": "One overwrite followed by three accumulations to drain address 0 using identical activation vectors and constant weights."
+  },
+  "shape": {
+    "m": 4,
+    "k": 16,
+    "n": 16
+  },
+  "tile": {
+    "m_tile_base": 0,
+    "n_tile_base": 0,
+    "tile_rows": 4,
+    "tile_cols": 16
+  },
+  "files": {
+    "activations": "activations.json",
+    "weights": "../reference_gemm_tile_m0_n0_k0to15/weights.json",
+    "golden": "golden.json"
+  },
+  "execution": {
+    "seq_len": 4,
+    "k_tile_count": 1,
+    "require_weight_preload": true,
+    "acc_clear_policy": "first_pass_overwrite",
+    "acc_addr_sequence": [0, 0, 0, 0],
+    "acc_clear_sequence": [1, 0, 0, 0],
+    "drain_addresses": [0]
+  },
+  "format": {
+    "activation_layout": "row_major_16xint8_vectors",
+    "weight_layout": "k_major_rows_of_16_columns",
+    "golden_layout": "drain_address_to_16xint32_vector_map",
+    "lane_order": "lane0_to_lowest_column_offset",
+    "endianness": "little",
+    "payload_encoding": "json"
+  },
+  "compare": {
+    "mode": "exact",
+    "require_exact_match": true
+  }
+}
