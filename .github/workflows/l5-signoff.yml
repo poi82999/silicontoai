@@ -21,13 +21,15 @@ jobs:
       - name: Run one-shot L5 signoff
         shell: powershell
         run: |
-          $workspace = wsl wslpath '${{ github.workspace }}'
+          $workspaceWin = "${{ github.workspace }}" -replace '\\','/'
+          $workspace = wsl wslpath -u "$workspaceWin"
           wsl bash -lc "cd '$workspace' && make l5-signoff"
 
       - name: Run repeatability check
         shell: powershell
         run: |
-          $workspace = wsl wslpath '${{ github.workspace }}'
+          $workspaceWin = "${{ github.workspace }}" -replace '\\','/'
+          $workspace = wsl wslpath -u "$workspaceWin"
           wsl bash -lc "cd '$workspace' && make l5-repeatability"
 
       - name: Upload L5 signoff artifacts
