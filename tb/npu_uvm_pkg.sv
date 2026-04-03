@@ -359,6 +359,15 @@ package npu_uvm_pkg;
                 for(int j=0; j<16; j++) weight_matrix[i][j] = 0;
         endfunction
 
+        function automatic bit [31:0] compute_signed_mac_result(npu_seq_item tr, int col);
+            logic signed [31:0] sum;
+            sum = '0;
+            for (int i = 0; i < 16; i++) begin
+                sum += $signed(tr.act_in[i]) * $signed(weight_matrix[i][col]);
+            end
+            return sum;
+        endfunction
+
         // Flush all pending acc entries up to (but not including) idx
         function void flush_up_to(int idx);
             while (acc_applied < idx && acc_queue.size() > 0) begin
@@ -391,11 +400,7 @@ package npu_uvm_pkg;
                 entry.addr  = tr.acc_addr;
                 entry.clear = tr.acc_clear;
                 for (int j=0; j<16; j++) begin
-                    bit [31:0] sum = 0;
-                    for (int i=0; i<16; i++) begin
-                        sum += 32'(tr.act_in[i]) * 32'(weight_matrix[i][j]);
-                    end
-                    entry.mac_result[j] = sum;
+                    entry.mac_result[j] = compute_signed_mac_result(tr, j);
                 end
                 acc_queue.push_back(entry);
                 acc_queued++;
@@ -411,8 +416,13 @@ package npu_uvm_pkg;
                     if (ref_bram[tr.drain_addr][i] !== tr.psum_drain_out[i]) begin
                         mismatch_found = 1;
                         `uvm_error("SCB_FAIL", $sformatf(
-                            "Mismatch at Col %0d | Addr=%0d | Expected: %0d, Actual: %0d",
-                            i, tr.drain_addr, ref_bram[tr.drain_addr][i], tr.psum_drain_out[i]))
+                            "Mismatch at Col %0d | Addr=%0d | Expected: %0d (0x%08h), Actual: %0d (0x%08h)",
+                            i,
+                            tr.drain_addr,
+                            $signed(ref_bram[tr.drain_addr][i]),
+                            ref_bram[tr.drain_addr][i],
+                            $signed(tr.psum_drain_out[i]),
+                            tr.psum_drain_out[i]))
                     end
                 end
                 if (!mismatch_found)

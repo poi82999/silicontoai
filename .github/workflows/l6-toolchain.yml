@@ -27,26 +27,77 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Set up Python 3.12
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.12"
+      - name: Resolve Python 3.12
+        shell: powershell
+        run: |
+          $ErrorActionPreference = "Stop"
+
+          $candidates = New-Object System.Collections.Generic.List[string]
+
+          try {
+            $resolved = (& py -3.12 -c "import sys; print(sys.executable)").Trim()
+            if ($LASTEXITCODE -eq 0 -and $resolved) {
+              $candidates.Add($resolved)
+            }
+          } catch {
+          }
+
+          try {
+            $resolved = (& python -c "import sys; print(sys.executable)").Trim()
+            if ($LASTEXITCODE -eq 0 -and $resolved) {
+              $candidates.Add($resolved)
+            }
+          } catch {
+          }
+
+          $pythonExe = $null
+          foreach ($candidate in ($candidates | Select-Object -Unique)) {
+            try {
+              $version = (& $candidate -c "import sys; print(f'{sys.version_info.major}.{sys.version_info.minor}')").Trim()
+              if ($LASTEXITCODE -eq 0 -and $version -eq "3.12") {
+                $pythonExe = $candidate
+                break
+              }
+            } catch {
+            }
+          }
+
+          if (-not $pythonExe) {
+            throw "Python 3.12 was not found on the self-hosted runner. Install CPython 3.12 and ensure either 'py -3.12' or 'python' resolves to it."
+          }
+
+          $venvDir = Join-Path $env:RUNNER_TEMP "silicontoai-l6-py312"
+          if (Test-Path $venvDir) {
+            Remove-Item -Recurse -Force $venvDir
+          }
+
+          & $pythonExe -m venv $venvDir
+
+          $venvPython = Join-Path $venvDir "Scripts\python.exe"
+          if (-not (Test-Path $venvPython)) {
+            throw "Failed to create a usable Python 3.12 virtual environment at $venvDir"
+          }
+
+          "PYTHON_EXE=$venvPython" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
+          (Join-Path $venvDir "Scripts") | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append
+          & $venvPython --version
+          & $venvPython -m pip --version
 
       - name: Install dependencies
         shell: powershell
         run: |
-          python -m pip install --upgrade pip
-          python -m pip install -e ".[dev]"
+          & $env:PYTHON_EXE -m pip install --upgrade pip
+          & $env:PYTHON_EXE -m pip install -e ".[dev]"
 
       - name: Run L6 unit tests
         shell: powershell
         run: |
-          python -m pytest l6/tests -v --tb=short -x --ignore=l6/tests/test_asset_drift.py --ignore=l6/tests/test_m3_ops_tracer.py -k "not nn_module"
+          & $env:PYTHON_EXE -m pytest l6/tests -v --tb=short -x --ignore=l6/tests/test_asset_drift.py --ignore=l6/tests/test_m3_ops_tracer.py -k "not nn_module"
 
       - name: Run asset drift gate
         shell: powershell
         run: |
-          python -m pytest l6/tests/test_asset_drift.py -v --tb=long
+          & $env:PYTHON_EXE -m pytest l6/tests/test_asset_drift.py -v --tb=long
 
       - name: Upload test results
         if: always()
