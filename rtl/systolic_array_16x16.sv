@@ -69,7 +69,7 @@ module systolic_array_16x16 (
                 // Column j needs (15 - j) cycles to catch up with Column 15
                 localparam DELAY = 15 - j;
                 logic [DELAY-1:0][31:0] deskew_pipe;
-                always_ff @(posedge clk or negedge rst_n) begin
+                always_ff @(posedge clk) begin
                     if (!rst_n) begin
                         deskew_pipe <= '0;
                     end else begin

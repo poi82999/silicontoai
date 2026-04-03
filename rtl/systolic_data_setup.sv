@@ -17,7 +17,7 @@ module systolic_data_setup #(
                 assign act_in_skewed[i] = act_in_raw[i]; // Row 0: No delay
             end else begin
                 logic [i-1:0][DATA_WIDTH-1:0] delay_pipe;
-                always_ff @(posedge clk or negedge rst_n) begin
+                always_ff @(posedge clk) begin
                     if (!rst_n) begin
                         delay_pipe <= '0;
                     end else begin

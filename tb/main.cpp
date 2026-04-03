@@ -14,6 +14,8 @@ namespace fs = std::filesystem;
 using replay::GoldenEntry;
 using replay::Manifest;
 using replay::PackageData;
+using replay::prepareLaneForDutDrive;
+using replay::ReplayRow16x8;
 
 struct CoreCoverageState {
     bool forwardingHitSeen = false;
@@ -105,14 +107,15 @@ void clearInputs(Vnpu_core_top* dut) {
     }
 }
 
-void packVector16x8(WData* target, const std::array<uint8_t, 16>& values) {
+void packVector16x8(WData* target, const ReplayRow16x8& values) {
     for (int i = 0; i < 4; ++i) {
         target[i] = 0;
     }
     for (int lane = 0; lane < 16; ++lane) {
         int wordIndex = lane / 4;
         int byteOffset = (lane % 4) * 8;
-        target[wordIndex] |= static_cast<WData>(values[lane]) << byteOffset;
+        const auto driveValue = prepareLaneForDutDrive(values[lane]);
+        target[wordIndex] |= static_cast<WData>(driveValue) << byteOffset;
     }
 }
 

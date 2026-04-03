@@ -1,7 +1,8 @@
 @echo off
 setlocal enabledelayedexpansion
 
-call C:\AMDDesignTools\2025.2\Vivado\settings64.bat
+call "%~dp0setup_vivado_env.bat"
+if %ERRORLEVEL% NEQ 0 exit /b 1
 
 set SCRIPT_DIR=%~dp0
 for %%I in ("%SCRIPT_DIR%..") do set ROOT_DIR=%%~fI

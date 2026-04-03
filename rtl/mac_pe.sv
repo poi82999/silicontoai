@@ -16,9 +16,10 @@ module mac_pe (
     output logic [7:0]  act_out,
     output logic [31:0] psum_out
 );
-    logic [7:0] weight_reg;
+    logic signed [7:0]  weight_reg;
 
-    always_ff @(posedge clk or negedge rst_n) begin
+    (* use_dsp = "yes" *)
+    always_ff @(posedge clk) begin
         if (!rst_n) begin
             weight_reg <= '0;
             act_out    <= '0;
@@ -26,14 +27,14 @@ module mac_pe (
         end else begin
             // Weight Stationary: 조건부 캡처
             if (weight_load_en) begin
-                weight_reg <= weight_in;
+                weight_reg <= $signed(weight_in);
             end
             
             // Activation 포워딩 (Right)
             act_out <= act_in;
             
-            // MAC & Psum 포워딩 (Bottom)
-            psum_out <= psum_in + (32'(act_in) * 32'(weight_reg));
+            // DSP-friendly MAC: multiply-add in one registered expression
+            psum_out <= $unsigned($signed(psum_in) + $signed(act_in) * weight_reg);
         end
     end
 endmodule

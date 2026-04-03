@@ -1,0 +1,110 @@
+{
+  "manifest_version": "0.2-draft",
+  "package_id": "program_chain_splitk_tail_src_fc1_m0_n16",
+  "op_type": "gemm_tile",
+  "description": "Replay-ready package exported from an L6 compute package.",
+  "source": {
+    "origin": "l6_replay_bridge",
+    "notes": "Generated from an L6 compute package for direct core/system replay."
+  },
+  "shape": {
+    "m": 16,
+    "k": 16,
+    "n": 20
+  },
+  "tile": {
+    "m_tile_base": 0,
+    "n_tile_base": 16,
+    "tile_rows": 16,
+    "tile_cols": 4
+  },
+  "files": {
+    "activations": "activations.json",
+    "weights": "weights.json",
+    "golden": "golden.json"
+  },
+  "execution": {
+    "seq_len": 16,
+    "k_tile_count": 1,
+    "require_weight_preload": true,
+    "acc_clear_policy": "first_pass_overwrite",
+    "drain_addresses": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ]
+  },
+  "format": {
+    "activation_layout": "row_major_16xint8_vectors",
+    "weight_layout": "k_major_rows_of_16_columns",
+    "golden_layout": "drain_address_to_16xint32_vector_map",
+    "lane_order": "lane0_to_lowest_column_offset",
+    "endianness": "little",
+    "payload_encoding": "json"
+  },
+  "compare": {
+    "mode": "exact",
+    "require_exact_match": true
+  },
+  "system": {
+    "memory": {
+      "weights_src_addr": 0,
+      "activations_src_addr": 8192,
+      "weights_total_bytes": 256,
+      "activations_total_bytes": 256
+    },
+    "dma": {
+      "weight_burst_len": 15,
+      "weight_total_bursts": 1,
+      "activation_burst_len": 15,
+      "activation_total_bursts": 1
+    },
+    "banks": {
+      "initial_bank_sel": 0,
+      "swap_before_weight_preload": true,
+      "swap_before_execute": true
+    },
+    "execution": {
+      "weight_target": "inactive_weight_bank_then_pe_preload",
+      "activation_target": "inactive_activation_bank_then_execute",
+      "phase_sequence": [
+        "dma_weights",
+        "swap_banks",
+        "preload_weights",
+        "dma_activations",
+        "swap_banks",
+        "execute",
+        "flush",
+        "drain"
+      ],
+      "expected_dma_done_count": 2,
+      "expected_npu_done_count": 2,
+      "flush_cycles": 35,
+      "passes": [
+        {
+          "pass_index": 0,
+          "weights_src_addr": 0,
+          "activations_src_addr": 8192,
+          "weight_burst_len": 15,
+          "weight_total_bursts": 1,
+          "activation_burst_len": 15,
+          "activation_total_bursts": 1,
+          "acc_clear": true
+        }
+      ]
+    }
+  }
+}

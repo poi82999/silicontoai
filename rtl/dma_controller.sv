@@ -62,7 +62,7 @@ module dma_controller #(
     wire r_last_fire = r_fire && rlast;
 
     // 1. DMA Control & Counters
-    always_ff @(posedge clk or negedge rst_n) begin
+    always_ff @(posedge clk) begin
         if (!rst_n) begin
             req_cnt         <= '0;
             resp_cnt        <= '0;
@@ -96,7 +96,7 @@ module dma_controller #(
     wire [7:0]  next_outstanding = outstanding_cnt + 8'(ar_fire) - 8'(r_last_fire);
     wire        can_issue = (next_req_cnt < total_bursts) && (next_outstanding < MAX_OUTSTANDING);
 
-    always_ff @(posedge clk or negedge rst_n) begin
+    always_ff @(posedge clk) begin
         if (!rst_n) begin
             arvalid <= 1'b0;
             araddr  <= '0;
@@ -123,7 +123,7 @@ module dma_controller #(
     end
 
     // 3. R Channel Logic (SRAM Writer - Off-by-one fixed)
-    always_ff @(posedge clk or negedge rst_n) begin
+    always_ff @(posedge clk) begin
         if (!rst_n) begin
             sram_wen   <= 1'b0;
             sram_addr  <= '0;

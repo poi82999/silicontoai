@@ -1,5 +1,6 @@
 @echo off
-call C:\AMDDesignTools\2025.2\Vivado\settings64.bat
+call "%~dp0setup_vivado_env.bat"
+if %ERRORLEVEL% NEQ 0 exit /b 1
 
 if exist xsim.dir rmdir /s /q xsim.dir
 

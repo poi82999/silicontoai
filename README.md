@@ -12,6 +12,8 @@ silicontoai/
 ├── docs/                   # AI/엔지니어 분석용 유지 문서
 │   ├── ai_analysis_report.md
 │   ├── architecture_report.md
+│   ├── current_status_report.md
+│   ├── l7_environment_setup.md
 │   ├── verification_report.md
 │   ├── debugging_report.md
 │   └── report_update_checklist.md
@@ -36,6 +38,11 @@ silicontoai/
 │   ├── npu_dma_controller.h
 │   └── mock_allocator.h
 │
+├── l6/                     # Python 기반 L6 학습/툴체인 공간
+│   ├── src/l6_toolchain/   # exporter / golden generator 코드
+│   ├── tests/              # L6 단위 테스트
+│   └── README.md           # 학습 순서와 실행 방법
+│
 ├── scripts/                # 시뮬레이션 실행 스크립트
 │   ├── run_sys.bat         # Vivado 시스템 레벨 시뮬 (권장)
 │   ├── run_uvm.bat         # Vivado UVM 시뮬
@@ -58,24 +65,29 @@ silicontoai/
 
 1. `README.md`
 2. `docs/ai_analysis_report.md`
-3. `docs/functional_contract_report.md`
-4. `docs/workload_package_report.md`
-5. `docs/core_replay_loader_report.md`
-6. `docs/l5_system_replay_scenarios_report.md`
-7. `docs/l5_signoff_report_template.md`
-8. `docs/system_replay_phase_executor_report.md`
-9. `docs/l5_signoff_sample_report.md`
-10. `docs/architecture_report.md`
-11. `docs/verification_report.md`
-12. `docs/debugging_report.md`
-13. `docs/report_update_checklist.md`
-14. `rtl/npu_system_top.sv`
-15. `rtl/npu_core_top.sv`
-16. `tb/npu_uvm_pkg.sv`
+3. `docs/current_status_report.md`
+4. `docs/l7_environment_setup.md`
+5. `docs/functional_contract_report.md`
+6. `docs/workload_package_report.md`
+7. `docs/core_replay_loader_report.md`
+8. `docs/l5_system_replay_scenarios_report.md`
+9. `docs/l5_signoff_report_template.md`
+10. `docs/system_replay_phase_executor_report.md`
+11. `docs/l5_signoff_sample_report.md`
+12. `docs/architecture_report.md`
+13. `docs/verification_report.md`
+14. `docs/debugging_report.md`
+15. `docs/report_update_checklist.md`
+16. `l6/README.md`
+17. `rtl/npu_system_top.sv`
+18. `rtl/npu_core_top.sv`
+19. `tb/npu_uvm_pkg.sv`
 
 문서 역할:
 
 - `docs/ai_analysis_report.md`: 분석 진입점과 읽기 순서
+- `docs/current_status_report.md`: 현재 milestone 진행률, 최근 완료 항목, 단기 우선순위
+- `docs/l7_environment_setup.md`: L7 진입 전 Windows/WSL/Vivado 준비 항목과 repo-side 구현 자산 공백 정리
 - `docs/functional_contract_report.md`: 시스템/코어 기능 계약, 타이밍 규칙, accumulator/drain 규칙
 - `docs/workload_package_report.md`: L2 workload package 개념, manifest 필드, replay 기준 예시
 - `docs/core_replay_loader_report.md`: L4 core replay loader 설계, 실행 순서, mismatch 리포트 기준
@@ -87,6 +99,7 @@ silicontoai/
 - `docs/verification_report.md`: 검증 구조, 명령어, 산출물 위치
 - `docs/debugging_report.md`: 증상별 디버깅 가이드
 - `docs/report_update_checklist.md`: RTL/검증 변경 시 문서 동기화 체크리스트와 템플릿
+- `l6/README.md`: Python 환경, L6 디렉터리 구조, 첫 Linear export/golden 학습 과제
 
 ---
 

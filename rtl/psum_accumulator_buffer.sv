@@ -62,7 +62,7 @@ module psum_accumulator_buffer #(
     end
 
     // Pipeline Alignment (Match Array output with BRAM read latency)
-    always_ff @(posedge clk or negedge rst_n) begin
+    always_ff @(posedge clk) begin
         if (!rst_n) begin
             acc_valid_q <= 1'b0;
             acc_clear_q <= 1'b0;

@@ -24,9 +24,13 @@ Detailed analysis is split into architecture, verification, and debugging docume
 11. [docs/verification_report.md](./verification_report.md)
 12. [docs/debugging_report.md](./debugging_report.md)
 13. [docs/report_update_checklist.md](./report_update_checklist.md)
-14. `rtl/npu_system_top.sv`
-15. `rtl/npu_core_top.sv`
-16. `tb/npu_uvm_pkg.sv`
+14. [docs/factory_analogy_architecture.md](./factory_analogy_architecture.md)
+15. [docs/m5_end_to_end_compiler_design.md](./m5_end_to_end_compiler_design.md)
+16. `l6/README.md`
+17. `l6/src/l6_toolchain/api.py`
+18. `rtl/npu_system_top.sv`
+19. `rtl/npu_core_top.sv`
+20. `tb/npu_uvm_pkg.sv`
 
 ---
 
@@ -64,6 +68,12 @@ Detailed analysis is split into architecture, verification, and debugging docume
 
 - [docs/report_update_checklist.md](./report_update_checklist.md)
   - Checklist and template to keep these reports synchronized when RTL/test flow changes.
+
+- [docs/factory_analogy_architecture.md](./factory_analogy_architecture.md)
+  - Full hardware/software stack mapped to a factory pipeline analogy. Covers RTL signals, Python classes, constants, verification flows, and the end-to-end tile production cycle.
+
+- [docs/m5_end_to_end_compiler_design.md](./m5_end_to_end_compiler_design.md)
+  - M5 compiler design note. Covers the 4-layer pipeline (import, plan, materialize, report), existing baseline, problem statement, and proposed architecture.
 
 ---
 

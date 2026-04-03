@@ -1,0 +1,30 @@
+[project]
+name = "silicontoai-l6"
+version = "0.1.0"
+description = "Python tooling for L6 study: linear export and hardware-faithful golden generation"
+readme = "l6/README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "numpy>=2.3,<3",
+]
+
+[project.scripts]
+l6-compile = "l6_toolchain.__main__:main"
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.4,<9",
+]
+
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+package-dir = {"" = "l6/src"}
+
+[tool.setuptools.packages.find]
+where = ["l6/src"]
+
+[tool.pytest.ini_options]
+testpaths = ["l6/tests"]

@@ -58,7 +58,7 @@ module npu_system_top #(
     // bank_sel == 0: DMA writes Bank 0, NPU reads Bank 1
     // bank_sel == 1: DMA writes Bank 1, NPU reads Bank 0
     logic bank_sel;
-    always_ff @(posedge clk or negedge rst_n) begin
+    always_ff @(posedge clk) begin
         if (!rst_n) bank_sel <= 1'b0;
         else if (mmio_swap_banks) bank_sel <= ~bank_sel;
     end
@@ -164,7 +164,7 @@ module npu_system_top #(
     logic [15:0] wt_load_shift; // 1-hot shift register
 
     // FSM State Register
-    always_ff @(posedge clk or negedge rst_n) begin
+    always_ff @(posedge clk) begin
         if (!rst_n) state <= ST_IDLE;
         else        state <= next_state;
     end
@@ -214,7 +214,7 @@ module npu_system_top #(
     assign npu_acc_addr_next = mmio_test_acc_addr_override_en ? mmio_test_acc_addr_override : npu_sram_raddr[8:0];
     assign core_acc_clear = mmio_npu_acc_clear && (!mmio_test_one_shot_acc_clear_en || one_shot_acc_clear_pending);
 
-    always_ff @(posedge clk or negedge rst_n) begin
+    always_ff @(posedge clk) begin
         if (!rst_n) begin
             exec_cnt       <= '0;
             flush_cnt      <= '0;

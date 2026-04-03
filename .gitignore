@@ -6,6 +6,22 @@
 *.wdb
 xsim.dir/
 scripts/*.log
+.Xil/
+vivado/.Xil/
+vivado.log
+vivado/vivado.log
+vivado/*.txt
+clockInfo.txt
+dfx_runtime.txt
+tight_setup_hold_pins.txt
+
+# Vivado generated projects & build outputs (large, regenerable)
+vivado/pynq_proj/
+vivado/silicontoai_l7_bringup/
+vivado/build_system_zynq/
+vivado/pynq_overlay/
+vivado/ila_build_log.txt
+vivado/pynq_build_log.txt
 
 # Simulation output logs (stored in sim/)
 sim/
@@ -13,9 +29,11 @@ sim/
 # Verilator build output
 build/
 build_system/
+build_core/
 
 # Concatenated source dump (regenerate with: python tools/concat.py)
 all_source_codes.txt
+docs/core_rtl_source_codes.txt
 
 # Root simulation and replay artifacts
 /replay_chain_summary.txt
@@ -27,9 +45,26 @@ scripts/dfx_runtime.txt
 
 # Package-local replay artifacts
 workloads/**/replay_*
+workloads/sim_drain_output.csv
+
+# Compiled simulation wrappers
+scripts/sim/
 
 # Editor / OS temp files
 .vscode/
 Thumbs.db
 *.swp
 *.swo
+
+# Python / L6 tooling
+.venv/
+.venv*/
+__pycache__/
+*.pyc
+*.egg-info/
+.pytest_cache/
+l6/generated/
+!l6/generated/README.md
+
+# Notebook checkpoints
+.ipynb_checkpoints/

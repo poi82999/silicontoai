@@ -20,6 +20,8 @@ namespace fs = std::filesystem;
 using replay::GoldenEntry;
 using replay::Manifest;
 using replay::PackageData;
+using replay::prepareLaneForDutDrive;
+using replay::ReplayRow16x8;
 using replay::SystemPass;
 
 namespace {
@@ -76,7 +78,7 @@ struct AxiSlaveState {
 };
 
 struct AxiMemoryModel {
-    std::vector<std::array<uint8_t, 16>> words;
+    std::vector<ReplayRow16x8> words;
     AxiSlaveState state;
 
     void reset() {
@@ -85,11 +87,11 @@ struct AxiMemoryModel {
 
     void ensureWordIndex(uint64_t wordIndex) {
         if (wordIndex >= words.size()) {
-            words.resize(static_cast<size_t>(wordIndex + 1), std::array<uint8_t, 16>{});
+            words.resize(static_cast<size_t>(wordIndex + 1), ReplayRow16x8{});
         }
     }
 
-    void writeRow(uint64_t byteAddress, const std::array<uint8_t, 16>& row) {
+    void writeRow(uint64_t byteAddress, const ReplayRow16x8& row) {
         if (byteAddress % kBytesPerWord != 0) {
             throw std::runtime_error("Package error: source addresses must be 16-byte aligned");
         }
@@ -107,7 +109,8 @@ struct AxiMemoryModel {
         for (int word = 0; word < 4; ++word) {
             uint32_t value = 0;
             for (int byte = 0; byte < 4; ++byte) {
-                value |= static_cast<uint32_t>(row[word * 4 + byte]) << (byte * 8);
+                const auto driveValue = prepareLaneForDutDrive(row[word * 4 + byte]);
+                value |= static_cast<uint32_t>(driveValue) << (byte * 8);
             }
             packed[word] = value;
         }
@@ -701,8 +704,17 @@ void drainAndCompare(Vnpu_system_top* dut,
                                              " data0=" + std::to_string(static_cast<int32_t>(dut->psum_drain_out[0])) +
                                              " data15=" + std::to_string(static_cast<int32_t>(dut->psum_drain_out[15])));
 
+        // CSV dump: all 16 lanes for visualization
+        {
+            std::string csv = "[DRAIN_CSV] " + std::to_string(drainAddr);
+            for (int lane = 0; lane < 16; ++lane) {
+                csv += "," + std::to_string(static_cast<int32_t>(dut->psum_drain_out[lane]));
+            }
+            appendEvent(&result->eventLines, contextp, csv);
+        }
+
         const GoldenEntry& golden = goldenIt->second;
-        for (int lane = 0; lane < 16; ++lane) {
+        for (int lane = 0; lane < package.manifest.tileCols; ++lane) {
             ++result->counters.checkedLanes;
             const int32_t expected = golden.vector[lane];
             const int32_t observed = static_cast<int32_t>(dut->psum_drain_out[lane]);

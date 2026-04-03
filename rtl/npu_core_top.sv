@@ -50,7 +50,7 @@ module npu_core_top (
     logic [30:0] acc_clear_pipe;
     logic [8:0]  acc_addr_pipe [31];
 
-    always_ff @(posedge clk or negedge rst_n) begin
+    always_ff @(posedge clk) begin
         if (!rst_n) begin
             acc_valid_pipe <= '0;
             acc_clear_pipe <= '0;

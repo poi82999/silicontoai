@@ -75,14 +75,26 @@ struct GoldenEntry {
     std::array<int32_t, 16> vector{};
 };
 
+using ReplayLaneBits = uint8_t;
+using ReplaySignedLane = int8_t;
+using ReplayRow16x8 = std::array<ReplayLaneBits, 16>;
+
 struct PackageData {
     fs::path packageDir;
     Manifest manifest;
     SystemConfig system;
-    std::vector<std::array<uint8_t, 16>> activationRows;
-    std::vector<std::array<uint8_t, 16>> weightRows;
+    std::vector<ReplayRow16x8> activationRows;
+    std::vector<ReplayRow16x8> weightRows;
     std::map<int, GoldenEntry> goldenByDrainAddr;
 };
+
+inline ReplaySignedLane interpretLaneAsSigned(ReplayLaneBits value) {
+    return static_cast<ReplaySignedLane>(value);
+}
+
+inline ReplayLaneBits prepareLaneForDutDrive(ReplayLaneBits value) {
+    return static_cast<ReplayLaneBits>(interpretLaneAsSigned(value));
+}
 
 inline std::string readTextFile(const fs::path& path) {
     std::ifstream input(path);
@@ -177,19 +189,19 @@ inline std::vector<int> extractIntArray(const std::string& text, const std::stri
     return values;
 }
 
-inline std::vector<std::array<uint8_t, 16>> parseRows16x8(const std::string& text) {
+inline std::vector<ReplayRow16x8> parseRows16x8(const std::string& text) {
     std::regex rowsPattern("\\\"rows\\\"\\s*:\\s*\\[([\\s\\S]*)\\]");
     std::smatch match;
     if (!std::regex_search(text, match, rowsPattern)) {
         throw std::runtime_error("Missing rows array in payload");
     }
 
-    std::vector<std::array<uint8_t, 16>> rows;
+    std::vector<ReplayRow16x8> rows;
     std::regex rowPattern("\\[([^\\]]+)\\]");
     auto begin = std::sregex_iterator(match[1].first, match[1].second, rowPattern);
     auto end = std::sregex_iterator();
     for (auto it = begin; it != end; ++it) {
-        std::array<uint8_t, 16> row{};
+        ReplayRow16x8 row{};
         std::regex numberPattern("-?\\d+");
         auto numBegin = std::sregex_iterator((*it)[1].first, (*it)[1].second, numberPattern);
         auto numEnd = std::sregex_iterator();
@@ -198,7 +210,7 @@ inline std::vector<std::array<uint8_t, 16>> parseRows16x8(const std::string& tex
             if (index >= 16) {
                 throw std::runtime_error("Row contains more than 16 elements");
             }
-            row[index++] = static_cast<uint8_t>(std::stoi((*numIt).str()));
+            row[index++] = static_cast<ReplayLaneBits>(std::stoi((*numIt).str()));
         }
         if (index != 16) {
             throw std::runtime_error("Row does not contain exactly 16 elements");
@@ -238,8 +250,8 @@ inline std::map<int, GoldenEntry> parseGolden(const std::string& text) {
             }
             entry.vector[index++] = static_cast<int32_t>(std::stoi((*numIt).str()));
         }
-        if (index != 16) {
-            throw std::runtime_error("Golden vector does not contain exactly 16 elements");
+        if (index < 1) {
+            throw std::runtime_error("Golden vector must contain at least one element");
         }
 
         goldenByAddr[entry.drainAddr] = entry;
@@ -355,8 +367,8 @@ inline void validateCommonManifest(const Manifest& manifest) {
     if (manifest.kTileCount < 1) {
         throw std::runtime_error("Package error: execution.k_tile_count must be >= 1");
     }
-    if (manifest.tileCols != 16) {
-        throw std::runtime_error("Package error: tile.tile_cols must be 16 for the current replay flow");
+    if (manifest.tileCols < 1 || manifest.tileCols > 16) {
+        throw std::runtime_error("Package error: tile.tile_cols must be within [1, 16] for the current replay flow");
     }
     if (manifest.tileRows != manifest.seqLen) {
         throw std::runtime_error("Package error: tile.tile_rows must match execution.seq_len in the current replay flow");
