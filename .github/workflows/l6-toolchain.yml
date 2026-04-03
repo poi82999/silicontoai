@@ -7,11 +7,13 @@ on:
       - main
       - master
     paths:
+      - ".github/workflows/l6-toolchain.yml"
       - "l6/**"
       - "workloads/**"
       - "pyproject.toml"
   pull_request:
     paths:
+      - ".github/workflows/l6-toolchain.yml"
       - "l6/**"
       - "workloads/**"
       - "pyproject.toml"
