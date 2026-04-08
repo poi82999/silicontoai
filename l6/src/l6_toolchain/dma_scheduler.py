@@ -9,11 +9,13 @@ Key responsibilities:
 2. Handle ping-pong SRAM bank allocation with optimal reuse
 3. Generate MMIO command sequences that can be directly replayed
 4. Model double-buffering (DMA overlapping with compute)
+5. Handle split-K passes (multi-pass accumulate patterns)
+6. Optimize for SRAM capacity constraints (64KB budget)
 """
 
 from __future__ import annotations
 
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from typing import Sequence
 
 from .lowering import TILE_SIZE, TilePlanEntry
@@ -53,6 +55,7 @@ class DMACommand:
     is_weight: bool
     bursts: tuple[DMAAXIBurst, ...]
     sram_bank_sel: int  # Which ping-pong bank to load into (0 or 1)
+    split_k_pass_index: int = 0  # For split-K: which pass (0=first, 1=second, etc.)
     
     @property
     def total_bursts(self) -> int:
@@ -66,16 +69,50 @@ class DMACommand:
 
 
 @dataclass(frozen=True)
+class SRAMAllocation:
+    """SRAM memory allocation tracking for optimization."""
+    bank_0_used_bytes: int = 0
+    bank_1_used_bytes: int = 0
+    max_capacity: int = 64 * 1024  # 64KB per bank
+    
+    @property
+    def bank_0_available(self) -> int:
+        """Remaining space in bank 0."""
+        return max(0, self.max_capacity - self.bank_0_used_bytes)
+    
+    @property
+    def bank_1_available(self) -> int:
+        """Remaining space in bank 1."""
+        return max(0, self.max_capacity - self.bank_1_used_bytes)
+    
+    @property
+    def total_used(self) -> int:
+        """Total bytes allocated across both banks."""
+        return self.bank_0_used_bytes + self.bank_1_used_bytes
+    
+    def is_feasible(self) -> bool:
+        """Check if allocation fits within constraints."""
+        return (self.bank_0_used_bytes <= self.max_capacity and 
+                self.bank_1_used_bytes <= self.max_capacity)
+
+
+@dataclass(frozen=True)
 class DMAScheduleSequence:
     """Complete DMA schedule with all commands and timing."""
     commands: tuple[DMACommand, ...]
     double_buffer_enabled: bool
     bank_swap_strategy: str  # e.g., "ping-pong", "sequential"
+    sram_allocation: SRAMAllocation = field(default_factory=SRAMAllocation)
+    split_k_passes: int = 1  # Number of K-dimension passes
     
     @property
     def total_dma_commands(self) -> int:
         """Total number of DMA commands."""
         return len(self.commands)
+    
+    def check_memory_feasibility(self) -> bool:
+        """Verify schedule fits within SRAM constraints."""
+        return self.sram_allocation.is_feasible()
 
 
 # ============================================================================
@@ -199,6 +236,8 @@ def generate_dma_commands(
     For each tile in the schedule, this produces DMA commands to load
     activations and weights (skipping weight reloads if enabled).
     
+    Handles split-K passes by tracking pass index in each command.
+    
     Args:
         tiles: Ordered sequence of tile cost estimates from scheduler
         act_base_addr: Base address for activation data in external memory
@@ -214,9 +253,16 @@ def generate_dma_commands(
     last_weight_tile_n = None
     last_weight_tile_k = None
     bank_counter = 0
+    split_k_pass_idx = 0
+    last_tile_k = None
     
     for tile_estimate in tiles:
         tile = tile_estimate.tile
+        
+        # Detect split-K pass transitions (K dimension change indicates new K-split)
+        if last_tile_k is not None and tile.tile_k != last_tile_k:
+            split_k_pass_idx += 1
+        last_tile_k = tile.tile_k
         
         # ===== Activation Load =====
         act_bytes = calculate_activation_payload_bytes(tile)
@@ -229,6 +275,7 @@ def generate_dma_commands(
             is_weight=False,
             bursts=act_bursts,
             sram_bank_sel=bank_counter % 2,
+            split_k_pass_index=split_k_pass_idx,
         )
         commands.append(act_cmd)
         current_act_offset += act_bytes
@@ -249,6 +296,7 @@ def generate_dma_commands(
                 is_weight=True,
                 bursts=wt_bursts,
                 sram_bank_sel=bank_counter % 2,
+                split_k_pass_index=split_k_pass_idx,
             )
             commands.append(wt_cmd)
             current_wt_offset += wt_bytes
@@ -269,6 +317,8 @@ def build_dma_schedule(
     """
     Build a complete DMA schedule from a tile sequence.
     
+    Includes SRAM allocation tracking and split-K pass detection.
+    
     Args:
         tiles: Tile schedule from scheduler.estimate_schedule_cost()
         act_base_addr: Base address for activations
@@ -284,10 +334,31 @@ def build_dma_schedule(
         enable_weight_reuse=True,
     )
     
+    # Calculate SRAM allocation
+    bank_0_bytes = 0
+    bank_1_bytes = 0
+    split_k_max = 1
+    
+    for cmd in commands:
+        if cmd.split_k_pass_index > 0:
+            split_k_max = max(split_k_max, cmd.split_k_pass_index + 1)
+        
+        if cmd.sram_bank_sel == 0:
+            bank_0_bytes += cmd.total_bytes
+        else:
+            bank_1_bytes += cmd.total_bytes
+    
+    sram_alloc = SRAMAllocation(
+        bank_0_used_bytes=bank_0_bytes,
+        bank_1_used_bytes=bank_1_bytes,
+    )
+    
     return DMAScheduleSequence(
         commands=commands,
         double_buffer_enabled=True,
         bank_swap_strategy="ping-pong",
+        sram_allocation=sram_alloc,
+        split_k_passes=split_k_max,
     )
 
 
@@ -386,14 +457,16 @@ def generate_mmio_sequence(
 # ============================================================================
 
 __all__ = [
+    "AXI_BEAT_BYTES",
     "DMAAXIBurst",
     "DMACommand",
     "DMAScheduleSequence",
     "MMIORegisterWrite",
-    "calculate_activation_payload_bytes",
-    "calculate_weight_payload_bytes",
-    "calculate_axi_bursts_for_payload",
-    "generate_dma_commands",
+    "SRAMAllocation",
     "build_dma_schedule",
+    "calculate_activation_payload_bytes",
+    "calculate_axi_bursts_for_payload",
+    "calculate_weight_payload_bytes",
+    "generate_dma_commands",
     "generate_mmio_sequence",
 ]
