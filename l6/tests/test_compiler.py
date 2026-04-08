@@ -507,3 +507,85 @@ class TestCompilerCLI:
 
         assert (output_dir / "compile_manifest.json").exists()
         assert (output_dir / "program_package" / "manifest.json").exists()
+
+
+# ---- DMA scheduler integration tests ----------------------------------------
+
+class TestDMASchedulerIntegration:
+    def test_step_plan_has_dma_schedule(self) -> None:
+        """StepCompilePlan should carry a populated DMAScheduleSequence."""
+        from l6_toolchain.dma_scheduler import DMAScheduleSequence
+        # Use a realistic tile size: 16x16 activation = 512 bytes, AXI-aligned.
+        program = _make_linear_program(m=16, k=16, n=16)
+        plan = create_compile_plan(program, options=CompilerOptions())
+        sp = plan.step_plans[0]
+        assert sp.dma_schedule is not None
+        assert isinstance(sp.dma_schedule, DMAScheduleSequence)
+        assert sp.dma_schedule.total_dma_commands > 0
+
+    def test_noncompute_step_has_no_dma_schedule(self) -> None:
+        """Non-compute steps should have dma_schedule=None."""
+        program = _make_two_layer_program()
+        plan = create_compile_plan(program, options=CompilerOptions())
+        relu_step = next(sp for sp in plan.step_plans if not sp.compute_required)
+        assert relu_step.dma_schedule is None
+
+    def test_splitk_dma_schedule_has_multiple_commands(self) -> None:
+        """A split-K schedule (k=32, 2 k-passes) should produce >= 4 DMA commands."""
+        # k=32 → 2 k-tile passes of tile_k=16; each pass issues 2 commands (act+wt) = 4 total.
+        # Note: split_k_passes is based on tile_k dimension changes, not tile count,
+        # so it correctly stays at 1 for uniform tile_k split-K. total_dma_commands
+        # correctly reflects the doubled command count.
+        program = Program(
+            inputs=(TensorValue(name="x", shape=(16, 32), dtype="int8"),),
+            tensors=(
+                TensorValue(name="x", shape=(16, 32), dtype="int8"),
+                TensorValue(name="y", shape=(16, 16), dtype="int32"),
+            ),
+            ops=(
+                OpNode(name="fc0", kind="linear", inputs=("x",), outputs=("y",),
+                       attrs={"in_features": 32, "out_features": 16}),
+            ),
+            outputs=("y",),
+        )
+        plan = create_compile_plan(program, options=CompilerOptions())
+        sp = plan.step_plans[0]
+        assert sp.dma_schedule is not None
+        assert sp.dma_schedule.total_dma_commands >= 4
+
+    def test_dma_schedule_in_compile_manifest(self, tmp_path: Path) -> None:
+        """compile_manifest.json step entries should include dma_schedule summary."""
+        # Use a realistic tile size so the DMA schedule is computed (not None).
+        program = _make_linear_program(m=16, k=16, n=16)
+        options = CompilerOptions(package_id="dma_manifest", output_dir=tmp_path / "out")
+        result = compile_program(program, options=options)
+
+        manifest = json.loads(Path(result.artifacts.compile_manifest_path).read_text(encoding="utf-8"))
+        step = manifest["steps"][0]
+        assert "dma_schedule" in step
+        dma = step["dma_schedule"]
+        assert isinstance(dma["total_dma_commands"], int)
+        assert dma["total_dma_commands"] > 0
+        assert isinstance(dma["split_k_passes"], int)
+        assert dma["split_k_passes"] >= 1
+        assert isinstance(dma["double_buffer_enabled"], bool)
+        assert isinstance(dma["sram_feasible"], bool)
+
+    def test_dma_schedule_sram_feasible_for_small_tile(self) -> None:
+        """A single 16×16×16 tile should fit in 64KB SRAM budget."""
+        program = _make_linear_program(m=16, k=16, n=16)
+        plan = create_compile_plan(program, options=CompilerOptions())
+        sp = plan.step_plans[0]
+        assert sp.dma_schedule is not None
+        assert sp.dma_schedule.sram_allocation.is_feasible() is True
+
+    def test_double_buffering_enabled(self) -> None:
+        """DMA schedule should have double-buffering enabled (ping-pong strategy)."""
+        # Use a realistic tile size so the DMA schedule is computed (not None).
+        program = _make_linear_program(m=16, k=16, n=16)
+        plan = create_compile_plan(program, options=CompilerOptions())
+        sp = plan.step_plans[0]
+        assert sp.dma_schedule is not None
+        assert sp.dma_schedule.double_buffer_enabled is True
+        assert sp.dma_schedule.bank_swap_strategy == "ping-pong"
+

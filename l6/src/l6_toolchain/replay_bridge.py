@@ -6,6 +6,9 @@ from dataclasses import asdict, dataclass
 from pathlib import Path
 
 from .common import read_json_required, write_json
+from .dma_scheduler import build_dma_schedule, generate_mmio_sequence
+from .lowering import TILE_SIZE, TilePlanEntry
+from .scheduler import estimate_tile_cost
 
 
 @dataclass(frozen=True)
@@ -142,8 +145,8 @@ def run_system_replay_packages(
     except OSError as exc:
         raise RuntimeError(f"System replay binary is not runnable on this host: {resolved_binary}") from exc
     if completed.returncode != 0:
-        stderr = completed.stderr.strip()
-        stdout = completed.stdout.strip()
+        stderr = (completed.stderr or "").strip()
+        stdout = (completed.stdout or "").strip()
         detail = stderr or stdout or f"returncode={completed.returncode}"
         raise RuntimeError(f"System replay smoke failed: {detail}")
 
@@ -433,6 +436,7 @@ def _write_replay_package(
     if include_system:
         manifest["system"] = _build_system_metadata(
             tile_rows=tile_rows,
+            tile_cols=tile_cols,
             k_tile_count=k_tile_count,
             weights_src_base=weights_src_base,
             activations_src_base=activations_src_base,
@@ -454,6 +458,7 @@ def _write_replay_package(
 def _build_system_metadata(
     *,
     tile_rows: int,
+    tile_cols: int,
     k_tile_count: int,
     weights_src_base: int,
     activations_src_base: int,
@@ -489,6 +494,46 @@ def _build_system_metadata(
         ])
     phase_sequence.extend(["flush", "drain"])
 
+    # Build DMA schedule via dma_scheduler for MMIO analysis (supplementary metadata).
+    # Note: Uses TILE_SIZE for tile_k (INT8 model uses 1 byte/elem, dma_scheduler models
+    # 2 bytes/elem — byte counts are relative models only, not absolute HW values).
+    _dma_sched_meta: dict[str, object] | None = None
+    try:
+        _tile_estimates = [
+            estimate_tile_cost(
+                TilePlanEntry(
+                    tile_m=tile_rows,
+                    tile_k=TILE_SIZE,
+                    tile_n=tile_cols,
+                    k_tile_base=pass_idx * TILE_SIZE,
+                    k_pass_index=pass_idx,
+                    k_tile_count=k_tile_count,
+                    acc_clear=acc_clear,
+                    emit_drain_after=(pass_idx == k_tile_count - 1),
+                ),
+                weight_reuse=False,
+            )
+            for pass_idx, acc_clear in enumerate(acc_clear_pattern)
+        ]
+        _dma_sched = build_dma_schedule(
+            _tile_estimates,
+            act_base_addr=activations_src_base,
+            wt_base_addr=weights_src_base,
+        )
+        _mmio_writes = generate_mmio_sequence(_dma_sched)
+        _dma_sched_meta = {
+            "total_dma_commands": _dma_sched.total_dma_commands,
+            "split_k_passes": _dma_sched.split_k_passes,
+            "double_buffer_enabled": _dma_sched.double_buffer_enabled,
+            "bank_swap_strategy": _dma_sched.bank_swap_strategy,
+            "sram_feasible": _dma_sched.check_memory_feasibility(),
+            "sram_model_bank0_bytes": _dma_sched.sram_allocation.bank_0_used_bytes,
+            "sram_model_bank1_bytes": _dma_sched.sram_allocation.bank_1_used_bytes,
+            "mmio_writes_count": len(_mmio_writes),
+        }
+    except ValueError:
+        pass  # DMA schedule not computable for this tile configuration
+
     return {
         "memory": {
             "weights_src_addr": weights_src_base,
@@ -517,6 +562,7 @@ def _build_system_metadata(
             "verification_only_hook_policy": "streamlined_dma_execute",
             "passes": passes,
         },
+        "dma_schedule": _dma_sched_meta,
     }
 
 

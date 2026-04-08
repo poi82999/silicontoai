@@ -5,6 +5,7 @@ from pathlib import Path
 from typing import Any
 
 from .common import json_dumps
+from .dma_scheduler import DMAScheduleSequence, build_dma_schedule
 from .ir import LoweredOp, Program, export_program_package, lower_program_to_steps, validate_program
 from .lowering import TILE_SIZE, TilePlanEntry, plan_linear_tiles
 from .replay_bridge import (
@@ -57,6 +58,7 @@ class StepCompilePlan:
     memory_fits: bool | None
     replay_package_count: int
     ordered_tiles: tuple[TilePlanEntry, ...] | None = None
+    dma_schedule: DMAScheduleSequence | None = None
 
 
 @dataclass(frozen=True)
@@ -148,6 +150,13 @@ def _plan_compute_step(
     for tile in tiles:
         replay_groups.add((tile.m_tile_base, tile.n_tile_base))
 
+    dma_schedule: DMAScheduleSequence | None
+    try:
+        dma_schedule = build_dma_schedule(list(schedule.tiles))
+    except ValueError:
+        # Sub-AXI-beat tiles (e.g. tiny test shapes) cannot produce a DMA schedule.
+        dma_schedule = None
+
     return StepCompilePlan(
         step_id=step_id,
         op_name=step.name,
@@ -162,6 +171,7 @@ def _plan_compute_step(
         memory_fits=memory.fits_in_budget,
         replay_package_count=len(replay_groups),
         ordered_tiles=tuple(ordered_tiles),
+        dma_schedule=dma_schedule,
     )
 
 
@@ -306,6 +316,17 @@ def _build_schedule_metadata(plan: ProgramCompilePlan) -> dict[int, dict[str, An
         }
         if sp.ordered_tiles is not None:
             entry["tile_order"] = list(sp.ordered_tiles)
+        if sp.dma_schedule is not None:
+            ds = sp.dma_schedule
+            entry["dma_schedule"] = {
+                "total_dma_commands": ds.total_dma_commands,
+                "split_k_passes": ds.split_k_passes,
+                "double_buffer_enabled": ds.double_buffer_enabled,
+                "bank_swap_strategy": ds.bank_swap_strategy,
+                "sram_feasible": ds.check_memory_feasibility(),
+                "sram_model_bank0_bytes": ds.sram_allocation.bank_0_used_bytes,
+                "sram_model_bank1_bytes": ds.sram_allocation.bank_1_used_bytes,
+            }
         metadata[sp.step_id] = entry
     return metadata
 
@@ -333,6 +354,14 @@ def _write_compile_manifest(
             entry["estimated_dma_cycles"] = sp.estimated_dma_cycles
             entry["memory_fits"] = sp.memory_fits
             entry["replay_package_count"] = sp.replay_package_count
+            if sp.dma_schedule is not None:
+                ds = sp.dma_schedule
+                entry["dma_schedule"] = {
+                    "total_dma_commands": ds.total_dma_commands,
+                    "split_k_passes": ds.split_k_passes,
+                    "double_buffer_enabled": ds.double_buffer_enabled,
+                    "sram_feasible": ds.check_memory_feasibility(),
+                }
         steps_summary.append(entry)
 
     manifest: dict[str, object] = {

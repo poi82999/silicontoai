@@ -97,8 +97,9 @@
         "drain"
       ],
       "expected_dma_done_count": 4,
-      "expected_npu_done_count": 4,
+      "expected_npu_done_count": 2,
       "flush_cycles": 35,
+      "verification_only_hook_policy": "streamlined_dma_execute",
       "passes": [
         {
           "pass_index": 0,
@@ -121,6 +122,16 @@
           "acc_clear": false
         }
       ]
+    },
+    "dma_schedule": {
+      "total_dma_commands": 4,
+      "split_k_passes": 1,
+      "double_buffer_enabled": true,
+      "bank_swap_strategy": "ping-pong",
+      "sram_feasible": true,
+      "sram_model_bank0_bytes": 1024,
+      "sram_model_bank1_bytes": 1024,
+      "mmio_writes_count": 23
     }
   }
 }

@@ -384,3 +384,65 @@ def test_export_and_run_system_replay_smoke_runs_generated_signed_int8_alignment
     assert "packages_total=1" in chain_summary
     assert "packages_failed=0" in chain_summary
     assert "status=PASS" in replay_report_text
+
+# ---- DMA scheduler integration tests ----------------------------------------
+
+def test_replay_package_manifest_has_dma_schedule_section(tmp_path) -> None:
+    """Replay package manifest system section should contain dma_schedule from dma_scheduler."""
+    from l6_toolchain.api import LinearOp, export_linear_tile_package, export_replay_packages
+    import json
+    from pathlib import Path as _Path
+
+    source_dir = tmp_path / "src"
+    replay_dir = tmp_path / "replay"
+    export_linear_tile_package(source_dir, LinearOp(package_id="dma_sched_test"))
+
+    artifacts = export_replay_packages(source_dir, replay_dir)
+    manifest = json.loads((_Path(artifacts[0].replay_package_dir) / "manifest.json").read_text(encoding="utf-8"))
+
+    assert "dma_schedule" in manifest["system"]
+    dma = manifest["system"]["dma_schedule"]
+    assert isinstance(dma["total_dma_commands"], int)
+    assert dma["total_dma_commands"] > 0
+    assert isinstance(dma["split_k_passes"], int)
+    assert dma["split_k_passes"] >= 1
+    assert dma["double_buffer_enabled"] is True
+    assert dma["bank_swap_strategy"] == "ping-pong"
+    assert isinstance(dma["sram_feasible"], bool)
+    assert isinstance(dma["mmio_writes_count"], int)
+    assert dma["mmio_writes_count"] > 0
+
+
+def test_splitk_replay_package_dma_schedule_has_multiple_commands(tmp_path) -> None:
+    """Split-K replay manifest dma_schedule should have >= 4 DMA commands for k=32."""
+    # k=32 → 2 k-tile passes of tile_k=16; each pass issues 2 DMA commands (act+wt) = 4 total.
+    # split_k_passes stays at 1 because detection is based on tile_k dimension changes, not pass count.
+    from l6_toolchain.api import LinearOp, export_linear_tiled_package, export_replay_packages
+    import json
+    from pathlib import Path as _Path
+
+    source_dir = tmp_path / "src"
+    replay_dir = tmp_path / "replay"
+    export_linear_tiled_package(source_dir, LinearOp(package_id="splitk_dma", m=16, k=32, n=16))
+
+    artifacts = export_replay_packages(source_dir, replay_dir)
+    manifest = json.loads((_Path(artifacts[0].replay_package_dir) / "manifest.json").read_text(encoding="utf-8"))
+
+    dma = manifest["system"]["dma_schedule"]
+    assert dma["total_dma_commands"] >= 4
+
+
+def test_replay_package_dma_schedule_sram_feasible(tmp_path) -> None:
+    """Standard 16x16 tile should be SRAM-feasible per dma_scheduler model."""
+    from l6_toolchain.api import LinearOp, export_linear_tile_package, export_replay_packages
+    import json
+    from pathlib import Path as _Path
+
+    source_dir = tmp_path / "src"
+    replay_dir = tmp_path / "replay"
+    export_linear_tile_package(source_dir, LinearOp(package_id="sram_feasible"))
+
+    artifacts = export_replay_packages(source_dir, replay_dir)
+    manifest = json.loads((_Path(artifacts[0].replay_package_dir) / "manifest.json").read_text(encoding="utf-8"))
+
+    assert manifest["system"]["dma_schedule"]["sram_feasible"] is True
