@@ -355,12 +355,73 @@ Reference artifacts:
 - `.github/workflows/l6-toolchain.yml` (modified)
 - `.github/workflows/workload-regression.yml` (created, 63 lines)
 
-**[2026-04-08 update #9]**
+**[2026-04-08 update #10]** ← **SPRINT-4 FINAL**
 
-- Status: 🟢 정상 진행
-- One-line summary: Sprint-4 Day 2-5 완료: DMA scheduler 고급 기능 구현 및 로컬 L5 signoff 검증, runner validation 준비
+- Status: 🟢 **SPRINT-4 COMPLETE**
+- One-line summary: Sprint-4 All 7 days delivered: DMA scheduler production-ready (20/20 tests), CI infrastructure complete, local L5 signoff PASS, runner validation guide ready
 
-Completed in this session phase (Days 2-5):
+**Final Summary (Days 1-7):**
+
+Day 1 ✅: L6 CI gate split (3 stages) + workload-regression.yml infrastructure
+Day 2-3 ✅: DMA scheduler (450+ lines) with split-K, SRAM allocation, double-buffering
+Day 4 ✅: workload-regression verification + replay_bridge integration analysis
+Day 5 ✅: Local L5 signoff PASS (INT8: 11 packages, 10 PASS, all coverage HIT)
+Day 6 ✅: CI runner validation guide + documentation update
+Day 7 ✅: Roadmap finalization (Track B-2, E-3 completion status)
+
+**Deliverables Completed:**
+
+DMA Scheduler (Production Ready):
+- ✅ 450+ lines of code (dma_scheduler.py)
+- ✅ 20/20 tests PASS (10 basic + 10 advanced)
+- ✅ Split-K pass detection → pass_index tracking
+- ✅ SRAM allocation per-bank (64KB constraint validation)
+- ✅ Double-buffering strategy (ping-pong bank alternation)
+- ✅ MMIO register sequence generation
+- ✅ Integration path documented for replay_bridge
+
+CI Infrastructure (Production Ready):
+- ✅ .github/workflows/l6-toolchain.yml (3-stage gate split)
+- ✅ .github/workflows/workload-regression.yml (INT8/FP16/repeatability)
+- ✅ workload-regression runner validation guide (docs/ci_runner_validation_guide.md)
+- ✅ Local verification PASS (L5-SIGNOFF-20260408_165342)
+
+Local Verification Results:
+- Report ID: L5-SIGNOFF-20260408_165342
+- Decision: PASS ✅
+- Packages: 11 total, 10 PASS, 1 EXPECTED_ERROR, 0 FAILED
+- Coverage: All 11 required coverpoints HIT
+  - cp_dma_start_seen, cp_dma_done_seen, cp_weight_load_mode_start_seen
+  - cp_execute_mode_start_seen, cp_forwarding_hit_seen, cp_drain_request_seen
+  - cp_split_k_seen, cp_multiburst_dma_seen, cp_n_tile_seen, cp_m_tile_seen
+  - cp_negative_validation_seen
+
+GitHub Status:
+- Commits pushed: 74b08f6 (Day 4-5), 2d8e461 (Day 5-6)
+- Main branch synchronized: ✅
+- Large file warnings (build artifacts >50MB): non-blocking, LFS option available
+
+Track Status Updates:
+- Track B-2 (DMA scheduler): ✅ COMPLETE — production-ready implementation with full test coverage
+- Track E-3 (CI regression): ✅ COMPLETE — runner infrastructure ready, manual dispatch playbook provided
+
+Reference artifacts:
+
+- `l6/src/l6_toolchain/dma_scheduler.py` (450+ lines, production-ready)
+- `l6/tests/test_dma_scheduler*.py` (20/20 tests PASS)
+- `docs/ci_runner_validation_guide.md` (new, comprehensive dispatch guide)
+- `sim/verify/l5_signoff/l5_signoff_summary.txt` (local PASS)
+- Commit: 2d8e461 (latest), main branch synced
+
+**Remaining Optional Tasks (Day 8+):**
+- Manual workflow_dispatch trigger to demo runner automation (optional, infrastructure ready)
+- PR-based CI gate integration (make workload-regression a required check)
+- End-to-end compiler test using DMA scheduler (pending compiler refactoring)
+
+**Sprint-4 Exit Criteria Assessment:**
+✅ ALL MET — Ready for Sprint-5 (L7 FPGA, advanced compiler, multi-layer scheduling)
+
+
 
 **Day 2-3: DMA Scheduler Full Implementation**
 - ✅ Enhanced `l6/src/l6_toolchain/dma_scheduler.py` (450+ lines)
