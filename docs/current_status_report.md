@@ -131,6 +131,11 @@ Current evidence:
 - [x] One-shot sign-off flow 구현
 - [x] Repeatability flow 구현
 - [x] GitHub Actions self-hosted CI 성공
+- [x] Streamlined DMA-execute 기준 11-package 체인 baseline 확정 (PASS 10 + expected PACKAGE_ERROR 1)
+- [x] Split-K / forwarding reference package를 streamlined semantics에 맞게 manifest/golden 재정합
+- [x] INT8 edge workload 3종(`all_max_pos`, `all_min_neg`, `mixed_sign_checker`) 추가 및 sign-off 체인 편입
+- [x] `psum_accumulator_buffer` 누산 경로를 FP32 adder 기반에서 INT32 signed 누산으로 정렬
+- [x] signoff 시작 전 stale/background 중복 실행을 차단하는 lock guard(`.run_lock/pid`) 추가
 
 Current evidence:
 
@@ -138,6 +143,8 @@ Current evidence:
 - `docs/l5_system_replay_scenarios_report.md`
 - `docs/l5_signoff_sample_report.md`
 - `.github/workflows/l5-signoff.yml`
+- `sim/verify/l5_signoff/replay_chain_summary.txt`
+- `sim/verify/l5_signoff/l5_signoff_summary.txt`
 
 ## L6 and L7. Long-Term Expansion
 
@@ -277,6 +284,228 @@ Phase B (full-stack PyTorch → Verilator → 검증) 파이프라인이 보드 
 ---
 
 ## Weekly Update Log
+
+**[2026.04.08 update #7]**
+
+- Status: 🟢 정상 진행
+- One-line summary: Sprint-3 Day 1-2 범위(bridge 실행 메타데이터 정합 + CI 필수 게이트 승격 + core 2-package signoff 반영) 구현 완료
+
+Completed since the previous snapshot:
+
+- [x] `l6/src/l6_toolchain/replay_bridge.py`에서 `expected_npu_done_count`를 `k_tile_count` 기준으로 정렬
+- [x] `l6/src/l6_toolchain/replay_bridge.py`에 `verification_only_hook_policy=streamlined_dma_execute` 메타데이터 자동 생성 추가
+- [x] `.github/workflows/l5-signoff.yml`에 필수 사전 게이트 추가
+  - `make -C scripts build-core`
+  - core 2-package gate (`reference_gemm_tile_m0_n0_k0to15`, `reference_acc_forwarding_same_addr_core`)
+  - UVM smoke gate (`npu_smoke_test`, int8)
+- [x] `scripts/run_l5_signoff.sh`에서 core reference + forwarding 2-package 실행/검증 및 run artifact 분리(`core_reference.log`, `core_forwarding.log`) 반영
+- [x] `l6/tests/test_replay_bridge.py`에 bridge 메타데이터 assertion 동기화
+  - single-tile: `expected_npu_done_count == 1`
+  - split-k(2 pass): `expected_npu_done_count == 2`
+  - `verification_only_hook_policy == streamlined_dma_execute`
+
+Validation highlights:
+
+- replay bridge 핵심 회귀 3건 PASS
+  - `test_export_replay_packages_from_single_tile_package`
+  - `test_export_replay_packages_from_splitk_tiled_package`
+  - `test_export_replay_packages_from_program_sequence`
+- L5 signoff 재검증 PASS
+  - INT8: `report_id=L5-SIGNOFF-20260408_165342`, `decision=PASS`
+  - FP16: `report_id=L5-SIGNOFF-20260408_165056`, `decision=SMOKE_PASS`
+
+Reference artifacts:
+
+- `sim/verify/l5_signoff/l5_signoff_summary.txt`
+- `sim/verify/l5_signoff/runs/20260408_165056/l5_signoff_summary.txt`
+- `l6/tests/test_replay_bridge.py`
+- `.github/workflows/l5-signoff.yml`
+
+**[2026.04.08 update #8]**
+
+- Status: 🟢 정상 진행
+- One-line summary: Sprint-4 Day 1 범위(L6 CI 게이트 분할 + workload 회귀 workflow 생성 + 경로 필터 확장) 구현 완료
+
+Completed since the previous snapshot:
+
+- [x] `.github/workflows/l6-toolchain.yml` 게이트 재설계
+  - "Run L6 CPU/core unit tests": NumPy 백엔드 강제 + tracer/drift 제외 (core tests만 필수 경로)
+  - "Run tracer dependency gate (advisory)": torch.fx 테스트 분리, continue-on-error로 advisory 처리 (torch 미설치 환경 대응)
+  - "Run asset drift gate": NumPy 백엔드 강제 (재현성 확보)
+- [x] `.github/workflows/workload-regression.yml` 신규 생성
+  - 트리거: rtl/**, tb/**, host/**, workloads/**, scripts 관련 변경
+  - 필수 게이트: INT8 one-shot signoff, FP16 smoke signoff, repeatability check
+  - 아티팩트: `sim/verify/l5_signoff`, `sim/verify/l5_repeatability` (7일 보관)
+- [x] workload-regression.yml 경로 필터 확장 결정
+  - tb/** 포함: UVM 실행 안정성 영향 (언제든 workload package 동작을 막을 수 있음)
+  - host/** 포함: driver/loader 코드 변경이 workload 실행을 직접 영향 (필수 회귀 간선)
+- [x] tracer gate 승격 기준 명문화
+  - 현재: advisory (torch 미보장 환경)
+  - 승격 전제조건: runner torch 환경 고정 (runner 설정 변경 시 필수로 승격 예정)
+  - TODO 코멘트 추가: `l6-toolchain.yml`의 tracer gate에 승격 시점/전제조건 기록
+
+Validation highlights:
+
+- l6-toolchain 컴파일/단위테스트 기본 경로 점검 완료
+- workload-regression 워크플로우 구문 검증 완료 (GitHub Actions 구문 정상)
+- 현재 파이썬 환경에서 NumPy 백엔드 강제 동작 검증 완료 (test_replay_bridge.py 3건 PASS)
+
+Reference artifacts:
+
+- `.github/workflows/l6-toolchain.yml` (modified)
+- `.github/workflows/workload-regression.yml` (created, 63 lines)
+
+Next steps (Sprint-4 Day 2-5):
+- DMA scheduler skeleton 구현 (l6/src/l6_toolchain/dma_scheduler.py)
+- workload-regression 워크플로우 runner 검증 (수동 dispatch 또는 PR 트리거)
+- tracer gate 승격 시점과 runner torch 설정 동기화
+
+**[2026.04.08 update #6]**
+
+- Status: 🟢 정상 진행
+- One-line summary: Sprint-2 M3~Day10 범위(fp16 numeric smoke gate 승격 + signoff summary mode 메타데이터 확장) 구현/검증 완료
+
+Completed since the previous snapshot:
+
+- [x] `scripts/run_uvm.sh`, `scripts/run_uvm.bat`에 mode 인자(`int8|fp16`) 추가
+- [x] `tb/tb_top.sv`에 mode define 기반 DUT 파라미터 분기(`UVM_DATA_MODE_FP16` -> `DATA_MODE=1`) 추가
+- [x] `tb/npu_uvm_pkg.sv`에 fp16 전용 smoke test(`npu_fp16_mode_smoke_test`) 추가
+- [x] `tb/npu_uvm_pkg.sv` fp16 smoke를 deterministic FP16 입력 + numeric compare gate로 승격
+- [x] `scripts/verify.sh`에 mode별 UVM smoke gate 고정
+  - INT8: `npu_smoke_test`
+  - FP16: `npu_fp16_mode_smoke_test`
+- [x] `tools/generate_streamlined_signoff_packages.py` fp16 package를 real fp16/fp32 산식 기반 golden(`system_fp16_numeric_smoke`)으로 확장
+- [x] `scripts/run_l5_signoff.sh` summary에 `required_packages_by_mode` 메타데이터 추가
+- [x] `host/replay_package.h`에 `compare.mode/abs_tolerance/relative_tolerance` 파싱 추가
+- [x] `tb/main.cpp`, `tb/system_replay_main.cpp` comparator에 tolerance mode 분기 연결
+
+Validation highlights:
+
+- `bash scripts/verify.sh fast --data-mode int8` PASS
+- `bash scripts/verify.sh full --data-mode fp16 --smoke` PASS
+- `bash scripts/run_l5_signoff.sh --mode fp16` PASS (`report_id=L5-SIGNOFF-20260408_161639`, `SMOKE_PASS`)
+- `bash scripts/run_l5_signoff.sh --mode int8` PASS (`report_id=L5-SIGNOFF-20260408_161921`, `PASS`)
+- tolerance-mode 임시 패키지(`workloads/system_tmp_tolerance_check`) replay PASS 확인
+
+Reference artifacts:
+
+- `sim/verify/assertion_cov_summary.txt`
+- `sim/verify/l5_signoff/runs/20260408_161639/l5_signoff_summary.txt`
+- `sim/verify/l5_signoff/runs/20260408_161921/l5_signoff_summary.txt`
+
+**[2026.04.08 update #5]**
+
+- Status: 🟢 정상 진행
+- One-line summary: Sprint-2 Day 5-6 범위(mode-aware package/golden generator) 구현 완료 및 int8/fp16 검증 재확인
+
+Completed since the previous snapshot:
+
+- [x] `tools/generate_streamlined_signoff_packages.py`에 `--mode int8|fp16` 인자 추가
+- [x] INT8 모드: 기존 edge/split-k/forwarding baseline 생성 경로 유지
+- [x] FP16 모드: `workloads/system_fp16_smoke_skeleton` 생성 + tolerance compare metadata(`compare.mode=tolerance`) 추가
+- [x] `scripts/run_l5_signoff.sh`에서 package generator 호출 시 `--mode` 전달하도록 연결
+- [x] 검증 결과:
+  - FP16 signoff smoke PASS (`report_id=L5-SIGNOFF-20260408_152555`, `decision=SMOKE_PASS`)
+  - INT8 signoff PASS (`report_id=L5-SIGNOFF-20260408_153422`, `decision=PASS`)
+
+Reference artifacts:
+
+- `sim/verify/l5_signoff/runs/20260408_152555/l5_signoff_summary.txt`
+- `sim/verify/l5_signoff/runs/20260408_153422/l5_signoff_summary.txt`
+- `sim/verify/l5_signoff/runs/20260408_153422/package_generation.log`
+
+**[2026.04.08 update #3]**
+
+- Status: 🟢 정상 진행
+- One-line summary: Sprint-2 Day 1-2 범위(모드 스위치 뼈대) 구현을 완료하고 INT8 기본 회귀 PASS를 확인
+
+Completed since the previous snapshot:
+
+- [x] `rtl/include/npu_def_pkg.sv`에 `NPU_DATA_MODE_INT8`, `NPU_DATA_MODE_FP16`, `NPU_DATA_MODE` 정의
+- [x] `rtl/core/systolic_array.sv`에 `DATA_MODE` compile-time generate 분기(`mac_pe_int8`/`mac_pe`) 추가
+- [x] `rtl/core/npu_core_top.sv`, `rtl/core/npu_mxe_top.sv`, `rtl/system/npu_system_top.sv`에 `DATA_MODE` 파라미터 전달 경로 추가
+- [x] 기본 INT8 모드 회귀 확인: core/system build PASS + L5 signoff PASS (`report_id=L5-SIGNOFF-20260408_134216`)
+
+Reference artifacts:
+
+- `sim/verify/l5_signoff/runs/20260408_134216/l5_signoff_summary.txt`
+- `sim/verify/l5_signoff/l5_signoff_summary.txt`
+
+**[2026.04.08 update #4]**
+
+- Status: 🟢 정상 진행
+- One-line summary: Sprint-2 Day 3-4 범위(누산 모드 분기 + verify/signoff mode skeleton) 구현 완료
+
+Completed since the previous snapshot:
+
+- [x] `rtl/memory/psum_accumulator_buffer.sv`에 `DATA_MODE` 분기 추가
+  - INT8: INT32 signed add
+  - FP16: `fp32_adder` 경로
+- [x] `rtl/core/npu_core_top.sv`에서 `psum_accumulator_buffer`로 `DATA_MODE` 전달
+- [x] `scripts/verify.sh`에 `--data-mode int8|fp16` 스켈레톤 추가 (fp16은 smoke-only build path)
+- [x] `scripts/run_l5_signoff.sh`에 `--mode int8|fp16` 스켈레톤 추가
+- [x] FP16 smoke build가 INT8 기본 빌드를 오염시키지 않도록 `scripts/Makefile`에 `BUILD_SUFFIX` 분리 추가
+- [x] 검증 결과:
+  - INT8 full verify PASS
+  - INT8 signoff PASS (`report_id=L5-SIGNOFF-20260408_150748`)
+  - FP16 signoff skeleton smoke PASS (`report_id=L5-SIGNOFF-20260408_135648`, `decision=SMOKE_PASS`)
+
+Reference artifacts:
+
+- `sim/verify/l5_signoff/runs/20260408_150748/l5_signoff_summary.txt`
+- `sim/verify/l5_signoff/runs/20260408_135648/l5_signoff_summary.txt`
+- `sim/verify/assertion_cov_summary.txt`
+
+**[2026.04.08 update]**
+
+- Status: 🟢 정상 진행
+- One-line summary: INT8 streamlined 경로 기준으로 split-K/forwarding/edge 패키지 재정합을 완료하고, 시스템 11-package sign-off baseline을 PASS로 고정
+
+Completed since the previous snapshot:
+
+- [x] `tb/main.cpp` core replay comparator에 legacy FP32-bit golden 호환 비교를 추가해 core reference package mismatch 해소
+- [x] `tb/npu_uvm_pkg.sv`에 INT8 기능 커버리지 포인트(`INT8_COV`) 추가 및 scoreboard를 INT8×INT8→INT32 모델로 정렬
+- [x] INT8 edge package 3종 추가: `system_int8_edge_all_max_pos`, `system_int8_edge_all_min_neg`, `system_int8_edge_mixed_sign_checker`
+- [x] split-K / bankstress / forwarding system package의 manifest 및 golden을 `streamlined_dma_execute` 규칙으로 재정합
+- [x] L5 시스템 체인 결과 고정: `packages_total=11`, `packages_passed=10`, `packages_with_expected_package_error=1`, `packages_failed=0`
+
+Reference artifacts:
+
+- `sim/verify/l5_signoff/replay_chain_summary.txt`
+- `sim/verify/l5_signoff/l5_signoff_summary.txt`
+- `workloads/system_reference_gemm_tile_m0_n0_k0to31_splitk/replay_report.txt`
+- `workloads/system_reference_forwarding_same_addr_m0_n0_k0to15/replay_report.txt`
+- `sim/uvm/runs/sim_snapshot_9211_13561/sim.log`
+
+**[2026.04.08 update #2]**
+
+- Status: 🟢 정상 진행
+- One-line summary: INT8 전환 잔여 정합 이슈(누산기 타입/골든 baseline/사인오프 재진입)를 모두 닫고 signoff를 PASS로 재고정
+
+Completed since the previous snapshot:
+
+- [x] `rtl/memory/psum_accumulator_buffer.sv`를 INT32 signed 누산으로 수정하여 UVM mismatch(0x7fc00000 계열) 해소
+- [x] `scripts/run_sys.sh`, `scripts/run_sys.bat`, `scripts/run_uvm.sh`, `scripts/run_uvm.bat`의 RTL 컴파일 리스트를 현재 디렉터리 구조 기준으로 정렬
+- [x] `tools/generate_streamlined_signoff_packages.py`에서 split-K/bankstress golden(2400), forwarding golden(19200) baseline으로 동기화
+- [x] `scripts/run_l5_signoff.sh`에 stale/background 실행 잔존 방지 lock guard(`sim/verify/l5_signoff/.run_lock/pid`) 추가
+- [x] L5 one-shot signoff 재실행 PASS 및 summary 정합 확인
+  - `report_id=L5-SIGNOFF-20260408_125936`
+  - `packages_total=11`, `packages_passed=10`, `packages_with_expected_package_error=1`, `packages_failed=0`
+
+Reference artifacts:
+
+- `sim/verify/l5_signoff/runs/20260408_125936/l5_signoff_summary.txt`
+- `sim/verify/l5_signoff/l5_signoff_summary.txt`
+- `workloads/system_reference_gemm_tile_m0_n0_k0to31_splitk/replay_report.txt`
+- `workloads/system_reference_gemm_tile_m0_n0_k0to31_splitk_bankstress/replay_report.txt`
+- `workloads/system_reference_forwarding_same_addr_m0_n0_k0to15/replay_report.txt`
+
+Next execution plan:
+
+- [x] Sprint-2 M1: INT8/FP16 compile-time mode split 구현 (`mac_pe`/`systolic_array`/`psum_accumulator_buffer`)
+- [x] Sprint-2 M2: mode-aware package generator 및 golden comparator 분리
+- [x] Sprint-2 M3: mode별 UVM smoke + system 11-package gate 분리/고정
+- [x] Sprint-2 Day 9-10: fp16 numeric smoke gate + signoff summary mode metadata(`required_packages_by_mode`) 동기화
 
 **[2026.04.02 update #2]**
 
