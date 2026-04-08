@@ -28,7 +28,9 @@
     "k_tile_count": 1,
     "require_weight_preload": true,
     "acc_clear_policy": "first_pass_overwrite",
-    "drain_addresses": [0]
+    "drain_addresses": [
+      0
+    ]
   },
   "format": {
     "activation_layout": "row_major_16xint8_vectors",
@@ -74,7 +76,7 @@
         "drain"
       ],
       "expected_dma_done_count": 2,
-      "expected_npu_done_count": 2,
+      "expected_npu_done_count": 1,
       "flush_cycles": 35,
       "verification_acc_addr_override": 0,
       "verification_one_shot_acc_clear": true,

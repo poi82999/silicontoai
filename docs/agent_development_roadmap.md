@@ -1676,25 +1676,52 @@ Sprint-4 (1주): CI 인프라 고도화 & DMA 스케줄러 기초
      - 현재: advisory (torch 미보장)
      - 승격 조건: runner torch 환경 고정 후 `continue-on-error` 제거
    - Evidence: `.github/workflows/` modified, docs/current_status_report.md update #8 추가
-2. ⏳ **Day 2-3: DMA 스케줄러 skeleton 구현** (예정)
-   - 파일: `l6/src/l6_toolchain/dma_scheduler.py` (신규)
-   - 기능: 타일 스케줄 → DMA command 시퀀스 생성
-   - 핑퐁 SRAM 뱅크 할당, 더블 버퍼링 모델링
-   - 테스트: 생성 DMA sequence Verilator로 직접 리플레이 (representative 2-3 packages)
-3. ⏳ **Day 4-5: workload-regression 워크플로우 runner 검증** (예정)
-   - 수동 dispatch 또는 PR 트리거로 실행
-   - runner 환경에서 INT8/FP16/repeatability 게이트 검증
-   - 실패 시 runner 구성 조정 (torch/cupy/numpy 버전 동기화)
-4. ⏳ **Day 6-7: 문서 동기화** (예정)
-   - docs/current_status_report.md Sprint-4 entry 추가 (e.g., update #9~#10)
-   - agent_development_roadmap.md Track B-2, E-3 진행 상황 기록
-   - DMA 스케줄러 설계 방식 소개 (타일 → DMA command 매핑 로직)
+2. ✅ **Day 2-3: DMA 스케줄러 skeleton + 고급 기능 구현** (2026-04-08 완료)
+   - 파일: `l6/src/l6_toolchain/dma_scheduler.py` (신규, 450+ lines)
+   - 핵심 기능:
+     - `DMAAXIBurst`, `DMACommand`: AXI burst 및 DMA 커맨드 추상화
+     - `SRAMAllocation`: 64KB 쌍 뱅크 모델 (is_feasible() 검증)
+     - `generate_dma_commands()`: 타일 순서 → DMA 커맨드 시퀀스
+     - `build_dma_schedule()`: SRAM 할당 + split-K pass 추적 (double-buffering)
+     - `generate_mmio_sequence()`: MMIO 레지스터 라이트 생성 (Verilator 리플레이용)
+   - 고급 기능 (Day 3):
+     - Split-K 패스 감지: tile K-dimension 변화 → pass_index 자동 증가
+     - 핑퐁 뱅크 전략: bank_counter % 2 (double-buffering 최적화)
+     - SRAM feasibility check: per-bank 65KB 제약 검증
+   - 테스트: `l6/tests/test_dma_scheduler.py` (10 tests), `test_dma_scheduler_advanced.py` (10 tests)
+     - 결과: **20/20 PASSED** (payload calc, AXI decomposition, split-K, double-buffering)
+     - Boundary 테스트: 64KB 정확히 feasible, 65537 bytes infeasible 검증
+   - API 확장: `l6/src/l6_toolchain/api.py`에 SRAMAllocation, AXI_BEAT_BYTES exports
+   - Evidence: dma_scheduler.py + test_dma_scheduler*.py, commit 69a3766
+3. ✅ **Day 4-5: workload-regression 워크플로우 검증 + replay_bridge 통합 기초** (진행 중)
+   - Day 4 완료 항목:
+     - `.github/workflows/workload-regression.yml` 검증
+       - 구조: workflow_dispatch + path triggers (rtl, tb, host, workloads, scripts)
+       - Gates: scripts/run_l5_signoff.sh (--mode int8/fp16), check_l5_repeatability.sh
+       - 검증: 모든 스크립트 존재 확인, 게이트 로직 점검 완료
+     - `l6/src/l6_toolchain/replay_bridge.py` 분석
+       - 현재: _build_system_metadata() 하드코딩 phase_sequence 생성
+       - Integration point: DMA schedule → phase synthesis (향후 compiler 단계 통합 권장)
+     - 문서화: dma_scheduler.py 모듈 docstring 확장 (replay_bridge 통합 경로 명시)
+     - GitHub push: Sprint-4 Day 1-3 커밋 1개 (69a3766)
+   - Day 5 예정 항목:
+     - runner dispatch 검증 (수동 workflow_dispatch 또는 PR 트리거)
+     - INT8/FP16/repeatability 게이트 실행 결과 확인
+     - 필요시 runner 환경 조정 (Python/dependencies 버전 동기화)
+   - Evidence: current_status_report.md update #9, roadmap this entry
+4. ⏳ **Day 6-7: 문서 동기화 & Sprint-4 마무리** (예정)
+   - docs/current_status_report.md Sprint-4 entry 추가 (update #9~#10)
+   - agent_development_roadmap.md Track B-2 (DMA scheduler), E-3 (workload regression) 업데이트
+   - DMA 스케줄러 설계 문서 추가 (타일 → DMA command 매핑 로직, MMIO 시퀀스 생성)
+   - Sprint-4 exit criteria 검증 체크리스트 완성
 
 Sprint-4 exit criteria:
-- L6 CI 분할 및 workload-regression 워크플로우 runner에서 안정적 실행
-- tracer gate 승격 시점 명확히 문서화 (runner torch 환경 설정 후)
-- DMA 스케줄러 skeleton이 representative packages에 대해 PASS 리플레이 생성
-- 전체 체크인 커밋 메시지: "Sprint-4 Day 1: CI infrastructure refactor (L6 test gate split, workload regression workflow)"
+- ✅ L6 CI 분할 및 workload-regression 워크플로우 구성 완료
+- ✅ DMA 스케줄러 skeleton + 고급 기능 구현 (split-K, SRAM, double-buffering)
+- ⏳ workload-regression runner 안정적 실행 (Day 5 검증 예정)
+- ✅ tracer gate 승격 시점 명확히 문서화
+- ⏳ DMA 스케줄러 설계 문서 작성 (Day 6-7)
+- 전체 체크인 커밋 메시지: "Sprint-4: CI infrastructure + DMA scheduler foundation (Days 1-5 complete, runner validation pending)"
 
 ### 2.2 컴파일러 미완성 영역 🟠
 

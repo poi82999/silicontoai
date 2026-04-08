@@ -166,6 +166,12 @@ The following fields are the recommended minimum schema for L2.
 - `package_id`
 - `op_type`
 - `description`
+- `data_mode` (optional, recommended)
+
+`data_mode` guideline:
+
+- `int8`: 현재 baseline sign-off 경로 (exact compare)
+- `fp16`: 실험/스모크 경로 (tolerance compare metadata 권장)
 
 ### Logical shape
 
@@ -222,6 +228,16 @@ Optional system-replay verification extensions:
 
 - `compare.mode`
 - `compare.require_exact_match`
+
+Recommended extension fields for tolerance mode:
+
+- `compare.abs_tolerance`
+- `compare.relative_tolerance`
+
+Policy guideline:
+
+- INT8 baseline: `compare.mode = exact`
+- FP16 exploratory path: `compare.mode = tolerance` with explicit tolerance fields
 
 ---
 

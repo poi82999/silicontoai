@@ -36,14 +36,21 @@ echo " [1/3] Compiling RTL + Testbench (xvlog)..."
 echo "============================================================"
 (cd "${WORK_DIR}" && \
   xvlog --nolog -sv \
-    "${ROOT_DIR}/rtl/dp_sram_bank.sv" \
-    "${ROOT_DIR}/rtl/mac_pe.sv" \
-    "${ROOT_DIR}/rtl/systolic_data_setup.sv" \
-    "${ROOT_DIR}/rtl/systolic_array_16x16.sv" \
-    "${ROOT_DIR}/rtl/psum_accumulator_buffer.sv" \
-    "${ROOT_DIR}/rtl/dma_controller.sv" \
-    "${ROOT_DIR}/rtl/npu_core_top.sv" \
-    "${ROOT_DIR}/rtl/npu_system_top.sv" \
+    "${ROOT_DIR}/rtl/include/npu_def_pkg.sv" \
+    "${ROOT_DIR}/rtl/include/npu_interfaces.sv" \
+    "${ROOT_DIR}/rtl/arithmetic/fp16_multiplier.sv" \
+    "${ROOT_DIR}/rtl/arithmetic/fp32_adder.sv" \
+    "${ROOT_DIR}/rtl/core/mac_pe.sv" \
+    "${ROOT_DIR}/rtl/core/mac_pe_int8.sv" \
+    "${ROOT_DIR}/rtl/core/systolic_data_setup.sv" \
+    "${ROOT_DIR}/rtl/core/systolic_array.sv" \
+    "${ROOT_DIR}/rtl/core/npu_mxe_top.sv" \
+    "${ROOT_DIR}/rtl/core/npu_core_top.sv" \
+    "${ROOT_DIR}/rtl/memory/dp_sram_bank.sv" \
+    "${ROOT_DIR}/rtl/memory/psum_accumulator_buffer.sv" \
+    "${ROOT_DIR}/rtl/system/axi_lite_mmio_bridge.sv" \
+    "${ROOT_DIR}/rtl/system/dma_controller.sv" \
+    "${ROOT_DIR}/rtl/system/npu_system_top.sv" \
     "${ROOT_DIR}/tb/assertions/npu_assertions.sv" \
     "${ROOT_DIR}/tb/assertions/npu_assert_coverage.sv" \
     "${ROOT_DIR}/tb/assertions/system_assert_bind.sv" \

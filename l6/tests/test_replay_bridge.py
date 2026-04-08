@@ -22,6 +22,8 @@ def test_export_replay_packages_from_single_tile_package(tmp_path: Path) -> None
     assert manifest["execution"]["seq_len"] == 16
     assert manifest["execution"]["k_tile_count"] == 1
     assert manifest["system"]["execution"]["expected_dma_done_count"] == 2
+    assert manifest["system"]["execution"]["expected_npu_done_count"] == 1
+    assert manifest["system"]["execution"]["verification_only_hook_policy"] == "streamlined_dma_execute"
     assert len(manifest["system"]["execution"]["passes"]) == 1
     assert len(activations["rows"]) == 16
     assert len(weights["rows"]) == 16
@@ -43,6 +45,8 @@ def test_export_replay_packages_from_splitk_tiled_package(tmp_path: Path) -> Non
     assert manifest["execution"]["acc_clear_policy"] == "first_pass_overwrite"
     assert len(manifest["system"]["execution"]["passes"]) == 2
     assert manifest["system"]["execution"]["passes"][1]["acc_clear"] is False
+    assert manifest["system"]["execution"]["expected_npu_done_count"] == 2
+    assert manifest["system"]["execution"]["verification_only_hook_policy"] == "streamlined_dma_execute"
     assert len(activations["rows"]) == 32
     assert len(weights["rows"]) == 32
 
@@ -72,7 +76,8 @@ def test_export_replay_packages_from_program_sequence(tmp_path: Path) -> None:
     manifest = json.loads(replay_manifest_path.read_text(encoding="utf-8"))
     assert "step_001_fc0" in str(replay_manifest_path.parent)
     assert manifest["op_type"] == "gemm_tile"
-    assert manifest["system"]["execution"]["expected_npu_done_count"] == 2
+    assert manifest["system"]["execution"]["expected_npu_done_count"] == 1
+    assert manifest["system"]["execution"]["verification_only_hook_policy"] == "streamlined_dma_execute"
 
 
 def test_export_replay_packages_supports_partial_n_tile_shapes(tmp_path: Path) -> None:

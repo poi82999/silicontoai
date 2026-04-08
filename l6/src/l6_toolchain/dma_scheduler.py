@@ -11,6 +11,15 @@ Key responsibilities:
 4. Model double-buffering (DMA overlapping with compute)
 5. Handle split-K passes (multi-pass accumulate patterns)
 6. Optimize for SRAM capacity constraints (64KB budget)
+
+Replay Bridge Integration (Day 4-5):
+  - generate_dma_commands(tiles) → tuple[DMACommand, ...]: Produces low-level DMA ops from tile schedule
+  - build_dma_schedule(tiles) → DMAScheduleSequence: Complete schedule with SRAM, split-K tracking
+  - generate_mmio_sequence(schedule) → tuple[MMIORegisterWrite, ...]: MMIO register writes for Verilator replay
+  
+  Integration path: TilePlanEntry[] → DMA Commands → MMIO Sequence → replay_bridge.py manifest augmentation
+  Future: replay_bridge._build_system_metadata() can consume DMA schedules for MMIO command synthesis
+           instead of current hardcoded phase_sequence generation.
 """
 
 from __future__ import annotations

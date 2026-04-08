@@ -1,0 +1,8897 @@
+// Verilated -*- C++ -*-
+// DESCRIPTION: Verilator output: Design implementation internals
+// See Vnpu_core_top.h for the primary calling header
+
+#include "Vnpu_core_top__pch.h"
+#include "Vnpu_core_top___024root.h"
+
+VL_INLINE_OPT void Vnpu_core_top___024root___nba_sequent__TOP__4(Vnpu_core_top___024root* vlSelf) {
+    if (false && vlSelf) {}  // Prevent unused
+    Vnpu_core_top__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
+    VL_DEBUG_IF(VL_DBG_MSGF("+    Vnpu_core_top___024root___nba_sequent__TOP__4\n"); );
+    // Body
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__10__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp 
+        = (0x1ffU & ((0x200000U & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__10__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                      ? ((IData)(0x62U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__10__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))
+                      : ((IData)(0x61U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__10__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__10__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp 
+        = (0x1ffU & ((0x200000U & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__10__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                      ? ((IData)(0x62U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__10__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))
+                      : ((IData)(0x61U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__10__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__10__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp 
+        = (0x1ffU & ((0x200000U & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__10__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                      ? ((IData)(0x62U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__10__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))
+                      : ((IData)(0x61U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__10__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__11__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp 
+        = (0x1ffU & ((0x200000U & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__11__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                      ? ((IData)(0x62U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__11__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))
+                      : ((IData)(0x61U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__11__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__11__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp 
+        = (0x1ffU & ((0x200000U & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__11__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                      ? ((IData)(0x62U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__11__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))
+                      : ((IData)(0x61U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__11__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__11__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp 
+        = (0x1ffU & ((0x200000U & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__11__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                      ? ((IData)(0x62U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__11__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))
+                      : ((IData)(0x61U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__11__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__11__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp 
+        = (0x1ffU & ((0x200000U & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__11__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                      ? ((IData)(0x62U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__11__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))
+                      : ((IData)(0x61U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__11__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__11__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp 
+        = (0x1ffU & ((0x200000U & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__11__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                      ? ((IData)(0x62U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__11__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))
+                      : ((IData)(0x61U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__11__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__11__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp 
+        = (0x1ffU & ((0x200000U & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__11__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                      ? ((IData)(0x62U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__11__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))
+                      : ((IData)(0x61U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__11__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__11__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp 
+        = (0x1ffU & ((0x200000U & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__11__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                      ? ((IData)(0x62U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__11__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))
+                      : ((IData)(0x61U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__11__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__11__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp 
+        = (0x1ffU & ((0x200000U & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__11__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                      ? ((IData)(0x62U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__11__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))
+                      : ((IData)(0x61U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__11__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__11__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp 
+        = (0x1ffU & ((0x200000U & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__11__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                      ? ((IData)(0x62U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__11__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))
+                      : ((IData)(0x61U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__11__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__11__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp 
+        = (0x1ffU & ((0x200000U & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__11__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                      ? ((IData)(0x62U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__11__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))
+                      : ((IData)(0x61U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__11__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__11__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp 
+        = (0x1ffU & ((0x200000U & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__11__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                      ? ((IData)(0x62U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__11__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))
+                      : ((IData)(0x61U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__11__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__11__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp 
+        = (0x1ffU & ((0x200000U & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__11__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                      ? ((IData)(0x62U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__11__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))
+                      : ((IData)(0x61U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__11__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__11__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp 
+        = (0x1ffU & ((0x200000U & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__11__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                      ? ((IData)(0x62U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__11__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))
+                      : ((IData)(0x61U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__11__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__11__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp 
+        = (0x1ffU & ((0x200000U & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__11__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                      ? ((IData)(0x62U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__11__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))
+                      : ((IData)(0x61U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__11__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__11__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp 
+        = (0x1ffU & ((0x200000U & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__11__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                      ? ((IData)(0x62U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__11__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))
+                      : ((IData)(0x61U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__11__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__11__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp 
+        = (0x1ffU & ((0x200000U & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__11__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                      ? ((IData)(0x62U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__11__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))
+                      : ((IData)(0x61U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__11__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__12__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp 
+        = (0x1ffU & ((0x200000U & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__12__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                      ? ((IData)(0x62U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__12__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))
+                      : ((IData)(0x61U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__12__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__12__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp 
+        = (0x1ffU & ((0x200000U & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__12__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                      ? ((IData)(0x62U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__12__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))
+                      : ((IData)(0x61U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__12__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__12__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp 
+        = (0x1ffU & ((0x200000U & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__12__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                      ? ((IData)(0x62U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__12__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))
+                      : ((IData)(0x61U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__12__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__12__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp 
+        = (0x1ffU & ((0x200000U & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__12__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                      ? ((IData)(0x62U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__12__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))
+                      : ((IData)(0x61U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__12__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__12__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp 
+        = (0x1ffU & ((0x200000U & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__12__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                      ? ((IData)(0x62U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__12__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))
+                      : ((IData)(0x61U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__12__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__12__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp 
+        = (0x1ffU & ((0x200000U & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__12__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                      ? ((IData)(0x62U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__12__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))
+                      : ((IData)(0x61U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__12__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__12__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp 
+        = (0x1ffU & ((0x200000U & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__12__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                      ? ((IData)(0x62U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__12__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))
+                      : ((IData)(0x61U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__12__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__12__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp 
+        = (0x1ffU & ((0x200000U & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__12__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                      ? ((IData)(0x62U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__12__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))
+                      : ((IData)(0x61U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__12__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__12__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp 
+        = (0x1ffU & ((0x200000U & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__12__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                      ? ((IData)(0x62U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__12__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))
+                      : ((IData)(0x61U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__12__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__12__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp 
+        = (0x1ffU & ((0x200000U & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__12__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                      ? ((IData)(0x62U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__12__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))
+                      : ((IData)(0x61U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__12__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__12__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp 
+        = (0x1ffU & ((0x200000U & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__12__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                      ? ((IData)(0x62U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__12__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))
+                      : ((IData)(0x61U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__12__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__12__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp 
+        = (0x1ffU & ((0x200000U & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__12__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                      ? ((IData)(0x62U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__12__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))
+                      : ((IData)(0x61U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__12__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__12__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp 
+        = (0x1ffU & ((0x200000U & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__12__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                      ? ((IData)(0x62U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__12__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))
+                      : ((IData)(0x61U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__12__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__12__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp 
+        = (0x1ffU & ((0x200000U & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__12__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                      ? ((IData)(0x62U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__12__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))
+                      : ((IData)(0x61U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__12__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__12__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp 
+        = (0x1ffU & ((0x200000U & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__12__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                      ? ((IData)(0x62U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__12__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))
+                      : ((IData)(0x61U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__12__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__12__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp 
+        = (0x1ffU & ((0x200000U & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__12__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                      ? ((IData)(0x62U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__12__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))
+                      : ((IData)(0x61U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__12__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__13__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp 
+        = (0x1ffU & ((0x200000U & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__13__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                      ? ((IData)(0x62U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__13__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))
+                      : ((IData)(0x61U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__13__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__13__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp 
+        = (0x1ffU & ((0x200000U & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__13__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                      ? ((IData)(0x62U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__13__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))
+                      : ((IData)(0x61U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__13__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__13__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp 
+        = (0x1ffU & ((0x200000U & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__13__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                      ? ((IData)(0x62U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__13__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))
+                      : ((IData)(0x61U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__13__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__13__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp 
+        = (0x1ffU & ((0x200000U & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__13__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                      ? ((IData)(0x62U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__13__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))
+                      : ((IData)(0x61U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__13__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__13__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp 
+        = (0x1ffU & ((0x200000U & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__13__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                      ? ((IData)(0x62U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__13__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))
+                      : ((IData)(0x61U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__13__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__13__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp 
+        = (0x1ffU & ((0x200000U & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__13__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                      ? ((IData)(0x62U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__13__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))
+                      : ((IData)(0x61U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__13__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__13__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp 
+        = (0x1ffU & ((0x200000U & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__13__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                      ? ((IData)(0x62U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__13__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))
+                      : ((IData)(0x61U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__13__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__13__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp 
+        = (0x1ffU & ((0x200000U & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__13__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                      ? ((IData)(0x62U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__13__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))
+                      : ((IData)(0x61U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__13__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__13__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp 
+        = (0x1ffU & ((0x200000U & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__13__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                      ? ((IData)(0x62U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__13__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))
+                      : ((IData)(0x61U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__13__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__13__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp 
+        = (0x1ffU & ((0x200000U & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__13__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                      ? ((IData)(0x62U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__13__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))
+                      : ((IData)(0x61U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__13__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__13__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp 
+        = (0x1ffU & ((0x200000U & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__13__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                      ? ((IData)(0x62U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__13__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))
+                      : ((IData)(0x61U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__13__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__13__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp 
+        = (0x1ffU & ((0x200000U & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__13__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                      ? ((IData)(0x62U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__13__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))
+                      : ((IData)(0x61U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__13__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__13__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp 
+        = (0x1ffU & ((0x200000U & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__13__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                      ? ((IData)(0x62U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__13__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))
+                      : ((IData)(0x61U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__13__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__13__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp 
+        = (0x1ffU & ((0x200000U & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__13__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                      ? ((IData)(0x62U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__13__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))
+                      : ((IData)(0x61U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__13__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__13__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp 
+        = (0x1ffU & ((0x200000U & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__13__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                      ? ((IData)(0x62U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__13__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))
+                      : ((IData)(0x61U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__13__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__13__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp 
+        = (0x1ffU & ((0x200000U & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__13__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                      ? ((IData)(0x62U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__13__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))
+                      : ((IData)(0x61U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__13__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__14__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp 
+        = (0x1ffU & ((0x200000U & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__14__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                      ? ((IData)(0x62U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__14__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))
+                      : ((IData)(0x61U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__14__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__14__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp 
+        = (0x1ffU & ((0x200000U & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__14__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                      ? ((IData)(0x62U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__14__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))
+                      : ((IData)(0x61U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__14__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__14__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp 
+        = (0x1ffU & ((0x200000U & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__14__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                      ? ((IData)(0x62U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__14__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))
+                      : ((IData)(0x61U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__14__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__14__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp 
+        = (0x1ffU & ((0x200000U & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__14__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                      ? ((IData)(0x62U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__14__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))
+                      : ((IData)(0x61U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__14__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__14__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp 
+        = (0x1ffU & ((0x200000U & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__14__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                      ? ((IData)(0x62U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__14__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))
+                      : ((IData)(0x61U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__14__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__14__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp 
+        = (0x1ffU & ((0x200000U & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__14__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                      ? ((IData)(0x62U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__14__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))
+                      : ((IData)(0x61U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__14__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__14__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp 
+        = (0x1ffU & ((0x200000U & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__14__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                      ? ((IData)(0x62U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__14__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))
+                      : ((IData)(0x61U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__14__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__14__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp 
+        = (0x1ffU & ((0x200000U & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__14__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                      ? ((IData)(0x62U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__14__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))
+                      : ((IData)(0x61U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__14__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__14__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp 
+        = (0x1ffU & ((0x200000U & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__14__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                      ? ((IData)(0x62U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__14__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))
+                      : ((IData)(0x61U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__14__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__14__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp 
+        = (0x1ffU & ((0x200000U & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__14__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                      ? ((IData)(0x62U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__14__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))
+                      : ((IData)(0x61U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__14__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__14__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp 
+        = (0x1ffU & ((0x200000U & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__14__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                      ? ((IData)(0x62U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__14__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))
+                      : ((IData)(0x61U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__14__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__14__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp 
+        = (0x1ffU & ((0x200000U & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__14__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                      ? ((IData)(0x62U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__14__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))
+                      : ((IData)(0x61U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__14__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__14__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp 
+        = (0x1ffU & ((0x200000U & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__14__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                      ? ((IData)(0x62U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__14__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))
+                      : ((IData)(0x61U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__14__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__14__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp 
+        = (0x1ffU & ((0x200000U & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__14__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                      ? ((IData)(0x62U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__14__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))
+                      : ((IData)(0x61U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__14__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__14__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp 
+        = (0x1ffU & ((0x200000U & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__14__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                      ? ((IData)(0x62U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__14__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))
+                      : ((IData)(0x61U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__14__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__14__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp 
+        = (0x1ffU & ((0x200000U & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__14__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                      ? ((IData)(0x62U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__14__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))
+                      : ((IData)(0x61U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__14__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__15__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp 
+        = (0x1ffU & ((0x200000U & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__15__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                      ? ((IData)(0x62U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__15__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))
+                      : ((IData)(0x61U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__15__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__15__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp 
+        = (0x1ffU & ((0x200000U & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__15__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                      ? ((IData)(0x62U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__15__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))
+                      : ((IData)(0x61U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__15__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__15__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp 
+        = (0x1ffU & ((0x200000U & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__15__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                      ? ((IData)(0x62U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__15__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))
+                      : ((IData)(0x61U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__15__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__15__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp 
+        = (0x1ffU & ((0x200000U & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__15__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                      ? ((IData)(0x62U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__15__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))
+                      : ((IData)(0x61U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__15__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__15__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp 
+        = (0x1ffU & ((0x200000U & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__15__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                      ? ((IData)(0x62U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__15__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))
+                      : ((IData)(0x61U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__15__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__15__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp 
+        = (0x1ffU & ((0x200000U & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__15__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                      ? ((IData)(0x62U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__15__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))
+                      : ((IData)(0x61U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__15__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__15__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp 
+        = (0x1ffU & ((0x200000U & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__15__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                      ? ((IData)(0x62U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__15__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))
+                      : ((IData)(0x61U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__15__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__15__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp 
+        = (0x1ffU & ((0x200000U & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__15__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                      ? ((IData)(0x62U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__15__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))
+                      : ((IData)(0x61U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__15__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__15__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp 
+        = (0x1ffU & ((0x200000U & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__15__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                      ? ((IData)(0x62U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__15__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))
+                      : ((IData)(0x61U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__15__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__15__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp 
+        = (0x1ffU & ((0x200000U & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__15__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                      ? ((IData)(0x62U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__15__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))
+                      : ((IData)(0x61U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__15__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__15__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp 
+        = (0x1ffU & ((0x200000U & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__15__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                      ? ((IData)(0x62U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__15__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))
+                      : ((IData)(0x61U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__15__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__15__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp 
+        = (0x1ffU & ((0x200000U & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__15__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                      ? ((IData)(0x62U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__15__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))
+                      : ((IData)(0x61U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__15__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__15__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp 
+        = (0x1ffU & ((0x200000U & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__15__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                      ? ((IData)(0x62U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__15__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))
+                      : ((IData)(0x61U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__15__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__15__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp 
+        = (0x1ffU & ((0x200000U & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__15__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                      ? ((IData)(0x62U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__15__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))
+                      : ((IData)(0x61U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__15__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__15__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp 
+        = (0x1ffU & ((0x200000U & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__15__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                      ? ((IData)(0x62U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__15__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))
+                      : ((IData)(0x61U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__15__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__15__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp 
+        = (0x1ffU & ((0x200000U & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__15__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                      ? ((IData)(0x62U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__15__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))
+                      : ((IData)(0x61U) + (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__15__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgTmp_h8cc3278a__0))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__fp32_product 
+        = ((((0x1fU == (0x1fU & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                 [0U][0U] >> 0xaU))) 
+             & (0U != (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                       [0U][0U]))) | (IData)(((0x7c00U 
+                                               == (0x7c00U 
+                                                   & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                              & (0U 
+                                                 != 
+                                                 (0x3ffU 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))))))
+            ? 0x7fc00000U : ((((0x1fU == (0x1fU & (
+                                                   vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                   [0U]
+                                                   [0U] 
+                                                   >> 0xaU))) 
+                               & (0U == (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                         [0U][0U]))) 
+                              | (IData)((0x7c00U == 
+                                         (0x7fffU & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))
+                              ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0)
+                                  ? 0x7fc00000U : (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU)))
+                              : (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0) 
+                                  | (((0U == (0x1fU 
+                                              & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                 [0U]
+                                                 [0U] 
+                                                 >> 0xaU))) 
+                                      & (0U != (0x3ffU 
+                                                & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                [0U]
+                                                [0U]))) 
+                                     | (IData)(((0U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))))
+                                  ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                     << 0x1fU) : ((IData)(
+                                                          (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                            >> 8U) 
+                                                           | (0xffU 
+                                                              <= (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))))
+                                                   ? 
+                                                  (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU))
+                                                   : 
+                                                  ((0U 
+                                                    == (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))
+                                                    ? 
+                                                   ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                    << 0x1fU)
+                                                    : 
+                                                   (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                     << 0x1fU) 
+                                                    | ((0x7f800000U 
+                                                        & ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                           << 0x17U)) 
+                                                       | ((0x200000U 
+                                                           & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                                                           ? 
+                                                          (0x7ffffcU 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 2U))
+                                                           : 
+                                                          (0x7ffff8U 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 3U))))))))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__fp32_product 
+        = ((((0x1fU == (0x1fU & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                 [0U][1U] >> 0xaU))) 
+             & (0U != (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                       [0U][1U]))) | (IData)(((0x7c00U 
+                                               == (0x7c00U 
+                                                   & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                              & (0U 
+                                                 != 
+                                                 (0x3ffU 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))))))
+            ? 0x7fc00000U : ((((0x1fU == (0x1fU & (
+                                                   vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                   [0U]
+                                                   [1U] 
+                                                   >> 0xaU))) 
+                               & (0U == (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                         [0U][1U]))) 
+                              | (IData)((0x7c00U == 
+                                         (0x7fffU & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))
+                              ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0)
+                                  ? 0x7fc00000U : (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU)))
+                              : (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0) 
+                                  | (((0U == (0x1fU 
+                                              & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                 [0U]
+                                                 [1U] 
+                                                 >> 0xaU))) 
+                                      & (0U != (0x3ffU 
+                                                & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                [0U]
+                                                [1U]))) 
+                                     | (IData)(((0U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))))
+                                  ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                     << 0x1fU) : ((IData)(
+                                                          (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                            >> 8U) 
+                                                           | (0xffU 
+                                                              <= (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))))
+                                                   ? 
+                                                  (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU))
+                                                   : 
+                                                  ((0U 
+                                                    == (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))
+                                                    ? 
+                                                   ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                    << 0x1fU)
+                                                    : 
+                                                   (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                     << 0x1fU) 
+                                                    | ((0x7f800000U 
+                                                        & ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                           << 0x17U)) 
+                                                       | ((0x200000U 
+                                                           & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                                                           ? 
+                                                          (0x7ffffcU 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 2U))
+                                                           : 
+                                                          (0x7ffff8U 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 3U))))))))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__fp32_product 
+        = ((((0x1fU == (0x1fU & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                 [0U][2U] >> 0xaU))) 
+             & (0U != (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                       [0U][2U]))) | (IData)(((0x7c00U 
+                                               == (0x7c00U 
+                                                   & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                              & (0U 
+                                                 != 
+                                                 (0x3ffU 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))))))
+            ? 0x7fc00000U : ((((0x1fU == (0x1fU & (
+                                                   vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                   [0U]
+                                                   [2U] 
+                                                   >> 0xaU))) 
+                               & (0U == (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                         [0U][2U]))) 
+                              | (IData)((0x7c00U == 
+                                         (0x7fffU & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))
+                              ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0)
+                                  ? 0x7fc00000U : (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU)))
+                              : (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0) 
+                                  | (((0U == (0x1fU 
+                                              & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                 [0U]
+                                                 [2U] 
+                                                 >> 0xaU))) 
+                                      & (0U != (0x3ffU 
+                                                & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                [0U]
+                                                [2U]))) 
+                                     | (IData)(((0U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))))
+                                  ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                     << 0x1fU) : ((IData)(
+                                                          (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                            >> 8U) 
+                                                           | (0xffU 
+                                                              <= (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))))
+                                                   ? 
+                                                  (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU))
+                                                   : 
+                                                  ((0U 
+                                                    == (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))
+                                                    ? 
+                                                   ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                    << 0x1fU)
+                                                    : 
+                                                   (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                     << 0x1fU) 
+                                                    | ((0x7f800000U 
+                                                        & ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                           << 0x17U)) 
+                                                       | ((0x200000U 
+                                                           & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                                                           ? 
+                                                          (0x7ffffcU 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 2U))
+                                                           : 
+                                                          (0x7ffff8U 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 3U))))))))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__fp32_product 
+        = ((((0x1fU == (0x1fU & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                 [0U][3U] >> 0xaU))) 
+             & (0U != (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                       [0U][3U]))) | (IData)(((0x7c00U 
+                                               == (0x7c00U 
+                                                   & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                              & (0U 
+                                                 != 
+                                                 (0x3ffU 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))))))
+            ? 0x7fc00000U : ((((0x1fU == (0x1fU & (
+                                                   vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                   [0U]
+                                                   [3U] 
+                                                   >> 0xaU))) 
+                               & (0U == (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                         [0U][3U]))) 
+                              | (IData)((0x7c00U == 
+                                         (0x7fffU & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))
+                              ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0)
+                                  ? 0x7fc00000U : (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU)))
+                              : (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0) 
+                                  | (((0U == (0x1fU 
+                                              & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                 [0U]
+                                                 [3U] 
+                                                 >> 0xaU))) 
+                                      & (0U != (0x3ffU 
+                                                & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                [0U]
+                                                [3U]))) 
+                                     | (IData)(((0U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))))
+                                  ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                     << 0x1fU) : ((IData)(
+                                                          (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                            >> 8U) 
+                                                           | (0xffU 
+                                                              <= (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))))
+                                                   ? 
+                                                  (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU))
+                                                   : 
+                                                  ((0U 
+                                                    == (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))
+                                                    ? 
+                                                   ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                    << 0x1fU)
+                                                    : 
+                                                   (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                     << 0x1fU) 
+                                                    | ((0x7f800000U 
+                                                        & ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                           << 0x17U)) 
+                                                       | ((0x200000U 
+                                                           & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                                                           ? 
+                                                          (0x7ffffcU 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 2U))
+                                                           : 
+                                                          (0x7ffff8U 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 3U))))))))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__fp32_product 
+        = ((((0x1fU == (0x1fU & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                 [0U][4U] >> 0xaU))) 
+             & (0U != (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                       [0U][4U]))) | (IData)(((0x7c00U 
+                                               == (0x7c00U 
+                                                   & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                              & (0U 
+                                                 != 
+                                                 (0x3ffU 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))))))
+            ? 0x7fc00000U : ((((0x1fU == (0x1fU & (
+                                                   vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                   [0U]
+                                                   [4U] 
+                                                   >> 0xaU))) 
+                               & (0U == (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                         [0U][4U]))) 
+                              | (IData)((0x7c00U == 
+                                         (0x7fffU & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))
+                              ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0)
+                                  ? 0x7fc00000U : (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU)))
+                              : (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0) 
+                                  | (((0U == (0x1fU 
+                                              & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                 [0U]
+                                                 [4U] 
+                                                 >> 0xaU))) 
+                                      & (0U != (0x3ffU 
+                                                & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                [0U]
+                                                [4U]))) 
+                                     | (IData)(((0U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))))
+                                  ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                     << 0x1fU) : ((IData)(
+                                                          (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                            >> 8U) 
+                                                           | (0xffU 
+                                                              <= (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))))
+                                                   ? 
+                                                  (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU))
+                                                   : 
+                                                  ((0U 
+                                                    == (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))
+                                                    ? 
+                                                   ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                    << 0x1fU)
+                                                    : 
+                                                   (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                     << 0x1fU) 
+                                                    | ((0x7f800000U 
+                                                        & ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                           << 0x17U)) 
+                                                       | ((0x200000U 
+                                                           & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                                                           ? 
+                                                          (0x7ffffcU 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 2U))
+                                                           : 
+                                                          (0x7ffff8U 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 3U))))))))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__fp32_product 
+        = ((((0x1fU == (0x1fU & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                 [0U][5U] >> 0xaU))) 
+             & (0U != (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                       [0U][5U]))) | (IData)(((0x7c00U 
+                                               == (0x7c00U 
+                                                   & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                              & (0U 
+                                                 != 
+                                                 (0x3ffU 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))))))
+            ? 0x7fc00000U : ((((0x1fU == (0x1fU & (
+                                                   vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                   [0U]
+                                                   [5U] 
+                                                   >> 0xaU))) 
+                               & (0U == (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                         [0U][5U]))) 
+                              | (IData)((0x7c00U == 
+                                         (0x7fffU & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))
+                              ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0)
+                                  ? 0x7fc00000U : (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU)))
+                              : (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0) 
+                                  | (((0U == (0x1fU 
+                                              & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                 [0U]
+                                                 [5U] 
+                                                 >> 0xaU))) 
+                                      & (0U != (0x3ffU 
+                                                & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                [0U]
+                                                [5U]))) 
+                                     | (IData)(((0U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))))
+                                  ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                     << 0x1fU) : ((IData)(
+                                                          (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                            >> 8U) 
+                                                           | (0xffU 
+                                                              <= (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))))
+                                                   ? 
+                                                  (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU))
+                                                   : 
+                                                  ((0U 
+                                                    == (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))
+                                                    ? 
+                                                   ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                    << 0x1fU)
+                                                    : 
+                                                   (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                     << 0x1fU) 
+                                                    | ((0x7f800000U 
+                                                        & ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                           << 0x17U)) 
+                                                       | ((0x200000U 
+                                                           & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                                                           ? 
+                                                          (0x7ffffcU 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 2U))
+                                                           : 
+                                                          (0x7ffff8U 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 3U))))))))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__fp32_product 
+        = ((((0x1fU == (0x1fU & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                 [0U][6U] >> 0xaU))) 
+             & (0U != (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                       [0U][6U]))) | (IData)(((0x7c00U 
+                                               == (0x7c00U 
+                                                   & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                              & (0U 
+                                                 != 
+                                                 (0x3ffU 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))))))
+            ? 0x7fc00000U : ((((0x1fU == (0x1fU & (
+                                                   vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                   [0U]
+                                                   [6U] 
+                                                   >> 0xaU))) 
+                               & (0U == (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                         [0U][6U]))) 
+                              | (IData)((0x7c00U == 
+                                         (0x7fffU & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))
+                              ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0)
+                                  ? 0x7fc00000U : (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU)))
+                              : (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0) 
+                                  | (((0U == (0x1fU 
+                                              & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                 [0U]
+                                                 [6U] 
+                                                 >> 0xaU))) 
+                                      & (0U != (0x3ffU 
+                                                & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                [0U]
+                                                [6U]))) 
+                                     | (IData)(((0U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))))
+                                  ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                     << 0x1fU) : ((IData)(
+                                                          (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                            >> 8U) 
+                                                           | (0xffU 
+                                                              <= (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))))
+                                                   ? 
+                                                  (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU))
+                                                   : 
+                                                  ((0U 
+                                                    == (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))
+                                                    ? 
+                                                   ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                    << 0x1fU)
+                                                    : 
+                                                   (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                     << 0x1fU) 
+                                                    | ((0x7f800000U 
+                                                        & ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                           << 0x17U)) 
+                                                       | ((0x200000U 
+                                                           & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                                                           ? 
+                                                          (0x7ffffcU 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 2U))
+                                                           : 
+                                                          (0x7ffff8U 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 3U))))))))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__fp32_product 
+        = ((((0x1fU == (0x1fU & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                 [0U][7U] >> 0xaU))) 
+             & (0U != (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                       [0U][7U]))) | (IData)(((0x7c00U 
+                                               == (0x7c00U 
+                                                   & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                              & (0U 
+                                                 != 
+                                                 (0x3ffU 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))))))
+            ? 0x7fc00000U : ((((0x1fU == (0x1fU & (
+                                                   vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                   [0U]
+                                                   [7U] 
+                                                   >> 0xaU))) 
+                               & (0U == (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                         [0U][7U]))) 
+                              | (IData)((0x7c00U == 
+                                         (0x7fffU & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))
+                              ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0)
+                                  ? 0x7fc00000U : (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU)))
+                              : (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0) 
+                                  | (((0U == (0x1fU 
+                                              & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                 [0U]
+                                                 [7U] 
+                                                 >> 0xaU))) 
+                                      & (0U != (0x3ffU 
+                                                & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                [0U]
+                                                [7U]))) 
+                                     | (IData)(((0U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))))
+                                  ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                     << 0x1fU) : ((IData)(
+                                                          (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                            >> 8U) 
+                                                           | (0xffU 
+                                                              <= (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))))
+                                                   ? 
+                                                  (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU))
+                                                   : 
+                                                  ((0U 
+                                                    == (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))
+                                                    ? 
+                                                   ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                    << 0x1fU)
+                                                    : 
+                                                   (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                     << 0x1fU) 
+                                                    | ((0x7f800000U 
+                                                        & ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                           << 0x17U)) 
+                                                       | ((0x200000U 
+                                                           & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                                                           ? 
+                                                          (0x7ffffcU 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 2U))
+                                                           : 
+                                                          (0x7ffff8U 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 3U))))))))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__fp32_product 
+        = ((((0x1fU == (0x1fU & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                 [0U][8U] >> 0xaU))) 
+             & (0U != (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                       [0U][8U]))) | (IData)(((0x7c00U 
+                                               == (0x7c00U 
+                                                   & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                              & (0U 
+                                                 != 
+                                                 (0x3ffU 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))))))
+            ? 0x7fc00000U : ((((0x1fU == (0x1fU & (
+                                                   vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                   [0U]
+                                                   [8U] 
+                                                   >> 0xaU))) 
+                               & (0U == (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                         [0U][8U]))) 
+                              | (IData)((0x7c00U == 
+                                         (0x7fffU & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))
+                              ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0)
+                                  ? 0x7fc00000U : (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU)))
+                              : (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0) 
+                                  | (((0U == (0x1fU 
+                                              & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                 [0U]
+                                                 [8U] 
+                                                 >> 0xaU))) 
+                                      & (0U != (0x3ffU 
+                                                & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                [0U]
+                                                [8U]))) 
+                                     | (IData)(((0U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))))
+                                  ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                     << 0x1fU) : ((IData)(
+                                                          (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                            >> 8U) 
+                                                           | (0xffU 
+                                                              <= (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))))
+                                                   ? 
+                                                  (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU))
+                                                   : 
+                                                  ((0U 
+                                                    == (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))
+                                                    ? 
+                                                   ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                    << 0x1fU)
+                                                    : 
+                                                   (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                     << 0x1fU) 
+                                                    | ((0x7f800000U 
+                                                        & ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                           << 0x17U)) 
+                                                       | ((0x200000U 
+                                                           & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                                                           ? 
+                                                          (0x7ffffcU 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 2U))
+                                                           : 
+                                                          (0x7ffff8U 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 3U))))))))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__fp32_product 
+        = ((((0x1fU == (0x1fU & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                 [0U][9U] >> 0xaU))) 
+             & (0U != (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                       [0U][9U]))) | (IData)(((0x7c00U 
+                                               == (0x7c00U 
+                                                   & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                              & (0U 
+                                                 != 
+                                                 (0x3ffU 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))))))
+            ? 0x7fc00000U : ((((0x1fU == (0x1fU & (
+                                                   vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                   [0U]
+                                                   [9U] 
+                                                   >> 0xaU))) 
+                               & (0U == (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                         [0U][9U]))) 
+                              | (IData)((0x7c00U == 
+                                         (0x7fffU & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))
+                              ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0)
+                                  ? 0x7fc00000U : (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU)))
+                              : (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0) 
+                                  | (((0U == (0x1fU 
+                                              & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                 [0U]
+                                                 [9U] 
+                                                 >> 0xaU))) 
+                                      & (0U != (0x3ffU 
+                                                & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                [0U]
+                                                [9U]))) 
+                                     | (IData)(((0U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))))
+                                  ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                     << 0x1fU) : ((IData)(
+                                                          (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                            >> 8U) 
+                                                           | (0xffU 
+                                                              <= (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))))
+                                                   ? 
+                                                  (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU))
+                                                   : 
+                                                  ((0U 
+                                                    == (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))
+                                                    ? 
+                                                   ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                    << 0x1fU)
+                                                    : 
+                                                   (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                     << 0x1fU) 
+                                                    | ((0x7f800000U 
+                                                        & ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                           << 0x17U)) 
+                                                       | ((0x200000U 
+                                                           & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                                                           ? 
+                                                          (0x7ffffcU 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 2U))
+                                                           : 
+                                                          (0x7ffff8U 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 3U))))))))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__fp32_product 
+        = ((((0x1fU == (0x1fU & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                 [0U][0xaU] >> 0xaU))) 
+             & (0U != (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                       [0U][0xaU]))) | (IData)(((0x7c00U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))))))
+            ? 0x7fc00000U : ((((0x1fU == (0x1fU & (
+                                                   vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                   [0U]
+                                                   [0xaU] 
+                                                   >> 0xaU))) 
+                               & (0U == (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                         [0U][0xaU]))) 
+                              | (IData)((0x7c00U == 
+                                         (0x7fffU & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))
+                              ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0)
+                                  ? 0x7fc00000U : (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU)))
+                              : (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0) 
+                                  | (((0U == (0x1fU 
+                                              & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                 [0U]
+                                                 [0xaU] 
+                                                 >> 0xaU))) 
+                                      & (0U != (0x3ffU 
+                                                & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                [0U]
+                                                [0xaU]))) 
+                                     | (IData)(((0U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))))
+                                  ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                     << 0x1fU) : ((IData)(
+                                                          (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                            >> 8U) 
+                                                           | (0xffU 
+                                                              <= (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))))
+                                                   ? 
+                                                  (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU))
+                                                   : 
+                                                  ((0U 
+                                                    == (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))
+                                                    ? 
+                                                   ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                    << 0x1fU)
+                                                    : 
+                                                   (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                     << 0x1fU) 
+                                                    | ((0x7f800000U 
+                                                        & ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                           << 0x17U)) 
+                                                       | ((0x200000U 
+                                                           & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                                                           ? 
+                                                          (0x7ffffcU 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 2U))
+                                                           : 
+                                                          (0x7ffff8U 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 3U))))))))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__fp32_product 
+        = ((((0x1fU == (0x1fU & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                 [0U][0xbU] >> 0xaU))) 
+             & (0U != (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                       [0U][0xbU]))) | (IData)(((0x7c00U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))))))
+            ? 0x7fc00000U : ((((0x1fU == (0x1fU & (
+                                                   vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                   [0U]
+                                                   [0xbU] 
+                                                   >> 0xaU))) 
+                               & (0U == (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                         [0U][0xbU]))) 
+                              | (IData)((0x7c00U == 
+                                         (0x7fffU & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))
+                              ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0)
+                                  ? 0x7fc00000U : (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU)))
+                              : (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0) 
+                                  | (((0U == (0x1fU 
+                                              & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                 [0U]
+                                                 [0xbU] 
+                                                 >> 0xaU))) 
+                                      & (0U != (0x3ffU 
+                                                & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                [0U]
+                                                [0xbU]))) 
+                                     | (IData)(((0U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))))
+                                  ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                     << 0x1fU) : ((IData)(
+                                                          (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                            >> 8U) 
+                                                           | (0xffU 
+                                                              <= (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))))
+                                                   ? 
+                                                  (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU))
+                                                   : 
+                                                  ((0U 
+                                                    == (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))
+                                                    ? 
+                                                   ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                    << 0x1fU)
+                                                    : 
+                                                   (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                     << 0x1fU) 
+                                                    | ((0x7f800000U 
+                                                        & ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                           << 0x17U)) 
+                                                       | ((0x200000U 
+                                                           & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                                                           ? 
+                                                          (0x7ffffcU 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 2U))
+                                                           : 
+                                                          (0x7ffff8U 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 3U))))))))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__fp32_product 
+        = ((((0x1fU == (0x1fU & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                 [0U][0xcU] >> 0xaU))) 
+             & (0U != (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                       [0U][0xcU]))) | (IData)(((0x7c00U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))))))
+            ? 0x7fc00000U : ((((0x1fU == (0x1fU & (
+                                                   vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                   [0U]
+                                                   [0xcU] 
+                                                   >> 0xaU))) 
+                               & (0U == (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                         [0U][0xcU]))) 
+                              | (IData)((0x7c00U == 
+                                         (0x7fffU & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))
+                              ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0)
+                                  ? 0x7fc00000U : (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU)))
+                              : (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0) 
+                                  | (((0U == (0x1fU 
+                                              & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                 [0U]
+                                                 [0xcU] 
+                                                 >> 0xaU))) 
+                                      & (0U != (0x3ffU 
+                                                & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                [0U]
+                                                [0xcU]))) 
+                                     | (IData)(((0U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))))
+                                  ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                     << 0x1fU) : ((IData)(
+                                                          (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                            >> 8U) 
+                                                           | (0xffU 
+                                                              <= (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))))
+                                                   ? 
+                                                  (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU))
+                                                   : 
+                                                  ((0U 
+                                                    == (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))
+                                                    ? 
+                                                   ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                    << 0x1fU)
+                                                    : 
+                                                   (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                     << 0x1fU) 
+                                                    | ((0x7f800000U 
+                                                        & ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                           << 0x17U)) 
+                                                       | ((0x200000U 
+                                                           & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                                                           ? 
+                                                          (0x7ffffcU 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 2U))
+                                                           : 
+                                                          (0x7ffff8U 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 3U))))))))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__fp32_product 
+        = ((((0x1fU == (0x1fU & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                 [0U][0xdU] >> 0xaU))) 
+             & (0U != (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                       [0U][0xdU]))) | (IData)(((0x7c00U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))))))
+            ? 0x7fc00000U : ((((0x1fU == (0x1fU & (
+                                                   vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                   [0U]
+                                                   [0xdU] 
+                                                   >> 0xaU))) 
+                               & (0U == (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                         [0U][0xdU]))) 
+                              | (IData)((0x7c00U == 
+                                         (0x7fffU & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))
+                              ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0)
+                                  ? 0x7fc00000U : (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU)))
+                              : (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0) 
+                                  | (((0U == (0x1fU 
+                                              & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                 [0U]
+                                                 [0xdU] 
+                                                 >> 0xaU))) 
+                                      & (0U != (0x3ffU 
+                                                & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                [0U]
+                                                [0xdU]))) 
+                                     | (IData)(((0U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))))
+                                  ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                     << 0x1fU) : ((IData)(
+                                                          (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                            >> 8U) 
+                                                           | (0xffU 
+                                                              <= (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))))
+                                                   ? 
+                                                  (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU))
+                                                   : 
+                                                  ((0U 
+                                                    == (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))
+                                                    ? 
+                                                   ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                    << 0x1fU)
+                                                    : 
+                                                   (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                     << 0x1fU) 
+                                                    | ((0x7f800000U 
+                                                        & ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                           << 0x17U)) 
+                                                       | ((0x200000U 
+                                                           & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                                                           ? 
+                                                          (0x7ffffcU 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 2U))
+                                                           : 
+                                                          (0x7ffff8U 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 3U))))))))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__fp32_product 
+        = ((((0x1fU == (0x1fU & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                 [0U][0xeU] >> 0xaU))) 
+             & (0U != (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                       [0U][0xeU]))) | (IData)(((0x7c00U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))))))
+            ? 0x7fc00000U : ((((0x1fU == (0x1fU & (
+                                                   vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                   [0U]
+                                                   [0xeU] 
+                                                   >> 0xaU))) 
+                               & (0U == (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                         [0U][0xeU]))) 
+                              | (IData)((0x7c00U == 
+                                         (0x7fffU & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))
+                              ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0)
+                                  ? 0x7fc00000U : (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU)))
+                              : (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0) 
+                                  | (((0U == (0x1fU 
+                                              & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                 [0U]
+                                                 [0xeU] 
+                                                 >> 0xaU))) 
+                                      & (0U != (0x3ffU 
+                                                & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                [0U]
+                                                [0xeU]))) 
+                                     | (IData)(((0U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))))
+                                  ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                     << 0x1fU) : ((IData)(
+                                                          (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                            >> 8U) 
+                                                           | (0xffU 
+                                                              <= (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))))
+                                                   ? 
+                                                  (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU))
+                                                   : 
+                                                  ((0U 
+                                                    == (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))
+                                                    ? 
+                                                   ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                    << 0x1fU)
+                                                    : 
+                                                   (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                     << 0x1fU) 
+                                                    | ((0x7f800000U 
+                                                        & ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                           << 0x17U)) 
+                                                       | ((0x200000U 
+                                                           & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                                                           ? 
+                                                          (0x7ffffcU 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 2U))
+                                                           : 
+                                                          (0x7ffff8U 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 3U))))))))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__fp32_product 
+        = ((((0x1fU == (0x1fU & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                 [0U][0xfU] >> 0xaU))) 
+             & (0U != (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                       [0U][0xfU]))) | (IData)(((0x7c00U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))))))
+            ? 0x7fc00000U : ((((0x1fU == (0x1fU & (
+                                                   vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                   [0U]
+                                                   [0xfU] 
+                                                   >> 0xaU))) 
+                               & (0U == (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                         [0U][0xfU]))) 
+                              | (IData)((0x7c00U == 
+                                         (0x7fffU & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))
+                              ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0)
+                                  ? 0x7fc00000U : (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU)))
+                              : (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0) 
+                                  | (((0U == (0x1fU 
+                                              & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                 [0U]
+                                                 [0xfU] 
+                                                 >> 0xaU))) 
+                                      & (0U != (0x3ffU 
+                                                & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                [0U]
+                                                [0xfU]))) 
+                                     | (IData)(((0U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))))
+                                  ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                     << 0x1fU) : ((IData)(
+                                                          (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                            >> 8U) 
+                                                           | (0xffU 
+                                                              <= (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))))
+                                                   ? 
+                                                  (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU))
+                                                   : 
+                                                  ((0U 
+                                                    == (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))
+                                                    ? 
+                                                   ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                    << 0x1fU)
+                                                    : 
+                                                   (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                     << 0x1fU) 
+                                                    | ((0x7f800000U 
+                                                        & ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                           << 0x17U)) 
+                                                       | ((0x200000U 
+                                                           & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                                                           ? 
+                                                          (0x7ffffcU 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 2U))
+                                                           : 
+                                                          (0x7ffff8U 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__0__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 3U))))))))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__fp32_product 
+        = ((((0x1fU == (0x1fU & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                 [1U][0U] >> 0xaU))) 
+             & (0U != (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                       [1U][0U]))) | (IData)(((0x7c00U 
+                                               == (0x7c00U 
+                                                   & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                              & (0U 
+                                                 != 
+                                                 (0x3ffU 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))))))
+            ? 0x7fc00000U : ((((0x1fU == (0x1fU & (
+                                                   vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                   [1U]
+                                                   [0U] 
+                                                   >> 0xaU))) 
+                               & (0U == (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                         [1U][0U]))) 
+                              | (IData)((0x7c00U == 
+                                         (0x7fffU & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))
+                              ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0)
+                                  ? 0x7fc00000U : (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU)))
+                              : (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0) 
+                                  | (((0U == (0x1fU 
+                                              & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                 [1U]
+                                                 [0U] 
+                                                 >> 0xaU))) 
+                                      & (0U != (0x3ffU 
+                                                & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                [1U]
+                                                [0U]))) 
+                                     | (IData)(((0U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))))
+                                  ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                     << 0x1fU) : ((IData)(
+                                                          (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                            >> 8U) 
+                                                           | (0xffU 
+                                                              <= (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))))
+                                                   ? 
+                                                  (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU))
+                                                   : 
+                                                  ((0U 
+                                                    == (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))
+                                                    ? 
+                                                   ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                    << 0x1fU)
+                                                    : 
+                                                   (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                     << 0x1fU) 
+                                                    | ((0x7f800000U 
+                                                        & ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                           << 0x17U)) 
+                                                       | ((0x200000U 
+                                                           & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                                                           ? 
+                                                          (0x7ffffcU 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 2U))
+                                                           : 
+                                                          (0x7ffff8U 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 3U))))))))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__fp32_product 
+        = ((((0x1fU == (0x1fU & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                 [1U][1U] >> 0xaU))) 
+             & (0U != (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                       [1U][1U]))) | (IData)(((0x7c00U 
+                                               == (0x7c00U 
+                                                   & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                              & (0U 
+                                                 != 
+                                                 (0x3ffU 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))))))
+            ? 0x7fc00000U : ((((0x1fU == (0x1fU & (
+                                                   vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                   [1U]
+                                                   [1U] 
+                                                   >> 0xaU))) 
+                               & (0U == (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                         [1U][1U]))) 
+                              | (IData)((0x7c00U == 
+                                         (0x7fffU & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))
+                              ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0)
+                                  ? 0x7fc00000U : (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU)))
+                              : (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0) 
+                                  | (((0U == (0x1fU 
+                                              & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                 [1U]
+                                                 [1U] 
+                                                 >> 0xaU))) 
+                                      & (0U != (0x3ffU 
+                                                & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                [1U]
+                                                [1U]))) 
+                                     | (IData)(((0U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))))
+                                  ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                     << 0x1fU) : ((IData)(
+                                                          (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                            >> 8U) 
+                                                           | (0xffU 
+                                                              <= (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))))
+                                                   ? 
+                                                  (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU))
+                                                   : 
+                                                  ((0U 
+                                                    == (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))
+                                                    ? 
+                                                   ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                    << 0x1fU)
+                                                    : 
+                                                   (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                     << 0x1fU) 
+                                                    | ((0x7f800000U 
+                                                        & ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                           << 0x17U)) 
+                                                       | ((0x200000U 
+                                                           & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                                                           ? 
+                                                          (0x7ffffcU 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 2U))
+                                                           : 
+                                                          (0x7ffff8U 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 3U))))))))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__fp32_product 
+        = ((((0x1fU == (0x1fU & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                 [1U][2U] >> 0xaU))) 
+             & (0U != (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                       [1U][2U]))) | (IData)(((0x7c00U 
+                                               == (0x7c00U 
+                                                   & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                              & (0U 
+                                                 != 
+                                                 (0x3ffU 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))))))
+            ? 0x7fc00000U : ((((0x1fU == (0x1fU & (
+                                                   vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                   [1U]
+                                                   [2U] 
+                                                   >> 0xaU))) 
+                               & (0U == (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                         [1U][2U]))) 
+                              | (IData)((0x7c00U == 
+                                         (0x7fffU & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))
+                              ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0)
+                                  ? 0x7fc00000U : (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU)))
+                              : (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0) 
+                                  | (((0U == (0x1fU 
+                                              & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                 [1U]
+                                                 [2U] 
+                                                 >> 0xaU))) 
+                                      & (0U != (0x3ffU 
+                                                & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                [1U]
+                                                [2U]))) 
+                                     | (IData)(((0U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))))
+                                  ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                     << 0x1fU) : ((IData)(
+                                                          (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                            >> 8U) 
+                                                           | (0xffU 
+                                                              <= (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))))
+                                                   ? 
+                                                  (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU))
+                                                   : 
+                                                  ((0U 
+                                                    == (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))
+                                                    ? 
+                                                   ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                    << 0x1fU)
+                                                    : 
+                                                   (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                     << 0x1fU) 
+                                                    | ((0x7f800000U 
+                                                        & ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                           << 0x17U)) 
+                                                       | ((0x200000U 
+                                                           & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                                                           ? 
+                                                          (0x7ffffcU 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 2U))
+                                                           : 
+                                                          (0x7ffff8U 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 3U))))))))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__fp32_product 
+        = ((((0x1fU == (0x1fU & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                 [1U][3U] >> 0xaU))) 
+             & (0U != (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                       [1U][3U]))) | (IData)(((0x7c00U 
+                                               == (0x7c00U 
+                                                   & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                              & (0U 
+                                                 != 
+                                                 (0x3ffU 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))))))
+            ? 0x7fc00000U : ((((0x1fU == (0x1fU & (
+                                                   vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                   [1U]
+                                                   [3U] 
+                                                   >> 0xaU))) 
+                               & (0U == (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                         [1U][3U]))) 
+                              | (IData)((0x7c00U == 
+                                         (0x7fffU & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))
+                              ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0)
+                                  ? 0x7fc00000U : (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU)))
+                              : (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0) 
+                                  | (((0U == (0x1fU 
+                                              & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                 [1U]
+                                                 [3U] 
+                                                 >> 0xaU))) 
+                                      & (0U != (0x3ffU 
+                                                & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                [1U]
+                                                [3U]))) 
+                                     | (IData)(((0U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))))
+                                  ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                     << 0x1fU) : ((IData)(
+                                                          (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                            >> 8U) 
+                                                           | (0xffU 
+                                                              <= (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))))
+                                                   ? 
+                                                  (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU))
+                                                   : 
+                                                  ((0U 
+                                                    == (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))
+                                                    ? 
+                                                   ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                    << 0x1fU)
+                                                    : 
+                                                   (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                     << 0x1fU) 
+                                                    | ((0x7f800000U 
+                                                        & ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                           << 0x17U)) 
+                                                       | ((0x200000U 
+                                                           & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                                                           ? 
+                                                          (0x7ffffcU 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 2U))
+                                                           : 
+                                                          (0x7ffff8U 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 3U))))))))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__fp32_product 
+        = ((((0x1fU == (0x1fU & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                 [1U][4U] >> 0xaU))) 
+             & (0U != (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                       [1U][4U]))) | (IData)(((0x7c00U 
+                                               == (0x7c00U 
+                                                   & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                              & (0U 
+                                                 != 
+                                                 (0x3ffU 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))))))
+            ? 0x7fc00000U : ((((0x1fU == (0x1fU & (
+                                                   vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                   [1U]
+                                                   [4U] 
+                                                   >> 0xaU))) 
+                               & (0U == (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                         [1U][4U]))) 
+                              | (IData)((0x7c00U == 
+                                         (0x7fffU & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))
+                              ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0)
+                                  ? 0x7fc00000U : (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU)))
+                              : (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0) 
+                                  | (((0U == (0x1fU 
+                                              & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                 [1U]
+                                                 [4U] 
+                                                 >> 0xaU))) 
+                                      & (0U != (0x3ffU 
+                                                & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                [1U]
+                                                [4U]))) 
+                                     | (IData)(((0U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))))
+                                  ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                     << 0x1fU) : ((IData)(
+                                                          (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                            >> 8U) 
+                                                           | (0xffU 
+                                                              <= (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))))
+                                                   ? 
+                                                  (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU))
+                                                   : 
+                                                  ((0U 
+                                                    == (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))
+                                                    ? 
+                                                   ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                    << 0x1fU)
+                                                    : 
+                                                   (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                     << 0x1fU) 
+                                                    | ((0x7f800000U 
+                                                        & ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                           << 0x17U)) 
+                                                       | ((0x200000U 
+                                                           & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                                                           ? 
+                                                          (0x7ffffcU 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 2U))
+                                                           : 
+                                                          (0x7ffff8U 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 3U))))))))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__fp32_product 
+        = ((((0x1fU == (0x1fU & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                 [1U][5U] >> 0xaU))) 
+             & (0U != (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                       [1U][5U]))) | (IData)(((0x7c00U 
+                                               == (0x7c00U 
+                                                   & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                              & (0U 
+                                                 != 
+                                                 (0x3ffU 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))))))
+            ? 0x7fc00000U : ((((0x1fU == (0x1fU & (
+                                                   vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                   [1U]
+                                                   [5U] 
+                                                   >> 0xaU))) 
+                               & (0U == (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                         [1U][5U]))) 
+                              | (IData)((0x7c00U == 
+                                         (0x7fffU & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))
+                              ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0)
+                                  ? 0x7fc00000U : (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU)))
+                              : (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0) 
+                                  | (((0U == (0x1fU 
+                                              & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                 [1U]
+                                                 [5U] 
+                                                 >> 0xaU))) 
+                                      & (0U != (0x3ffU 
+                                                & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                [1U]
+                                                [5U]))) 
+                                     | (IData)(((0U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))))
+                                  ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                     << 0x1fU) : ((IData)(
+                                                          (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                            >> 8U) 
+                                                           | (0xffU 
+                                                              <= (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))))
+                                                   ? 
+                                                  (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU))
+                                                   : 
+                                                  ((0U 
+                                                    == (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))
+                                                    ? 
+                                                   ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                    << 0x1fU)
+                                                    : 
+                                                   (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                     << 0x1fU) 
+                                                    | ((0x7f800000U 
+                                                        & ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                           << 0x17U)) 
+                                                       | ((0x200000U 
+                                                           & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                                                           ? 
+                                                          (0x7ffffcU 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 2U))
+                                                           : 
+                                                          (0x7ffff8U 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 3U))))))))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__fp32_product 
+        = ((((0x1fU == (0x1fU & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                 [1U][6U] >> 0xaU))) 
+             & (0U != (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                       [1U][6U]))) | (IData)(((0x7c00U 
+                                               == (0x7c00U 
+                                                   & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                              & (0U 
+                                                 != 
+                                                 (0x3ffU 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))))))
+            ? 0x7fc00000U : ((((0x1fU == (0x1fU & (
+                                                   vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                   [1U]
+                                                   [6U] 
+                                                   >> 0xaU))) 
+                               & (0U == (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                         [1U][6U]))) 
+                              | (IData)((0x7c00U == 
+                                         (0x7fffU & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))
+                              ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0)
+                                  ? 0x7fc00000U : (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU)))
+                              : (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0) 
+                                  | (((0U == (0x1fU 
+                                              & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                 [1U]
+                                                 [6U] 
+                                                 >> 0xaU))) 
+                                      & (0U != (0x3ffU 
+                                                & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                [1U]
+                                                [6U]))) 
+                                     | (IData)(((0U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))))
+                                  ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                     << 0x1fU) : ((IData)(
+                                                          (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                            >> 8U) 
+                                                           | (0xffU 
+                                                              <= (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))))
+                                                   ? 
+                                                  (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU))
+                                                   : 
+                                                  ((0U 
+                                                    == (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))
+                                                    ? 
+                                                   ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                    << 0x1fU)
+                                                    : 
+                                                   (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                     << 0x1fU) 
+                                                    | ((0x7f800000U 
+                                                        & ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                           << 0x17U)) 
+                                                       | ((0x200000U 
+                                                           & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                                                           ? 
+                                                          (0x7ffffcU 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 2U))
+                                                           : 
+                                                          (0x7ffff8U 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 3U))))))))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__fp32_product 
+        = ((((0x1fU == (0x1fU & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                 [1U][7U] >> 0xaU))) 
+             & (0U != (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                       [1U][7U]))) | (IData)(((0x7c00U 
+                                               == (0x7c00U 
+                                                   & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                              & (0U 
+                                                 != 
+                                                 (0x3ffU 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))))))
+            ? 0x7fc00000U : ((((0x1fU == (0x1fU & (
+                                                   vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                   [1U]
+                                                   [7U] 
+                                                   >> 0xaU))) 
+                               & (0U == (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                         [1U][7U]))) 
+                              | (IData)((0x7c00U == 
+                                         (0x7fffU & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))
+                              ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0)
+                                  ? 0x7fc00000U : (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU)))
+                              : (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0) 
+                                  | (((0U == (0x1fU 
+                                              & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                 [1U]
+                                                 [7U] 
+                                                 >> 0xaU))) 
+                                      & (0U != (0x3ffU 
+                                                & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                [1U]
+                                                [7U]))) 
+                                     | (IData)(((0U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))))
+                                  ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                     << 0x1fU) : ((IData)(
+                                                          (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                            >> 8U) 
+                                                           | (0xffU 
+                                                              <= (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))))
+                                                   ? 
+                                                  (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU))
+                                                   : 
+                                                  ((0U 
+                                                    == (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))
+                                                    ? 
+                                                   ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                    << 0x1fU)
+                                                    : 
+                                                   (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                     << 0x1fU) 
+                                                    | ((0x7f800000U 
+                                                        & ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                           << 0x17U)) 
+                                                       | ((0x200000U 
+                                                           & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                                                           ? 
+                                                          (0x7ffffcU 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 2U))
+                                                           : 
+                                                          (0x7ffff8U 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 3U))))))))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__fp32_product 
+        = ((((0x1fU == (0x1fU & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                 [1U][8U] >> 0xaU))) 
+             & (0U != (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                       [1U][8U]))) | (IData)(((0x7c00U 
+                                               == (0x7c00U 
+                                                   & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                              & (0U 
+                                                 != 
+                                                 (0x3ffU 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))))))
+            ? 0x7fc00000U : ((((0x1fU == (0x1fU & (
+                                                   vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                   [1U]
+                                                   [8U] 
+                                                   >> 0xaU))) 
+                               & (0U == (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                         [1U][8U]))) 
+                              | (IData)((0x7c00U == 
+                                         (0x7fffU & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))
+                              ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0)
+                                  ? 0x7fc00000U : (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU)))
+                              : (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0) 
+                                  | (((0U == (0x1fU 
+                                              & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                 [1U]
+                                                 [8U] 
+                                                 >> 0xaU))) 
+                                      & (0U != (0x3ffU 
+                                                & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                [1U]
+                                                [8U]))) 
+                                     | (IData)(((0U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))))
+                                  ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                     << 0x1fU) : ((IData)(
+                                                          (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                            >> 8U) 
+                                                           | (0xffU 
+                                                              <= (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))))
+                                                   ? 
+                                                  (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU))
+                                                   : 
+                                                  ((0U 
+                                                    == (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))
+                                                    ? 
+                                                   ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                    << 0x1fU)
+                                                    : 
+                                                   (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                     << 0x1fU) 
+                                                    | ((0x7f800000U 
+                                                        & ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                           << 0x17U)) 
+                                                       | ((0x200000U 
+                                                           & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                                                           ? 
+                                                          (0x7ffffcU 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 2U))
+                                                           : 
+                                                          (0x7ffff8U 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 3U))))))))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__fp32_product 
+        = ((((0x1fU == (0x1fU & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                 [1U][9U] >> 0xaU))) 
+             & (0U != (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                       [1U][9U]))) | (IData)(((0x7c00U 
+                                               == (0x7c00U 
+                                                   & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                              & (0U 
+                                                 != 
+                                                 (0x3ffU 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))))))
+            ? 0x7fc00000U : ((((0x1fU == (0x1fU & (
+                                                   vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                   [1U]
+                                                   [9U] 
+                                                   >> 0xaU))) 
+                               & (0U == (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                         [1U][9U]))) 
+                              | (IData)((0x7c00U == 
+                                         (0x7fffU & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))
+                              ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0)
+                                  ? 0x7fc00000U : (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU)))
+                              : (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0) 
+                                  | (((0U == (0x1fU 
+                                              & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                 [1U]
+                                                 [9U] 
+                                                 >> 0xaU))) 
+                                      & (0U != (0x3ffU 
+                                                & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                [1U]
+                                                [9U]))) 
+                                     | (IData)(((0U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))))
+                                  ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                     << 0x1fU) : ((IData)(
+                                                          (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                            >> 8U) 
+                                                           | (0xffU 
+                                                              <= (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))))
+                                                   ? 
+                                                  (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU))
+                                                   : 
+                                                  ((0U 
+                                                    == (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))
+                                                    ? 
+                                                   ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                    << 0x1fU)
+                                                    : 
+                                                   (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                     << 0x1fU) 
+                                                    | ((0x7f800000U 
+                                                        & ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                           << 0x17U)) 
+                                                       | ((0x200000U 
+                                                           & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                                                           ? 
+                                                          (0x7ffffcU 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 2U))
+                                                           : 
+                                                          (0x7ffff8U 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 3U))))))))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__fp32_product 
+        = ((((0x1fU == (0x1fU & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                 [1U][0xaU] >> 0xaU))) 
+             & (0U != (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                       [1U][0xaU]))) | (IData)(((0x7c00U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))))))
+            ? 0x7fc00000U : ((((0x1fU == (0x1fU & (
+                                                   vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                   [1U]
+                                                   [0xaU] 
+                                                   >> 0xaU))) 
+                               & (0U == (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                         [1U][0xaU]))) 
+                              | (IData)((0x7c00U == 
+                                         (0x7fffU & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))
+                              ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0)
+                                  ? 0x7fc00000U : (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU)))
+                              : (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0) 
+                                  | (((0U == (0x1fU 
+                                              & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                 [1U]
+                                                 [0xaU] 
+                                                 >> 0xaU))) 
+                                      & (0U != (0x3ffU 
+                                                & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                [1U]
+                                                [0xaU]))) 
+                                     | (IData)(((0U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))))
+                                  ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                     << 0x1fU) : ((IData)(
+                                                          (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                            >> 8U) 
+                                                           | (0xffU 
+                                                              <= (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))))
+                                                   ? 
+                                                  (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU))
+                                                   : 
+                                                  ((0U 
+                                                    == (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))
+                                                    ? 
+                                                   ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                    << 0x1fU)
+                                                    : 
+                                                   (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                     << 0x1fU) 
+                                                    | ((0x7f800000U 
+                                                        & ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                           << 0x17U)) 
+                                                       | ((0x200000U 
+                                                           & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                                                           ? 
+                                                          (0x7ffffcU 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 2U))
+                                                           : 
+                                                          (0x7ffff8U 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 3U))))))))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__fp32_product 
+        = ((((0x1fU == (0x1fU & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                 [1U][0xbU] >> 0xaU))) 
+             & (0U != (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                       [1U][0xbU]))) | (IData)(((0x7c00U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))))))
+            ? 0x7fc00000U : ((((0x1fU == (0x1fU & (
+                                                   vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                   [1U]
+                                                   [0xbU] 
+                                                   >> 0xaU))) 
+                               & (0U == (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                         [1U][0xbU]))) 
+                              | (IData)((0x7c00U == 
+                                         (0x7fffU & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))
+                              ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0)
+                                  ? 0x7fc00000U : (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU)))
+                              : (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0) 
+                                  | (((0U == (0x1fU 
+                                              & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                 [1U]
+                                                 [0xbU] 
+                                                 >> 0xaU))) 
+                                      & (0U != (0x3ffU 
+                                                & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                [1U]
+                                                [0xbU]))) 
+                                     | (IData)(((0U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))))
+                                  ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                     << 0x1fU) : ((IData)(
+                                                          (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                            >> 8U) 
+                                                           | (0xffU 
+                                                              <= (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))))
+                                                   ? 
+                                                  (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU))
+                                                   : 
+                                                  ((0U 
+                                                    == (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))
+                                                    ? 
+                                                   ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                    << 0x1fU)
+                                                    : 
+                                                   (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                     << 0x1fU) 
+                                                    | ((0x7f800000U 
+                                                        & ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                           << 0x17U)) 
+                                                       | ((0x200000U 
+                                                           & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                                                           ? 
+                                                          (0x7ffffcU 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 2U))
+                                                           : 
+                                                          (0x7ffff8U 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 3U))))))))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__fp32_product 
+        = ((((0x1fU == (0x1fU & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                 [1U][0xcU] >> 0xaU))) 
+             & (0U != (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                       [1U][0xcU]))) | (IData)(((0x7c00U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))))))
+            ? 0x7fc00000U : ((((0x1fU == (0x1fU & (
+                                                   vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                   [1U]
+                                                   [0xcU] 
+                                                   >> 0xaU))) 
+                               & (0U == (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                         [1U][0xcU]))) 
+                              | (IData)((0x7c00U == 
+                                         (0x7fffU & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))
+                              ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0)
+                                  ? 0x7fc00000U : (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU)))
+                              : (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0) 
+                                  | (((0U == (0x1fU 
+                                              & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                 [1U]
+                                                 [0xcU] 
+                                                 >> 0xaU))) 
+                                      & (0U != (0x3ffU 
+                                                & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                [1U]
+                                                [0xcU]))) 
+                                     | (IData)(((0U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))))
+                                  ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                     << 0x1fU) : ((IData)(
+                                                          (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                            >> 8U) 
+                                                           | (0xffU 
+                                                              <= (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))))
+                                                   ? 
+                                                  (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU))
+                                                   : 
+                                                  ((0U 
+                                                    == (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))
+                                                    ? 
+                                                   ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                    << 0x1fU)
+                                                    : 
+                                                   (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                     << 0x1fU) 
+                                                    | ((0x7f800000U 
+                                                        & ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                           << 0x17U)) 
+                                                       | ((0x200000U 
+                                                           & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                                                           ? 
+                                                          (0x7ffffcU 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 2U))
+                                                           : 
+                                                          (0x7ffff8U 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 3U))))))))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__fp32_product 
+        = ((((0x1fU == (0x1fU & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                 [1U][0xdU] >> 0xaU))) 
+             & (0U != (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                       [1U][0xdU]))) | (IData)(((0x7c00U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))))))
+            ? 0x7fc00000U : ((((0x1fU == (0x1fU & (
+                                                   vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                   [1U]
+                                                   [0xdU] 
+                                                   >> 0xaU))) 
+                               & (0U == (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                         [1U][0xdU]))) 
+                              | (IData)((0x7c00U == 
+                                         (0x7fffU & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))
+                              ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0)
+                                  ? 0x7fc00000U : (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU)))
+                              : (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0) 
+                                  | (((0U == (0x1fU 
+                                              & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                 [1U]
+                                                 [0xdU] 
+                                                 >> 0xaU))) 
+                                      & (0U != (0x3ffU 
+                                                & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                [1U]
+                                                [0xdU]))) 
+                                     | (IData)(((0U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))))
+                                  ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                     << 0x1fU) : ((IData)(
+                                                          (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                            >> 8U) 
+                                                           | (0xffU 
+                                                              <= (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))))
+                                                   ? 
+                                                  (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU))
+                                                   : 
+                                                  ((0U 
+                                                    == (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))
+                                                    ? 
+                                                   ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                    << 0x1fU)
+                                                    : 
+                                                   (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                     << 0x1fU) 
+                                                    | ((0x7f800000U 
+                                                        & ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                           << 0x17U)) 
+                                                       | ((0x200000U 
+                                                           & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                                                           ? 
+                                                          (0x7ffffcU 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 2U))
+                                                           : 
+                                                          (0x7ffff8U 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 3U))))))))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__fp32_product 
+        = ((((0x1fU == (0x1fU & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                 [1U][0xeU] >> 0xaU))) 
+             & (0U != (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                       [1U][0xeU]))) | (IData)(((0x7c00U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))))))
+            ? 0x7fc00000U : ((((0x1fU == (0x1fU & (
+                                                   vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                   [1U]
+                                                   [0xeU] 
+                                                   >> 0xaU))) 
+                               & (0U == (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                         [1U][0xeU]))) 
+                              | (IData)((0x7c00U == 
+                                         (0x7fffU & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))
+                              ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0)
+                                  ? 0x7fc00000U : (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU)))
+                              : (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0) 
+                                  | (((0U == (0x1fU 
+                                              & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                 [1U]
+                                                 [0xeU] 
+                                                 >> 0xaU))) 
+                                      & (0U != (0x3ffU 
+                                                & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                [1U]
+                                                [0xeU]))) 
+                                     | (IData)(((0U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))))
+                                  ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                     << 0x1fU) : ((IData)(
+                                                          (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                            >> 8U) 
+                                                           | (0xffU 
+                                                              <= (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))))
+                                                   ? 
+                                                  (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU))
+                                                   : 
+                                                  ((0U 
+                                                    == (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))
+                                                    ? 
+                                                   ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                    << 0x1fU)
+                                                    : 
+                                                   (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                     << 0x1fU) 
+                                                    | ((0x7f800000U 
+                                                        & ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                           << 0x17U)) 
+                                                       | ((0x200000U 
+                                                           & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                                                           ? 
+                                                          (0x7ffffcU 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 2U))
+                                                           : 
+                                                          (0x7ffff8U 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 3U))))))))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__fp32_product 
+        = ((((0x1fU == (0x1fU & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                 [1U][0xfU] >> 0xaU))) 
+             & (0U != (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                       [1U][0xfU]))) | (IData)(((0x7c00U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))))))
+            ? 0x7fc00000U : ((((0x1fU == (0x1fU & (
+                                                   vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                   [1U]
+                                                   [0xfU] 
+                                                   >> 0xaU))) 
+                               & (0U == (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                         [1U][0xfU]))) 
+                              | (IData)((0x7c00U == 
+                                         (0x7fffU & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))
+                              ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0)
+                                  ? 0x7fc00000U : (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU)))
+                              : (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0) 
+                                  | (((0U == (0x1fU 
+                                              & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                 [1U]
+                                                 [0xfU] 
+                                                 >> 0xaU))) 
+                                      & (0U != (0x3ffU 
+                                                & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                [1U]
+                                                [0xfU]))) 
+                                     | (IData)(((0U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))))
+                                  ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                     << 0x1fU) : ((IData)(
+                                                          (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                            >> 8U) 
+                                                           | (0xffU 
+                                                              <= (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))))
+                                                   ? 
+                                                  (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU))
+                                                   : 
+                                                  ((0U 
+                                                    == (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))
+                                                    ? 
+                                                   ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                    << 0x1fU)
+                                                    : 
+                                                   (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                     << 0x1fU) 
+                                                    | ((0x7f800000U 
+                                                        & ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                           << 0x17U)) 
+                                                       | ((0x200000U 
+                                                           & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                                                           ? 
+                                                          (0x7ffffcU 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 2U))
+                                                           : 
+                                                          (0x7ffff8U 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__1__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 3U))))))))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__fp32_product 
+        = ((((0x1fU == (0x1fU & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                 [2U][0U] >> 0xaU))) 
+             & (0U != (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                       [2U][0U]))) | (IData)(((0x7c00U 
+                                               == (0x7c00U 
+                                                   & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                              & (0U 
+                                                 != 
+                                                 (0x3ffU 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))))))
+            ? 0x7fc00000U : ((((0x1fU == (0x1fU & (
+                                                   vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                   [2U]
+                                                   [0U] 
+                                                   >> 0xaU))) 
+                               & (0U == (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                         [2U][0U]))) 
+                              | (IData)((0x7c00U == 
+                                         (0x7fffU & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))
+                              ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0)
+                                  ? 0x7fc00000U : (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU)))
+                              : (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0) 
+                                  | (((0U == (0x1fU 
+                                              & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                 [2U]
+                                                 [0U] 
+                                                 >> 0xaU))) 
+                                      & (0U != (0x3ffU 
+                                                & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                [2U]
+                                                [0U]))) 
+                                     | (IData)(((0U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))))
+                                  ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                     << 0x1fU) : ((IData)(
+                                                          (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                            >> 8U) 
+                                                           | (0xffU 
+                                                              <= (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))))
+                                                   ? 
+                                                  (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU))
+                                                   : 
+                                                  ((0U 
+                                                    == (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))
+                                                    ? 
+                                                   ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                    << 0x1fU)
+                                                    : 
+                                                   (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                     << 0x1fU) 
+                                                    | ((0x7f800000U 
+                                                        & ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                           << 0x17U)) 
+                                                       | ((0x200000U 
+                                                           & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                                                           ? 
+                                                          (0x7ffffcU 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 2U))
+                                                           : 
+                                                          (0x7ffff8U 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 3U))))))))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__fp32_product 
+        = ((((0x1fU == (0x1fU & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                 [2U][1U] >> 0xaU))) 
+             & (0U != (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                       [2U][1U]))) | (IData)(((0x7c00U 
+                                               == (0x7c00U 
+                                                   & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                              & (0U 
+                                                 != 
+                                                 (0x3ffU 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))))))
+            ? 0x7fc00000U : ((((0x1fU == (0x1fU & (
+                                                   vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                   [2U]
+                                                   [1U] 
+                                                   >> 0xaU))) 
+                               & (0U == (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                         [2U][1U]))) 
+                              | (IData)((0x7c00U == 
+                                         (0x7fffU & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))
+                              ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0)
+                                  ? 0x7fc00000U : (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU)))
+                              : (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0) 
+                                  | (((0U == (0x1fU 
+                                              & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                 [2U]
+                                                 [1U] 
+                                                 >> 0xaU))) 
+                                      & (0U != (0x3ffU 
+                                                & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                [2U]
+                                                [1U]))) 
+                                     | (IData)(((0U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))))
+                                  ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                     << 0x1fU) : ((IData)(
+                                                          (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                            >> 8U) 
+                                                           | (0xffU 
+                                                              <= (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))))
+                                                   ? 
+                                                  (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU))
+                                                   : 
+                                                  ((0U 
+                                                    == (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))
+                                                    ? 
+                                                   ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                    << 0x1fU)
+                                                    : 
+                                                   (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                     << 0x1fU) 
+                                                    | ((0x7f800000U 
+                                                        & ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                           << 0x17U)) 
+                                                       | ((0x200000U 
+                                                           & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                                                           ? 
+                                                          (0x7ffffcU 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 2U))
+                                                           : 
+                                                          (0x7ffff8U 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 3U))))))))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__fp32_product 
+        = ((((0x1fU == (0x1fU & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                 [2U][2U] >> 0xaU))) 
+             & (0U != (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                       [2U][2U]))) | (IData)(((0x7c00U 
+                                               == (0x7c00U 
+                                                   & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                              & (0U 
+                                                 != 
+                                                 (0x3ffU 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))))))
+            ? 0x7fc00000U : ((((0x1fU == (0x1fU & (
+                                                   vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                   [2U]
+                                                   [2U] 
+                                                   >> 0xaU))) 
+                               & (0U == (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                         [2U][2U]))) 
+                              | (IData)((0x7c00U == 
+                                         (0x7fffU & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))
+                              ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0)
+                                  ? 0x7fc00000U : (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU)))
+                              : (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0) 
+                                  | (((0U == (0x1fU 
+                                              & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                 [2U]
+                                                 [2U] 
+                                                 >> 0xaU))) 
+                                      & (0U != (0x3ffU 
+                                                & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                [2U]
+                                                [2U]))) 
+                                     | (IData)(((0U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))))
+                                  ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                     << 0x1fU) : ((IData)(
+                                                          (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                            >> 8U) 
+                                                           | (0xffU 
+                                                              <= (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))))
+                                                   ? 
+                                                  (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU))
+                                                   : 
+                                                  ((0U 
+                                                    == (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))
+                                                    ? 
+                                                   ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                    << 0x1fU)
+                                                    : 
+                                                   (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                     << 0x1fU) 
+                                                    | ((0x7f800000U 
+                                                        & ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                           << 0x17U)) 
+                                                       | ((0x200000U 
+                                                           & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                                                           ? 
+                                                          (0x7ffffcU 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 2U))
+                                                           : 
+                                                          (0x7ffff8U 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 3U))))))))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__fp32_product 
+        = ((((0x1fU == (0x1fU & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                 [2U][3U] >> 0xaU))) 
+             & (0U != (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                       [2U][3U]))) | (IData)(((0x7c00U 
+                                               == (0x7c00U 
+                                                   & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                              & (0U 
+                                                 != 
+                                                 (0x3ffU 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))))))
+            ? 0x7fc00000U : ((((0x1fU == (0x1fU & (
+                                                   vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                   [2U]
+                                                   [3U] 
+                                                   >> 0xaU))) 
+                               & (0U == (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                         [2U][3U]))) 
+                              | (IData)((0x7c00U == 
+                                         (0x7fffU & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))
+                              ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0)
+                                  ? 0x7fc00000U : (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU)))
+                              : (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0) 
+                                  | (((0U == (0x1fU 
+                                              & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                 [2U]
+                                                 [3U] 
+                                                 >> 0xaU))) 
+                                      & (0U != (0x3ffU 
+                                                & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                [2U]
+                                                [3U]))) 
+                                     | (IData)(((0U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))))
+                                  ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                     << 0x1fU) : ((IData)(
+                                                          (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                            >> 8U) 
+                                                           | (0xffU 
+                                                              <= (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))))
+                                                   ? 
+                                                  (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU))
+                                                   : 
+                                                  ((0U 
+                                                    == (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))
+                                                    ? 
+                                                   ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                    << 0x1fU)
+                                                    : 
+                                                   (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                     << 0x1fU) 
+                                                    | ((0x7f800000U 
+                                                        & ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                           << 0x17U)) 
+                                                       | ((0x200000U 
+                                                           & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                                                           ? 
+                                                          (0x7ffffcU 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 2U))
+                                                           : 
+                                                          (0x7ffff8U 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 3U))))))))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__fp32_product 
+        = ((((0x1fU == (0x1fU & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                 [2U][4U] >> 0xaU))) 
+             & (0U != (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                       [2U][4U]))) | (IData)(((0x7c00U 
+                                               == (0x7c00U 
+                                                   & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                              & (0U 
+                                                 != 
+                                                 (0x3ffU 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))))))
+            ? 0x7fc00000U : ((((0x1fU == (0x1fU & (
+                                                   vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                   [2U]
+                                                   [4U] 
+                                                   >> 0xaU))) 
+                               & (0U == (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                         [2U][4U]))) 
+                              | (IData)((0x7c00U == 
+                                         (0x7fffU & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))
+                              ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0)
+                                  ? 0x7fc00000U : (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU)))
+                              : (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0) 
+                                  | (((0U == (0x1fU 
+                                              & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                 [2U]
+                                                 [4U] 
+                                                 >> 0xaU))) 
+                                      & (0U != (0x3ffU 
+                                                & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                [2U]
+                                                [4U]))) 
+                                     | (IData)(((0U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))))
+                                  ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                     << 0x1fU) : ((IData)(
+                                                          (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                            >> 8U) 
+                                                           | (0xffU 
+                                                              <= (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))))
+                                                   ? 
+                                                  (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU))
+                                                   : 
+                                                  ((0U 
+                                                    == (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))
+                                                    ? 
+                                                   ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                    << 0x1fU)
+                                                    : 
+                                                   (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                     << 0x1fU) 
+                                                    | ((0x7f800000U 
+                                                        & ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                           << 0x17U)) 
+                                                       | ((0x200000U 
+                                                           & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                                                           ? 
+                                                          (0x7ffffcU 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 2U))
+                                                           : 
+                                                          (0x7ffff8U 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 3U))))))))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__fp32_product 
+        = ((((0x1fU == (0x1fU & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                 [2U][5U] >> 0xaU))) 
+             & (0U != (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                       [2U][5U]))) | (IData)(((0x7c00U 
+                                               == (0x7c00U 
+                                                   & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                              & (0U 
+                                                 != 
+                                                 (0x3ffU 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))))))
+            ? 0x7fc00000U : ((((0x1fU == (0x1fU & (
+                                                   vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                   [2U]
+                                                   [5U] 
+                                                   >> 0xaU))) 
+                               & (0U == (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                         [2U][5U]))) 
+                              | (IData)((0x7c00U == 
+                                         (0x7fffU & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))
+                              ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0)
+                                  ? 0x7fc00000U : (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU)))
+                              : (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0) 
+                                  | (((0U == (0x1fU 
+                                              & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                 [2U]
+                                                 [5U] 
+                                                 >> 0xaU))) 
+                                      & (0U != (0x3ffU 
+                                                & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                [2U]
+                                                [5U]))) 
+                                     | (IData)(((0U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))))
+                                  ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                     << 0x1fU) : ((IData)(
+                                                          (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                            >> 8U) 
+                                                           | (0xffU 
+                                                              <= (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))))
+                                                   ? 
+                                                  (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU))
+                                                   : 
+                                                  ((0U 
+                                                    == (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))
+                                                    ? 
+                                                   ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                    << 0x1fU)
+                                                    : 
+                                                   (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                     << 0x1fU) 
+                                                    | ((0x7f800000U 
+                                                        & ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                           << 0x17U)) 
+                                                       | ((0x200000U 
+                                                           & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                                                           ? 
+                                                          (0x7ffffcU 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 2U))
+                                                           : 
+                                                          (0x7ffff8U 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 3U))))))))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__fp32_product 
+        = ((((0x1fU == (0x1fU & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                 [2U][6U] >> 0xaU))) 
+             & (0U != (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                       [2U][6U]))) | (IData)(((0x7c00U 
+                                               == (0x7c00U 
+                                                   & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                              & (0U 
+                                                 != 
+                                                 (0x3ffU 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))))))
+            ? 0x7fc00000U : ((((0x1fU == (0x1fU & (
+                                                   vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                   [2U]
+                                                   [6U] 
+                                                   >> 0xaU))) 
+                               & (0U == (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                         [2U][6U]))) 
+                              | (IData)((0x7c00U == 
+                                         (0x7fffU & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))
+                              ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0)
+                                  ? 0x7fc00000U : (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU)))
+                              : (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0) 
+                                  | (((0U == (0x1fU 
+                                              & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                 [2U]
+                                                 [6U] 
+                                                 >> 0xaU))) 
+                                      & (0U != (0x3ffU 
+                                                & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                [2U]
+                                                [6U]))) 
+                                     | (IData)(((0U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))))
+                                  ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                     << 0x1fU) : ((IData)(
+                                                          (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                            >> 8U) 
+                                                           | (0xffU 
+                                                              <= (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))))
+                                                   ? 
+                                                  (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU))
+                                                   : 
+                                                  ((0U 
+                                                    == (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))
+                                                    ? 
+                                                   ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                    << 0x1fU)
+                                                    : 
+                                                   (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                     << 0x1fU) 
+                                                    | ((0x7f800000U 
+                                                        & ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                           << 0x17U)) 
+                                                       | ((0x200000U 
+                                                           & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                                                           ? 
+                                                          (0x7ffffcU 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 2U))
+                                                           : 
+                                                          (0x7ffff8U 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 3U))))))))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__fp32_product 
+        = ((((0x1fU == (0x1fU & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                 [2U][7U] >> 0xaU))) 
+             & (0U != (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                       [2U][7U]))) | (IData)(((0x7c00U 
+                                               == (0x7c00U 
+                                                   & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                              & (0U 
+                                                 != 
+                                                 (0x3ffU 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))))))
+            ? 0x7fc00000U : ((((0x1fU == (0x1fU & (
+                                                   vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                   [2U]
+                                                   [7U] 
+                                                   >> 0xaU))) 
+                               & (0U == (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                         [2U][7U]))) 
+                              | (IData)((0x7c00U == 
+                                         (0x7fffU & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))
+                              ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0)
+                                  ? 0x7fc00000U : (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU)))
+                              : (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0) 
+                                  | (((0U == (0x1fU 
+                                              & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                 [2U]
+                                                 [7U] 
+                                                 >> 0xaU))) 
+                                      & (0U != (0x3ffU 
+                                                & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                [2U]
+                                                [7U]))) 
+                                     | (IData)(((0U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))))
+                                  ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                     << 0x1fU) : ((IData)(
+                                                          (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                            >> 8U) 
+                                                           | (0xffU 
+                                                              <= (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))))
+                                                   ? 
+                                                  (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU))
+                                                   : 
+                                                  ((0U 
+                                                    == (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))
+                                                    ? 
+                                                   ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                    << 0x1fU)
+                                                    : 
+                                                   (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                     << 0x1fU) 
+                                                    | ((0x7f800000U 
+                                                        & ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                           << 0x17U)) 
+                                                       | ((0x200000U 
+                                                           & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                                                           ? 
+                                                          (0x7ffffcU 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 2U))
+                                                           : 
+                                                          (0x7ffff8U 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 3U))))))))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__fp32_product 
+        = ((((0x1fU == (0x1fU & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                 [2U][8U] >> 0xaU))) 
+             & (0U != (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                       [2U][8U]))) | (IData)(((0x7c00U 
+                                               == (0x7c00U 
+                                                   & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                              & (0U 
+                                                 != 
+                                                 (0x3ffU 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))))))
+            ? 0x7fc00000U : ((((0x1fU == (0x1fU & (
+                                                   vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                   [2U]
+                                                   [8U] 
+                                                   >> 0xaU))) 
+                               & (0U == (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                         [2U][8U]))) 
+                              | (IData)((0x7c00U == 
+                                         (0x7fffU & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))
+                              ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0)
+                                  ? 0x7fc00000U : (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU)))
+                              : (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0) 
+                                  | (((0U == (0x1fU 
+                                              & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                 [2U]
+                                                 [8U] 
+                                                 >> 0xaU))) 
+                                      & (0U != (0x3ffU 
+                                                & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                [2U]
+                                                [8U]))) 
+                                     | (IData)(((0U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))))
+                                  ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                     << 0x1fU) : ((IData)(
+                                                          (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                            >> 8U) 
+                                                           | (0xffU 
+                                                              <= (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))))
+                                                   ? 
+                                                  (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU))
+                                                   : 
+                                                  ((0U 
+                                                    == (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))
+                                                    ? 
+                                                   ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                    << 0x1fU)
+                                                    : 
+                                                   (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                     << 0x1fU) 
+                                                    | ((0x7f800000U 
+                                                        & ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                           << 0x17U)) 
+                                                       | ((0x200000U 
+                                                           & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                                                           ? 
+                                                          (0x7ffffcU 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 2U))
+                                                           : 
+                                                          (0x7ffff8U 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 3U))))))))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__fp32_product 
+        = ((((0x1fU == (0x1fU & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                 [2U][9U] >> 0xaU))) 
+             & (0U != (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                       [2U][9U]))) | (IData)(((0x7c00U 
+                                               == (0x7c00U 
+                                                   & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                              & (0U 
+                                                 != 
+                                                 (0x3ffU 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))))))
+            ? 0x7fc00000U : ((((0x1fU == (0x1fU & (
+                                                   vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                   [2U]
+                                                   [9U] 
+                                                   >> 0xaU))) 
+                               & (0U == (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                         [2U][9U]))) 
+                              | (IData)((0x7c00U == 
+                                         (0x7fffU & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))
+                              ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0)
+                                  ? 0x7fc00000U : (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU)))
+                              : (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0) 
+                                  | (((0U == (0x1fU 
+                                              & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                 [2U]
+                                                 [9U] 
+                                                 >> 0xaU))) 
+                                      & (0U != (0x3ffU 
+                                                & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                [2U]
+                                                [9U]))) 
+                                     | (IData)(((0U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))))
+                                  ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                     << 0x1fU) : ((IData)(
+                                                          (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                            >> 8U) 
+                                                           | (0xffU 
+                                                              <= (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))))
+                                                   ? 
+                                                  (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU))
+                                                   : 
+                                                  ((0U 
+                                                    == (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))
+                                                    ? 
+                                                   ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                    << 0x1fU)
+                                                    : 
+                                                   (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                     << 0x1fU) 
+                                                    | ((0x7f800000U 
+                                                        & ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                           << 0x17U)) 
+                                                       | ((0x200000U 
+                                                           & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                                                           ? 
+                                                          (0x7ffffcU 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 2U))
+                                                           : 
+                                                          (0x7ffff8U 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 3U))))))))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__fp32_product 
+        = ((((0x1fU == (0x1fU & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                 [2U][0xaU] >> 0xaU))) 
+             & (0U != (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                       [2U][0xaU]))) | (IData)(((0x7c00U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))))))
+            ? 0x7fc00000U : ((((0x1fU == (0x1fU & (
+                                                   vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                   [2U]
+                                                   [0xaU] 
+                                                   >> 0xaU))) 
+                               & (0U == (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                         [2U][0xaU]))) 
+                              | (IData)((0x7c00U == 
+                                         (0x7fffU & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))
+                              ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0)
+                                  ? 0x7fc00000U : (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU)))
+                              : (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0) 
+                                  | (((0U == (0x1fU 
+                                              & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                 [2U]
+                                                 [0xaU] 
+                                                 >> 0xaU))) 
+                                      & (0U != (0x3ffU 
+                                                & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                [2U]
+                                                [0xaU]))) 
+                                     | (IData)(((0U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))))
+                                  ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                     << 0x1fU) : ((IData)(
+                                                          (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                            >> 8U) 
+                                                           | (0xffU 
+                                                              <= (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))))
+                                                   ? 
+                                                  (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU))
+                                                   : 
+                                                  ((0U 
+                                                    == (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))
+                                                    ? 
+                                                   ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                    << 0x1fU)
+                                                    : 
+                                                   (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                     << 0x1fU) 
+                                                    | ((0x7f800000U 
+                                                        & ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                           << 0x17U)) 
+                                                       | ((0x200000U 
+                                                           & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                                                           ? 
+                                                          (0x7ffffcU 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 2U))
+                                                           : 
+                                                          (0x7ffff8U 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 3U))))))))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__fp32_product 
+        = ((((0x1fU == (0x1fU & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                 [2U][0xbU] >> 0xaU))) 
+             & (0U != (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                       [2U][0xbU]))) | (IData)(((0x7c00U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))))))
+            ? 0x7fc00000U : ((((0x1fU == (0x1fU & (
+                                                   vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                   [2U]
+                                                   [0xbU] 
+                                                   >> 0xaU))) 
+                               & (0U == (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                         [2U][0xbU]))) 
+                              | (IData)((0x7c00U == 
+                                         (0x7fffU & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))
+                              ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0)
+                                  ? 0x7fc00000U : (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU)))
+                              : (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0) 
+                                  | (((0U == (0x1fU 
+                                              & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                 [2U]
+                                                 [0xbU] 
+                                                 >> 0xaU))) 
+                                      & (0U != (0x3ffU 
+                                                & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                [2U]
+                                                [0xbU]))) 
+                                     | (IData)(((0U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))))
+                                  ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                     << 0x1fU) : ((IData)(
+                                                          (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                            >> 8U) 
+                                                           | (0xffU 
+                                                              <= (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))))
+                                                   ? 
+                                                  (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU))
+                                                   : 
+                                                  ((0U 
+                                                    == (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))
+                                                    ? 
+                                                   ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                    << 0x1fU)
+                                                    : 
+                                                   (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                     << 0x1fU) 
+                                                    | ((0x7f800000U 
+                                                        & ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                           << 0x17U)) 
+                                                       | ((0x200000U 
+                                                           & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                                                           ? 
+                                                          (0x7ffffcU 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 2U))
+                                                           : 
+                                                          (0x7ffff8U 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 3U))))))))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__fp32_product 
+        = ((((0x1fU == (0x1fU & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                 [2U][0xcU] >> 0xaU))) 
+             & (0U != (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                       [2U][0xcU]))) | (IData)(((0x7c00U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))))))
+            ? 0x7fc00000U : ((((0x1fU == (0x1fU & (
+                                                   vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                   [2U]
+                                                   [0xcU] 
+                                                   >> 0xaU))) 
+                               & (0U == (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                         [2U][0xcU]))) 
+                              | (IData)((0x7c00U == 
+                                         (0x7fffU & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))
+                              ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0)
+                                  ? 0x7fc00000U : (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU)))
+                              : (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0) 
+                                  | (((0U == (0x1fU 
+                                              & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                 [2U]
+                                                 [0xcU] 
+                                                 >> 0xaU))) 
+                                      & (0U != (0x3ffU 
+                                                & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                [2U]
+                                                [0xcU]))) 
+                                     | (IData)(((0U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))))
+                                  ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                     << 0x1fU) : ((IData)(
+                                                          (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                            >> 8U) 
+                                                           | (0xffU 
+                                                              <= (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))))
+                                                   ? 
+                                                  (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU))
+                                                   : 
+                                                  ((0U 
+                                                    == (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))
+                                                    ? 
+                                                   ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                    << 0x1fU)
+                                                    : 
+                                                   (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                     << 0x1fU) 
+                                                    | ((0x7f800000U 
+                                                        & ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                           << 0x17U)) 
+                                                       | ((0x200000U 
+                                                           & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                                                           ? 
+                                                          (0x7ffffcU 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 2U))
+                                                           : 
+                                                          (0x7ffff8U 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 3U))))))))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__fp32_product 
+        = ((((0x1fU == (0x1fU & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                 [2U][0xdU] >> 0xaU))) 
+             & (0U != (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                       [2U][0xdU]))) | (IData)(((0x7c00U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))))))
+            ? 0x7fc00000U : ((((0x1fU == (0x1fU & (
+                                                   vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                   [2U]
+                                                   [0xdU] 
+                                                   >> 0xaU))) 
+                               & (0U == (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                         [2U][0xdU]))) 
+                              | (IData)((0x7c00U == 
+                                         (0x7fffU & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))
+                              ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0)
+                                  ? 0x7fc00000U : (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU)))
+                              : (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0) 
+                                  | (((0U == (0x1fU 
+                                              & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                 [2U]
+                                                 [0xdU] 
+                                                 >> 0xaU))) 
+                                      & (0U != (0x3ffU 
+                                                & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                [2U]
+                                                [0xdU]))) 
+                                     | (IData)(((0U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))))
+                                  ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                     << 0x1fU) : ((IData)(
+                                                          (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                            >> 8U) 
+                                                           | (0xffU 
+                                                              <= (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))))
+                                                   ? 
+                                                  (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU))
+                                                   : 
+                                                  ((0U 
+                                                    == (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))
+                                                    ? 
+                                                   ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                    << 0x1fU)
+                                                    : 
+                                                   (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                     << 0x1fU) 
+                                                    | ((0x7f800000U 
+                                                        & ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                           << 0x17U)) 
+                                                       | ((0x200000U 
+                                                           & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                                                           ? 
+                                                          (0x7ffffcU 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 2U))
+                                                           : 
+                                                          (0x7ffff8U 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 3U))))))))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__fp32_product 
+        = ((((0x1fU == (0x1fU & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                 [2U][0xeU] >> 0xaU))) 
+             & (0U != (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                       [2U][0xeU]))) | (IData)(((0x7c00U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))))))
+            ? 0x7fc00000U : ((((0x1fU == (0x1fU & (
+                                                   vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                   [2U]
+                                                   [0xeU] 
+                                                   >> 0xaU))) 
+                               & (0U == (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                         [2U][0xeU]))) 
+                              | (IData)((0x7c00U == 
+                                         (0x7fffU & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))
+                              ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0)
+                                  ? 0x7fc00000U : (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU)))
+                              : (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0) 
+                                  | (((0U == (0x1fU 
+                                              & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                 [2U]
+                                                 [0xeU] 
+                                                 >> 0xaU))) 
+                                      & (0U != (0x3ffU 
+                                                & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                [2U]
+                                                [0xeU]))) 
+                                     | (IData)(((0U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))))
+                                  ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                     << 0x1fU) : ((IData)(
+                                                          (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                            >> 8U) 
+                                                           | (0xffU 
+                                                              <= (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))))
+                                                   ? 
+                                                  (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU))
+                                                   : 
+                                                  ((0U 
+                                                    == (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))
+                                                    ? 
+                                                   ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                    << 0x1fU)
+                                                    : 
+                                                   (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                     << 0x1fU) 
+                                                    | ((0x7f800000U 
+                                                        & ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                           << 0x17U)) 
+                                                       | ((0x200000U 
+                                                           & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                                                           ? 
+                                                          (0x7ffffcU 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 2U))
+                                                           : 
+                                                          (0x7ffff8U 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 3U))))))))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__fp32_product 
+        = ((((0x1fU == (0x1fU & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                 [2U][0xfU] >> 0xaU))) 
+             & (0U != (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                       [2U][0xfU]))) | (IData)(((0x7c00U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))))))
+            ? 0x7fc00000U : ((((0x1fU == (0x1fU & (
+                                                   vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                   [2U]
+                                                   [0xfU] 
+                                                   >> 0xaU))) 
+                               & (0U == (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                         [2U][0xfU]))) 
+                              | (IData)((0x7c00U == 
+                                         (0x7fffU & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))
+                              ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0)
+                                  ? 0x7fc00000U : (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU)))
+                              : (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0) 
+                                  | (((0U == (0x1fU 
+                                              & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                 [2U]
+                                                 [0xfU] 
+                                                 >> 0xaU))) 
+                                      & (0U != (0x3ffU 
+                                                & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                [2U]
+                                                [0xfU]))) 
+                                     | (IData)(((0U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))))
+                                  ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                     << 0x1fU) : ((IData)(
+                                                          (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                            >> 8U) 
+                                                           | (0xffU 
+                                                              <= (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))))
+                                                   ? 
+                                                  (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU))
+                                                   : 
+                                                  ((0U 
+                                                    == (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))
+                                                    ? 
+                                                   ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                    << 0x1fU)
+                                                    : 
+                                                   (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                     << 0x1fU) 
+                                                    | ((0x7f800000U 
+                                                        & ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                           << 0x17U)) 
+                                                       | ((0x200000U 
+                                                           & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                                                           ? 
+                                                          (0x7ffffcU 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 2U))
+                                                           : 
+                                                          (0x7ffff8U 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__2__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 3U))))))))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__fp32_product 
+        = ((((0x1fU == (0x1fU & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                 [3U][0U] >> 0xaU))) 
+             & (0U != (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                       [3U][0U]))) | (IData)(((0x7c00U 
+                                               == (0x7c00U 
+                                                   & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                              & (0U 
+                                                 != 
+                                                 (0x3ffU 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))))))
+            ? 0x7fc00000U : ((((0x1fU == (0x1fU & (
+                                                   vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                   [3U]
+                                                   [0U] 
+                                                   >> 0xaU))) 
+                               & (0U == (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                         [3U][0U]))) 
+                              | (IData)((0x7c00U == 
+                                         (0x7fffU & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))
+                              ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0)
+                                  ? 0x7fc00000U : (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU)))
+                              : (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0) 
+                                  | (((0U == (0x1fU 
+                                              & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                 [3U]
+                                                 [0U] 
+                                                 >> 0xaU))) 
+                                      & (0U != (0x3ffU 
+                                                & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                [3U]
+                                                [0U]))) 
+                                     | (IData)(((0U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))))
+                                  ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                     << 0x1fU) : ((IData)(
+                                                          (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                            >> 8U) 
+                                                           | (0xffU 
+                                                              <= (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))))
+                                                   ? 
+                                                  (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU))
+                                                   : 
+                                                  ((0U 
+                                                    == (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))
+                                                    ? 
+                                                   ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                    << 0x1fU)
+                                                    : 
+                                                   (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                     << 0x1fU) 
+                                                    | ((0x7f800000U 
+                                                        & ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                           << 0x17U)) 
+                                                       | ((0x200000U 
+                                                           & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                                                           ? 
+                                                          (0x7ffffcU 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 2U))
+                                                           : 
+                                                          (0x7ffff8U 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 3U))))))))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__fp32_product 
+        = ((((0x1fU == (0x1fU & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                 [3U][1U] >> 0xaU))) 
+             & (0U != (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                       [3U][1U]))) | (IData)(((0x7c00U 
+                                               == (0x7c00U 
+                                                   & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                              & (0U 
+                                                 != 
+                                                 (0x3ffU 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))))))
+            ? 0x7fc00000U : ((((0x1fU == (0x1fU & (
+                                                   vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                   [3U]
+                                                   [1U] 
+                                                   >> 0xaU))) 
+                               & (0U == (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                         [3U][1U]))) 
+                              | (IData)((0x7c00U == 
+                                         (0x7fffU & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))
+                              ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0)
+                                  ? 0x7fc00000U : (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU)))
+                              : (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0) 
+                                  | (((0U == (0x1fU 
+                                              & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                 [3U]
+                                                 [1U] 
+                                                 >> 0xaU))) 
+                                      & (0U != (0x3ffU 
+                                                & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                [3U]
+                                                [1U]))) 
+                                     | (IData)(((0U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))))
+                                  ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                     << 0x1fU) : ((IData)(
+                                                          (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                            >> 8U) 
+                                                           | (0xffU 
+                                                              <= (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))))
+                                                   ? 
+                                                  (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU))
+                                                   : 
+                                                  ((0U 
+                                                    == (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))
+                                                    ? 
+                                                   ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                    << 0x1fU)
+                                                    : 
+                                                   (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                     << 0x1fU) 
+                                                    | ((0x7f800000U 
+                                                        & ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                           << 0x17U)) 
+                                                       | ((0x200000U 
+                                                           & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                                                           ? 
+                                                          (0x7ffffcU 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 2U))
+                                                           : 
+                                                          (0x7ffff8U 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 3U))))))))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__fp32_product 
+        = ((((0x1fU == (0x1fU & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                 [3U][2U] >> 0xaU))) 
+             & (0U != (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                       [3U][2U]))) | (IData)(((0x7c00U 
+                                               == (0x7c00U 
+                                                   & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                              & (0U 
+                                                 != 
+                                                 (0x3ffU 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))))))
+            ? 0x7fc00000U : ((((0x1fU == (0x1fU & (
+                                                   vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                   [3U]
+                                                   [2U] 
+                                                   >> 0xaU))) 
+                               & (0U == (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                         [3U][2U]))) 
+                              | (IData)((0x7c00U == 
+                                         (0x7fffU & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))
+                              ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0)
+                                  ? 0x7fc00000U : (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU)))
+                              : (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0) 
+                                  | (((0U == (0x1fU 
+                                              & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                 [3U]
+                                                 [2U] 
+                                                 >> 0xaU))) 
+                                      & (0U != (0x3ffU 
+                                                & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                [3U]
+                                                [2U]))) 
+                                     | (IData)(((0U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))))
+                                  ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                     << 0x1fU) : ((IData)(
+                                                          (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                            >> 8U) 
+                                                           | (0xffU 
+                                                              <= (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))))
+                                                   ? 
+                                                  (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU))
+                                                   : 
+                                                  ((0U 
+                                                    == (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))
+                                                    ? 
+                                                   ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                    << 0x1fU)
+                                                    : 
+                                                   (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                     << 0x1fU) 
+                                                    | ((0x7f800000U 
+                                                        & ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                           << 0x17U)) 
+                                                       | ((0x200000U 
+                                                           & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                                                           ? 
+                                                          (0x7ffffcU 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 2U))
+                                                           : 
+                                                          (0x7ffff8U 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 3U))))))))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__fp32_product 
+        = ((((0x1fU == (0x1fU & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                 [3U][3U] >> 0xaU))) 
+             & (0U != (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                       [3U][3U]))) | (IData)(((0x7c00U 
+                                               == (0x7c00U 
+                                                   & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                              & (0U 
+                                                 != 
+                                                 (0x3ffU 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))))))
+            ? 0x7fc00000U : ((((0x1fU == (0x1fU & (
+                                                   vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                   [3U]
+                                                   [3U] 
+                                                   >> 0xaU))) 
+                               & (0U == (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                         [3U][3U]))) 
+                              | (IData)((0x7c00U == 
+                                         (0x7fffU & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))
+                              ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0)
+                                  ? 0x7fc00000U : (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU)))
+                              : (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0) 
+                                  | (((0U == (0x1fU 
+                                              & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                 [3U]
+                                                 [3U] 
+                                                 >> 0xaU))) 
+                                      & (0U != (0x3ffU 
+                                                & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                [3U]
+                                                [3U]))) 
+                                     | (IData)(((0U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))))
+                                  ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                     << 0x1fU) : ((IData)(
+                                                          (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                            >> 8U) 
+                                                           | (0xffU 
+                                                              <= (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))))
+                                                   ? 
+                                                  (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU))
+                                                   : 
+                                                  ((0U 
+                                                    == (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))
+                                                    ? 
+                                                   ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                    << 0x1fU)
+                                                    : 
+                                                   (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                     << 0x1fU) 
+                                                    | ((0x7f800000U 
+                                                        & ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                           << 0x17U)) 
+                                                       | ((0x200000U 
+                                                           & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                                                           ? 
+                                                          (0x7ffffcU 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 2U))
+                                                           : 
+                                                          (0x7ffff8U 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 3U))))))))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__fp32_product 
+        = ((((0x1fU == (0x1fU & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                 [3U][4U] >> 0xaU))) 
+             & (0U != (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                       [3U][4U]))) | (IData)(((0x7c00U 
+                                               == (0x7c00U 
+                                                   & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                              & (0U 
+                                                 != 
+                                                 (0x3ffU 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))))))
+            ? 0x7fc00000U : ((((0x1fU == (0x1fU & (
+                                                   vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                   [3U]
+                                                   [4U] 
+                                                   >> 0xaU))) 
+                               & (0U == (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                         [3U][4U]))) 
+                              | (IData)((0x7c00U == 
+                                         (0x7fffU & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))
+                              ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0)
+                                  ? 0x7fc00000U : (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU)))
+                              : (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0) 
+                                  | (((0U == (0x1fU 
+                                              & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                 [3U]
+                                                 [4U] 
+                                                 >> 0xaU))) 
+                                      & (0U != (0x3ffU 
+                                                & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                [3U]
+                                                [4U]))) 
+                                     | (IData)(((0U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))))
+                                  ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                     << 0x1fU) : ((IData)(
+                                                          (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                            >> 8U) 
+                                                           | (0xffU 
+                                                              <= (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))))
+                                                   ? 
+                                                  (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU))
+                                                   : 
+                                                  ((0U 
+                                                    == (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))
+                                                    ? 
+                                                   ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                    << 0x1fU)
+                                                    : 
+                                                   (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                     << 0x1fU) 
+                                                    | ((0x7f800000U 
+                                                        & ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                           << 0x17U)) 
+                                                       | ((0x200000U 
+                                                           & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                                                           ? 
+                                                          (0x7ffffcU 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 2U))
+                                                           : 
+                                                          (0x7ffff8U 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 3U))))))))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__fp32_product 
+        = ((((0x1fU == (0x1fU & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                 [3U][5U] >> 0xaU))) 
+             & (0U != (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                       [3U][5U]))) | (IData)(((0x7c00U 
+                                               == (0x7c00U 
+                                                   & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                              & (0U 
+                                                 != 
+                                                 (0x3ffU 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))))))
+            ? 0x7fc00000U : ((((0x1fU == (0x1fU & (
+                                                   vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                   [3U]
+                                                   [5U] 
+                                                   >> 0xaU))) 
+                               & (0U == (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                         [3U][5U]))) 
+                              | (IData)((0x7c00U == 
+                                         (0x7fffU & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))
+                              ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0)
+                                  ? 0x7fc00000U : (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU)))
+                              : (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0) 
+                                  | (((0U == (0x1fU 
+                                              & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                 [3U]
+                                                 [5U] 
+                                                 >> 0xaU))) 
+                                      & (0U != (0x3ffU 
+                                                & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                [3U]
+                                                [5U]))) 
+                                     | (IData)(((0U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))))
+                                  ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                     << 0x1fU) : ((IData)(
+                                                          (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                            >> 8U) 
+                                                           | (0xffU 
+                                                              <= (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))))
+                                                   ? 
+                                                  (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU))
+                                                   : 
+                                                  ((0U 
+                                                    == (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))
+                                                    ? 
+                                                   ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                    << 0x1fU)
+                                                    : 
+                                                   (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                     << 0x1fU) 
+                                                    | ((0x7f800000U 
+                                                        & ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                           << 0x17U)) 
+                                                       | ((0x200000U 
+                                                           & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                                                           ? 
+                                                          (0x7ffffcU 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 2U))
+                                                           : 
+                                                          (0x7ffff8U 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 3U))))))))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__fp32_product 
+        = ((((0x1fU == (0x1fU & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                 [3U][6U] >> 0xaU))) 
+             & (0U != (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                       [3U][6U]))) | (IData)(((0x7c00U 
+                                               == (0x7c00U 
+                                                   & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                              & (0U 
+                                                 != 
+                                                 (0x3ffU 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))))))
+            ? 0x7fc00000U : ((((0x1fU == (0x1fU & (
+                                                   vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                   [3U]
+                                                   [6U] 
+                                                   >> 0xaU))) 
+                               & (0U == (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                         [3U][6U]))) 
+                              | (IData)((0x7c00U == 
+                                         (0x7fffU & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))
+                              ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0)
+                                  ? 0x7fc00000U : (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU)))
+                              : (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0) 
+                                  | (((0U == (0x1fU 
+                                              & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                 [3U]
+                                                 [6U] 
+                                                 >> 0xaU))) 
+                                      & (0U != (0x3ffU 
+                                                & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                [3U]
+                                                [6U]))) 
+                                     | (IData)(((0U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))))
+                                  ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                     << 0x1fU) : ((IData)(
+                                                          (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                            >> 8U) 
+                                                           | (0xffU 
+                                                              <= (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))))
+                                                   ? 
+                                                  (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU))
+                                                   : 
+                                                  ((0U 
+                                                    == (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))
+                                                    ? 
+                                                   ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                    << 0x1fU)
+                                                    : 
+                                                   (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                     << 0x1fU) 
+                                                    | ((0x7f800000U 
+                                                        & ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                           << 0x17U)) 
+                                                       | ((0x200000U 
+                                                           & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                                                           ? 
+                                                          (0x7ffffcU 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 2U))
+                                                           : 
+                                                          (0x7ffff8U 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 3U))))))))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__fp32_product 
+        = ((((0x1fU == (0x1fU & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                 [3U][7U] >> 0xaU))) 
+             & (0U != (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                       [3U][7U]))) | (IData)(((0x7c00U 
+                                               == (0x7c00U 
+                                                   & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                              & (0U 
+                                                 != 
+                                                 (0x3ffU 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))))))
+            ? 0x7fc00000U : ((((0x1fU == (0x1fU & (
+                                                   vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                   [3U]
+                                                   [7U] 
+                                                   >> 0xaU))) 
+                               & (0U == (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                         [3U][7U]))) 
+                              | (IData)((0x7c00U == 
+                                         (0x7fffU & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))
+                              ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0)
+                                  ? 0x7fc00000U : (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU)))
+                              : (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0) 
+                                  | (((0U == (0x1fU 
+                                              & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                 [3U]
+                                                 [7U] 
+                                                 >> 0xaU))) 
+                                      & (0U != (0x3ffU 
+                                                & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                [3U]
+                                                [7U]))) 
+                                     | (IData)(((0U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))))
+                                  ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                     << 0x1fU) : ((IData)(
+                                                          (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                            >> 8U) 
+                                                           | (0xffU 
+                                                              <= (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))))
+                                                   ? 
+                                                  (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU))
+                                                   : 
+                                                  ((0U 
+                                                    == (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))
+                                                    ? 
+                                                   ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                    << 0x1fU)
+                                                    : 
+                                                   (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                     << 0x1fU) 
+                                                    | ((0x7f800000U 
+                                                        & ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                           << 0x17U)) 
+                                                       | ((0x200000U 
+                                                           & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                                                           ? 
+                                                          (0x7ffffcU 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 2U))
+                                                           : 
+                                                          (0x7ffff8U 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 3U))))))))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__fp32_product 
+        = ((((0x1fU == (0x1fU & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                 [3U][8U] >> 0xaU))) 
+             & (0U != (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                       [3U][8U]))) | (IData)(((0x7c00U 
+                                               == (0x7c00U 
+                                                   & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                              & (0U 
+                                                 != 
+                                                 (0x3ffU 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))))))
+            ? 0x7fc00000U : ((((0x1fU == (0x1fU & (
+                                                   vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                   [3U]
+                                                   [8U] 
+                                                   >> 0xaU))) 
+                               & (0U == (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                         [3U][8U]))) 
+                              | (IData)((0x7c00U == 
+                                         (0x7fffU & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))
+                              ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0)
+                                  ? 0x7fc00000U : (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU)))
+                              : (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0) 
+                                  | (((0U == (0x1fU 
+                                              & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                 [3U]
+                                                 [8U] 
+                                                 >> 0xaU))) 
+                                      & (0U != (0x3ffU 
+                                                & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                [3U]
+                                                [8U]))) 
+                                     | (IData)(((0U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))))
+                                  ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                     << 0x1fU) : ((IData)(
+                                                          (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                            >> 8U) 
+                                                           | (0xffU 
+                                                              <= (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))))
+                                                   ? 
+                                                  (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU))
+                                                   : 
+                                                  ((0U 
+                                                    == (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))
+                                                    ? 
+                                                   ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                    << 0x1fU)
+                                                    : 
+                                                   (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                     << 0x1fU) 
+                                                    | ((0x7f800000U 
+                                                        & ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                           << 0x17U)) 
+                                                       | ((0x200000U 
+                                                           & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                                                           ? 
+                                                          (0x7ffffcU 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 2U))
+                                                           : 
+                                                          (0x7ffff8U 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 3U))))))))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__fp32_product 
+        = ((((0x1fU == (0x1fU & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                 [3U][9U] >> 0xaU))) 
+             & (0U != (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                       [3U][9U]))) | (IData)(((0x7c00U 
+                                               == (0x7c00U 
+                                                   & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                              & (0U 
+                                                 != 
+                                                 (0x3ffU 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))))))
+            ? 0x7fc00000U : ((((0x1fU == (0x1fU & (
+                                                   vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                   [3U]
+                                                   [9U] 
+                                                   >> 0xaU))) 
+                               & (0U == (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                         [3U][9U]))) 
+                              | (IData)((0x7c00U == 
+                                         (0x7fffU & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))
+                              ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0)
+                                  ? 0x7fc00000U : (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU)))
+                              : (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0) 
+                                  | (((0U == (0x1fU 
+                                              & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                 [3U]
+                                                 [9U] 
+                                                 >> 0xaU))) 
+                                      & (0U != (0x3ffU 
+                                                & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                [3U]
+                                                [9U]))) 
+                                     | (IData)(((0U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))))
+                                  ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                     << 0x1fU) : ((IData)(
+                                                          (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                            >> 8U) 
+                                                           | (0xffU 
+                                                              <= (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))))
+                                                   ? 
+                                                  (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU))
+                                                   : 
+                                                  ((0U 
+                                                    == (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))
+                                                    ? 
+                                                   ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                    << 0x1fU)
+                                                    : 
+                                                   (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                     << 0x1fU) 
+                                                    | ((0x7f800000U 
+                                                        & ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                           << 0x17U)) 
+                                                       | ((0x200000U 
+                                                           & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                                                           ? 
+                                                          (0x7ffffcU 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 2U))
+                                                           : 
+                                                          (0x7ffff8U 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 3U))))))))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__fp32_product 
+        = ((((0x1fU == (0x1fU & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                 [3U][0xaU] >> 0xaU))) 
+             & (0U != (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                       [3U][0xaU]))) | (IData)(((0x7c00U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))))))
+            ? 0x7fc00000U : ((((0x1fU == (0x1fU & (
+                                                   vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                   [3U]
+                                                   [0xaU] 
+                                                   >> 0xaU))) 
+                               & (0U == (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                         [3U][0xaU]))) 
+                              | (IData)((0x7c00U == 
+                                         (0x7fffU & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))
+                              ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0)
+                                  ? 0x7fc00000U : (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU)))
+                              : (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0) 
+                                  | (((0U == (0x1fU 
+                                              & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                 [3U]
+                                                 [0xaU] 
+                                                 >> 0xaU))) 
+                                      & (0U != (0x3ffU 
+                                                & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                [3U]
+                                                [0xaU]))) 
+                                     | (IData)(((0U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))))
+                                  ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                     << 0x1fU) : ((IData)(
+                                                          (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                            >> 8U) 
+                                                           | (0xffU 
+                                                              <= (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))))
+                                                   ? 
+                                                  (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU))
+                                                   : 
+                                                  ((0U 
+                                                    == (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))
+                                                    ? 
+                                                   ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                    << 0x1fU)
+                                                    : 
+                                                   (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                     << 0x1fU) 
+                                                    | ((0x7f800000U 
+                                                        & ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                           << 0x17U)) 
+                                                       | ((0x200000U 
+                                                           & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                                                           ? 
+                                                          (0x7ffffcU 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 2U))
+                                                           : 
+                                                          (0x7ffff8U 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 3U))))))))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__fp32_product 
+        = ((((0x1fU == (0x1fU & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                 [3U][0xbU] >> 0xaU))) 
+             & (0U != (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                       [3U][0xbU]))) | (IData)(((0x7c00U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))))))
+            ? 0x7fc00000U : ((((0x1fU == (0x1fU & (
+                                                   vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                   [3U]
+                                                   [0xbU] 
+                                                   >> 0xaU))) 
+                               & (0U == (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                         [3U][0xbU]))) 
+                              | (IData)((0x7c00U == 
+                                         (0x7fffU & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))
+                              ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0)
+                                  ? 0x7fc00000U : (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU)))
+                              : (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0) 
+                                  | (((0U == (0x1fU 
+                                              & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                 [3U]
+                                                 [0xbU] 
+                                                 >> 0xaU))) 
+                                      & (0U != (0x3ffU 
+                                                & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                [3U]
+                                                [0xbU]))) 
+                                     | (IData)(((0U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))))
+                                  ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                     << 0x1fU) : ((IData)(
+                                                          (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                            >> 8U) 
+                                                           | (0xffU 
+                                                              <= (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))))
+                                                   ? 
+                                                  (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU))
+                                                   : 
+                                                  ((0U 
+                                                    == (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))
+                                                    ? 
+                                                   ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                    << 0x1fU)
+                                                    : 
+                                                   (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                     << 0x1fU) 
+                                                    | ((0x7f800000U 
+                                                        & ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                           << 0x17U)) 
+                                                       | ((0x200000U 
+                                                           & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                                                           ? 
+                                                          (0x7ffffcU 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 2U))
+                                                           : 
+                                                          (0x7ffff8U 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 3U))))))))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__fp32_product 
+        = ((((0x1fU == (0x1fU & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                 [3U][0xcU] >> 0xaU))) 
+             & (0U != (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                       [3U][0xcU]))) | (IData)(((0x7c00U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))))))
+            ? 0x7fc00000U : ((((0x1fU == (0x1fU & (
+                                                   vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                   [3U]
+                                                   [0xcU] 
+                                                   >> 0xaU))) 
+                               & (0U == (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                         [3U][0xcU]))) 
+                              | (IData)((0x7c00U == 
+                                         (0x7fffU & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))
+                              ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0)
+                                  ? 0x7fc00000U : (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU)))
+                              : (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0) 
+                                  | (((0U == (0x1fU 
+                                              & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                 [3U]
+                                                 [0xcU] 
+                                                 >> 0xaU))) 
+                                      & (0U != (0x3ffU 
+                                                & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                [3U]
+                                                [0xcU]))) 
+                                     | (IData)(((0U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))))
+                                  ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                     << 0x1fU) : ((IData)(
+                                                          (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                            >> 8U) 
+                                                           | (0xffU 
+                                                              <= (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))))
+                                                   ? 
+                                                  (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU))
+                                                   : 
+                                                  ((0U 
+                                                    == (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))
+                                                    ? 
+                                                   ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                    << 0x1fU)
+                                                    : 
+                                                   (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                     << 0x1fU) 
+                                                    | ((0x7f800000U 
+                                                        & ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                           << 0x17U)) 
+                                                       | ((0x200000U 
+                                                           & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                                                           ? 
+                                                          (0x7ffffcU 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 2U))
+                                                           : 
+                                                          (0x7ffff8U 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 3U))))))))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__fp32_product 
+        = ((((0x1fU == (0x1fU & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                 [3U][0xdU] >> 0xaU))) 
+             & (0U != (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                       [3U][0xdU]))) | (IData)(((0x7c00U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))))))
+            ? 0x7fc00000U : ((((0x1fU == (0x1fU & (
+                                                   vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                   [3U]
+                                                   [0xdU] 
+                                                   >> 0xaU))) 
+                               & (0U == (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                         [3U][0xdU]))) 
+                              | (IData)((0x7c00U == 
+                                         (0x7fffU & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))
+                              ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0)
+                                  ? 0x7fc00000U : (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU)))
+                              : (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0) 
+                                  | (((0U == (0x1fU 
+                                              & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                 [3U]
+                                                 [0xdU] 
+                                                 >> 0xaU))) 
+                                      & (0U != (0x3ffU 
+                                                & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                [3U]
+                                                [0xdU]))) 
+                                     | (IData)(((0U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))))
+                                  ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                     << 0x1fU) : ((IData)(
+                                                          (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                            >> 8U) 
+                                                           | (0xffU 
+                                                              <= (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))))
+                                                   ? 
+                                                  (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU))
+                                                   : 
+                                                  ((0U 
+                                                    == (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))
+                                                    ? 
+                                                   ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                    << 0x1fU)
+                                                    : 
+                                                   (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                     << 0x1fU) 
+                                                    | ((0x7f800000U 
+                                                        & ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                           << 0x17U)) 
+                                                       | ((0x200000U 
+                                                           & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                                                           ? 
+                                                          (0x7ffffcU 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 2U))
+                                                           : 
+                                                          (0x7ffff8U 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 3U))))))))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__fp32_product 
+        = ((((0x1fU == (0x1fU & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                 [3U][0xeU] >> 0xaU))) 
+             & (0U != (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                       [3U][0xeU]))) | (IData)(((0x7c00U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))))))
+            ? 0x7fc00000U : ((((0x1fU == (0x1fU & (
+                                                   vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                   [3U]
+                                                   [0xeU] 
+                                                   >> 0xaU))) 
+                               & (0U == (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                         [3U][0xeU]))) 
+                              | (IData)((0x7c00U == 
+                                         (0x7fffU & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))
+                              ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0)
+                                  ? 0x7fc00000U : (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU)))
+                              : (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0) 
+                                  | (((0U == (0x1fU 
+                                              & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                 [3U]
+                                                 [0xeU] 
+                                                 >> 0xaU))) 
+                                      & (0U != (0x3ffU 
+                                                & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                [3U]
+                                                [0xeU]))) 
+                                     | (IData)(((0U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))))
+                                  ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                     << 0x1fU) : ((IData)(
+                                                          (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                            >> 8U) 
+                                                           | (0xffU 
+                                                              <= (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))))
+                                                   ? 
+                                                  (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU))
+                                                   : 
+                                                  ((0U 
+                                                    == (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))
+                                                    ? 
+                                                   ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                    << 0x1fU)
+                                                    : 
+                                                   (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                     << 0x1fU) 
+                                                    | ((0x7f800000U 
+                                                        & ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                           << 0x17U)) 
+                                                       | ((0x200000U 
+                                                           & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                                                           ? 
+                                                          (0x7ffffcU 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 2U))
+                                                           : 
+                                                          (0x7ffff8U 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 3U))))))))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__fp32_product 
+        = ((((0x1fU == (0x1fU & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                 [3U][0xfU] >> 0xaU))) 
+             & (0U != (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                       [3U][0xfU]))) | (IData)(((0x7c00U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))))))
+            ? 0x7fc00000U : ((((0x1fU == (0x1fU & (
+                                                   vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                   [3U]
+                                                   [0xfU] 
+                                                   >> 0xaU))) 
+                               & (0U == (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                         [3U][0xfU]))) 
+                              | (IData)((0x7c00U == 
+                                         (0x7fffU & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))
+                              ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0)
+                                  ? 0x7fc00000U : (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU)))
+                              : (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0) 
+                                  | (((0U == (0x1fU 
+                                              & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                 [3U]
+                                                 [0xfU] 
+                                                 >> 0xaU))) 
+                                      & (0U != (0x3ffU 
+                                                & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                [3U]
+                                                [0xfU]))) 
+                                     | (IData)(((0U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))))
+                                  ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                     << 0x1fU) : ((IData)(
+                                                          (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                            >> 8U) 
+                                                           | (0xffU 
+                                                              <= (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))))
+                                                   ? 
+                                                  (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU))
+                                                   : 
+                                                  ((0U 
+                                                    == (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))
+                                                    ? 
+                                                   ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                    << 0x1fU)
+                                                    : 
+                                                   (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                     << 0x1fU) 
+                                                    | ((0x7f800000U 
+                                                        & ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                           << 0x17U)) 
+                                                       | ((0x200000U 
+                                                           & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                                                           ? 
+                                                          (0x7ffffcU 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 2U))
+                                                           : 
+                                                          (0x7ffff8U 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__3__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 3U))))))))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__fp32_product 
+        = ((((0x1fU == (0x1fU & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                 [4U][0U] >> 0xaU))) 
+             & (0U != (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                       [4U][0U]))) | (IData)(((0x7c00U 
+                                               == (0x7c00U 
+                                                   & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                              & (0U 
+                                                 != 
+                                                 (0x3ffU 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))))))
+            ? 0x7fc00000U : ((((0x1fU == (0x1fU & (
+                                                   vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                   [4U]
+                                                   [0U] 
+                                                   >> 0xaU))) 
+                               & (0U == (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                         [4U][0U]))) 
+                              | (IData)((0x7c00U == 
+                                         (0x7fffU & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))
+                              ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0)
+                                  ? 0x7fc00000U : (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU)))
+                              : (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0) 
+                                  | (((0U == (0x1fU 
+                                              & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                 [4U]
+                                                 [0U] 
+                                                 >> 0xaU))) 
+                                      & (0U != (0x3ffU 
+                                                & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                [4U]
+                                                [0U]))) 
+                                     | (IData)(((0U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))))
+                                  ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                     << 0x1fU) : ((IData)(
+                                                          (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                            >> 8U) 
+                                                           | (0xffU 
+                                                              <= (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))))
+                                                   ? 
+                                                  (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU))
+                                                   : 
+                                                  ((0U 
+                                                    == (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))
+                                                    ? 
+                                                   ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                    << 0x1fU)
+                                                    : 
+                                                   (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                     << 0x1fU) 
+                                                    | ((0x7f800000U 
+                                                        & ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                           << 0x17U)) 
+                                                       | ((0x200000U 
+                                                           & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                                                           ? 
+                                                          (0x7ffffcU 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 2U))
+                                                           : 
+                                                          (0x7ffff8U 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 3U))))))))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__fp32_product 
+        = ((((0x1fU == (0x1fU & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                 [4U][1U] >> 0xaU))) 
+             & (0U != (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                       [4U][1U]))) | (IData)(((0x7c00U 
+                                               == (0x7c00U 
+                                                   & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                              & (0U 
+                                                 != 
+                                                 (0x3ffU 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))))))
+            ? 0x7fc00000U : ((((0x1fU == (0x1fU & (
+                                                   vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                   [4U]
+                                                   [1U] 
+                                                   >> 0xaU))) 
+                               & (0U == (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                         [4U][1U]))) 
+                              | (IData)((0x7c00U == 
+                                         (0x7fffU & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))
+                              ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0)
+                                  ? 0x7fc00000U : (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU)))
+                              : (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0) 
+                                  | (((0U == (0x1fU 
+                                              & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                 [4U]
+                                                 [1U] 
+                                                 >> 0xaU))) 
+                                      & (0U != (0x3ffU 
+                                                & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                [4U]
+                                                [1U]))) 
+                                     | (IData)(((0U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))))
+                                  ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                     << 0x1fU) : ((IData)(
+                                                          (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                            >> 8U) 
+                                                           | (0xffU 
+                                                              <= (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))))
+                                                   ? 
+                                                  (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU))
+                                                   : 
+                                                  ((0U 
+                                                    == (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))
+                                                    ? 
+                                                   ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                    << 0x1fU)
+                                                    : 
+                                                   (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                     << 0x1fU) 
+                                                    | ((0x7f800000U 
+                                                        & ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                           << 0x17U)) 
+                                                       | ((0x200000U 
+                                                           & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                                                           ? 
+                                                          (0x7ffffcU 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 2U))
+                                                           : 
+                                                          (0x7ffff8U 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 3U))))))))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__fp32_product 
+        = ((((0x1fU == (0x1fU & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                 [4U][2U] >> 0xaU))) 
+             & (0U != (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                       [4U][2U]))) | (IData)(((0x7c00U 
+                                               == (0x7c00U 
+                                                   & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                              & (0U 
+                                                 != 
+                                                 (0x3ffU 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))))))
+            ? 0x7fc00000U : ((((0x1fU == (0x1fU & (
+                                                   vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                   [4U]
+                                                   [2U] 
+                                                   >> 0xaU))) 
+                               & (0U == (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                         [4U][2U]))) 
+                              | (IData)((0x7c00U == 
+                                         (0x7fffU & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))
+                              ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0)
+                                  ? 0x7fc00000U : (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU)))
+                              : (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0) 
+                                  | (((0U == (0x1fU 
+                                              & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                 [4U]
+                                                 [2U] 
+                                                 >> 0xaU))) 
+                                      & (0U != (0x3ffU 
+                                                & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                [4U]
+                                                [2U]))) 
+                                     | (IData)(((0U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))))
+                                  ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                     << 0x1fU) : ((IData)(
+                                                          (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                            >> 8U) 
+                                                           | (0xffU 
+                                                              <= (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))))
+                                                   ? 
+                                                  (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU))
+                                                   : 
+                                                  ((0U 
+                                                    == (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))
+                                                    ? 
+                                                   ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                    << 0x1fU)
+                                                    : 
+                                                   (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                     << 0x1fU) 
+                                                    | ((0x7f800000U 
+                                                        & ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                           << 0x17U)) 
+                                                       | ((0x200000U 
+                                                           & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                                                           ? 
+                                                          (0x7ffffcU 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 2U))
+                                                           : 
+                                                          (0x7ffff8U 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 3U))))))))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__fp32_product 
+        = ((((0x1fU == (0x1fU & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                 [4U][3U] >> 0xaU))) 
+             & (0U != (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                       [4U][3U]))) | (IData)(((0x7c00U 
+                                               == (0x7c00U 
+                                                   & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                              & (0U 
+                                                 != 
+                                                 (0x3ffU 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))))))
+            ? 0x7fc00000U : ((((0x1fU == (0x1fU & (
+                                                   vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                   [4U]
+                                                   [3U] 
+                                                   >> 0xaU))) 
+                               & (0U == (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                         [4U][3U]))) 
+                              | (IData)((0x7c00U == 
+                                         (0x7fffU & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))
+                              ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0)
+                                  ? 0x7fc00000U : (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU)))
+                              : (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0) 
+                                  | (((0U == (0x1fU 
+                                              & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                 [4U]
+                                                 [3U] 
+                                                 >> 0xaU))) 
+                                      & (0U != (0x3ffU 
+                                                & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                [4U]
+                                                [3U]))) 
+                                     | (IData)(((0U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))))
+                                  ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                     << 0x1fU) : ((IData)(
+                                                          (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                            >> 8U) 
+                                                           | (0xffU 
+                                                              <= (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))))
+                                                   ? 
+                                                  (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU))
+                                                   : 
+                                                  ((0U 
+                                                    == (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))
+                                                    ? 
+                                                   ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                    << 0x1fU)
+                                                    : 
+                                                   (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                     << 0x1fU) 
+                                                    | ((0x7f800000U 
+                                                        & ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                           << 0x17U)) 
+                                                       | ((0x200000U 
+                                                           & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                                                           ? 
+                                                          (0x7ffffcU 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 2U))
+                                                           : 
+                                                          (0x7ffff8U 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 3U))))))))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__fp32_product 
+        = ((((0x1fU == (0x1fU & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                 [4U][4U] >> 0xaU))) 
+             & (0U != (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                       [4U][4U]))) | (IData)(((0x7c00U 
+                                               == (0x7c00U 
+                                                   & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                              & (0U 
+                                                 != 
+                                                 (0x3ffU 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))))))
+            ? 0x7fc00000U : ((((0x1fU == (0x1fU & (
+                                                   vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                   [4U]
+                                                   [4U] 
+                                                   >> 0xaU))) 
+                               & (0U == (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                         [4U][4U]))) 
+                              | (IData)((0x7c00U == 
+                                         (0x7fffU & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))
+                              ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0)
+                                  ? 0x7fc00000U : (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU)))
+                              : (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0) 
+                                  | (((0U == (0x1fU 
+                                              & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                 [4U]
+                                                 [4U] 
+                                                 >> 0xaU))) 
+                                      & (0U != (0x3ffU 
+                                                & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                [4U]
+                                                [4U]))) 
+                                     | (IData)(((0U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))))
+                                  ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                     << 0x1fU) : ((IData)(
+                                                          (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                            >> 8U) 
+                                                           | (0xffU 
+                                                              <= (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))))
+                                                   ? 
+                                                  (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU))
+                                                   : 
+                                                  ((0U 
+                                                    == (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))
+                                                    ? 
+                                                   ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                    << 0x1fU)
+                                                    : 
+                                                   (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                     << 0x1fU) 
+                                                    | ((0x7f800000U 
+                                                        & ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                           << 0x17U)) 
+                                                       | ((0x200000U 
+                                                           & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                                                           ? 
+                                                          (0x7ffffcU 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 2U))
+                                                           : 
+                                                          (0x7ffff8U 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 3U))))))))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__fp32_product 
+        = ((((0x1fU == (0x1fU & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                 [4U][5U] >> 0xaU))) 
+             & (0U != (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                       [4U][5U]))) | (IData)(((0x7c00U 
+                                               == (0x7c00U 
+                                                   & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                              & (0U 
+                                                 != 
+                                                 (0x3ffU 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))))))
+            ? 0x7fc00000U : ((((0x1fU == (0x1fU & (
+                                                   vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                   [4U]
+                                                   [5U] 
+                                                   >> 0xaU))) 
+                               & (0U == (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                         [4U][5U]))) 
+                              | (IData)((0x7c00U == 
+                                         (0x7fffU & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))
+                              ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0)
+                                  ? 0x7fc00000U : (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU)))
+                              : (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0) 
+                                  | (((0U == (0x1fU 
+                                              & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                 [4U]
+                                                 [5U] 
+                                                 >> 0xaU))) 
+                                      & (0U != (0x3ffU 
+                                                & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                [4U]
+                                                [5U]))) 
+                                     | (IData)(((0U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))))
+                                  ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                     << 0x1fU) : ((IData)(
+                                                          (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                            >> 8U) 
+                                                           | (0xffU 
+                                                              <= (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))))
+                                                   ? 
+                                                  (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU))
+                                                   : 
+                                                  ((0U 
+                                                    == (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))
+                                                    ? 
+                                                   ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                    << 0x1fU)
+                                                    : 
+                                                   (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                     << 0x1fU) 
+                                                    | ((0x7f800000U 
+                                                        & ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                           << 0x17U)) 
+                                                       | ((0x200000U 
+                                                           & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                                                           ? 
+                                                          (0x7ffffcU 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 2U))
+                                                           : 
+                                                          (0x7ffff8U 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 3U))))))))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__fp32_product 
+        = ((((0x1fU == (0x1fU & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                 [4U][6U] >> 0xaU))) 
+             & (0U != (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                       [4U][6U]))) | (IData)(((0x7c00U 
+                                               == (0x7c00U 
+                                                   & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                              & (0U 
+                                                 != 
+                                                 (0x3ffU 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))))))
+            ? 0x7fc00000U : ((((0x1fU == (0x1fU & (
+                                                   vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                   [4U]
+                                                   [6U] 
+                                                   >> 0xaU))) 
+                               & (0U == (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                         [4U][6U]))) 
+                              | (IData)((0x7c00U == 
+                                         (0x7fffU & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))
+                              ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0)
+                                  ? 0x7fc00000U : (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU)))
+                              : (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0) 
+                                  | (((0U == (0x1fU 
+                                              & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                 [4U]
+                                                 [6U] 
+                                                 >> 0xaU))) 
+                                      & (0U != (0x3ffU 
+                                                & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                [4U]
+                                                [6U]))) 
+                                     | (IData)(((0U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))))
+                                  ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                     << 0x1fU) : ((IData)(
+                                                          (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                            >> 8U) 
+                                                           | (0xffU 
+                                                              <= (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))))
+                                                   ? 
+                                                  (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU))
+                                                   : 
+                                                  ((0U 
+                                                    == (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))
+                                                    ? 
+                                                   ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                    << 0x1fU)
+                                                    : 
+                                                   (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                     << 0x1fU) 
+                                                    | ((0x7f800000U 
+                                                        & ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                           << 0x17U)) 
+                                                       | ((0x200000U 
+                                                           & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                                                           ? 
+                                                          (0x7ffffcU 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 2U))
+                                                           : 
+                                                          (0x7ffff8U 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 3U))))))))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__fp32_product 
+        = ((((0x1fU == (0x1fU & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                 [4U][7U] >> 0xaU))) 
+             & (0U != (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                       [4U][7U]))) | (IData)(((0x7c00U 
+                                               == (0x7c00U 
+                                                   & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                              & (0U 
+                                                 != 
+                                                 (0x3ffU 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))))))
+            ? 0x7fc00000U : ((((0x1fU == (0x1fU & (
+                                                   vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                   [4U]
+                                                   [7U] 
+                                                   >> 0xaU))) 
+                               & (0U == (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                         [4U][7U]))) 
+                              | (IData)((0x7c00U == 
+                                         (0x7fffU & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))
+                              ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0)
+                                  ? 0x7fc00000U : (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU)))
+                              : (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0) 
+                                  | (((0U == (0x1fU 
+                                              & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                 [4U]
+                                                 [7U] 
+                                                 >> 0xaU))) 
+                                      & (0U != (0x3ffU 
+                                                & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                [4U]
+                                                [7U]))) 
+                                     | (IData)(((0U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))))
+                                  ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                     << 0x1fU) : ((IData)(
+                                                          (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                            >> 8U) 
+                                                           | (0xffU 
+                                                              <= (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))))
+                                                   ? 
+                                                  (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU))
+                                                   : 
+                                                  ((0U 
+                                                    == (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))
+                                                    ? 
+                                                   ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                    << 0x1fU)
+                                                    : 
+                                                   (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                     << 0x1fU) 
+                                                    | ((0x7f800000U 
+                                                        & ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                           << 0x17U)) 
+                                                       | ((0x200000U 
+                                                           & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                                                           ? 
+                                                          (0x7ffffcU 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 2U))
+                                                           : 
+                                                          (0x7ffff8U 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 3U))))))))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__fp32_product 
+        = ((((0x1fU == (0x1fU & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                 [4U][8U] >> 0xaU))) 
+             & (0U != (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                       [4U][8U]))) | (IData)(((0x7c00U 
+                                               == (0x7c00U 
+                                                   & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                              & (0U 
+                                                 != 
+                                                 (0x3ffU 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))))))
+            ? 0x7fc00000U : ((((0x1fU == (0x1fU & (
+                                                   vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                   [4U]
+                                                   [8U] 
+                                                   >> 0xaU))) 
+                               & (0U == (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                         [4U][8U]))) 
+                              | (IData)((0x7c00U == 
+                                         (0x7fffU & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))
+                              ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0)
+                                  ? 0x7fc00000U : (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU)))
+                              : (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0) 
+                                  | (((0U == (0x1fU 
+                                              & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                 [4U]
+                                                 [8U] 
+                                                 >> 0xaU))) 
+                                      & (0U != (0x3ffU 
+                                                & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                [4U]
+                                                [8U]))) 
+                                     | (IData)(((0U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))))
+                                  ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                     << 0x1fU) : ((IData)(
+                                                          (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                            >> 8U) 
+                                                           | (0xffU 
+                                                              <= (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))))
+                                                   ? 
+                                                  (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU))
+                                                   : 
+                                                  ((0U 
+                                                    == (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))
+                                                    ? 
+                                                   ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                    << 0x1fU)
+                                                    : 
+                                                   (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                     << 0x1fU) 
+                                                    | ((0x7f800000U 
+                                                        & ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                           << 0x17U)) 
+                                                       | ((0x200000U 
+                                                           & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                                                           ? 
+                                                          (0x7ffffcU 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 2U))
+                                                           : 
+                                                          (0x7ffff8U 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 3U))))))))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__fp32_product 
+        = ((((0x1fU == (0x1fU & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                 [4U][9U] >> 0xaU))) 
+             & (0U != (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                       [4U][9U]))) | (IData)(((0x7c00U 
+                                               == (0x7c00U 
+                                                   & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                              & (0U 
+                                                 != 
+                                                 (0x3ffU 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))))))
+            ? 0x7fc00000U : ((((0x1fU == (0x1fU & (
+                                                   vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                   [4U]
+                                                   [9U] 
+                                                   >> 0xaU))) 
+                               & (0U == (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                         [4U][9U]))) 
+                              | (IData)((0x7c00U == 
+                                         (0x7fffU & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))
+                              ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0)
+                                  ? 0x7fc00000U : (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU)))
+                              : (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0) 
+                                  | (((0U == (0x1fU 
+                                              & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                 [4U]
+                                                 [9U] 
+                                                 >> 0xaU))) 
+                                      & (0U != (0x3ffU 
+                                                & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                [4U]
+                                                [9U]))) 
+                                     | (IData)(((0U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))))
+                                  ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                     << 0x1fU) : ((IData)(
+                                                          (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                            >> 8U) 
+                                                           | (0xffU 
+                                                              <= (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))))
+                                                   ? 
+                                                  (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU))
+                                                   : 
+                                                  ((0U 
+                                                    == (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))
+                                                    ? 
+                                                   ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                    << 0x1fU)
+                                                    : 
+                                                   (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                     << 0x1fU) 
+                                                    | ((0x7f800000U 
+                                                        & ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                           << 0x17U)) 
+                                                       | ((0x200000U 
+                                                           & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                                                           ? 
+                                                          (0x7ffffcU 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 2U))
+                                                           : 
+                                                          (0x7ffff8U 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 3U))))))))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__fp32_product 
+        = ((((0x1fU == (0x1fU & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                 [4U][0xaU] >> 0xaU))) 
+             & (0U != (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                       [4U][0xaU]))) | (IData)(((0x7c00U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))))))
+            ? 0x7fc00000U : ((((0x1fU == (0x1fU & (
+                                                   vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                   [4U]
+                                                   [0xaU] 
+                                                   >> 0xaU))) 
+                               & (0U == (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                         [4U][0xaU]))) 
+                              | (IData)((0x7c00U == 
+                                         (0x7fffU & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))
+                              ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0)
+                                  ? 0x7fc00000U : (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU)))
+                              : (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0) 
+                                  | (((0U == (0x1fU 
+                                              & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                 [4U]
+                                                 [0xaU] 
+                                                 >> 0xaU))) 
+                                      & (0U != (0x3ffU 
+                                                & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                [4U]
+                                                [0xaU]))) 
+                                     | (IData)(((0U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))))
+                                  ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                     << 0x1fU) : ((IData)(
+                                                          (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                            >> 8U) 
+                                                           | (0xffU 
+                                                              <= (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))))
+                                                   ? 
+                                                  (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU))
+                                                   : 
+                                                  ((0U 
+                                                    == (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))
+                                                    ? 
+                                                   ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                    << 0x1fU)
+                                                    : 
+                                                   (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                     << 0x1fU) 
+                                                    | ((0x7f800000U 
+                                                        & ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                           << 0x17U)) 
+                                                       | ((0x200000U 
+                                                           & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                                                           ? 
+                                                          (0x7ffffcU 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 2U))
+                                                           : 
+                                                          (0x7ffff8U 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 3U))))))))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__fp32_product 
+        = ((((0x1fU == (0x1fU & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                 [4U][0xbU] >> 0xaU))) 
+             & (0U != (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                       [4U][0xbU]))) | (IData)(((0x7c00U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))))))
+            ? 0x7fc00000U : ((((0x1fU == (0x1fU & (
+                                                   vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                   [4U]
+                                                   [0xbU] 
+                                                   >> 0xaU))) 
+                               & (0U == (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                         [4U][0xbU]))) 
+                              | (IData)((0x7c00U == 
+                                         (0x7fffU & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))
+                              ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0)
+                                  ? 0x7fc00000U : (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU)))
+                              : (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0) 
+                                  | (((0U == (0x1fU 
+                                              & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                 [4U]
+                                                 [0xbU] 
+                                                 >> 0xaU))) 
+                                      & (0U != (0x3ffU 
+                                                & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                [4U]
+                                                [0xbU]))) 
+                                     | (IData)(((0U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))))
+                                  ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                     << 0x1fU) : ((IData)(
+                                                          (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                            >> 8U) 
+                                                           | (0xffU 
+                                                              <= (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))))
+                                                   ? 
+                                                  (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU))
+                                                   : 
+                                                  ((0U 
+                                                    == (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))
+                                                    ? 
+                                                   ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                    << 0x1fU)
+                                                    : 
+                                                   (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                     << 0x1fU) 
+                                                    | ((0x7f800000U 
+                                                        & ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                           << 0x17U)) 
+                                                       | ((0x200000U 
+                                                           & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                                                           ? 
+                                                          (0x7ffffcU 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 2U))
+                                                           : 
+                                                          (0x7ffff8U 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 3U))))))))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__fp32_product 
+        = ((((0x1fU == (0x1fU & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                 [4U][0xcU] >> 0xaU))) 
+             & (0U != (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                       [4U][0xcU]))) | (IData)(((0x7c00U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))))))
+            ? 0x7fc00000U : ((((0x1fU == (0x1fU & (
+                                                   vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                   [4U]
+                                                   [0xcU] 
+                                                   >> 0xaU))) 
+                               & (0U == (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                         [4U][0xcU]))) 
+                              | (IData)((0x7c00U == 
+                                         (0x7fffU & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))
+                              ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0)
+                                  ? 0x7fc00000U : (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU)))
+                              : (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0) 
+                                  | (((0U == (0x1fU 
+                                              & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                 [4U]
+                                                 [0xcU] 
+                                                 >> 0xaU))) 
+                                      & (0U != (0x3ffU 
+                                                & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                [4U]
+                                                [0xcU]))) 
+                                     | (IData)(((0U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))))
+                                  ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                     << 0x1fU) : ((IData)(
+                                                          (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                            >> 8U) 
+                                                           | (0xffU 
+                                                              <= (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))))
+                                                   ? 
+                                                  (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU))
+                                                   : 
+                                                  ((0U 
+                                                    == (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))
+                                                    ? 
+                                                   ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                    << 0x1fU)
+                                                    : 
+                                                   (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                     << 0x1fU) 
+                                                    | ((0x7f800000U 
+                                                        & ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                           << 0x17U)) 
+                                                       | ((0x200000U 
+                                                           & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                                                           ? 
+                                                          (0x7ffffcU 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 2U))
+                                                           : 
+                                                          (0x7ffff8U 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 3U))))))))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__fp32_product 
+        = ((((0x1fU == (0x1fU & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                 [4U][0xdU] >> 0xaU))) 
+             & (0U != (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                       [4U][0xdU]))) | (IData)(((0x7c00U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))))))
+            ? 0x7fc00000U : ((((0x1fU == (0x1fU & (
+                                                   vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                   [4U]
+                                                   [0xdU] 
+                                                   >> 0xaU))) 
+                               & (0U == (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                         [4U][0xdU]))) 
+                              | (IData)((0x7c00U == 
+                                         (0x7fffU & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))
+                              ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0)
+                                  ? 0x7fc00000U : (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU)))
+                              : (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0) 
+                                  | (((0U == (0x1fU 
+                                              & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                 [4U]
+                                                 [0xdU] 
+                                                 >> 0xaU))) 
+                                      & (0U != (0x3ffU 
+                                                & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                [4U]
+                                                [0xdU]))) 
+                                     | (IData)(((0U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))))
+                                  ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                     << 0x1fU) : ((IData)(
+                                                          (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                            >> 8U) 
+                                                           | (0xffU 
+                                                              <= (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))))
+                                                   ? 
+                                                  (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU))
+                                                   : 
+                                                  ((0U 
+                                                    == (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))
+                                                    ? 
+                                                   ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                    << 0x1fU)
+                                                    : 
+                                                   (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                     << 0x1fU) 
+                                                    | ((0x7f800000U 
+                                                        & ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                           << 0x17U)) 
+                                                       | ((0x200000U 
+                                                           & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                                                           ? 
+                                                          (0x7ffffcU 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 2U))
+                                                           : 
+                                                          (0x7ffff8U 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 3U))))))))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__fp32_product 
+        = ((((0x1fU == (0x1fU & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                 [4U][0xeU] >> 0xaU))) 
+             & (0U != (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                       [4U][0xeU]))) | (IData)(((0x7c00U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))))))
+            ? 0x7fc00000U : ((((0x1fU == (0x1fU & (
+                                                   vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                   [4U]
+                                                   [0xeU] 
+                                                   >> 0xaU))) 
+                               & (0U == (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                         [4U][0xeU]))) 
+                              | (IData)((0x7c00U == 
+                                         (0x7fffU & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))
+                              ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0)
+                                  ? 0x7fc00000U : (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU)))
+                              : (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0) 
+                                  | (((0U == (0x1fU 
+                                              & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                 [4U]
+                                                 [0xeU] 
+                                                 >> 0xaU))) 
+                                      & (0U != (0x3ffU 
+                                                & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                [4U]
+                                                [0xeU]))) 
+                                     | (IData)(((0U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))))
+                                  ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                     << 0x1fU) : ((IData)(
+                                                          (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                            >> 8U) 
+                                                           | (0xffU 
+                                                              <= (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))))
+                                                   ? 
+                                                  (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU))
+                                                   : 
+                                                  ((0U 
+                                                    == (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))
+                                                    ? 
+                                                   ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                    << 0x1fU)
+                                                    : 
+                                                   (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                     << 0x1fU) 
+                                                    | ((0x7f800000U 
+                                                        & ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                           << 0x17U)) 
+                                                       | ((0x200000U 
+                                                           & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                                                           ? 
+                                                          (0x7ffffcU 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 2U))
+                                                           : 
+                                                          (0x7ffff8U 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 3U))))))))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__fp32_product 
+        = ((((0x1fU == (0x1fU & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                 [4U][0xfU] >> 0xaU))) 
+             & (0U != (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                       [4U][0xfU]))) | (IData)(((0x7c00U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))))))
+            ? 0x7fc00000U : ((((0x1fU == (0x1fU & (
+                                                   vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                   [4U]
+                                                   [0xfU] 
+                                                   >> 0xaU))) 
+                               & (0U == (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                         [4U][0xfU]))) 
+                              | (IData)((0x7c00U == 
+                                         (0x7fffU & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))
+                              ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0)
+                                  ? 0x7fc00000U : (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU)))
+                              : (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0) 
+                                  | (((0U == (0x1fU 
+                                              & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                 [4U]
+                                                 [0xfU] 
+                                                 >> 0xaU))) 
+                                      & (0U != (0x3ffU 
+                                                & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                [4U]
+                                                [0xfU]))) 
+                                     | (IData)(((0U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))))
+                                  ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                     << 0x1fU) : ((IData)(
+                                                          (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                            >> 8U) 
+                                                           | (0xffU 
+                                                              <= (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))))
+                                                   ? 
+                                                  (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU))
+                                                   : 
+                                                  ((0U 
+                                                    == (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))
+                                                    ? 
+                                                   ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                    << 0x1fU)
+                                                    : 
+                                                   (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                     << 0x1fU) 
+                                                    | ((0x7f800000U 
+                                                        & ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                           << 0x17U)) 
+                                                       | ((0x200000U 
+                                                           & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                                                           ? 
+                                                          (0x7ffffcU 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 2U))
+                                                           : 
+                                                          (0x7ffff8U 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__4__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 3U))))))))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__fp32_product 
+        = ((((0x1fU == (0x1fU & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                 [5U][0U] >> 0xaU))) 
+             & (0U != (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                       [5U][0U]))) | (IData)(((0x7c00U 
+                                               == (0x7c00U 
+                                                   & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                              & (0U 
+                                                 != 
+                                                 (0x3ffU 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))))))
+            ? 0x7fc00000U : ((((0x1fU == (0x1fU & (
+                                                   vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                   [5U]
+                                                   [0U] 
+                                                   >> 0xaU))) 
+                               & (0U == (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                         [5U][0U]))) 
+                              | (IData)((0x7c00U == 
+                                         (0x7fffU & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))
+                              ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0)
+                                  ? 0x7fc00000U : (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU)))
+                              : (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0) 
+                                  | (((0U == (0x1fU 
+                                              & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                 [5U]
+                                                 [0U] 
+                                                 >> 0xaU))) 
+                                      & (0U != (0x3ffU 
+                                                & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                [5U]
+                                                [0U]))) 
+                                     | (IData)(((0U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))))
+                                  ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                     << 0x1fU) : ((IData)(
+                                                          (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                            >> 8U) 
+                                                           | (0xffU 
+                                                              <= (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))))
+                                                   ? 
+                                                  (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU))
+                                                   : 
+                                                  ((0U 
+                                                    == (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))
+                                                    ? 
+                                                   ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                    << 0x1fU)
+                                                    : 
+                                                   (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                     << 0x1fU) 
+                                                    | ((0x7f800000U 
+                                                        & ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                           << 0x17U)) 
+                                                       | ((0x200000U 
+                                                           & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                                                           ? 
+                                                          (0x7ffffcU 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 2U))
+                                                           : 
+                                                          (0x7ffff8U 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 3U))))))))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__fp32_product 
+        = ((((0x1fU == (0x1fU & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                 [5U][1U] >> 0xaU))) 
+             & (0U != (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                       [5U][1U]))) | (IData)(((0x7c00U 
+                                               == (0x7c00U 
+                                                   & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                              & (0U 
+                                                 != 
+                                                 (0x3ffU 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))))))
+            ? 0x7fc00000U : ((((0x1fU == (0x1fU & (
+                                                   vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                   [5U]
+                                                   [1U] 
+                                                   >> 0xaU))) 
+                               & (0U == (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                         [5U][1U]))) 
+                              | (IData)((0x7c00U == 
+                                         (0x7fffU & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))
+                              ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0)
+                                  ? 0x7fc00000U : (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU)))
+                              : (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0) 
+                                  | (((0U == (0x1fU 
+                                              & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                 [5U]
+                                                 [1U] 
+                                                 >> 0xaU))) 
+                                      & (0U != (0x3ffU 
+                                                & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                [5U]
+                                                [1U]))) 
+                                     | (IData)(((0U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))))
+                                  ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                     << 0x1fU) : ((IData)(
+                                                          (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                            >> 8U) 
+                                                           | (0xffU 
+                                                              <= (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))))
+                                                   ? 
+                                                  (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU))
+                                                   : 
+                                                  ((0U 
+                                                    == (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))
+                                                    ? 
+                                                   ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                    << 0x1fU)
+                                                    : 
+                                                   (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                     << 0x1fU) 
+                                                    | ((0x7f800000U 
+                                                        & ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                           << 0x17U)) 
+                                                       | ((0x200000U 
+                                                           & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                                                           ? 
+                                                          (0x7ffffcU 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 2U))
+                                                           : 
+                                                          (0x7ffff8U 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 3U))))))))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__fp32_product 
+        = ((((0x1fU == (0x1fU & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                 [5U][2U] >> 0xaU))) 
+             & (0U != (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                       [5U][2U]))) | (IData)(((0x7c00U 
+                                               == (0x7c00U 
+                                                   & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                              & (0U 
+                                                 != 
+                                                 (0x3ffU 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))))))
+            ? 0x7fc00000U : ((((0x1fU == (0x1fU & (
+                                                   vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                   [5U]
+                                                   [2U] 
+                                                   >> 0xaU))) 
+                               & (0U == (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                         [5U][2U]))) 
+                              | (IData)((0x7c00U == 
+                                         (0x7fffU & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))
+                              ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0)
+                                  ? 0x7fc00000U : (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU)))
+                              : (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0) 
+                                  | (((0U == (0x1fU 
+                                              & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                 [5U]
+                                                 [2U] 
+                                                 >> 0xaU))) 
+                                      & (0U != (0x3ffU 
+                                                & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                [5U]
+                                                [2U]))) 
+                                     | (IData)(((0U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))))
+                                  ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                     << 0x1fU) : ((IData)(
+                                                          (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                            >> 8U) 
+                                                           | (0xffU 
+                                                              <= (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))))
+                                                   ? 
+                                                  (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU))
+                                                   : 
+                                                  ((0U 
+                                                    == (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))
+                                                    ? 
+                                                   ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                    << 0x1fU)
+                                                    : 
+                                                   (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                     << 0x1fU) 
+                                                    | ((0x7f800000U 
+                                                        & ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                           << 0x17U)) 
+                                                       | ((0x200000U 
+                                                           & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                                                           ? 
+                                                          (0x7ffffcU 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 2U))
+                                                           : 
+                                                          (0x7ffff8U 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 3U))))))))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__fp32_product 
+        = ((((0x1fU == (0x1fU & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                 [5U][3U] >> 0xaU))) 
+             & (0U != (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                       [5U][3U]))) | (IData)(((0x7c00U 
+                                               == (0x7c00U 
+                                                   & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                              & (0U 
+                                                 != 
+                                                 (0x3ffU 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))))))
+            ? 0x7fc00000U : ((((0x1fU == (0x1fU & (
+                                                   vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                   [5U]
+                                                   [3U] 
+                                                   >> 0xaU))) 
+                               & (0U == (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                         [5U][3U]))) 
+                              | (IData)((0x7c00U == 
+                                         (0x7fffU & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))
+                              ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0)
+                                  ? 0x7fc00000U : (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU)))
+                              : (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0) 
+                                  | (((0U == (0x1fU 
+                                              & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                 [5U]
+                                                 [3U] 
+                                                 >> 0xaU))) 
+                                      & (0U != (0x3ffU 
+                                                & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                [5U]
+                                                [3U]))) 
+                                     | (IData)(((0U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))))
+                                  ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                     << 0x1fU) : ((IData)(
+                                                          (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                            >> 8U) 
+                                                           | (0xffU 
+                                                              <= (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))))
+                                                   ? 
+                                                  (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU))
+                                                   : 
+                                                  ((0U 
+                                                    == (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))
+                                                    ? 
+                                                   ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                    << 0x1fU)
+                                                    : 
+                                                   (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                     << 0x1fU) 
+                                                    | ((0x7f800000U 
+                                                        & ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                           << 0x17U)) 
+                                                       | ((0x200000U 
+                                                           & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                                                           ? 
+                                                          (0x7ffffcU 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 2U))
+                                                           : 
+                                                          (0x7ffff8U 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 3U))))))))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__fp32_product 
+        = ((((0x1fU == (0x1fU & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                 [5U][4U] >> 0xaU))) 
+             & (0U != (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                       [5U][4U]))) | (IData)(((0x7c00U 
+                                               == (0x7c00U 
+                                                   & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                              & (0U 
+                                                 != 
+                                                 (0x3ffU 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))))))
+            ? 0x7fc00000U : ((((0x1fU == (0x1fU & (
+                                                   vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                   [5U]
+                                                   [4U] 
+                                                   >> 0xaU))) 
+                               & (0U == (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                         [5U][4U]))) 
+                              | (IData)((0x7c00U == 
+                                         (0x7fffU & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))
+                              ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0)
+                                  ? 0x7fc00000U : (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU)))
+                              : (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0) 
+                                  | (((0U == (0x1fU 
+                                              & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                 [5U]
+                                                 [4U] 
+                                                 >> 0xaU))) 
+                                      & (0U != (0x3ffU 
+                                                & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                [5U]
+                                                [4U]))) 
+                                     | (IData)(((0U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))))
+                                  ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                     << 0x1fU) : ((IData)(
+                                                          (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                            >> 8U) 
+                                                           | (0xffU 
+                                                              <= (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))))
+                                                   ? 
+                                                  (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU))
+                                                   : 
+                                                  ((0U 
+                                                    == (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))
+                                                    ? 
+                                                   ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                    << 0x1fU)
+                                                    : 
+                                                   (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                     << 0x1fU) 
+                                                    | ((0x7f800000U 
+                                                        & ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                           << 0x17U)) 
+                                                       | ((0x200000U 
+                                                           & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                                                           ? 
+                                                          (0x7ffffcU 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 2U))
+                                                           : 
+                                                          (0x7ffff8U 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 3U))))))))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__fp32_product 
+        = ((((0x1fU == (0x1fU & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                 [5U][5U] >> 0xaU))) 
+             & (0U != (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                       [5U][5U]))) | (IData)(((0x7c00U 
+                                               == (0x7c00U 
+                                                   & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                              & (0U 
+                                                 != 
+                                                 (0x3ffU 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))))))
+            ? 0x7fc00000U : ((((0x1fU == (0x1fU & (
+                                                   vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                   [5U]
+                                                   [5U] 
+                                                   >> 0xaU))) 
+                               & (0U == (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                         [5U][5U]))) 
+                              | (IData)((0x7c00U == 
+                                         (0x7fffU & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))
+                              ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0)
+                                  ? 0x7fc00000U : (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU)))
+                              : (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0) 
+                                  | (((0U == (0x1fU 
+                                              & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                 [5U]
+                                                 [5U] 
+                                                 >> 0xaU))) 
+                                      & (0U != (0x3ffU 
+                                                & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                [5U]
+                                                [5U]))) 
+                                     | (IData)(((0U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))))
+                                  ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                     << 0x1fU) : ((IData)(
+                                                          (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                            >> 8U) 
+                                                           | (0xffU 
+                                                              <= (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))))
+                                                   ? 
+                                                  (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU))
+                                                   : 
+                                                  ((0U 
+                                                    == (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))
+                                                    ? 
+                                                   ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                    << 0x1fU)
+                                                    : 
+                                                   (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                     << 0x1fU) 
+                                                    | ((0x7f800000U 
+                                                        & ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                           << 0x17U)) 
+                                                       | ((0x200000U 
+                                                           & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                                                           ? 
+                                                          (0x7ffffcU 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 2U))
+                                                           : 
+                                                          (0x7ffff8U 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 3U))))))))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__fp32_product 
+        = ((((0x1fU == (0x1fU & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                 [5U][6U] >> 0xaU))) 
+             & (0U != (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                       [5U][6U]))) | (IData)(((0x7c00U 
+                                               == (0x7c00U 
+                                                   & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                              & (0U 
+                                                 != 
+                                                 (0x3ffU 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))))))
+            ? 0x7fc00000U : ((((0x1fU == (0x1fU & (
+                                                   vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                   [5U]
+                                                   [6U] 
+                                                   >> 0xaU))) 
+                               & (0U == (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                         [5U][6U]))) 
+                              | (IData)((0x7c00U == 
+                                         (0x7fffU & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))
+                              ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0)
+                                  ? 0x7fc00000U : (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU)))
+                              : (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0) 
+                                  | (((0U == (0x1fU 
+                                              & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                 [5U]
+                                                 [6U] 
+                                                 >> 0xaU))) 
+                                      & (0U != (0x3ffU 
+                                                & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                [5U]
+                                                [6U]))) 
+                                     | (IData)(((0U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))))
+                                  ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                     << 0x1fU) : ((IData)(
+                                                          (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                            >> 8U) 
+                                                           | (0xffU 
+                                                              <= (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))))
+                                                   ? 
+                                                  (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU))
+                                                   : 
+                                                  ((0U 
+                                                    == (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))
+                                                    ? 
+                                                   ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                    << 0x1fU)
+                                                    : 
+                                                   (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                     << 0x1fU) 
+                                                    | ((0x7f800000U 
+                                                        & ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                           << 0x17U)) 
+                                                       | ((0x200000U 
+                                                           & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                                                           ? 
+                                                          (0x7ffffcU 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 2U))
+                                                           : 
+                                                          (0x7ffff8U 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 3U))))))))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__fp32_product 
+        = ((((0x1fU == (0x1fU & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                 [5U][7U] >> 0xaU))) 
+             & (0U != (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                       [5U][7U]))) | (IData)(((0x7c00U 
+                                               == (0x7c00U 
+                                                   & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                              & (0U 
+                                                 != 
+                                                 (0x3ffU 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))))))
+            ? 0x7fc00000U : ((((0x1fU == (0x1fU & (
+                                                   vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                   [5U]
+                                                   [7U] 
+                                                   >> 0xaU))) 
+                               & (0U == (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                         [5U][7U]))) 
+                              | (IData)((0x7c00U == 
+                                         (0x7fffU & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))
+                              ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0)
+                                  ? 0x7fc00000U : (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU)))
+                              : (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0) 
+                                  | (((0U == (0x1fU 
+                                              & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                 [5U]
+                                                 [7U] 
+                                                 >> 0xaU))) 
+                                      & (0U != (0x3ffU 
+                                                & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                [5U]
+                                                [7U]))) 
+                                     | (IData)(((0U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))))
+                                  ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                     << 0x1fU) : ((IData)(
+                                                          (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                            >> 8U) 
+                                                           | (0xffU 
+                                                              <= (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))))
+                                                   ? 
+                                                  (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU))
+                                                   : 
+                                                  ((0U 
+                                                    == (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))
+                                                    ? 
+                                                   ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                    << 0x1fU)
+                                                    : 
+                                                   (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                     << 0x1fU) 
+                                                    | ((0x7f800000U 
+                                                        & ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                           << 0x17U)) 
+                                                       | ((0x200000U 
+                                                           & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                                                           ? 
+                                                          (0x7ffffcU 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 2U))
+                                                           : 
+                                                          (0x7ffff8U 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 3U))))))))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__fp32_product 
+        = ((((0x1fU == (0x1fU & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                 [5U][8U] >> 0xaU))) 
+             & (0U != (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                       [5U][8U]))) | (IData)(((0x7c00U 
+                                               == (0x7c00U 
+                                                   & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                              & (0U 
+                                                 != 
+                                                 (0x3ffU 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))))))
+            ? 0x7fc00000U : ((((0x1fU == (0x1fU & (
+                                                   vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                   [5U]
+                                                   [8U] 
+                                                   >> 0xaU))) 
+                               & (0U == (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                         [5U][8U]))) 
+                              | (IData)((0x7c00U == 
+                                         (0x7fffU & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))
+                              ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0)
+                                  ? 0x7fc00000U : (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU)))
+                              : (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0) 
+                                  | (((0U == (0x1fU 
+                                              & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                 [5U]
+                                                 [8U] 
+                                                 >> 0xaU))) 
+                                      & (0U != (0x3ffU 
+                                                & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                [5U]
+                                                [8U]))) 
+                                     | (IData)(((0U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))))
+                                  ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                     << 0x1fU) : ((IData)(
+                                                          (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                            >> 8U) 
+                                                           | (0xffU 
+                                                              <= (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))))
+                                                   ? 
+                                                  (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU))
+                                                   : 
+                                                  ((0U 
+                                                    == (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))
+                                                    ? 
+                                                   ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                    << 0x1fU)
+                                                    : 
+                                                   (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                     << 0x1fU) 
+                                                    | ((0x7f800000U 
+                                                        & ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                           << 0x17U)) 
+                                                       | ((0x200000U 
+                                                           & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                                                           ? 
+                                                          (0x7ffffcU 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 2U))
+                                                           : 
+                                                          (0x7ffff8U 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 3U))))))))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__fp32_product 
+        = ((((0x1fU == (0x1fU & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                 [5U][9U] >> 0xaU))) 
+             & (0U != (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                       [5U][9U]))) | (IData)(((0x7c00U 
+                                               == (0x7c00U 
+                                                   & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                              & (0U 
+                                                 != 
+                                                 (0x3ffU 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))))))
+            ? 0x7fc00000U : ((((0x1fU == (0x1fU & (
+                                                   vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                   [5U]
+                                                   [9U] 
+                                                   >> 0xaU))) 
+                               & (0U == (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                         [5U][9U]))) 
+                              | (IData)((0x7c00U == 
+                                         (0x7fffU & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))
+                              ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0)
+                                  ? 0x7fc00000U : (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU)))
+                              : (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0) 
+                                  | (((0U == (0x1fU 
+                                              & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                 [5U]
+                                                 [9U] 
+                                                 >> 0xaU))) 
+                                      & (0U != (0x3ffU 
+                                                & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                [5U]
+                                                [9U]))) 
+                                     | (IData)(((0U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))))
+                                  ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                     << 0x1fU) : ((IData)(
+                                                          (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                            >> 8U) 
+                                                           | (0xffU 
+                                                              <= (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))))
+                                                   ? 
+                                                  (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU))
+                                                   : 
+                                                  ((0U 
+                                                    == (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))
+                                                    ? 
+                                                   ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                    << 0x1fU)
+                                                    : 
+                                                   (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                     << 0x1fU) 
+                                                    | ((0x7f800000U 
+                                                        & ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                           << 0x17U)) 
+                                                       | ((0x200000U 
+                                                           & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                                                           ? 
+                                                          (0x7ffffcU 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 2U))
+                                                           : 
+                                                          (0x7ffff8U 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 3U))))))))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__fp32_product 
+        = ((((0x1fU == (0x1fU & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                 [5U][0xaU] >> 0xaU))) 
+             & (0U != (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                       [5U][0xaU]))) | (IData)(((0x7c00U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))))))
+            ? 0x7fc00000U : ((((0x1fU == (0x1fU & (
+                                                   vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                   [5U]
+                                                   [0xaU] 
+                                                   >> 0xaU))) 
+                               & (0U == (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                         [5U][0xaU]))) 
+                              | (IData)((0x7c00U == 
+                                         (0x7fffU & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))
+                              ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0)
+                                  ? 0x7fc00000U : (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU)))
+                              : (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0) 
+                                  | (((0U == (0x1fU 
+                                              & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                 [5U]
+                                                 [0xaU] 
+                                                 >> 0xaU))) 
+                                      & (0U != (0x3ffU 
+                                                & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                [5U]
+                                                [0xaU]))) 
+                                     | (IData)(((0U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))))
+                                  ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                     << 0x1fU) : ((IData)(
+                                                          (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                            >> 8U) 
+                                                           | (0xffU 
+                                                              <= (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))))
+                                                   ? 
+                                                  (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU))
+                                                   : 
+                                                  ((0U 
+                                                    == (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))
+                                                    ? 
+                                                   ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                    << 0x1fU)
+                                                    : 
+                                                   (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                     << 0x1fU) 
+                                                    | ((0x7f800000U 
+                                                        & ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                           << 0x17U)) 
+                                                       | ((0x200000U 
+                                                           & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                                                           ? 
+                                                          (0x7ffffcU 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 2U))
+                                                           : 
+                                                          (0x7ffff8U 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 3U))))))))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__fp32_product 
+        = ((((0x1fU == (0x1fU & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                 [5U][0xbU] >> 0xaU))) 
+             & (0U != (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                       [5U][0xbU]))) | (IData)(((0x7c00U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))))))
+            ? 0x7fc00000U : ((((0x1fU == (0x1fU & (
+                                                   vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                   [5U]
+                                                   [0xbU] 
+                                                   >> 0xaU))) 
+                               & (0U == (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                         [5U][0xbU]))) 
+                              | (IData)((0x7c00U == 
+                                         (0x7fffU & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))
+                              ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0)
+                                  ? 0x7fc00000U : (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU)))
+                              : (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0) 
+                                  | (((0U == (0x1fU 
+                                              & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                 [5U]
+                                                 [0xbU] 
+                                                 >> 0xaU))) 
+                                      & (0U != (0x3ffU 
+                                                & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                [5U]
+                                                [0xbU]))) 
+                                     | (IData)(((0U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))))
+                                  ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                     << 0x1fU) : ((IData)(
+                                                          (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                            >> 8U) 
+                                                           | (0xffU 
+                                                              <= (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))))
+                                                   ? 
+                                                  (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU))
+                                                   : 
+                                                  ((0U 
+                                                    == (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))
+                                                    ? 
+                                                   ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                    << 0x1fU)
+                                                    : 
+                                                   (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                     << 0x1fU) 
+                                                    | ((0x7f800000U 
+                                                        & ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                           << 0x17U)) 
+                                                       | ((0x200000U 
+                                                           & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                                                           ? 
+                                                          (0x7ffffcU 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 2U))
+                                                           : 
+                                                          (0x7ffff8U 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 3U))))))))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__fp32_product 
+        = ((((0x1fU == (0x1fU & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                 [5U][0xcU] >> 0xaU))) 
+             & (0U != (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                       [5U][0xcU]))) | (IData)(((0x7c00U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))))))
+            ? 0x7fc00000U : ((((0x1fU == (0x1fU & (
+                                                   vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                   [5U]
+                                                   [0xcU] 
+                                                   >> 0xaU))) 
+                               & (0U == (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                         [5U][0xcU]))) 
+                              | (IData)((0x7c00U == 
+                                         (0x7fffU & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))
+                              ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0)
+                                  ? 0x7fc00000U : (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU)))
+                              : (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0) 
+                                  | (((0U == (0x1fU 
+                                              & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                 [5U]
+                                                 [0xcU] 
+                                                 >> 0xaU))) 
+                                      & (0U != (0x3ffU 
+                                                & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                [5U]
+                                                [0xcU]))) 
+                                     | (IData)(((0U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))))
+                                  ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                     << 0x1fU) : ((IData)(
+                                                          (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                            >> 8U) 
+                                                           | (0xffU 
+                                                              <= (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))))
+                                                   ? 
+                                                  (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU))
+                                                   : 
+                                                  ((0U 
+                                                    == (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))
+                                                    ? 
+                                                   ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                    << 0x1fU)
+                                                    : 
+                                                   (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                     << 0x1fU) 
+                                                    | ((0x7f800000U 
+                                                        & ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                           << 0x17U)) 
+                                                       | ((0x200000U 
+                                                           & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                                                           ? 
+                                                          (0x7ffffcU 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 2U))
+                                                           : 
+                                                          (0x7ffff8U 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 3U))))))))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__fp32_product 
+        = ((((0x1fU == (0x1fU & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                 [5U][0xdU] >> 0xaU))) 
+             & (0U != (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                       [5U][0xdU]))) | (IData)(((0x7c00U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))))))
+            ? 0x7fc00000U : ((((0x1fU == (0x1fU & (
+                                                   vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                   [5U]
+                                                   [0xdU] 
+                                                   >> 0xaU))) 
+                               & (0U == (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                         [5U][0xdU]))) 
+                              | (IData)((0x7c00U == 
+                                         (0x7fffU & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))
+                              ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0)
+                                  ? 0x7fc00000U : (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU)))
+                              : (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0) 
+                                  | (((0U == (0x1fU 
+                                              & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                 [5U]
+                                                 [0xdU] 
+                                                 >> 0xaU))) 
+                                      & (0U != (0x3ffU 
+                                                & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                [5U]
+                                                [0xdU]))) 
+                                     | (IData)(((0U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))))
+                                  ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                     << 0x1fU) : ((IData)(
+                                                          (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                            >> 8U) 
+                                                           | (0xffU 
+                                                              <= (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))))
+                                                   ? 
+                                                  (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU))
+                                                   : 
+                                                  ((0U 
+                                                    == (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))
+                                                    ? 
+                                                   ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                    << 0x1fU)
+                                                    : 
+                                                   (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                     << 0x1fU) 
+                                                    | ((0x7f800000U 
+                                                        & ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                           << 0x17U)) 
+                                                       | ((0x200000U 
+                                                           & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                                                           ? 
+                                                          (0x7ffffcU 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 2U))
+                                                           : 
+                                                          (0x7ffff8U 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 3U))))))))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__fp32_product 
+        = ((((0x1fU == (0x1fU & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                 [5U][0xeU] >> 0xaU))) 
+             & (0U != (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                       [5U][0xeU]))) | (IData)(((0x7c00U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))))))
+            ? 0x7fc00000U : ((((0x1fU == (0x1fU & (
+                                                   vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                   [5U]
+                                                   [0xeU] 
+                                                   >> 0xaU))) 
+                               & (0U == (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                         [5U][0xeU]))) 
+                              | (IData)((0x7c00U == 
+                                         (0x7fffU & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))
+                              ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0)
+                                  ? 0x7fc00000U : (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU)))
+                              : (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0) 
+                                  | (((0U == (0x1fU 
+                                              & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                 [5U]
+                                                 [0xeU] 
+                                                 >> 0xaU))) 
+                                      & (0U != (0x3ffU 
+                                                & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                [5U]
+                                                [0xeU]))) 
+                                     | (IData)(((0U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))))
+                                  ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                     << 0x1fU) : ((IData)(
+                                                          (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                            >> 8U) 
+                                                           | (0xffU 
+                                                              <= (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))))
+                                                   ? 
+                                                  (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU))
+                                                   : 
+                                                  ((0U 
+                                                    == (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))
+                                                    ? 
+                                                   ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                    << 0x1fU)
+                                                    : 
+                                                   (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                     << 0x1fU) 
+                                                    | ((0x7f800000U 
+                                                        & ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                           << 0x17U)) 
+                                                       | ((0x200000U 
+                                                           & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                                                           ? 
+                                                          (0x7ffffcU 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 2U))
+                                                           : 
+                                                          (0x7ffff8U 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 3U))))))))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__fp32_product 
+        = ((((0x1fU == (0x1fU & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                 [5U][0xfU] >> 0xaU))) 
+             & (0U != (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                       [5U][0xfU]))) | (IData)(((0x7c00U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))))))
+            ? 0x7fc00000U : ((((0x1fU == (0x1fU & (
+                                                   vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                   [5U]
+                                                   [0xfU] 
+                                                   >> 0xaU))) 
+                               & (0U == (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                         [5U][0xfU]))) 
+                              | (IData)((0x7c00U == 
+                                         (0x7fffU & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))
+                              ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0)
+                                  ? 0x7fc00000U : (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU)))
+                              : (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0) 
+                                  | (((0U == (0x1fU 
+                                              & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                 [5U]
+                                                 [0xfU] 
+                                                 >> 0xaU))) 
+                                      & (0U != (0x3ffU 
+                                                & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                [5U]
+                                                [0xfU]))) 
+                                     | (IData)(((0U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))))
+                                  ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                     << 0x1fU) : ((IData)(
+                                                          (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                            >> 8U) 
+                                                           | (0xffU 
+                                                              <= (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))))
+                                                   ? 
+                                                  (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU))
+                                                   : 
+                                                  ((0U 
+                                                    == (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))
+                                                    ? 
+                                                   ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                    << 0x1fU)
+                                                    : 
+                                                   (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                     << 0x1fU) 
+                                                    | ((0x7f800000U 
+                                                        & ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                           << 0x17U)) 
+                                                       | ((0x200000U 
+                                                           & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                                                           ? 
+                                                          (0x7ffffcU 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 2U))
+                                                           : 
+                                                          (0x7ffff8U 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__5__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 3U))))))))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__fp32_product 
+        = ((((0x1fU == (0x1fU & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                 [6U][0U] >> 0xaU))) 
+             & (0U != (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                       [6U][0U]))) | (IData)(((0x7c00U 
+                                               == (0x7c00U 
+                                                   & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                              & (0U 
+                                                 != 
+                                                 (0x3ffU 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))))))
+            ? 0x7fc00000U : ((((0x1fU == (0x1fU & (
+                                                   vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                   [6U]
+                                                   [0U] 
+                                                   >> 0xaU))) 
+                               & (0U == (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                         [6U][0U]))) 
+                              | (IData)((0x7c00U == 
+                                         (0x7fffU & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))
+                              ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0)
+                                  ? 0x7fc00000U : (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU)))
+                              : (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0) 
+                                  | (((0U == (0x1fU 
+                                              & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                 [6U]
+                                                 [0U] 
+                                                 >> 0xaU))) 
+                                      & (0U != (0x3ffU 
+                                                & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                [6U]
+                                                [0U]))) 
+                                     | (IData)(((0U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))))
+                                  ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                     << 0x1fU) : ((IData)(
+                                                          (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                            >> 8U) 
+                                                           | (0xffU 
+                                                              <= (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))))
+                                                   ? 
+                                                  (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU))
+                                                   : 
+                                                  ((0U 
+                                                    == (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))
+                                                    ? 
+                                                   ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                    << 0x1fU)
+                                                    : 
+                                                   (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                     << 0x1fU) 
+                                                    | ((0x7f800000U 
+                                                        & ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                           << 0x17U)) 
+                                                       | ((0x200000U 
+                                                           & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                                                           ? 
+                                                          (0x7ffffcU 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 2U))
+                                                           : 
+                                                          (0x7ffff8U 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 3U))))))))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__fp32_product 
+        = ((((0x1fU == (0x1fU & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                 [6U][1U] >> 0xaU))) 
+             & (0U != (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                       [6U][1U]))) | (IData)(((0x7c00U 
+                                               == (0x7c00U 
+                                                   & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                              & (0U 
+                                                 != 
+                                                 (0x3ffU 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))))))
+            ? 0x7fc00000U : ((((0x1fU == (0x1fU & (
+                                                   vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                   [6U]
+                                                   [1U] 
+                                                   >> 0xaU))) 
+                               & (0U == (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                         [6U][1U]))) 
+                              | (IData)((0x7c00U == 
+                                         (0x7fffU & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))
+                              ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0)
+                                  ? 0x7fc00000U : (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU)))
+                              : (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0) 
+                                  | (((0U == (0x1fU 
+                                              & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                 [6U]
+                                                 [1U] 
+                                                 >> 0xaU))) 
+                                      & (0U != (0x3ffU 
+                                                & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                [6U]
+                                                [1U]))) 
+                                     | (IData)(((0U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))))
+                                  ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                     << 0x1fU) : ((IData)(
+                                                          (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                            >> 8U) 
+                                                           | (0xffU 
+                                                              <= (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))))
+                                                   ? 
+                                                  (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU))
+                                                   : 
+                                                  ((0U 
+                                                    == (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))
+                                                    ? 
+                                                   ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                    << 0x1fU)
+                                                    : 
+                                                   (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                     << 0x1fU) 
+                                                    | ((0x7f800000U 
+                                                        & ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                           << 0x17U)) 
+                                                       | ((0x200000U 
+                                                           & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                                                           ? 
+                                                          (0x7ffffcU 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 2U))
+                                                           : 
+                                                          (0x7ffff8U 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 3U))))))))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__fp32_product 
+        = ((((0x1fU == (0x1fU & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                 [6U][2U] >> 0xaU))) 
+             & (0U != (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                       [6U][2U]))) | (IData)(((0x7c00U 
+                                               == (0x7c00U 
+                                                   & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                              & (0U 
+                                                 != 
+                                                 (0x3ffU 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))))))
+            ? 0x7fc00000U : ((((0x1fU == (0x1fU & (
+                                                   vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                   [6U]
+                                                   [2U] 
+                                                   >> 0xaU))) 
+                               & (0U == (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                         [6U][2U]))) 
+                              | (IData)((0x7c00U == 
+                                         (0x7fffU & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))
+                              ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0)
+                                  ? 0x7fc00000U : (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU)))
+                              : (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0) 
+                                  | (((0U == (0x1fU 
+                                              & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                 [6U]
+                                                 [2U] 
+                                                 >> 0xaU))) 
+                                      & (0U != (0x3ffU 
+                                                & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                [6U]
+                                                [2U]))) 
+                                     | (IData)(((0U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))))
+                                  ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                     << 0x1fU) : ((IData)(
+                                                          (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                            >> 8U) 
+                                                           | (0xffU 
+                                                              <= (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))))
+                                                   ? 
+                                                  (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU))
+                                                   : 
+                                                  ((0U 
+                                                    == (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))
+                                                    ? 
+                                                   ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                    << 0x1fU)
+                                                    : 
+                                                   (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                     << 0x1fU) 
+                                                    | ((0x7f800000U 
+                                                        & ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                           << 0x17U)) 
+                                                       | ((0x200000U 
+                                                           & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                                                           ? 
+                                                          (0x7ffffcU 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 2U))
+                                                           : 
+                                                          (0x7ffff8U 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 3U))))))))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__fp32_product 
+        = ((((0x1fU == (0x1fU & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                 [6U][3U] >> 0xaU))) 
+             & (0U != (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                       [6U][3U]))) | (IData)(((0x7c00U 
+                                               == (0x7c00U 
+                                                   & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                              & (0U 
+                                                 != 
+                                                 (0x3ffU 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))))))
+            ? 0x7fc00000U : ((((0x1fU == (0x1fU & (
+                                                   vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                   [6U]
+                                                   [3U] 
+                                                   >> 0xaU))) 
+                               & (0U == (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                         [6U][3U]))) 
+                              | (IData)((0x7c00U == 
+                                         (0x7fffU & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))
+                              ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0)
+                                  ? 0x7fc00000U : (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU)))
+                              : (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0) 
+                                  | (((0U == (0x1fU 
+                                              & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                 [6U]
+                                                 [3U] 
+                                                 >> 0xaU))) 
+                                      & (0U != (0x3ffU 
+                                                & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                [6U]
+                                                [3U]))) 
+                                     | (IData)(((0U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))))
+                                  ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                     << 0x1fU) : ((IData)(
+                                                          (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                            >> 8U) 
+                                                           | (0xffU 
+                                                              <= (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))))
+                                                   ? 
+                                                  (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU))
+                                                   : 
+                                                  ((0U 
+                                                    == (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))
+                                                    ? 
+                                                   ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                    << 0x1fU)
+                                                    : 
+                                                   (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                     << 0x1fU) 
+                                                    | ((0x7f800000U 
+                                                        & ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                           << 0x17U)) 
+                                                       | ((0x200000U 
+                                                           & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                                                           ? 
+                                                          (0x7ffffcU 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 2U))
+                                                           : 
+                                                          (0x7ffff8U 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__3__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 3U))))))))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__fp32_product 
+        = ((((0x1fU == (0x1fU & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                 [6U][4U] >> 0xaU))) 
+             & (0U != (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                       [6U][4U]))) | (IData)(((0x7c00U 
+                                               == (0x7c00U 
+                                                   & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                              & (0U 
+                                                 != 
+                                                 (0x3ffU 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))))))
+            ? 0x7fc00000U : ((((0x1fU == (0x1fU & (
+                                                   vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                   [6U]
+                                                   [4U] 
+                                                   >> 0xaU))) 
+                               & (0U == (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                         [6U][4U]))) 
+                              | (IData)((0x7c00U == 
+                                         (0x7fffU & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))
+                              ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0)
+                                  ? 0x7fc00000U : (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU)))
+                              : (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0) 
+                                  | (((0U == (0x1fU 
+                                              & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                 [6U]
+                                                 [4U] 
+                                                 >> 0xaU))) 
+                                      & (0U != (0x3ffU 
+                                                & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                [6U]
+                                                [4U]))) 
+                                     | (IData)(((0U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))))
+                                  ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                     << 0x1fU) : ((IData)(
+                                                          (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                            >> 8U) 
+                                                           | (0xffU 
+                                                              <= (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))))
+                                                   ? 
+                                                  (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU))
+                                                   : 
+                                                  ((0U 
+                                                    == (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))
+                                                    ? 
+                                                   ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                    << 0x1fU)
+                                                    : 
+                                                   (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                     << 0x1fU) 
+                                                    | ((0x7f800000U 
+                                                        & ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                           << 0x17U)) 
+                                                       | ((0x200000U 
+                                                           & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                                                           ? 
+                                                          (0x7ffffcU 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 2U))
+                                                           : 
+                                                          (0x7ffff8U 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__4__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 3U))))))))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__fp32_product 
+        = ((((0x1fU == (0x1fU & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                 [6U][5U] >> 0xaU))) 
+             & (0U != (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                       [6U][5U]))) | (IData)(((0x7c00U 
+                                               == (0x7c00U 
+                                                   & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                              & (0U 
+                                                 != 
+                                                 (0x3ffU 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))))))
+            ? 0x7fc00000U : ((((0x1fU == (0x1fU & (
+                                                   vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                   [6U]
+                                                   [5U] 
+                                                   >> 0xaU))) 
+                               & (0U == (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                         [6U][5U]))) 
+                              | (IData)((0x7c00U == 
+                                         (0x7fffU & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))
+                              ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0)
+                                  ? 0x7fc00000U : (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU)))
+                              : (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0) 
+                                  | (((0U == (0x1fU 
+                                              & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                 [6U]
+                                                 [5U] 
+                                                 >> 0xaU))) 
+                                      & (0U != (0x3ffU 
+                                                & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                [6U]
+                                                [5U]))) 
+                                     | (IData)(((0U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))))
+                                  ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                     << 0x1fU) : ((IData)(
+                                                          (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                            >> 8U) 
+                                                           | (0xffU 
+                                                              <= (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))))
+                                                   ? 
+                                                  (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU))
+                                                   : 
+                                                  ((0U 
+                                                    == (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))
+                                                    ? 
+                                                   ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                    << 0x1fU)
+                                                    : 
+                                                   (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                     << 0x1fU) 
+                                                    | ((0x7f800000U 
+                                                        & ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                           << 0x17U)) 
+                                                       | ((0x200000U 
+                                                           & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                                                           ? 
+                                                          (0x7ffffcU 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 2U))
+                                                           : 
+                                                          (0x7ffff8U 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__5__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 3U))))))))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__fp32_product 
+        = ((((0x1fU == (0x1fU & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                 [6U][6U] >> 0xaU))) 
+             & (0U != (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                       [6U][6U]))) | (IData)(((0x7c00U 
+                                               == (0x7c00U 
+                                                   & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                              & (0U 
+                                                 != 
+                                                 (0x3ffU 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))))))
+            ? 0x7fc00000U : ((((0x1fU == (0x1fU & (
+                                                   vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                   [6U]
+                                                   [6U] 
+                                                   >> 0xaU))) 
+                               & (0U == (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                         [6U][6U]))) 
+                              | (IData)((0x7c00U == 
+                                         (0x7fffU & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))
+                              ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0)
+                                  ? 0x7fc00000U : (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU)))
+                              : (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0) 
+                                  | (((0U == (0x1fU 
+                                              & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                 [6U]
+                                                 [6U] 
+                                                 >> 0xaU))) 
+                                      & (0U != (0x3ffU 
+                                                & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                [6U]
+                                                [6U]))) 
+                                     | (IData)(((0U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))))
+                                  ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                     << 0x1fU) : ((IData)(
+                                                          (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                            >> 8U) 
+                                                           | (0xffU 
+                                                              <= (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))))
+                                                   ? 
+                                                  (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU))
+                                                   : 
+                                                  ((0U 
+                                                    == (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))
+                                                    ? 
+                                                   ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                    << 0x1fU)
+                                                    : 
+                                                   (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                     << 0x1fU) 
+                                                    | ((0x7f800000U 
+                                                        & ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                           << 0x17U)) 
+                                                       | ((0x200000U 
+                                                           & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                                                           ? 
+                                                          (0x7ffffcU 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 2U))
+                                                           : 
+                                                          (0x7ffff8U 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__6__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 3U))))))))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__fp32_product 
+        = ((((0x1fU == (0x1fU & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                 [6U][7U] >> 0xaU))) 
+             & (0U != (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                       [6U][7U]))) | (IData)(((0x7c00U 
+                                               == (0x7c00U 
+                                                   & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                              & (0U 
+                                                 != 
+                                                 (0x3ffU 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))))))
+            ? 0x7fc00000U : ((((0x1fU == (0x1fU & (
+                                                   vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                   [6U]
+                                                   [7U] 
+                                                   >> 0xaU))) 
+                               & (0U == (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                         [6U][7U]))) 
+                              | (IData)((0x7c00U == 
+                                         (0x7fffU & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))
+                              ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0)
+                                  ? 0x7fc00000U : (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU)))
+                              : (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0) 
+                                  | (((0U == (0x1fU 
+                                              & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                 [6U]
+                                                 [7U] 
+                                                 >> 0xaU))) 
+                                      & (0U != (0x3ffU 
+                                                & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                [6U]
+                                                [7U]))) 
+                                     | (IData)(((0U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))))
+                                  ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                     << 0x1fU) : ((IData)(
+                                                          (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                            >> 8U) 
+                                                           | (0xffU 
+                                                              <= (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))))
+                                                   ? 
+                                                  (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU))
+                                                   : 
+                                                  ((0U 
+                                                    == (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))
+                                                    ? 
+                                                   ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                    << 0x1fU)
+                                                    : 
+                                                   (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                     << 0x1fU) 
+                                                    | ((0x7f800000U 
+                                                        & ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                           << 0x17U)) 
+                                                       | ((0x200000U 
+                                                           & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                                                           ? 
+                                                          (0x7ffffcU 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 2U))
+                                                           : 
+                                                          (0x7ffff8U 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__7__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 3U))))))))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__fp32_product 
+        = ((((0x1fU == (0x1fU & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                 [6U][8U] >> 0xaU))) 
+             & (0U != (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                       [6U][8U]))) | (IData)(((0x7c00U 
+                                               == (0x7c00U 
+                                                   & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                              & (0U 
+                                                 != 
+                                                 (0x3ffU 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))))))
+            ? 0x7fc00000U : ((((0x1fU == (0x1fU & (
+                                                   vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                   [6U]
+                                                   [8U] 
+                                                   >> 0xaU))) 
+                               & (0U == (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                         [6U][8U]))) 
+                              | (IData)((0x7c00U == 
+                                         (0x7fffU & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))
+                              ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0)
+                                  ? 0x7fc00000U : (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU)))
+                              : (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0) 
+                                  | (((0U == (0x1fU 
+                                              & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                 [6U]
+                                                 [8U] 
+                                                 >> 0xaU))) 
+                                      & (0U != (0x3ffU 
+                                                & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                [6U]
+                                                [8U]))) 
+                                     | (IData)(((0U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))))
+                                  ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                     << 0x1fU) : ((IData)(
+                                                          (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                            >> 8U) 
+                                                           | (0xffU 
+                                                              <= (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))))
+                                                   ? 
+                                                  (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU))
+                                                   : 
+                                                  ((0U 
+                                                    == (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))
+                                                    ? 
+                                                   ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                    << 0x1fU)
+                                                    : 
+                                                   (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                     << 0x1fU) 
+                                                    | ((0x7f800000U 
+                                                        & ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                           << 0x17U)) 
+                                                       | ((0x200000U 
+                                                           & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                                                           ? 
+                                                          (0x7ffffcU 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 2U))
+                                                           : 
+                                                          (0x7ffff8U 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__8__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 3U))))))))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__fp32_product 
+        = ((((0x1fU == (0x1fU & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                 [6U][9U] >> 0xaU))) 
+             & (0U != (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                       [6U][9U]))) | (IData)(((0x7c00U 
+                                               == (0x7c00U 
+                                                   & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                              & (0U 
+                                                 != 
+                                                 (0x3ffU 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))))))
+            ? 0x7fc00000U : ((((0x1fU == (0x1fU & (
+                                                   vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                   [6U]
+                                                   [9U] 
+                                                   >> 0xaU))) 
+                               & (0U == (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                         [6U][9U]))) 
+                              | (IData)((0x7c00U == 
+                                         (0x7fffU & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))
+                              ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0)
+                                  ? 0x7fc00000U : (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU)))
+                              : (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0) 
+                                  | (((0U == (0x1fU 
+                                              & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                 [6U]
+                                                 [9U] 
+                                                 >> 0xaU))) 
+                                      & (0U != (0x3ffU 
+                                                & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                [6U]
+                                                [9U]))) 
+                                     | (IData)(((0U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))))
+                                  ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                     << 0x1fU) : ((IData)(
+                                                          (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                            >> 8U) 
+                                                           | (0xffU 
+                                                              <= (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))))
+                                                   ? 
+                                                  (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU))
+                                                   : 
+                                                  ((0U 
+                                                    == (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))
+                                                    ? 
+                                                   ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                    << 0x1fU)
+                                                    : 
+                                                   (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                     << 0x1fU) 
+                                                    | ((0x7f800000U 
+                                                        & ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                           << 0x17U)) 
+                                                       | ((0x200000U 
+                                                           & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                                                           ? 
+                                                          (0x7ffffcU 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 2U))
+                                                           : 
+                                                          (0x7ffff8U 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__9__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 3U))))))))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__fp32_product 
+        = ((((0x1fU == (0x1fU & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                 [6U][0xaU] >> 0xaU))) 
+             & (0U != (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                       [6U][0xaU]))) | (IData)(((0x7c00U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))))))
+            ? 0x7fc00000U : ((((0x1fU == (0x1fU & (
+                                                   vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                   [6U]
+                                                   [0xaU] 
+                                                   >> 0xaU))) 
+                               & (0U == (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                         [6U][0xaU]))) 
+                              | (IData)((0x7c00U == 
+                                         (0x7fffU & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))
+                              ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0)
+                                  ? 0x7fc00000U : (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU)))
+                              : (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0) 
+                                  | (((0U == (0x1fU 
+                                              & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                 [6U]
+                                                 [0xaU] 
+                                                 >> 0xaU))) 
+                                      & (0U != (0x3ffU 
+                                                & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                [6U]
+                                                [0xaU]))) 
+                                     | (IData)(((0U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))))
+                                  ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                     << 0x1fU) : ((IData)(
+                                                          (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                            >> 8U) 
+                                                           | (0xffU 
+                                                              <= (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))))
+                                                   ? 
+                                                  (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU))
+                                                   : 
+                                                  ((0U 
+                                                    == (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))
+                                                    ? 
+                                                   ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                    << 0x1fU)
+                                                    : 
+                                                   (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                     << 0x1fU) 
+                                                    | ((0x7f800000U 
+                                                        & ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                           << 0x17U)) 
+                                                       | ((0x200000U 
+                                                           & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                                                           ? 
+                                                          (0x7ffffcU 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 2U))
+                                                           : 
+                                                          (0x7ffff8U 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__10__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 3U))))))))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__fp32_product 
+        = ((((0x1fU == (0x1fU & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                 [6U][0xbU] >> 0xaU))) 
+             & (0U != (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                       [6U][0xbU]))) | (IData)(((0x7c00U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))))))
+            ? 0x7fc00000U : ((((0x1fU == (0x1fU & (
+                                                   vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                   [6U]
+                                                   [0xbU] 
+                                                   >> 0xaU))) 
+                               & (0U == (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                         [6U][0xbU]))) 
+                              | (IData)((0x7c00U == 
+                                         (0x7fffU & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))
+                              ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0)
+                                  ? 0x7fc00000U : (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU)))
+                              : (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0) 
+                                  | (((0U == (0x1fU 
+                                              & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                 [6U]
+                                                 [0xbU] 
+                                                 >> 0xaU))) 
+                                      & (0U != (0x3ffU 
+                                                & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                [6U]
+                                                [0xbU]))) 
+                                     | (IData)(((0U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))))
+                                  ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                     << 0x1fU) : ((IData)(
+                                                          (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                            >> 8U) 
+                                                           | (0xffU 
+                                                              <= (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))))
+                                                   ? 
+                                                  (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU))
+                                                   : 
+                                                  ((0U 
+                                                    == (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))
+                                                    ? 
+                                                   ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                    << 0x1fU)
+                                                    : 
+                                                   (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                     << 0x1fU) 
+                                                    | ((0x7f800000U 
+                                                        & ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                           << 0x17U)) 
+                                                       | ((0x200000U 
+                                                           & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                                                           ? 
+                                                          (0x7ffffcU 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 2U))
+                                                           : 
+                                                          (0x7ffff8U 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__11__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 3U))))))))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__fp32_product 
+        = ((((0x1fU == (0x1fU & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                 [6U][0xcU] >> 0xaU))) 
+             & (0U != (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                       [6U][0xcU]))) | (IData)(((0x7c00U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))))))
+            ? 0x7fc00000U : ((((0x1fU == (0x1fU & (
+                                                   vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                   [6U]
+                                                   [0xcU] 
+                                                   >> 0xaU))) 
+                               & (0U == (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                         [6U][0xcU]))) 
+                              | (IData)((0x7c00U == 
+                                         (0x7fffU & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))
+                              ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0)
+                                  ? 0x7fc00000U : (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU)))
+                              : (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0) 
+                                  | (((0U == (0x1fU 
+                                              & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                 [6U]
+                                                 [0xcU] 
+                                                 >> 0xaU))) 
+                                      & (0U != (0x3ffU 
+                                                & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                [6U]
+                                                [0xcU]))) 
+                                     | (IData)(((0U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))))
+                                  ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                     << 0x1fU) : ((IData)(
+                                                          (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                            >> 8U) 
+                                                           | (0xffU 
+                                                              <= (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))))
+                                                   ? 
+                                                  (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU))
+                                                   : 
+                                                  ((0U 
+                                                    == (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))
+                                                    ? 
+                                                   ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                    << 0x1fU)
+                                                    : 
+                                                   (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                     << 0x1fU) 
+                                                    | ((0x7f800000U 
+                                                        & ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                           << 0x17U)) 
+                                                       | ((0x200000U 
+                                                           & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                                                           ? 
+                                                          (0x7ffffcU 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 2U))
+                                                           : 
+                                                          (0x7ffff8U 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__12__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 3U))))))))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__fp32_product 
+        = ((((0x1fU == (0x1fU & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                 [6U][0xdU] >> 0xaU))) 
+             & (0U != (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                       [6U][0xdU]))) | (IData)(((0x7c00U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))))))
+            ? 0x7fc00000U : ((((0x1fU == (0x1fU & (
+                                                   vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                   [6U]
+                                                   [0xdU] 
+                                                   >> 0xaU))) 
+                               & (0U == (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                         [6U][0xdU]))) 
+                              | (IData)((0x7c00U == 
+                                         (0x7fffU & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))
+                              ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0)
+                                  ? 0x7fc00000U : (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU)))
+                              : (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0) 
+                                  | (((0U == (0x1fU 
+                                              & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                 [6U]
+                                                 [0xdU] 
+                                                 >> 0xaU))) 
+                                      & (0U != (0x3ffU 
+                                                & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                [6U]
+                                                [0xdU]))) 
+                                     | (IData)(((0U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))))
+                                  ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                     << 0x1fU) : ((IData)(
+                                                          (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                            >> 8U) 
+                                                           | (0xffU 
+                                                              <= (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))))
+                                                   ? 
+                                                  (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU))
+                                                   : 
+                                                  ((0U 
+                                                    == (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))
+                                                    ? 
+                                                   ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                    << 0x1fU)
+                                                    : 
+                                                   (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                     << 0x1fU) 
+                                                    | ((0x7f800000U 
+                                                        & ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                           << 0x17U)) 
+                                                       | ((0x200000U 
+                                                           & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                                                           ? 
+                                                          (0x7ffffcU 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 2U))
+                                                           : 
+                                                          (0x7ffff8U 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__13__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 3U))))))))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__fp32_product 
+        = ((((0x1fU == (0x1fU & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                 [6U][0xeU] >> 0xaU))) 
+             & (0U != (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                       [6U][0xeU]))) | (IData)(((0x7c00U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))))))
+            ? 0x7fc00000U : ((((0x1fU == (0x1fU & (
+                                                   vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                   [6U]
+                                                   [0xeU] 
+                                                   >> 0xaU))) 
+                               & (0U == (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                         [6U][0xeU]))) 
+                              | (IData)((0x7c00U == 
+                                         (0x7fffU & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))
+                              ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0)
+                                  ? 0x7fc00000U : (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU)))
+                              : (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0) 
+                                  | (((0U == (0x1fU 
+                                              & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                 [6U]
+                                                 [0xeU] 
+                                                 >> 0xaU))) 
+                                      & (0U != (0x3ffU 
+                                                & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                [6U]
+                                                [0xeU]))) 
+                                     | (IData)(((0U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))))
+                                  ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                     << 0x1fU) : ((IData)(
+                                                          (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                            >> 8U) 
+                                                           | (0xffU 
+                                                              <= (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))))
+                                                   ? 
+                                                  (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU))
+                                                   : 
+                                                  ((0U 
+                                                    == (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))
+                                                    ? 
+                                                   ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                    << 0x1fU)
+                                                    : 
+                                                   (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                     << 0x1fU) 
+                                                    | ((0x7f800000U 
+                                                        & ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                           << 0x17U)) 
+                                                       | ((0x200000U 
+                                                           & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                                                           ? 
+                                                          (0x7ffffcU 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 2U))
+                                                           : 
+                                                          (0x7ffff8U 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__14__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 3U))))))))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__fp32_product 
+        = ((((0x1fU == (0x1fU & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                 [6U][0xfU] >> 0xaU))) 
+             & (0U != (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                       [6U][0xfU]))) | (IData)(((0x7c00U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))))))
+            ? 0x7fc00000U : ((((0x1fU == (0x1fU & (
+                                                   vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                   [6U]
+                                                   [0xfU] 
+                                                   >> 0xaU))) 
+                               & (0U == (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                         [6U][0xfU]))) 
+                              | (IData)((0x7c00U == 
+                                         (0x7fffU & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))
+                              ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0)
+                                  ? 0x7fc00000U : (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU)))
+                              : (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0) 
+                                  | (((0U == (0x1fU 
+                                              & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                 [6U]
+                                                 [0xfU] 
+                                                 >> 0xaU))) 
+                                      & (0U != (0x3ffU 
+                                                & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                [6U]
+                                                [0xfU]))) 
+                                     | (IData)(((0U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))))
+                                  ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                     << 0x1fU) : ((IData)(
+                                                          (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                            >> 8U) 
+                                                           | (0xffU 
+                                                              <= (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))))
+                                                   ? 
+                                                  (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU))
+                                                   : 
+                                                  ((0U 
+                                                    == (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))
+                                                    ? 
+                                                   ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                    << 0x1fU)
+                                                    : 
+                                                   (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                     << 0x1fU) 
+                                                    | ((0x7f800000U 
+                                                        & ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                           << 0x17U)) 
+                                                       | ((0x200000U 
+                                                           & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                                                           ? 
+                                                          (0x7ffffcU 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 2U))
+                                                           : 
+                                                          (0x7ffff8U 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__6__KET____DOT__PE_COL__BRA__15__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 3U))))))))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__7__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__fp32_product 
+        = ((((0x1fU == (0x1fU & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                 [7U][0U] >> 0xaU))) 
+             & (0U != (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                       [7U][0U]))) | (IData)(((0x7c00U 
+                                               == (0x7c00U 
+                                                   & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__7__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                              & (0U 
+                                                 != 
+                                                 (0x3ffU 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__7__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))))))
+            ? 0x7fc00000U : ((((0x1fU == (0x1fU & (
+                                                   vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                   [7U]
+                                                   [0U] 
+                                                   >> 0xaU))) 
+                               & (0U == (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                         [7U][0U]))) 
+                              | (IData)((0x7c00U == 
+                                         (0x7fffU & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__7__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))
+                              ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__7__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0)
+                                  ? 0x7fc00000U : (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__7__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU)))
+                              : (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__7__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0) 
+                                  | (((0U == (0x1fU 
+                                              & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                 [7U]
+                                                 [0U] 
+                                                 >> 0xaU))) 
+                                      & (0U != (0x3ffU 
+                                                & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                [7U]
+                                                [0U]))) 
+                                     | (IData)(((0U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__7__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__7__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))))
+                                  ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__7__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                     << 0x1fU) : ((IData)(
+                                                          (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__7__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                            >> 8U) 
+                                                           | (0xffU 
+                                                              <= (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__7__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))))
+                                                   ? 
+                                                  (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__7__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU))
+                                                   : 
+                                                  ((0U 
+                                                    == (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__7__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))
+                                                    ? 
+                                                   ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__7__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                    << 0x1fU)
+                                                    : 
+                                                   (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__7__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                     << 0x1fU) 
+                                                    | ((0x7f800000U 
+                                                        & ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__7__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                           << 0x17U)) 
+                                                       | ((0x200000U 
+                                                           & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__7__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                                                           ? 
+                                                          (0x7ffffcU 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__7__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 2U))
+                                                           : 
+                                                          (0x7ffff8U 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__7__KET____DOT__PE_COL__BRA__0__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 3U))))))))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__7__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__fp32_product 
+        = ((((0x1fU == (0x1fU & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                 [7U][1U] >> 0xaU))) 
+             & (0U != (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                       [7U][1U]))) | (IData)(((0x7c00U 
+                                               == (0x7c00U 
+                                                   & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__7__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                              & (0U 
+                                                 != 
+                                                 (0x3ffU 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__7__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))))))
+            ? 0x7fc00000U : ((((0x1fU == (0x1fU & (
+                                                   vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                   [7U]
+                                                   [1U] 
+                                                   >> 0xaU))) 
+                               & (0U == (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                         [7U][1U]))) 
+                              | (IData)((0x7c00U == 
+                                         (0x7fffU & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__7__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))
+                              ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__7__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0)
+                                  ? 0x7fc00000U : (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__7__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU)))
+                              : (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__7__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0) 
+                                  | (((0U == (0x1fU 
+                                              & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                 [7U]
+                                                 [1U] 
+                                                 >> 0xaU))) 
+                                      & (0U != (0x3ffU 
+                                                & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                [7U]
+                                                [1U]))) 
+                                     | (IData)(((0U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__7__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__7__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))))
+                                  ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__7__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                     << 0x1fU) : ((IData)(
+                                                          (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__7__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                            >> 8U) 
+                                                           | (0xffU 
+                                                              <= (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__7__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))))
+                                                   ? 
+                                                  (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__7__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU))
+                                                   : 
+                                                  ((0U 
+                                                    == (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__7__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))
+                                                    ? 
+                                                   ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__7__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                    << 0x1fU)
+                                                    : 
+                                                   (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__7__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                     << 0x1fU) 
+                                                    | ((0x7f800000U 
+                                                        & ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__7__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                           << 0x17U)) 
+                                                       | ((0x200000U 
+                                                           & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__7__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                                                           ? 
+                                                          (0x7ffffcU 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__7__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 2U))
+                                                           : 
+                                                          (0x7ffff8U 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__7__KET____DOT__PE_COL__BRA__1__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 3U))))))))));
+    vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__7__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__fp32_product 
+        = ((((0x1fU == (0x1fU & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                 [7U][2U] >> 0xaU))) 
+             & (0U != (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                       [7U][2U]))) | (IData)(((0x7c00U 
+                                               == (0x7c00U 
+                                                   & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__7__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                              & (0U 
+                                                 != 
+                                                 (0x3ffU 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__7__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))))))
+            ? 0x7fc00000U : ((((0x1fU == (0x1fU & (
+                                                   vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                   [7U]
+                                                   [2U] 
+                                                   >> 0xaU))) 
+                               & (0U == (0x3ffU & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                         [7U][2U]))) 
+                              | (IData)((0x7c00U == 
+                                         (0x7fffU & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__7__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))
+                              ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__7__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0)
+                                  ? 0x7fc00000U : (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__7__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU)))
+                              : (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__7__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT____VdfgExtracted_h1f028376__0) 
+                                  | (((0U == (0x1fU 
+                                              & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                 [7U]
+                                                 [2U] 
+                                                 >> 0xaU))) 
+                                      & (0U != (0x3ffU 
+                                                & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__pe_act_wire
+                                                [7U]
+                                                [2U]))) 
+                                     | (IData)(((0U 
+                                                 == 
+                                                 (0x7c00U 
+                                                  & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__7__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg))) 
+                                                & (0U 
+                                                   != 
+                                                   (0x3ffU 
+                                                    & (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__7__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__weight_reg)))))))
+                                  ? ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__7__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                     << 0x1fU) : ((IData)(
+                                                          (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__7__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                            >> 8U) 
+                                                           | (0xffU 
+                                                              <= (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__7__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))))
+                                                   ? 
+                                                  (0x7f800000U 
+                                                   | ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__7__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                      << 0x1fU))
+                                                   : 
+                                                  ((0U 
+                                                    == (IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__7__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp))
+                                                    ? 
+                                                   ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__7__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                    << 0x1fU)
+                                                    : 
+                                                   (((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__7__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__result_sign) 
+                                                     << 0x1fU) 
+                                                    | ((0x7f800000U 
+                                                        & ((IData)(vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__7__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__fp32_exp) 
+                                                           << 0x17U)) 
+                                                       | ((0x200000U 
+                                                           & vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__7__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product)
+                                                           ? 
+                                                          (0x7ffffcU 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__7__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 2U))
+                                                           : 
+                                                          (0x7ffff8U 
+                                                           & (vlSelf->npu_core_top__DOT__u_systolic_array__DOT__PE_ROW__BRA__7__KET____DOT__PE_COL__BRA__2__KET____DOT__MODE_FP16__DOT__u_pe__DOT__u_mul__DOT__mant_product 
+                                                              << 3U))))))))));
+}

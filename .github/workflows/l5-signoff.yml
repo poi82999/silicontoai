@@ -26,6 +26,27 @@ jobs:
           wsl bash -lc "cd '$workspace' && find scripts -name '*.sh' -print0 | xargs -0 sed -i 's/\r$//'"
           wsl bash -lc "cd '$workspace' && chmod +x scripts/*.sh"
 
+      - name: Build Verilator core binary
+        shell: powershell
+        run: |
+          $workspaceWin = "${{ github.workspace }}" -replace '\\','/'
+          $workspace = wsl wslpath -u "$workspaceWin"
+          wsl bash -lc "cd '$workspace' && make -C scripts build-core"
+
+      - name: Run core 2-package gate
+        shell: powershell
+        run: |
+          $workspaceWin = "${{ github.workspace }}" -replace '\\','/'
+          $workspace = wsl wslpath -u "$workspaceWin"
+          wsl bash -lc "cd '$workspace' && ./build/Vnpu_core_top workloads/reference_gemm_tile_m0_n0_k0to15 && ./build/Vnpu_core_top workloads/reference_acc_forwarding_same_addr_core"
+
+      - name: Run UVM smoke gate
+        shell: powershell
+        run: |
+          $workspaceWin = "${{ github.workspace }}" -replace '\\','/'
+          $workspace = wsl wslpath -u "$workspaceWin"
+          wsl bash -lc "cd '$workspace' && bash scripts/run_uvm.sh npu_smoke_test int8"
+
       - name: Run one-shot L5 signoff
         shell: powershell
         run: |

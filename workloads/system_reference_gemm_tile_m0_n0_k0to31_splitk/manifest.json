@@ -28,7 +28,24 @@
     "k_tile_count": 2,
     "require_weight_preload": true,
     "acc_clear_policy": "first_pass_overwrite",
-    "drain_addresses": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+    "drain_addresses": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ]
   },
   "format": {
     "activation_layout": "row_major_16xint8_vectors",
@@ -80,7 +97,7 @@
         "drain"
       ],
       "expected_dma_done_count": 4,
-      "expected_npu_done_count": 4,
+      "expected_npu_done_count": 2,
       "flush_cycles": 35,
       "passes": [
         {
@@ -95,8 +112,8 @@
         },
         {
           "pass_index": 1,
-          "weights_src_addr": 256,
-          "activations_src_addr": 8448,
+          "weights_src_addr": 512,
+          "activations_src_addr": 8704,
           "weight_burst_len": 15,
           "weight_total_bursts": 1,
           "activation_burst_len": 15,

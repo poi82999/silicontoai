@@ -512,8 +512,9 @@ def _build_system_metadata(
             "activation_target": "inactive_activation_bank_then_execute",
             "phase_sequence": phase_sequence,
             "expected_dma_done_count": 2 * k_tile_count,
-            "expected_npu_done_count": 2 * k_tile_count,
+            "expected_npu_done_count": k_tile_count,
             "flush_cycles": 35,
+            "verification_only_hook_policy": "streamlined_dma_execute",
             "passes": passes,
         },
     }

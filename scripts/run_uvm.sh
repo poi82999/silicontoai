@@ -4,6 +4,7 @@ set -euo pipefail
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 ROOT_DIR="$(cd "${SCRIPT_DIR}/.." && pwd)"
 TESTNAME="${1:-npu_test}"
+DATA_MODE="${2:-int8}"
 SNAPSHOT="sim_snapshot_$(date +%s)"
 SIM_DIR="${ROOT_DIR}/sim/uvm"
 RUNS_DIR="${SIM_DIR}/runs"
@@ -36,12 +37,22 @@ if ! command -v xvlog >/dev/null 2>&1 || ! command -v xelab >/dev/null 2>&1 || !
     ! xvlog -version >/dev/null 2>&1 || ! xelab -version >/dev/null 2>&1 || ! xsim -version >/dev/null 2>&1; then
     if command -v cmd.exe >/dev/null 2>&1 && [[ -f "${SCRIPT_DIR}/run_uvm.bat" ]]; then
         echo "[UVM Script] Linux Vivado tools are not on PATH. Falling back to Windows Vivado via cmd.exe."
-        cmd.exe /c "cd /d $(wslpath -w "${SCRIPT_DIR}") && call run_uvm.bat ${TESTNAME}"
+        cmd.exe /c "cd /d $(wslpath -w "${SCRIPT_DIR}") && call run_uvm.bat ${TESTNAME} ${DATA_MODE}"
         exit $?
     fi
 
     echo "[UVM Script] Vivado simulator tools are not on PATH."
     exit 1
+fi
+
+if [[ "${DATA_MODE}" != "int8" && "${DATA_MODE}" != "fp16" ]]; then
+    echo "[UVM Script] invalid data mode: ${DATA_MODE} (expected int8|fp16)"
+    exit 1
+fi
+
+UVM_MODE_DEFINE=""
+if [[ "${DATA_MODE}" == "fp16" ]]; then
+    UVM_MODE_DEFINE="-d UVM_DATA_MODE_FP16"
 fi
 
 rm -f "${SCRIPT_DIR}"/*.log "${SCRIPT_DIR}"/*.pb
@@ -55,11 +66,17 @@ printf '%s\n' "${SIM_LOG}" > "${LATEST_SIM_LOG}"
 echo "[UVM Script] Starting Compilation..."
 (cd "${WORK_DIR}" && \
     xvlog --nolog -sv -L uvm \
-        "${ROOT_DIR}/rtl/mac_pe.sv" \
-        "${ROOT_DIR}/rtl/systolic_data_setup.sv" \
-        "${ROOT_DIR}/rtl/psum_accumulator_buffer.sv" \
-        "${ROOT_DIR}/rtl/systolic_array_16x16.sv" \
-        "${ROOT_DIR}/rtl/npu_core_top.sv" \
+        ${UVM_MODE_DEFINE} \
+        "${ROOT_DIR}/rtl/include/npu_def_pkg.sv" \
+        "${ROOT_DIR}/rtl/arithmetic/fp16_multiplier.sv" \
+        "${ROOT_DIR}/rtl/arithmetic/fp32_adder.sv" \
+        "${ROOT_DIR}/rtl/core/mac_pe.sv" \
+        "${ROOT_DIR}/rtl/core/mac_pe_int8.sv" \
+        "${ROOT_DIR}/rtl/core/systolic_data_setup.sv" \
+        "${ROOT_DIR}/rtl/memory/psum_accumulator_buffer.sv" \
+        "${ROOT_DIR}/rtl/core/systolic_array.sv" \
+        "${ROOT_DIR}/rtl/core/npu_mxe_top.sv" \
+        "${ROOT_DIR}/rtl/core/npu_core_top.sv" \
         "${ROOT_DIR}/tb/npu_if.sv" \
         "${ROOT_DIR}/tb/npu_uvm_pkg.sv" \
         "${ROOT_DIR}/tb/assertions/npu_assertions.sv" \

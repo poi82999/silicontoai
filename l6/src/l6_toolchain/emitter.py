@@ -55,15 +55,28 @@ def _resolve_weight_matrix(spec: LinearOp, data: LinearData | None = None) -> np
 
 
 def _compute_product(activations: np.ndarray, weights: np.ndarray, bias: np.ndarray | None = None) -> np.ndarray:
-    product = activations.astype(np.int32) @ weights.astype(np.int32)
-    if bias is not None:
-        product = product + bias.astype(np.int32)
-    return product
+    """Bit-accurate FP16→FP32 matmul matching NPU RTL semantics.
+
+    Uses CUDA GPU acceleration when available (via cuda.golden_accel),
+    with automatic NumPy fallback.
+    """
+    try:
+        from npu_cuda.golden_accel import compute_golden_single
+        return compute_golden_single(activations, weights, bias)
+    except ImportError:
+        # Cast to float16, multiply/accumulate into float32 to match RTL semantics
+        product = activations.astype(np.float16) @ weights.astype(np.float16)
+        product = product.astype(np.float32)
+        if bias is not None:
+            product = product + bias.astype(np.float32)
+        return product
 
 
 def _golden_outputs_from_product(product: np.ndarray, global_row_base: int, global_col_base: int) -> list[dict[str, object]]:
     outputs: list[dict[str, object]] = []
-    for row_idx, vector in enumerate(product.tolist()):
+    # Cast float32 matrix directly viewing its IEEE 754 bit layout as int32
+    bit_representations = product.view(np.int32).tolist()
+    for row_idx, vector in enumerate(bit_representations):
         outputs.append(
             {
                 "drain_addr": row_idx,

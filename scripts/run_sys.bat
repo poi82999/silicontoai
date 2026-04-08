@@ -36,19 +36,28 @@ echo ============================================================
 echo  [1/3] Compiling RTL + Testbench (xvlog)...
 echo ============================================================
 pushd %WORK_DIR%
-call xvlog --nolog -sv ^
-  %ROOT_DIR%\rtl\dp_sram_bank.sv ^
-  %ROOT_DIR%\rtl\mac_pe.sv ^
-  %ROOT_DIR%\rtl\systolic_data_setup.sv ^
-  %ROOT_DIR%\rtl\systolic_array_16x16.sv ^
-  %ROOT_DIR%\rtl\psum_accumulator_buffer.sv ^
-  %ROOT_DIR%\rtl\dma_controller.sv ^
-  %ROOT_DIR%\rtl\npu_core_top.sv ^
-  %ROOT_DIR%\rtl\npu_system_top.sv ^
-  %ROOT_DIR%\tb\assertions\npu_assertions.sv ^
-  %ROOT_DIR%\tb\assertions\npu_assert_coverage.sv ^
-  %ROOT_DIR%\tb\assertions\system_assert_bind.sv ^
-  %ROOT_DIR%\tb\tb_system_top.sv > %OUT_DIR%\compile.log 2>&1
+
+echo %ROOT_DIR%\rtl\include\npu_def_pkg.sv > compile_list.f
+echo %ROOT_DIR%\rtl\include\npu_interfaces.sv >> compile_list.f
+echo %ROOT_DIR%\rtl\arithmetic\fp16_multiplier.sv >> compile_list.f
+echo %ROOT_DIR%\rtl\arithmetic\fp32_adder.sv >> compile_list.f
+echo %ROOT_DIR%\rtl\core\mac_pe.sv >> compile_list.f
+echo %ROOT_DIR%\rtl\core\mac_pe_int8.sv >> compile_list.f
+echo %ROOT_DIR%\rtl\core\systolic_data_setup.sv >> compile_list.f
+echo %ROOT_DIR%\rtl\core\systolic_array.sv >> compile_list.f
+echo %ROOT_DIR%\rtl\core\npu_mxe_top.sv >> compile_list.f
+echo %ROOT_DIR%\rtl\core\npu_core_top.sv >> compile_list.f
+echo %ROOT_DIR%\rtl\memory\dp_sram_bank.sv >> compile_list.f
+echo %ROOT_DIR%\rtl\memory\psum_accumulator_buffer.sv >> compile_list.f
+echo %ROOT_DIR%\rtl\system\axi_lite_mmio_bridge.sv >> compile_list.f
+echo %ROOT_DIR%\rtl\system\dma_controller.sv >> compile_list.f
+echo %ROOT_DIR%\rtl\system\npu_system_top.sv >> compile_list.f
+echo %ROOT_DIR%\tb\assertions\npu_assertions.sv >> compile_list.f
+echo %ROOT_DIR%\tb\assertions\npu_assert_coverage.sv >> compile_list.f
+echo %ROOT_DIR%\tb\assertions\system_assert_bind.sv >> compile_list.f
+echo %ROOT_DIR%\tb\tb_system_top.sv >> compile_list.f
+
+call xvlog --nolog -sv -f compile_list.f > %OUT_DIR%\compile.log 2>&1
 popd
 
 if %ERRORLEVEL% NEQ 0 (

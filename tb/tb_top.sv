@@ -6,6 +6,12 @@ import npu_uvm_pkg::*;
 
 module tb_top;
 
+    `ifdef UVM_DATA_MODE_FP16
+        localparam int TB_DATA_MODE = 1;
+    `else
+        localparam int TB_DATA_MODE = 0;
+    `endif
+
     // 1. Clock and Reset Generation
     logic clk;
     logic rst_n;
@@ -24,7 +30,9 @@ module tb_top;
     npu_if vif(clk, rst_n);
 
     // 3. DUT Instantiation
-    npu_core_top dut (
+    npu_core_top #(
+        .DATA_MODE(TB_DATA_MODE)
+    ) dut (
         .clk             (vif.clk),
         .rst_n           (vif.rst_n),
         .sram_act_in     (vif.sram_act_in),

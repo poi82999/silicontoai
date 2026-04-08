@@ -10,6 +10,14 @@ if not exist %SIM_DIR% mkdir %SIM_DIR%
 if not exist %RUNS_DIR% mkdir %RUNS_DIR%
 set TESTNAME=npu_test
 if not "%~1"=="" set TESTNAME=%~1
+set DATA_MODE=int8
+if not "%~2"=="" set DATA_MODE=%~2
+if /I not "%DATA_MODE%"=="int8" if /I not "%DATA_MODE%"=="fp16" (
+  echo [ERROR] Invalid DATA_MODE=%DATA_MODE% ^(expected int8^|fp16^)
+  exit /b 1
+)
+set UVM_MODE_DEFINE=
+if /I "%DATA_MODE%"=="fp16" set UVM_MODE_DEFINE=-d UVM_DATA_MODE_FP16
 set SNAPSHOT=sim_snapshot_%RANDOM%_%RANDOM%
 set RUN_DIR=%RUNS_DIR%\%SNAPSHOT%
 set WORK_DIR=%RUN_DIR%\work
@@ -42,18 +50,27 @@ echo ============================================================
 echo  [1/3] Compiling RTL + UVM Testbench (xvlog)...
 echo ============================================================
 pushd %WORK_DIR%
-call xvlog --nolog -sv -L uvm ^
-  %ROOT_DIR%\rtl\mac_pe.sv ^
-  %ROOT_DIR%\rtl\systolic_data_setup.sv ^
-  %ROOT_DIR%\rtl\systolic_array_16x16.sv ^
-  %ROOT_DIR%\rtl\psum_accumulator_buffer.sv ^
-  %ROOT_DIR%\rtl\npu_core_top.sv ^
-  %ROOT_DIR%\tb\npu_if.sv ^
-  %ROOT_DIR%\tb\npu_uvm_pkg.sv ^
-  %ROOT_DIR%\tb\assertions\npu_assertions.sv ^
-  %ROOT_DIR%\tb\assertions\npu_assert_coverage.sv ^
-  %ROOT_DIR%\tb\assertions\core_assert_bind.sv ^
-  %ROOT_DIR%\tb\tb_top.sv > %COMPILE_LOG% 2>&1
+
+echo %ROOT_DIR%\rtl\include\npu_def_pkg.sv > compile_list.f
+echo %ROOT_DIR%\rtl\include\npu_interfaces.sv >> compile_list.f
+echo %ROOT_DIR%\rtl\arithmetic\fp16_multiplier.sv >> compile_list.f
+echo %ROOT_DIR%\rtl\arithmetic\fp32_adder.sv >> compile_list.f
+echo %ROOT_DIR%\rtl\core\mac_pe.sv >> compile_list.f
+echo %ROOT_DIR%\rtl\core\mac_pe_int8.sv >> compile_list.f
+echo %ROOT_DIR%\rtl\core\systolic_data_setup.sv >> compile_list.f
+echo %ROOT_DIR%\rtl\core\systolic_array.sv >> compile_list.f
+echo %ROOT_DIR%\rtl\core\npu_mxe_top.sv >> compile_list.f
+echo %ROOT_DIR%\rtl\core\npu_core_top.sv >> compile_list.f
+echo %ROOT_DIR%\rtl\memory\dp_sram_bank.sv >> compile_list.f
+echo %ROOT_DIR%\rtl\memory\psum_accumulator_buffer.sv >> compile_list.f
+echo %ROOT_DIR%\tb\npu_if.sv >> compile_list.f
+echo %ROOT_DIR%\tb\npu_uvm_pkg.sv >> compile_list.f
+echo %ROOT_DIR%\tb\assertions\npu_assertions.sv >> compile_list.f
+echo %ROOT_DIR%\tb\assertions\npu_assert_coverage.sv >> compile_list.f
+echo %ROOT_DIR%\tb\assertions\core_assert_bind.sv >> compile_list.f
+echo %ROOT_DIR%\tb\tb_top.sv >> compile_list.f
+
+call xvlog --nolog -sv -L uvm %UVM_MODE_DEFINE% -f compile_list.f > %COMPILE_LOG% 2>&1
 popd
 
 if %ERRORLEVEL% NEQ 0 (

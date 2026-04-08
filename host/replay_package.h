@@ -1,7 +1,9 @@
 #pragma once
 
 #include <array>
+#include <cmath>
 #include <cstdint>
+#include <cstring>
 #include <filesystem>
 #include <fstream>
 #include <map>
@@ -31,6 +33,10 @@ struct Manifest {
     std::vector<int> drainAddresses;
     std::vector<int> accAddrSequence;
     std::vector<int> accClearSequence;
+    std::string compareMode = "exact";
+    bool compareRequireExactMatch = true;
+    float compareAbsTolerance = 0.0F;
+    float compareRelativeTolerance = 0.0F;
 };
 
 struct SystemPass {
@@ -72,19 +78,19 @@ struct GoldenEntry {
     int drainAddr = 0;
     int globalRow = 0;
     int globalColBase = 0;
-    std::array<int32_t, 16> vector{};
+    std::array<uint32_t, 16> vector{};
 };
 
-using ReplayLaneBits = uint8_t;
-using ReplaySignedLane = int8_t;
-using ReplayRow16x8 = std::array<ReplayLaneBits, 16>;
+using ReplayLaneBits = uint16_t;
+using ReplaySignedLane = int16_t;
+using ReplayRow16x16 = std::array<ReplayLaneBits, 16>;
 
 struct PackageData {
     fs::path packageDir;
     Manifest manifest;
     SystemConfig system;
-    std::vector<ReplayRow16x8> activationRows;
-    std::vector<ReplayRow16x8> weightRows;
+    std::vector<ReplayRow16x16> activationRows;
+    std::vector<ReplayRow16x16> weightRows;
     std::map<int, GoldenEntry> goldenByDrainAddr;
 };
 
@@ -93,7 +99,9 @@ inline ReplaySignedLane interpretLaneAsSigned(ReplayLaneBits value) {
 }
 
 inline ReplayLaneBits prepareLaneForDutDrive(ReplayLaneBits value) {
-    return static_cast<ReplayLaneBits>(interpretLaneAsSigned(value));
+    // Lane values in packages are signed INT8 integers in two's-complement 16-bit storage.
+    // mac_pe_int8 reads only the lower 8 bits as signed INT8 — pass through directly.
+    return value;
 }
 
 inline std::string readTextFile(const fs::path& path) {
@@ -143,6 +151,16 @@ inline int extractInt(const std::string& text, const std::string& key) {
     return value;
 }
 
+inline bool tryExtractFloat(const std::string& text, const std::string& key, float* outValue) {
+    std::regex pattern("\\\"" + key + "\\\"\\s*:\\s*(-?\\d+(?:\\.\\d+)?)");
+    std::smatch match;
+    if (!std::regex_search(text, match, pattern)) {
+        return false;
+    }
+    *outValue = std::stof(match[1].str());
+    return true;
+}
+
 inline bool tryExtractUInt64(const std::string& text, const std::string& key, uint64_t* outValue) {
     std::regex pattern("\\\"" + key + "\\\"\\s*:\\s*(\\d+)");
     std::smatch match;
@@ -189,19 +207,19 @@ inline std::vector<int> extractIntArray(const std::string& text, const std::stri
     return values;
 }
 
-inline std::vector<ReplayRow16x8> parseRows16x8(const std::string& text) {
+inline std::vector<ReplayRow16x16> parseRows16x16(const std::string& text) {
     std::regex rowsPattern("\\\"rows\\\"\\s*:\\s*\\[([\\s\\S]*)\\]");
     std::smatch match;
     if (!std::regex_search(text, match, rowsPattern)) {
         throw std::runtime_error("Missing rows array in payload");
     }
 
-    std::vector<ReplayRow16x8> rows;
+    std::vector<ReplayRow16x16> rows;
     std::regex rowPattern("\\[([^\\]]+)\\]");
     auto begin = std::sregex_iterator(match[1].first, match[1].second, rowPattern);
     auto end = std::sregex_iterator();
     for (auto it = begin; it != end; ++it) {
-        ReplayRow16x8 row{};
+        ReplayRow16x16 row{};
         std::regex numberPattern("-?\\d+");
         auto numBegin = std::sregex_iterator((*it)[1].first, (*it)[1].second, numberPattern);
         auto numEnd = std::sregex_iterator();
@@ -248,7 +266,7 @@ inline std::map<int, GoldenEntry> parseGolden(const std::string& text) {
             if (index >= 16) {
                 throw std::runtime_error("Golden vector contains more than 16 elements");
             }
-            entry.vector[index++] = static_cast<int32_t>(std::stoi((*numIt).str()));
+            entry.vector[index++] = static_cast<uint32_t>(std::stoll((*numIt).str()));
         }
         if (index < 1) {
             throw std::runtime_error("Golden vector must contain at least one element");
@@ -289,7 +307,43 @@ inline Manifest parseManifest(const std::string& text) {
             manifest.accClearSequence = extractIntArray(text, "acc_clear_sequence");
         }
     }
+
+    std::string compareMode;
+    if (tryExtractString(text, "mode", &compareMode)) {
+        manifest.compareMode = compareMode;
+    }
+    bool requireExact = true;
+    if (tryExtractBool(text, "require_exact_match", &requireExact)) {
+        manifest.compareRequireExactMatch = requireExact;
+    }
+    float absTol = 0.0F;
+    if (tryExtractFloat(text, "abs_tolerance", &absTol)) {
+        manifest.compareAbsTolerance = absTol;
+    }
+    float relTol = 0.0F;
+    if (tryExtractFloat(text, "relative_tolerance", &relTol)) {
+        manifest.compareRelativeTolerance = relTol;
+    }
+
     return manifest;
+}
+
+inline bool tryDecodeFiniteFloat(uint32_t raw, float* out) {
+    float value = 0.0F;
+    std::memcpy(&value, &raw, sizeof(value));
+    if (!std::isfinite(value)) {
+        return false;
+    }
+    *out = value;
+    return true;
+}
+
+inline float decodeCompareValue(uint32_t raw) {
+    float asFloat = 0.0F;
+    if (tryDecodeFiniteFloat(raw, &asFloat)) {
+        return asFloat;
+    }
+    return static_cast<float>(static_cast<int32_t>(raw));
 }
 
 inline SystemConfig parseSystemConfig(const std::string& text) {
@@ -389,8 +443,8 @@ inline PackageData loadPackage(const fs::path& packageDir) {
     package.system = parseSystemConfig(manifestText);
     validateCommonManifest(package.manifest);
 
-    package.activationRows = parseRows16x8(readTextFile(packageDir / package.manifest.activationsFile));
-    package.weightRows = parseRows16x8(readTextFile(packageDir / package.manifest.weightsFile));
+    package.activationRows = parseRows16x16(readTextFile(packageDir / package.manifest.activationsFile));
+    package.weightRows = parseRows16x16(readTextFile(packageDir / package.manifest.weightsFile));
     package.goldenByDrainAddr = parseGolden(readTextFile(packageDir / package.manifest.goldenFile));
 
     const int expectedActivationRows = package.manifest.seqLen * package.manifest.kTileCount;

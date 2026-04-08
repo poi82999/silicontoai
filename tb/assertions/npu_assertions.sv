@@ -50,55 +50,8 @@ module dma_controller_sva #(
 endmodule
 
 module npu_system_top_sva (
-    input logic clk,
-    input logic rst_n,
-    input logic [2:0] state,
-    input logic mmio_start_npu,
-    input logic mmio_npu_mode,
-    input logic [15:0] mmio_npu_seq_len,
-    input logic mmio_swap_banks,
-    input logic mmio_clear_done
+    // Deprecated for Phase 2
 );
-    localparam logic [2:0] ST_IDLE         = 3'd0;
-    localparam logic [2:0] ST_LOAD_WT      = 3'd1;
-    localparam logic [2:0] ST_LOAD_WT_WAIT = 3'd2;
-    localparam logic [2:0] ST_EXEC_ACT     = 3'd3;
-    localparam logic [2:0] ST_FLUSH        = 3'd4;
-    localparam logic [2:0] ST_DONE         = 3'd5;
-
-`ifndef SYNTHESIS
-    property p_state_is_legal;
-        @(posedge clk) disable iff (!rst_n)
-            state inside {ST_IDLE, ST_LOAD_WT, ST_LOAD_WT_WAIT, ST_EXEC_ACT, ST_FLUSH, ST_DONE};
-    endproperty
-
-    property p_execute_mode_requires_nonzero_seq_len;
-        @(posedge clk) disable iff (!rst_n)
-            (mmio_start_npu && !mmio_npu_mode) |-> (mmio_npu_seq_len != 0);
-    endproperty
-
-    property p_bank_swap_only_in_idle;
-        @(posedge clk) disable iff (!rst_n)
-            mmio_swap_banks |-> (state == ST_IDLE);
-    endproperty
-
-    property p_clear_done_only_in_done;
-        @(posedge clk) disable iff (!rst_n)
-            mmio_clear_done |-> (state == ST_DONE);
-    endproperty
-
-    ap_p_state_is_legal: assert property (p_state_is_legal)
-        else $error("[ASSERT][p_state_is_legal] npu_system_top: illegal FSM state detected");
-
-    ap_p_execute_mode_requires_nonzero_seq_len: assert property (p_execute_mode_requires_nonzero_seq_len)
-        else $error("[ASSERT][p_execute_mode_requires_nonzero_seq_len] npu_system_top: execute mode requires non-zero mmio_npu_seq_len");
-
-    ap_p_bank_swap_only_in_idle: assert property (p_bank_swap_only_in_idle)
-        else $error("[ASSERT][p_bank_swap_only_in_idle] npu_system_top: bank swap is only valid in ST_IDLE");
-
-    ap_p_clear_done_only_in_done: assert property (p_clear_done_only_in_done)
-        else $error("[ASSERT][p_clear_done_only_in_done] npu_system_top: mmio_clear_done is only valid in ST_DONE");
-`endif
 endmodule
 
 module psum_accumulator_buffer_sva (

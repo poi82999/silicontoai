@@ -19,14 +19,28 @@ silicontoai/
 │   └── report_update_checklist.md
 │
 ├── rtl/                    # RTL 소스 (SystemVerilog)
-│   ├── npu_system_top.sv   # 최상위 통합 모듈 (DMA + SRAM + NPU Core + FSM)
-│   ├── npu_core_top.sv     # NPU Core (Systolic Array + Accumulator)
-│   ├── dma_controller.sv   # AXI4 Read DMA 컨트롤러
-│   ├── systolic_array_16x16.sv  # 16×16 MAC Array (Skew/Deskew 포함)
-│   ├── systolic_data_setup.sv   # Activation Input Skewing
-│   ├── mac_pe.sv           # INT8×INT8→INT32 MAC Processing Element
-│   ├── psum_accumulator_buffer.sv # Partial Sum BRAM 누산 버퍼
-│   └── dp_sram_bank.sv     # Dual-Port SRAM Bank
+│   ├── include/
+│   │   ├── npu_def_pkg.sv      # 전역 파라미터 정의 (16×16, FP16/FP32 폭)
+│   │   └── npu_interfaces.sv   # AXI-Stream 인터페이스 정의
+│   ├── core/
+│   │   ├── npu_core_top.sv     # NPU Core (Systolic Array + Accumulator)
+│   │   ├── npu_mxe_top.sv      # Matrix Execution Engine wrapper
+│   │   ├── systolic_array.sv   # 16×16 MAC Array (Skew/Deskew 포함)
+│   │   ├── systolic_data_setup.sv  # Activation Input Skewing
+│   │   └── mac_pe.sv           # FP16×FP16→FP32 MAC Processing Element
+│   ├── arithmetic/
+│   │   ├── fp16_multiplier.sv  # FP16×FP16→FP32 곱셈기
+│   │   └── fp32_adder.sv       # FP32 덧셈기 (정규화+라운딩)
+│   ├── memory/
+│   │   ├── psum_accumulator_buffer.sv # Partial Sum BRAM 누산 버퍼
+│   │   └── dp_sram_bank.sv     # Dual-Port SRAM Bank
+│   ├── system/
+│   │   ├── npu_system_top.sv   # 최상위 통합 모듈 (DMA + SRAM + MXE)
+│   │   ├── dma_controller.sv   # AXI4 Read DMA 컨트롤러
+│   │   └── axi_lite_mmio_bridge.sv # AXI-Lite MMIO 레지스터 브릿지
+│   └── fpga/
+│       ├── fpga_core_bringup_top.sv    # FPGA Core 자체검사 모듈
+│       └── fpga_system_bringup_top.sv  # FPGA System 자체검사 모듈
 │
 ├── tb/                     # 테스트벤치
 │   ├── tb_system_top.sv    # 시스템 레벨 Directed Test
@@ -112,9 +126,9 @@ Main Memory (AXI4)
 Ping-Pong SRAM × 4 (dp_sram_bank)
     │  bank_sel 기반 MUX
     ▼
-16×16 Systolic Array (systolic_array_16x16)
+16×16 Systolic Array (systolic_array)
   - Activation Skewing (systolic_data_setup)
-  - 256개 MAC PE (mac_pe): INT8 × INT8 → INT32
+  - 256개 MAC PE (mac_pe): FP16 × FP16 → FP32
   - Psum De-skewing
     │  31-cycle pipeline
     ▼
@@ -277,7 +291,7 @@ Vivado와 WSL이 설치된 self-hosted Windows runner에서는 push 또는 manua
 | 항목 | 값 |
 |------|----|
 | MAC PE 수 | 256 (16×16) |
-| 데이터 타입 | INT8 × INT8 → INT32 |
+| 데이터 타입 | FP16 × FP16 → FP32 |
 | 파이프라인 깊이 | 31 사이클 |
 | SRAM Bank 용량 | 16KB (1024 × 128b) × 4 |
 | Accumulator BRAM | 512 × 512b |

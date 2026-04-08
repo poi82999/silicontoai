@@ -15,16 +15,7 @@ bind dma_controller dma_controller_sva #(
     .outstanding_cnt(outstanding_cnt)
 );
 
-bind npu_system_top npu_system_top_sva u_npu_system_top_sva (
-    .clk(clk),
-    .rst_n(rst_n),
-    .state(state),
-    .mmio_start_npu(mmio_start_npu),
-    .mmio_npu_mode(mmio_npu_mode),
-    .mmio_npu_seq_len(mmio_npu_seq_len),
-    .mmio_swap_banks(mmio_swap_banks),
-    .mmio_clear_done(mmio_clear_done)
-);
+// npu_system_top bind removed for Phase 2
 
 bind psum_accumulator_buffer psum_accumulator_buffer_sva u_psum_accumulator_buffer_sva (
     .clk(clk),

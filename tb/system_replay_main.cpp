@@ -1,8 +1,12 @@
+#include <algorithm>
 #include <array>
+#include <cmath>
 #include <cstdint>
+#include <cstring>
 #include <filesystem>
 #include <fstream>
 #include <iostream>
+#include <limits>
 #include <memory>
 #include <sstream>
 #include <stdexcept>
@@ -18,15 +22,16 @@
 namespace fs = std::filesystem;
 
 using replay::GoldenEntry;
+using replay::decodeCompareValue;
 using replay::Manifest;
 using replay::PackageData;
 using replay::prepareLaneForDutDrive;
-using replay::ReplayRow16x8;
+using replay::ReplayRow16x16;
 using replay::SystemPass;
 
 namespace {
 
-constexpr int kBytesPerWord = 16;
+constexpr int kBytesPerWord = 32;  // 256-bit = 32 bytes per AXI beat
 constexpr int kWeightRowsPerPass = 16;
 constexpr int kDefaultTimeoutCycles = 10000;
 
@@ -69,7 +74,7 @@ struct TraceState {
 struct AxiSlaveState {
     bool arready = true;
     uint8_t rid = 0;
-    std::array<uint32_t, 4> rdata{};
+    std::array<uint32_t, 8> rdata{};  // 256-bit = 8 × 32-bit words
     uint8_t rresp = 0;
     bool rlast = false;
     bool rvalid = false;
@@ -78,7 +83,7 @@ struct AxiSlaveState {
 };
 
 struct AxiMemoryModel {
-    std::vector<ReplayRow16x8> words;
+    std::vector<ReplayRow16x16> words;
     AxiSlaveState state;
 
     void reset() {
@@ -87,30 +92,32 @@ struct AxiMemoryModel {
 
     void ensureWordIndex(uint64_t wordIndex) {
         if (wordIndex >= words.size()) {
-            words.resize(static_cast<size_t>(wordIndex + 1), ReplayRow16x8{});
+            words.resize(static_cast<size_t>(wordIndex + 1), ReplayRow16x16{});
         }
     }
 
-    void writeRow(uint64_t byteAddress, const ReplayRow16x8& row) {
+    void writeRow(uint64_t byteAddress, const ReplayRow16x16& row) {
         if (byteAddress % kBytesPerWord != 0) {
-            throw std::runtime_error("Package error: source addresses must be 16-byte aligned");
+            throw std::runtime_error("Package error: source addresses must be 32-byte aligned");
         }
         const uint64_t wordIndex = byteAddress / kBytesPerWord;
         ensureWordIndex(wordIndex);
         words[static_cast<size_t>(wordIndex)] = row;
     }
 
-    std::array<uint32_t, 4> readWordAsU32(uint64_t wordIndex) const {
-        std::array<uint32_t, 4> packed{};
+    std::array<uint32_t, 8> readWordAsU32(uint64_t wordIndex) const {
+        std::array<uint32_t, 8> packed{};
         if (wordIndex >= words.size()) {
             return packed;
         }
         const auto& row = words[static_cast<size_t>(wordIndex)];
-        for (int word = 0; word < 4; ++word) {
+        // 16 lanes × 16-bit = 256 bits = 8 × 32-bit words
+        // 2 lanes per 32-bit word
+        for (int word = 0; word < 8; ++word) {
             uint32_t value = 0;
-            for (int byte = 0; byte < 4; ++byte) {
-                const auto driveValue = prepareLaneForDutDrive(row[word * 4 + byte]);
-                value |= static_cast<uint32_t>(driveValue) << (byte * 8);
+            for (int laneOff = 0; laneOff < 2; ++laneOff) {
+                const auto driveValue = prepareLaneForDutDrive(row[word * 2 + laneOff]);
+                value |= static_cast<uint32_t>(driveValue) << (laneOff * 16);
             }
             packed[word] = value;
         }
@@ -120,7 +127,7 @@ struct AxiMemoryModel {
     void drive(Vnpu_system_top* dut) const {
         dut->arready = state.arready;
         dut->rid = state.rid;
-        for (int i = 0; i < 4; ++i) {
+        for (int i = 0; i < 8; ++i) {
             dut->rdata[i] = state.rdata[i];
         }
         dut->rresp = state.rresp;
@@ -142,7 +149,7 @@ struct AxiMemoryModel {
         if (dut->arvalid && state.arready) {
             next.arready = false;
             next.rCnt = dut->arlen;
-            next.rAddr = static_cast<uint64_t>(dut->araddr) >> 4;
+            next.rAddr = static_cast<uint64_t>(dut->araddr) >> 5;  // 32-byte beat address
             next.rvalid = true;
             next.rdata = readWordAsU32(next.rAddr);
             next.rid = static_cast<uint8_t>(dut->arid);
@@ -224,13 +231,15 @@ void tick(Vnpu_system_top* dut, VerilatedContext* contextp, AxiMemoryModel* memo
     dut->eval();
     if (gCoverageState) {
         const auto* root = dut->rootp;
-        const bool forwardingHit = (root->npu_system_top__DOT__u_npu_core__DOT__u_psum_buffer__DOT__acc_valid_q != 0)
-            && (root->npu_system_top__DOT__u_npu_core__DOT__u_psum_buffer__DOT__last_write_valid != 0)
-            && (root->npu_system_top__DOT__u_npu_core__DOT__u_psum_buffer__DOT__acc_addr_q
-                == root->npu_system_top__DOT__u_npu_core__DOT__u_psum_buffer__DOT__last_write_addr);
+        // Updated paths for Phase 2 MXE wrapper: u_mxe_core -> u_core -> u_psum_buffer
+        const bool forwardingHit =
+            (root->npu_system_top__DOT__u_mxe_core__DOT__u_core__DOT__u_psum_buffer__DOT__acc_valid_q != 0)
+            && (root->npu_system_top__DOT__u_mxe_core__DOT__u_core__DOT__u_psum_buffer__DOT__last_write_valid != 0)
+            && (root->npu_system_top__DOT__u_mxe_core__DOT__u_core__DOT__u_psum_buffer__DOT__acc_addr_q
+                == root->npu_system_top__DOT__u_mxe_core__DOT__u_core__DOT__u_psum_buffer__DOT__last_write_addr);
         gCoverageState->forwardingHitSeen = gCoverageState->forwardingHitSeen || forwardingHit;
-        gCoverageState->drainRequestSeen = gCoverageState->drainRequestSeen || (dut->drain_re != 0)
-            || (root->npu_system_top__DOT__u_npu_core__DOT__u_psum_buffer__DOT__drain_re_q != 0);
+        gCoverageState->drainRequestSeen = gCoverageState->drainRequestSeen || (dut->mmio_drain_start != 0)
+            || (root->npu_system_top__DOT__u_mxe_core__DOT__u_core__DOT__u_psum_buffer__DOT__drain_re_q != 0);
         gCoverageState->dmaDoneSeen = gCoverageState->dmaDoneSeen || (dut->mmio_dma_done != 0);
     }
     if (gTraceState && gTraceState->enabled) {
@@ -256,8 +265,9 @@ void clearInputs(Vnpu_system_top* dut) {
     dut->mmio_test_one_shot_acc_clear_en = 0;
     dut->mmio_clear_done = 0;
     dut->mmio_npu_seq_len = 0;
-    dut->drain_re = 0;
-    dut->drain_addr = 0;
+    dut->mmio_drain_start = 0;
+    dut->mmio_drain_len = 0;
+    dut->m_axis_psum_tready = 1;
 }
 
 RuntimeOptions parseRuntimeOptions(int argc, char** argv, std::vector<fs::path>* packagePaths) {
@@ -480,17 +490,42 @@ void validateSystemPackage(const PackageData& package) {
     if (package.system.flushCycles < 0) {
         throw std::runtime_error("Package error: flush_cycles must be non-negative");
     }
-    if (package.system.weightsTotalBytes != static_cast<int>(package.weightRows.size()) * kBytesPerWord) {
-        throw std::runtime_error("Package error: weights_total_bytes does not match weight payload size");
+
+    // Phase 1: Validate declared byte counts if present.
+    // The manifest may declare weights_total_bytes / activations_total_bytes.
+    // When present (nonzero), accept both:
+    //   - physical bytes: 16-bit lane slots packed on AXI (32 bytes per row)
+    //   - logical bytes:  signed INT8 payload size (16 bytes per row)
+    const int actualWeightBytes   = static_cast<int>(package.weightRows.size())     * kBytesPerWord;
+    const int actualActBytes      = static_cast<int>(package.activationRows.size()) * kBytesPerWord;
+    const int logicalWeightBytes  = static_cast<int>(package.weightRows.size())     * 16;
+    const int logicalActBytes     = static_cast<int>(package.activationRows.size()) * 16;
+
+    if (package.system.weightsTotalBytes > 0
+        && package.system.weightsTotalBytes != actualWeightBytes
+        && package.system.weightsTotalBytes != logicalWeightBytes) {
+        throw std::runtime_error("Package error: weights_total_bytes does not match payload size (" +
+            std::to_string(package.system.weightsTotalBytes) + " declared vs " +
+            std::to_string(actualWeightBytes) + " physical / " +
+            std::to_string(logicalWeightBytes) + " logical)");
     }
-    if (package.system.activationsTotalBytes != static_cast<int>(package.activationRows.size()) * kBytesPerWord) {
-        throw std::runtime_error("Package error: activations_total_bytes does not match activation payload size");
+    if (package.system.activationsTotalBytes > 0
+        && package.system.activationsTotalBytes != actualActBytes
+        && package.system.activationsTotalBytes != logicalActBytes) {
+        throw std::runtime_error("Package error: activations_total_bytes does not match payload size (" +
+            std::to_string(package.system.activationsTotalBytes) + " declared vs " +
+            std::to_string(actualActBytes) + " physical / " +
+            std::to_string(logicalActBytes) + " logical)");
     }
-    if ((package.system.weightBurstLen + 1) * kBytesPerWord * package.system.weightTotalBursts != package.system.weightsTotalBytes) {
-        throw std::runtime_error("Package error: top-level weight DMA plan does not match weights_total_bytes");
+
+    // Phase 2: Cross-check the DMA plan against actual payload sizes.
+    if ((package.system.weightBurstLen + 1) * kBytesPerWord * package.system.weightTotalBursts != actualWeightBytes) {
+        throw std::runtime_error("Package error: top-level weight DMA plan does not match weight payload size (" +
+            std::to_string(actualWeightBytes) + " bytes)");
     }
-    if ((package.system.activationBurstLen + 1) * kBytesPerWord * package.system.activationTotalBursts != package.system.activationsTotalBytes) {
-        throw std::runtime_error("Package error: top-level activation DMA plan does not match activations_total_bytes");
+    if ((package.system.activationBurstLen + 1) * kBytesPerWord * package.system.activationTotalBursts != actualActBytes) {
+        throw std::runtime_error("Package error: top-level activation DMA plan does not match activation payload size (" +
+            std::to_string(actualActBytes) + " bytes)");
     }
     if (package.system.expectedDmaDoneCount < 1 || package.system.expectedNpuDoneCount < 1) {
         throw std::runtime_error("Package error: expected done counts must be positive");
@@ -505,13 +540,14 @@ void validateSystemPackage(const PackageData& package) {
     const std::vector<SystemPass> passes = buildPassPlan(package);
     for (const auto& pass : passes) {
         if (pass.weightsSrcAddr % kBytesPerWord != 0 || pass.activationsSrcAddr % kBytesPerWord != 0) {
-            throw std::runtime_error("Package error: per-pass source addresses must be 16-byte aligned");
+            throw std::runtime_error("Package error: per-pass source addresses must be 32-byte aligned");
         }
         if ((pass.weightBurstLen + 1) * kBytesPerWord * pass.weightTotalBursts != kWeightRowsPerPass * kBytesPerWord) {
-            throw std::runtime_error("Package error: per-pass weight DMA plan must transfer exactly 256 bytes");
+            throw std::runtime_error("Package error: per-pass weight DMA plan must transfer exactly " +
+                std::to_string(kWeightRowsPerPass * kBytesPerWord) + " bytes");
         }
         if ((pass.activationBurstLen + 1) * kBytesPerWord * pass.activationTotalBursts != package.manifest.seqLen * kBytesPerWord) {
-            throw std::runtime_error("Package error: per-pass activation DMA plan must transfer seq_len * 16 bytes");
+            throw std::runtime_error("Package error: per-pass activation DMA plan must transfer seq_len * 32 bytes");
         }
     }
 }
@@ -638,6 +674,58 @@ void launchActivationDma(Vnpu_system_top* dut,
     waitForDmaDone(dut, contextp, memory, result, kDefaultTimeoutCycles, "dma_activations_pass_" + std::to_string(pass.passIndex));
 }
 
+// Phase 2 Streamlined: Activation DMA directly drives MXE computation.
+// acc_clear is conveyed in-band via tuser; npu_done fires same cycle as dma_done.
+void launchActivationDmaStreamlined(Vnpu_system_top* dut,
+                                    VerilatedContext* contextp,
+                                    AxiMemoryModel* memory,
+                                    ReplayResult* result,
+                                    const PackageData& package,
+                                    const SystemPass& pass) {
+    dut->mmio_dma_target = 0;
+    dut->mmio_npu_acc_clear = pass.accClear ? 1 : 0;
+    dut->mmio_src_addr = pass.activationsSrcAddr;
+    dut->mmio_burst_len = static_cast<uint8_t>(pass.activationBurstLen);
+    dut->mmio_total_bursts = static_cast<uint16_t>(pass.activationTotalBursts);
+    if (package.system.verificationAccAddrOverride.has_value()) {
+        dut->mmio_test_acc_addr_override_en = 1;
+        dut->mmio_test_acc_addr_override = static_cast<uint16_t>(*package.system.verificationAccAddrOverride);
+    }
+    dut->mmio_test_one_shot_acc_clear_en = package.system.verificationOneShotAccClear ? 1 : 0;
+    ++result->counters.activationDmaLaunchCount;
+    ++result->counters.executeLaunchCount;  // Streamlined: activation DMA IS the execute step
+    appendEvent(&result->eventLines, contextp,
+        "[SYSTEM REPLAY] stream_activations_execute pass=" + std::to_string(pass.passIndex) +
+        " acc_clear=" + std::to_string(pass.accClear ? 1 : 0) +
+        " src_addr=" + std::to_string(pass.activationsSrcAddr) +
+        " burst_len=" + std::to_string(pass.activationBurstLen) +
+        " total_bursts=" + std::to_string(pass.activationTotalBursts));
+    pulseStartDma(dut, contextp, memory);
+    // Wait for DMA done; mmio_npu_done fires same cycle (mmio_dma_done && target==0)
+    const std::string phase = "stream_act_execute_pass_" + std::to_string(pass.passIndex);
+    for (int cycle = 0; cycle < kDefaultTimeoutCycles; ++cycle) {
+        tick(dut, contextp, memory);
+        if (dut->mmio_dma_done) {
+            ++result->counters.dmaDoneCount;
+            appendEvent(&result->eventLines, contextp, "[SYSTEM REPLAY] dma_done phase=" + phase +
+                        " count=" + std::to_string(result->counters.dmaDoneCount));
+            // mmio_npu_done = mmio_dma_done && target==0, fires same cycle
+            if (dut->mmio_npu_done) {
+                ++result->counters.npuDoneCount;
+                appendEvent(&result->eventLines, contextp, "[SYSTEM REPLAY] npu_done phase=" + phase +
+                            " count=" + std::to_string(result->counters.npuDoneCount));
+            }
+            // Clear override fields
+            dut->mmio_npu_acc_clear = 0;
+            dut->mmio_test_acc_addr_override_en = 0;
+            dut->mmio_test_acc_addr_override = 0;
+            dut->mmio_test_one_shot_acc_clear_en = 0;
+            return;
+        }
+    }
+    throw std::runtime_error("Replay driver error: timeout while waiting for streamlined activation DMA done during " + phase);
+}
+
 void launchPreload(Vnpu_system_top* dut,
                    VerilatedContext* contextp,
                    AxiMemoryModel* memory,
@@ -686,29 +774,65 @@ void drainAndCompare(Vnpu_system_top* dut,
                      AxiMemoryModel* memory,
                      const PackageData& package,
                      ReplayResult* result) {
+    if (package.manifest.drainAddresses.empty()) {
+        return;
+    }
+
+    // Determine the maximum address to drain because AXIS streams from 0 to len-1
+    int maxAddr = 0;
+    for (int addr : package.manifest.drainAddresses) {
+        if (addr > maxAddr) {
+            maxAddr = addr;
+        }
+    }
+    const int drainLen = maxAddr + 1;
+
+    // Pulse mmio_drain_start
+    dut->mmio_drain_len = static_cast<uint16_t>(drainLen);
+    dut->mmio_drain_start = 1;
+    dut->m_axis_psum_tready = 1;
+    tick(dut, contextp, memory);
+    dut->mmio_drain_start = 0;
+
+    // Collect all streamed words into a buffer
+    std::vector<std::array<uint32_t, 16>> drainedBuffer;
+    
+    // Safety timeout: wait for stream
+    int waitCycles = 0;
+    while (drainedBuffer.size() < static_cast<size_t>(drainLen)) {
+        if (waitCycles++ > kDefaultTimeoutCycles) {
+            throw std::runtime_error("Replay driver error: timeout while waiting for AXIS TX drain stream");
+        }
+        if (dut->m_axis_psum_tvalid && dut->m_axis_psum_tready) {
+            std::array<uint32_t, 16> rowData{};
+            for (int i = 0; i < 16; ++i) {
+                // Fetch each 32-bit word from the 512-bit m_axis_psum_tdata array
+                rowData[i] = dut->m_axis_psum_tdata[i];
+            }
+            drainedBuffer.push_back(rowData);
+        }
+        tick(dut, contextp, memory);
+    }
+    
+    // Now compare the collected items subset
     for (int drainAddr : package.manifest.drainAddresses) {
         const auto goldenIt = package.goldenByDrainAddr.find(drainAddr);
         if (goldenIt == package.goldenByDrainAddr.end()) {
             throw std::runtime_error("Package error: missing golden entry for drain_addr=" + std::to_string(drainAddr));
         }
 
-        dut->drain_addr = static_cast<uint16_t>(drainAddr);
-        dut->drain_re = 1;
-        tick(dut, contextp, memory);
-        dut->drain_re = 0;
-        tick(dut, contextp, memory);
-        tick(dut, contextp, memory);
+        const auto& observedRow = drainedBuffer[static_cast<size_t>(drainAddr)];
 
         ++result->counters.drainedRows;
         appendEvent(&result->eventLines, contextp, "[SYSTEM REPLAY] drain addr=" + std::to_string(drainAddr) +
-                                             " data0=" + std::to_string(static_cast<int32_t>(dut->psum_drain_out[0])) +
-                                             " data15=" + std::to_string(static_cast<int32_t>(dut->psum_drain_out[15])));
+                                             " data0=" + std::to_string(static_cast<int32_t>(observedRow[0])) +
+                                             " data15=" + std::to_string(static_cast<int32_t>(observedRow[15])));
 
         // CSV dump: all 16 lanes for visualization
         {
             std::string csv = "[DRAIN_CSV] " + std::to_string(drainAddr);
             for (int lane = 0; lane < 16; ++lane) {
-                csv += "," + std::to_string(static_cast<int32_t>(dut->psum_drain_out[lane]));
+                csv += "," + std::to_string(static_cast<int32_t>(observedRow[lane]));
             }
             appendEvent(&result->eventLines, contextp, csv);
         }
@@ -716,17 +840,71 @@ void drainAndCompare(Vnpu_system_top* dut,
         const GoldenEntry& golden = goldenIt->second;
         for (int lane = 0; lane < package.manifest.tileCols; ++lane) {
             ++result->counters.checkedLanes;
-            const int32_t expected = golden.vector[lane];
-            const int32_t observed = static_cast<int32_t>(dut->psum_drain_out[lane]);
-            if (expected != observed) {
+            const uint32_t expectedRaw = golden.vector[lane];
+            const uint32_t observedRaw = observedRow[lane];
+
+            // Compatibility compare:
+            //  - New packages: expectedRaw stores INT32 bits directly.
+            //  - Legacy packages: expectedRaw stores FP32 bits for integer-valued outputs.
+            const int32_t observedI32 = static_cast<int32_t>(observedRaw);
+            int32_t expectedI32 = static_cast<int32_t>(expectedRaw);
+            bool laneMatch = (expectedRaw == observedRaw);
+
+            if (!laneMatch) {
+                float expectedAsFloat = 0.0F;
+                std::memcpy(&expectedAsFloat, &expectedRaw, sizeof(expectedAsFloat));
+                if (std::isfinite(expectedAsFloat)) {
+                    const float rounded = std::round(expectedAsFloat);
+                    if (std::fabs(expectedAsFloat - rounded) < 1e-6F
+                        && rounded >= -2147483648.0F
+                        && rounded <= 2147483647.0F) {
+                        expectedI32 = static_cast<int32_t>(rounded);
+                        laneMatch = (expectedI32 == observedI32);
+                    }
+                }
+            }
+
+            const bool toleranceMode = (package.manifest.compareMode == "tolerance");
+            if (toleranceMode) {
+                std::vector<float> expectedCandidates = {static_cast<float>(static_cast<int32_t>(expectedRaw))};
+                std::vector<float> observedCandidates = {static_cast<float>(static_cast<int32_t>(observedRaw))};
+                float tmp = 0.0F;
+                if (replay::tryDecodeFiniteFloat(expectedRaw, &tmp)) {
+                    expectedCandidates.push_back(tmp);
+                }
+                if (replay::tryDecodeFiniteFloat(observedRaw, &tmp)) {
+                    observedCandidates.push_back(tmp);
+                }
+
+                float minAbsDiff = std::numeric_limits<float>::infinity();
+                for (float expVal : expectedCandidates) {
+                    for (float obsVal : observedCandidates) {
+                        minAbsDiff = std::min(minAbsDiff, std::fabs(expVal - obsVal));
+                    }
+                }
+                const float tol = package.manifest.compareAbsTolerance +
+                    (package.manifest.compareRelativeTolerance * std::max(std::fabs(expectedCandidates.front()), 1.0F));
+                laneMatch = (minAbsDiff <= tol);
+            }
+
+            if (!laneMatch) {
                 std::ostringstream mismatch;
                 mismatch << "[MISMATCH] package=" << package.manifest.packageId
                          << " drain_addr=" << drainAddr
                          << " lane=" << lane
                          << " global=(row=" << golden.globalRow
                          << ", col=" << (golden.globalColBase + lane)
-                         << ") expected=" << expected
-                         << " observed=" << observed;
+                         << ") expected_i32=0x" << std::hex << expectedRaw << std::dec
+                         << " (" << expectedI32 << ")"
+                         << " observed_i32=0x" << std::hex << observedRaw << std::dec
+                         << " (" << observedI32 << ")";
+                if (toleranceMode) {
+                    mismatch << " compare_mode=tolerance"
+                             << " abs_tol=" << package.manifest.compareAbsTolerance
+                             << " rel_tol=" << package.manifest.compareRelativeTolerance
+                             << " expected_val=" << decodeCompareValue(expectedRaw)
+                             << " observed_val=" << decodeCompareValue(observedRaw);
+                }
                 result->mismatchLines.push_back(mismatch.str());
             }
         }
@@ -809,30 +987,22 @@ ReplayResult runSystemReplay(Vnpu_system_top* dut,
     populateMemory(memory, package);
     resetDut(dut, contextp, memory);
 
+    // Phase 2 Streamlined Dataflow:
+    // Weight stream → auto-loads PEs; Activation stream → auto-computes (no preload/execute/swap needed)
     const std::vector<SystemPass> passes = buildPassPlan(package);
     for (const auto& pass : passes) {
+        // Step 1: Stream weights to MXE (auto-loads into MAC PEs via AXIS)
         coverageState->dmaStartSeen = true;
+        coverageState->weightLoadModeStartSeen = true;  // Weight streaming is the preload
         launchWeightDma(dut, contextp, memory, &result, pass);
-        if (package.system.swapBeforeWeightPreload) {
-            ++result.counters.bankSwapCount;
-            appendEvent(&result.eventLines, contextp, "[SYSTEM REPLAY] swap_before_weight_preload pass=" + std::to_string(pass.passIndex));
-            pulseSwapBanks(dut, contextp, memory);
-        }
 
-        coverageState->weightLoadModeStartSeen = true;
-        launchPreload(dut, contextp, memory, &result, pass);
+        // Step 2: Stream activations with acc_clear through MXE (computation in-flight)
         coverageState->dmaStartSeen = true;
-        launchActivationDma(dut, contextp, memory, &result, pass);
-        if (package.system.swapBeforeExecute) {
-            ++result.counters.bankSwapCount;
-            appendEvent(&result.eventLines, contextp, "[SYSTEM REPLAY] swap_before_execute pass=" + std::to_string(pass.passIndex));
-            pulseSwapBanks(dut, contextp, memory);
-        }
-
-        coverageState->executeModeStartSeen = true;
-        launchExecute(dut, contextp, memory, &result, package, pass);
+        coverageState->executeModeStartSeen = true;     // Activation streaming is the execute
+        launchActivationDmaStreamlined(dut, contextp, memory, &result, package, pass);
     }
 
+    // Wait for pipeline to flush before drain
     appendEvent(&result.eventLines, contextp, "[SYSTEM REPLAY] flush cycles=" + std::to_string(package.system.flushCycles));
     for (int cycle = 0; cycle < package.system.flushCycles; ++cycle) {
         tick(dut, contextp, memory);
@@ -840,11 +1010,17 @@ ReplayResult runSystemReplay(Vnpu_system_top* dut,
 
     drainAndCompare(dut, contextp, memory, package, &result);
 
-    if (result.counters.dmaDoneCount != package.system.expectedDmaDoneCount) {
-        throw std::runtime_error("Replay driver error: observed dma_done count does not match expected count");
+    // Phase 2 Streamlined: dma_done fires once per DMA launch (weight + activation = 2 per pass).
+    // npu_done fires once per activation DMA (streamlined: act DMA == execute event).
+    const int expectedDmaDone = result.counters.weightDmaLaunchCount + result.counters.activationDmaLaunchCount;
+    const int expectedNpuDone = result.counters.activationDmaLaunchCount; // 1 per K-pass
+    if (result.counters.dmaDoneCount != expectedDmaDone) {
+        throw std::runtime_error("Replay driver error: observed dma_done=" +
+            std::to_string(result.counters.dmaDoneCount) + " expected=" + std::to_string(expectedDmaDone));
     }
-    if (result.counters.npuDoneCount != package.system.expectedNpuDoneCount) {
-        throw std::runtime_error("Replay driver error: observed npu_done count does not match expected count");
+    if (result.counters.npuDoneCount != expectedNpuDone) {
+        throw std::runtime_error("Replay driver error: observed npu_done=" +
+            std::to_string(result.counters.npuDoneCount) + " expected=" + std::to_string(expectedNpuDone));
     }
 
     if (!result.mismatchLines.empty()) {

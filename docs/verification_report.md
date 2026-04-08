@@ -70,10 +70,25 @@ Commands:
 - `make uvm-basic`
 - `make uvm-stress`
 - `make uvm`
+- `bash scripts/run_uvm.sh npu_smoke_test int8`
+- `bash scripts/run_uvm.sh npu_fp16_mode_smoke_test fp16`
 
 Expected success marker:
 
 - `SCB_PASS`
+- `UVM_ERROR :    0`
+- `INT8_COV` summary log (scoreboard report phase)
+
+INT8 coverage notes:
+
+- `tb/npu_uvm_pkg.sv` scoreboard now tracks INT8-mode functional points (`cg_int8_mode`)
+- smoke/basic/stress run 종료 시 `int8_mode_coverage`와 extreme/sign-combo hit 상태를 로그로 출력
+
+Mode-aware UVM smoke gate policy:
+
+- INT8 gate: `npu_smoke_test` (scoreboard exact compare)
+- FP16 gate: `npu_fp16_mode_smoke_test` (FP16xFP16->FP32 numeric compare gate, abs/rel tolerance)
+- `tb/tb_top.sv`는 `UVM_DATA_MODE_FP16` define 유무에 따라 DUT `DATA_MODE`를 분기
 
 ---
 
@@ -116,6 +131,8 @@ This separation exists because the simulator flow is better behaved with externa
 - `make sim`
 - `make sys`
 - `make verify-fast`
+- `bash scripts/verify.sh fast --data-mode int8`
+- `bash scripts/verify.sh full --data-mode fp16 --smoke`
 
 ### UVM
 
@@ -139,6 +156,17 @@ Intent:
 
 - `make l5-signoff` runs the full Vivado system + UVM verification summary flow and the package-driven chained L5 replay flow together
 - `make l5-repeatability` performs two clean sign-off runs and checks that the key summary artifacts match exactly
+
+Current L5 baseline (streamlined DMA-execute):
+
+- System chain package set: 11 packages
+- Expected chain result:
+  - `packages_total=11`
+  - `packages_passed=10`
+  - `packages_with_expected_package_error=1`
+  - `packages_failed=0`
+- Expected negative package behavior:
+  - `system_negative_invalid_dma_bytes` must be reported as `PACKAGE_ERROR`
 
 ---
 
@@ -186,6 +214,7 @@ Contains aggregated verification outputs.
 
 - `core.log`
 - `system.log`
+- `uvm_smoke.log`
 - `uvm.log`
 - `assertion_cov_index.txt`
 - `assertion_cov_summary.txt`
@@ -193,6 +222,9 @@ Contains aggregated verification outputs.
   - one-shot L5 sign-off summary
   - chained replay summary
   - copied Vivado/UVM assertion coverage summary
+  - canonical baseline files:
+    - `replay_chain_summary.txt`
+    - `l5_signoff_summary.txt`
 - `l5_repeatability/`
   - two clean sign-off runs and comparison summary
 
@@ -208,6 +240,11 @@ Policy:
 - the directed Vivado system test ties all verification-only hook inputs to `0`
 - the hooks are activated only through explicit `system.execution.verification_*` manifest fields in the system replay runner
 - no sign-off claim may rely on those hooks being active in the normal directed Vivado path
+
+Forwarding scenario note:
+
+- `system_reference_forwarding_same_addr_m0_n0_k0to15` is maintained as a dedicated system replay stress package
+- this package is part of the 11-package sign-off chain and must remain PASS while still hitting `cp_forwarding_hit_seen=HIT`
 
 ---
 
