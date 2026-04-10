@@ -47,12 +47,14 @@ Current evidence:
 - [x] SRAM bank, DMA, core 간 연결 개요 설계
 - [x] 실제 연산 tile 기준 데이터 흐름 예시 추가
 - [ ] Workload 관점 병목 분석 정량화
-- [ ] Bandwidth vs compute roofline 분석
+- [x] Bandwidth vs compute roofline 분석 (Sprint-6 Day3-4 baseline)
 
 Current evidence:
 
 - `docs/architecture_report.md`
 - `docs/functional_contract_report.md`
+- `l6/src/l6_toolchain/roofline.py`
+- `l6/tests/test_roofline.py`
 
 ## L2. Workload Package Definition
 
@@ -141,7 +143,7 @@ Current evidence:
 
 - `tb/system_replay_main.cpp`
 - `docs/l5_system_replay_scenarios_report.md`
-- `docs/l5_signoff_sample_report.md`
+- `docs/l5_signoff_report.md`
 - `.github/workflows/l5-signoff.yml`
 - `sim/verify/l5_signoff/replay_chain_summary.txt`
 - `sim/verify/l5_signoff/l5_signoff_summary.txt`
@@ -150,7 +152,7 @@ Current evidence:
 
 > Goal: compiler/backend, higher-level operator tiling, FPGA implementation과 timing closure까지 확장
 
-- L6 compiler/backend linkage: █████████░ 92%
+- L6 compiler/backend linkage: ██████████ 96%
   - [x] Python 3.12 기반 L6 workspace와 public API surface 정리
   - [x] `gemm_tile` / `gemm_tiled` exporter, inspector, validator 구축
   - [x] Torch `Linear` / `Conv2d` frontend와 grouped-conv real-data lowering 경로 구축
@@ -162,8 +164,9 @@ Current evidence:
   - [x] M3 torch.fx tracer + 8개 op frontend coverage (linear/conv2d/relu/flatten/add/bias_add/reshape/getattr)
   - [x] M4 analytical cost model, weight_reuse reorder, memory budget analysis (scheduler.py)
   - [x] M5 end-to-end compiler entry (`compile_program`), scheduler→export bridge, schedule metadata in manifest, CLI
+  - [x] B-1 Operator Fusion: Linear+ReLU, Conv+ReLU, Conv+BN folding (numerical weight folding via numpy)
+  - [x] E-1 Real Model Workloads: MobileNetV2 layer1, ResNet-18 block1, Transformer QKV — 3종 생성/검증
   - [ ] 현재 지원 op를 넘는 broader importer / model-level coverage 확장
-  - [ ] representative end-to-end layer/model set으로 fixed regression workload 확대
 - L7 FPGA implementation: ███████░░░ 70%
   - [x] Vivado simulation flow 확보
   - [x] Arty A7-35T pre-board bitstream synthesis (npu_core_top → xc7a35t, timing met)
@@ -183,6 +186,10 @@ Current evidence:
 - `l6/src/l6_toolchain/replay_bridge.py`
 - `l6/regenerate_fixed_replay_assets.py`
 - `l6/tests/test_replay_bridge.py`
+- `l6/src/l6_toolchain/fusion.py`
+- `l6/tests/test_fusion.py`
+- `l6/generate_model_workloads.py`
+- `l6/tests/test_model_workloads.py`
 - `vivado/build_system_zynq.tcl`
 - `vivado/build_pynq_overlay.tcl`
 - `host/npu_fullstack_demo.ipynb`
@@ -228,7 +235,7 @@ Phase B (full-stack PyTorch → Verilator → 검증) 파이프라인이 보드 
 - Status: **COMPLETE**
 - Evidence:
   - `docs/l6_arithmetic_semantics_report.md` — dtype, accumulation, saturation/overflow policy 문서화
-  - `docs/l6_signed_int8_alignment_design_note.md` — long-term signed-int8 contract 명문화
+  - `docs/l6_signed_int8_design.md` — signed-int8 contract 설계 및 체크리스트 (통합)
   - replay bridge compare semantics와 validator가 위 정책과 정렬됨
   - fixed assets가 regenerate script 기준으로 재생성 가능
 
@@ -284,6 +291,143 @@ Phase B (full-stack PyTorch → Verilator → 검증) 파이프라인이 보드 
 ---
 
 ## Weekly Update Log
+
+**[2026.04.10 update #14]**
+
+- Status: 🟢 정상 진행
+- One-line summary: Sprint-7 Track B-1 operator fusion + Track E-1 real model workloads 완료, 프로젝트 정리 및 push 준비
+
+Completed since the previous snapshot:
+
+- [x] Sprint-7 Track B-1: Operator Fusion Framework
+  - `l6/src/l6_toolchain/fusion.py` 신규 (404 lines)
+  - 3 fusion passes: `apply_linear_relu_fusion`, `apply_conv_relu_fusion`, `apply_conv_bn_folding` (numerical weight folding via numpy)
+  - `apply_all_fusions()` composite pass (BN → conv_relu → linear_relu)
+  - compiler 통합: `enable_fusion` option, `--no-fusion` CLI
+  - api.py / __init__.py export 추가
+  - 15 fusion tests all passing
+- [x] Sprint-7 Track E-1: Real Model Workloads
+  - `l6/generate_model_workloads.py` 신규 — 3종 model workload generator
+  - MobileNetV2 layer1 (32×32), ResNet-18 block1 (8×8), Transformer QKV (dim=128)
+  - 12 model workload tests all passing
+- [x] 프로젝트 정리: 18 stale 파일 삭제, 문서 통합, .gitignore에 model workload 제외 추가
+- [x] latest L6 result: `170 passed, 5 skipped, 0 failed`
+
+Reference artifacts:
+
+- `l6/src/l6_toolchain/fusion.py`
+- `l6/tests/test_fusion.py`
+- `l6/generate_model_workloads.py`
+- `l6/tests/test_model_workloads.py`
+
+**[2026.04.09 update #11]**
+
+- Status: 🟢 정상 진행
+- One-line summary: Sprint-6 Day3-4 roofline baseline 결과를 문서/manifest 경로까지 연동 완료
+
+Completed since the previous snapshot:
+
+- [x] `l6/src/l6_toolchain/roofline.py`의 `analyze_roofline_with_scheduler` 결과를 compile manifest에 선택적으로 기록하는 compiler 경로 확장
+  - `CompilerOptions.include_roofline_in_manifest` 추가 (default: `False`)
+  - `roofline_dma_bandwidth_gbps`, `roofline_mac_throughput`, `roofline_clock_mhz` 옵션 추가
+  - `compile_manifest.json` step entry에 `roofline` 블록 optional 기록
+  - top-level `roofline_config` optional 기록
+- [x] CLI 옵션 연동
+  - `--include-roofline-manifest`
+  - `--roofline-dma-bandwidth-gbps`
+  - `--roofline-mac-throughput`
+  - `--roofline-clock-mhz`
+- [x] compiler regression test 보강
+  - default 미기록 검증
+  - opt-in 기록 검증
+
+Roofline baseline (current implementation, scheduler-coupled):
+
+- Case A: `shape=(16,16,16)`, BW=`3.2 Gbit/s`, MAC/cycle=`256`, `100 MHz`
+  - `total_ops=8192`, `total_bytes=2048`, `OI=4.0`
+  - `peak_compute=51.2 GOPS`, `memory_roof=1.6 GOPS`
+  - `achievable=1.6 GOPS`, `utilization=3.12%`, bottleneck=`memory`
+- Case B: `shape=(32,16,32)` + scheduler(`weight_reuse`)
+  - `total_ops=32768`, `total_bytes=6144`, `OI=5.3333`
+  - `estimated_cycles=410`
+  - `achievable=2.1333 GOPS`, `achieved=2.1333 GOPS`, `utilization=4.17%`, bottleneck=`memory`
+
+Validation highlights:
+
+- `pytest l6/tests/test_roofline.py -q` → 7 passed
+- `pytest l6/tests/test_compiler.py -q` (roofline manifest tests 포함) → PASS
+
+Reference artifacts:
+
+- `l6/src/l6_toolchain/roofline.py`
+- `l6/src/l6_toolchain/compiler.py`
+- `l6/src/l6_toolchain/__main__.py`
+- `l6/tests/test_roofline.py`
+- `l6/tests/test_compiler.py`
+
+**[2026.04.09 update #12]**
+
+- Status: 🟢 정상 진행
+- One-line summary: roofline 메타데이터를 step manifest/inspector로 확장하고 board/profile preset 기반 설정으로 분리 완료
+
+Completed since the previous snapshot:
+
+- [x] roofline 설정을 하드코딩 기본값에서 preset 기반 해석으로 전환
+  - `l6/src/l6_toolchain/roofline_profiles.py` 신규 추가
+  - preset: `sim_default`, `arty_a7_100mhz`, `zynq_system_100mhz`, `pynq_z2_overlay`
+  - compiler/CLI는 `roofline_profile`을 기본 입력으로 받고, 개별 수치 override는 optional 유지
+- [x] `export_program_package` 경로의 step manifest `compiler` 블록에 roofline 메타데이터 노출
+- [x] inspector summary API 추가
+  - `inspect_package_summary()`가 program_sequence step별 compiler/roofline 메타데이터를 반환
+- [x] CLI/README 동기화
+  - `--roofline-profile` 추가
+  - preset + override 사용 예시 반영
+
+Validation highlights:
+
+- `pytest l6/tests/test_roofline.py -q` → profile preset/override 테스트 포함 PASS
+- `pytest l6/tests/test_compiler.py -q` → step manifest roofline/CLI preset 테스트 포함 PASS
+- `pytest l6/tests/test_package_tools.py -q` → inspector summary roofline 노출 테스트 포함 PASS
+
+Reference artifacts:
+
+- `l6/src/l6_toolchain/roofline_profiles.py`
+- `l6/src/l6_toolchain/compiler.py`
+- `l6/src/l6_toolchain/inspector.py`
+- `l6/tests/test_roofline.py`
+- `l6/tests/test_package_tools.py`
+
+**[2026.04.09 update #13]**
+
+- Status: 🟢 정상 진행
+- One-line summary: roofline contract 문서 고정, preset 재보정, inspector performance summary/CLI 노출 완료
+
+Completed since the previous snapshot:
+
+- [x] roofline 스키마를 별도 문서로 고정
+  - `docs/l6_roofline_manifest_schema.md`
+  - `compile_manifest.json -> roofline_config`, `steps[].roofline`
+  - `program_step manifest -> compiler.roofline`
+- [x] preset 값 재보정
+  - `sim_default`: RTL `EXT_AXI_DATA_WIDTH=256` + 100 MHz proxy → `25.6 Gbit/s`
+  - `arty_a7_100mhz`: Arty XDC/bring-up timing 100 MHz + 256-bit RTL proxy → `25.6 Gbit/s`
+  - `pynq_z2_overlay`: current PS7 `M_AXI_GP0 -> npu_pl/s_axi` control-plane proxy at 100 MHz → `3.2 Gbit/s`
+- [x] inspector text summary/API/CLI 추가
+  - `inspect_compile_output_summary()`
+  - `format_performance_summary()`
+  - `python -m l6_toolchain inspect <path>`
+
+Validation highlights:
+
+- preset/inspector/CLI 관련 회귀 포함 전체 L6 테스트 PASS
+- latest L6 result: `170 passed, 5 skipped, 0 failed`
+
+Reference artifacts:
+
+- `docs/l6_roofline_manifest_schema.md`
+- `l6/src/l6_toolchain/roofline_profiles.py`
+- `l6/src/l6_toolchain/inspector.py`
+- `l6/src/l6_toolchain/__main__.py`
 
 **[2026.04.08 update #7]**
 

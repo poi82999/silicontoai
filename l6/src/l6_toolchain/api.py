@@ -18,7 +18,7 @@ from .frontend import (
     linear_op_from_torch_linear,
 )
 from .ir import LoweredOp, OpNode, Program, ProgramExportStep, TensorValue, export_program_package, lower_program_to_steps, validate_program
-from .inspector import reconstruct_output_matrix
+from .inspector import format_performance_summary, inspect_compile_output_summary, inspect_package_summary, reconstruct_output_matrix
 from .lowering import TILE_SIZE, SupportsLinearShape, TilePlanEntry, plan_linear_tiles
 from .replay_bridge import (
     ReplayPackageArtifact,
@@ -54,6 +54,8 @@ from .dma_scheduler import (
     generate_dma_commands,
     generate_mmio_sequence,
 )
+from .roofline import RooflineResult, analyze_roofline, analyze_roofline_with_scheduler
+from .roofline_profiles import RooflineProfile, get_roofline_profile, list_roofline_profiles, resolve_roofline_profile
 from .compiler import (
     CompilerArtifacts,
     CompilerOptions,
@@ -65,6 +67,13 @@ from .compiler import (
     create_compile_plan,
 )
 from .tracer import trace_torch_module
+from .fusion import (
+    FusionResult,
+    apply_all_fusions,
+    apply_conv_bn_folding,
+    apply_conv_relu_fusion,
+    apply_linear_relu_fusion,
+)
 from .validator import ValidationIssue, ValidationReport, validate_package, validate_package_report
 
 
@@ -76,6 +85,7 @@ __all__ = [
     "DMAAXIBurst",
     "DMAScheduleSequence",
     "EXPLICIT_TENSOR_MODE",
+    "FusionResult",
     "LinearData",
     "LinearOp",
     "LoweredOp",
@@ -87,6 +97,8 @@ __all__ = [
     "ProgramCompilePlan",
     "ProgramExportStep",
     "ReplayPackageArtifact",
+    "RooflineProfile",
+    "RooflineResult",
     "ScheduleComparison",
     "ScheduleSummary",
     "SRAMAllocation",
@@ -103,6 +115,12 @@ __all__ = [
     "ValidationIssue",
     "ValidationReport",
     "analyze_memory_usage",
+    "analyze_roofline",
+    "analyze_roofline_with_scheduler",
+    "apply_all_fusions",
+    "apply_conv_bn_folding",
+    "apply_conv_relu_fusion",
+    "apply_linear_relu_fusion",
     "build_arg_parser",
     "build_dma_schedule",
     "build_program_from_source",
@@ -124,10 +142,15 @@ __all__ = [
     "export_program_package",
     "export_and_run_system_replay_smoke",
     "export_replay_packages",
+    "format_performance_summary",
     "frontend",
     "generate_dma_commands",
     "generate_mmio_sequence",
+    "get_roofline_profile",
+    "inspect_compile_output_summary",
+    "inspect_package_summary",
     "json_dumps",
+    "list_roofline_profiles",
     "linear_data_from_torch_linear",
     "linear_op_from_cli_args",
     "linear_op_from_torch_linear",
@@ -137,6 +160,7 @@ __all__ = [
     "read_json",
     "read_json_required",
     "reconstruct_output_matrix",
+    "resolve_roofline_profile",
     "reorder_tiles",
     "run_system_replay_packages",
     "trace_torch_module",

@@ -28,7 +28,9 @@ sim/
 
 # Verilator build output
 build/
+build_fp16/
 build_system/
+build_system_fp16/
 build_core/
 
 # Concatenated source dump (regenerate with: python tools/concat.py)
@@ -43,9 +45,18 @@ docs/core_rtl_source_codes.txt
 /xvlog.log
 scripts/dfx_runtime.txt
 
+# Root-level build/debug logs (local dev only, regenerable)
+/debug.log
+/l5_make_output.txt
+/l5_run.log
+/uvm_errors.txt
+
 # Package-local replay artifacts
 workloads/**/replay_*
 workloads/sim_drain_output.csv
+
+# Generated model workloads (large, regenerate with: python l6/generate_model_workloads.py)
+workloads/model_*/
 
 # Compiled simulation wrappers
 scripts/sim/
@@ -68,3 +79,6 @@ l6/generated/
 
 # Notebook checkpoints
 .ipynb_checkpoints/
+
+# Notebook-generated images (regenerable via host/*.ipynb)
+docs/*.png

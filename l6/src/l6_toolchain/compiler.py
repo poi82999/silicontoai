@@ -6,6 +6,7 @@ from typing import Any
 
 from .common import json_dumps
 from .dma_scheduler import DMAScheduleSequence, build_dma_schedule
+from .fusion import apply_all_fusions
 from .ir import LoweredOp, Program, export_program_package, lower_program_to_steps, validate_program
 from .lowering import TILE_SIZE, TilePlanEntry, plan_linear_tiles
 from .replay_bridge import (
@@ -13,6 +14,8 @@ from .replay_bridge import (
     export_and_run_system_replay_smoke,
     export_replay_packages,
 )
+from .roofline import analyze_roofline_with_scheduler
+from .roofline_profiles import resolve_roofline_profile
 from .scheduler import (
     analyze_memory_usage,
     estimate_schedule_cost,
@@ -37,6 +40,12 @@ class CompilerOptions:
     binary_path: str | Path | None = None
     schedule_strategy: str = "weight_reuse"
     include_schedule_metadata: bool = True
+    roofline_profile: str = "sim_default"
+    include_roofline_in_manifest: bool = False
+    roofline_dma_bandwidth_gbps: float | None = None
+    roofline_mac_throughput: int | None = None
+    roofline_clock_mhz: float | None = None
+    enable_fusion: bool = True
     input_shape: tuple[int, ...] | None = None
     tensor_data: dict[str, Any] | None = field(default=None, hash=False)
 
@@ -203,6 +212,11 @@ def create_compile_plan(
     Useful for cost inspection and dry-run analysis.
     """
     program = build_program_from_source(source, input_shape=options.input_shape)
+
+    if options.enable_fusion:
+        fusion_result = apply_all_fusions(program, tensor_data=options.tensor_data)
+        program = fusion_result.program
+
     lowered = lower_program_to_steps(program)
 
     step_plans: list[StepCompilePlan] = []
@@ -247,7 +261,7 @@ def compile_program(
     program_package_dir = output_path / "program_package"
 
     # Build schedule metadata to thread into export
-    schedule_metadata = _build_schedule_metadata(plan) if options.include_schedule_metadata else None
+    schedule_metadata = _build_schedule_metadata(plan, options=options) if options.include_schedule_metadata else None
 
     # Phase 4: Export program package
     export_program_package(
@@ -271,7 +285,13 @@ def compile_program(
 
     # Write compile_manifest.json
     compile_manifest_path = output_path / "compile_manifest.json"
-    _write_compile_manifest(plan, compile_manifest_path, program_package_dir, replay_dirs)
+    _write_compile_manifest(
+        plan,
+        compile_manifest_path,
+        program_package_dir,
+        replay_dirs,
+        options=options,
+    )
 
     artifacts = CompilerArtifacts(
         program_package_dir=str(program_package_dir),
@@ -295,7 +315,11 @@ def compile_program(
 # Layer 4: Reporting
 # ---------------------------------------------------------------------------
 
-def _build_schedule_metadata(plan: ProgramCompilePlan) -> dict[int, dict[str, Any]]:
+def _build_schedule_metadata(
+    plan: ProgramCompilePlan,
+    *,
+    options: CompilerOptions,
+) -> dict[int, dict[str, Any]]:
     """Build per-step schedule metadata dict keyed by step_id.
 
     This is threaded into ``export_program_package`` so that per-step
@@ -303,6 +327,14 @@ def _build_schedule_metadata(plan: ProgramCompilePlan) -> dict[int, dict[str, An
     is used by the emitter instead of default M→N→K.
     """
     metadata: dict[int, dict[str, Any]] = {}
+    roofline_profile = None
+    if options.include_roofline_in_manifest:
+        roofline_profile = resolve_roofline_profile(
+            options.roofline_profile,
+            dma_bandwidth_gbps=options.roofline_dma_bandwidth_gbps,
+            mac_throughput=options.roofline_mac_throughput,
+            clock_mhz=options.roofline_clock_mhz,
+        )
     for sp in plan.step_plans:
         if not sp.compute_required:
             continue
@@ -314,6 +346,41 @@ def _build_schedule_metadata(plan: ProgramCompilePlan) -> dict[int, dict[str, An
             "replay_package_count": sp.replay_package_count,
             "memory_fits": sp.memory_fits,
         }
+        if roofline_profile is not None and sp.logical_shape is not None:
+            shape = type(
+                "_RooflineShape",
+                (),
+                {
+                    "m": int(sp.logical_shape["m"]),
+                    "k": int(sp.logical_shape["k"]),
+                    "n": int(sp.logical_shape["n"]),
+                },
+            )()
+            roofline = analyze_roofline_with_scheduler(
+                shape,
+                dma_bandwidth_gbps=roofline_profile.dma_bandwidth_gbps,
+                mac_throughput=roofline_profile.mac_throughput,
+                clock_mhz=roofline_profile.clock_mhz,
+                strategy=sp.schedule_strategy or plan.schedule_strategy,
+            )
+            entry["roofline"] = {
+                "profile": roofline_profile.name,
+                "m": roofline.m,
+                "k": roofline.k,
+                "n": roofline.n,
+                "total_ops": roofline.total_ops,
+                "total_bytes": roofline.total_bytes,
+                "operational_intensity": roofline.operational_intensity,
+                "peak_compute_gops": roofline.peak_compute_gops,
+                "peak_bandwidth_gbps": roofline.peak_bandwidth_gbps,
+                "memory_roof_gops": roofline.memory_roof_gops,
+                "achievable_gops": roofline.achievable_gops,
+                "achieved_gops": roofline.achieved_gops,
+                "utilization_percent": roofline.utilization_percent,
+                "bottleneck": roofline.bottleneck,
+                "estimated_cycles": roofline.estimated_cycles,
+                "schedule_strategy": roofline.schedule_strategy,
+            }
         if sp.ordered_tiles is not None:
             entry["tile_order"] = list(sp.ordered_tiles)
         if sp.dma_schedule is not None:
@@ -336,7 +403,10 @@ def _write_compile_manifest(
     path: Path,
     program_package_dir: Path,
     replay_dirs: list[str],
+    *,
+    options: CompilerOptions,
 ) -> None:
+    schedule_metadata = _build_schedule_metadata(plan, options=options)
     steps_summary: list[dict[str, object]] = []
     for sp in plan.step_plans:
         entry: dict[str, object] = {
@@ -354,6 +424,9 @@ def _write_compile_manifest(
             entry["estimated_dma_cycles"] = sp.estimated_dma_cycles
             entry["memory_fits"] = sp.memory_fits
             entry["replay_package_count"] = sp.replay_package_count
+            step_meta = schedule_metadata.get(sp.step_id, {})
+            if "roofline" in step_meta:
+                entry["roofline"] = step_meta["roofline"]
             if sp.dma_schedule is not None:
                 ds = sp.dma_schedule
                 entry["dma_schedule"] = {
@@ -377,6 +450,20 @@ def _write_compile_manifest(
         "total_estimated_cycles": plan.total_estimated_cycles,
         "steps": steps_summary,
     }
+    if options.include_roofline_in_manifest:
+        roofline_profile = resolve_roofline_profile(
+            options.roofline_profile,
+            dma_bandwidth_gbps=options.roofline_dma_bandwidth_gbps,
+            mac_throughput=options.roofline_mac_throughput,
+            clock_mhz=options.roofline_clock_mhz,
+        )
+        manifest["roofline_config"] = {
+            "profile": roofline_profile.name,
+            "description": roofline_profile.description,
+            "dma_bandwidth_gbps": roofline_profile.dma_bandwidth_gbps,
+            "mac_throughput": roofline_profile.mac_throughput,
+            "clock_mhz": roofline_profile.clock_mhz,
+        }
 
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json_dumps(manifest), encoding="utf-8")

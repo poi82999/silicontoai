@@ -25,21 +25,26 @@
 ```text
 l6/
 ├── README.md
+├── generate_model_workloads.py    # Track E-1: MobileNet/ResNet/Transformer workload generator
 ├── regenerate_fixed_replay_assets.py
 ├── src/
 │   └── l6_toolchain/
 │       ├── __init__.py
-│       ├── __main__.py        # CLI entry: python -m l6_toolchain compile
+│       ├── __main__.py        # CLI entry: python -m l6_toolchain compile [--no-fusion]
 │       ├── api.py             # public API surface
 │       ├── common.py          # shared utilities
-│       ├── compiler.py        # M5 end-to-end compiler
+│       ├── compiler.py        # M5 end-to-end compiler (fusion → plan → export → replay)
+│       ├── dma_scheduler.py   # DMA command generation + SRAM allocation
 │       ├── emitter.py         # JSON package generation
 │       ├── frontend.py        # Linear/Conv2d frontend + torch adapter
+│       ├── fusion.py          # Track B-1: operator fusion (Linear+ReLU, Conv+ReLU, Conv+BN)
 │       ├── inspector.py       # package golden stitching
 │       ├── ir.py              # mini IR + program lowering + export
 │       ├── linear_export.py   # legacy linear export CLI
 │       ├── lowering.py        # tile planning (TILE_SIZE=16)
 │       ├── replay_bridge.py   # L6→system replay bridge
+│       ├── roofline.py        # roofline performance model
+│       ├── roofline_profiles.py  # board/platform presets
 │       ├── scheduler.py       # M4 cost model + reorder + memory budget
 │       ├── tracer.py          # torch.fx → Program tracer
 │       └── validator.py       # package validation
@@ -47,12 +52,16 @@ l6/
     ├── conftest.py
     ├── test_asset_drift.py
     ├── test_compiler.py
+    ├── test_dma_scheduler.py
     ├── test_emitter.py
     ├── test_frontend.py
+    ├── test_fusion.py
     ├── test_ir.py
     ├── test_m3_ops_tracer.py
+    ├── test_model_workloads.py
     ├── test_package_tools.py
     ├── test_replay_bridge.py
+    ├── test_roofline.py
     └── test_scheduler.py
 ```
 
@@ -226,7 +235,7 @@ Recommended next expansion order:
 테스트 실행:
 
 ```powershell
-c:/projects/silicontoai/.venv312/Scripts/python.exe -m pytest l6/tests  # 112 tests
+c:/projects/silicontoai/.venv312/Scripts/python.exe -m pytest l6/tests  # 148 tests
 ```
 
 ## Compiler CLI (M5)
@@ -246,6 +255,27 @@ c:/projects/silicontoai/.venv312/Scripts/python.exe -m l6_toolchain compile --pr
 
 # Schedule metadata 비활성화
 c:/projects/silicontoai/.venv312/Scripts/python.exe -m l6_toolchain compile --program-json l6/generated/program.json --no-schedule-metadata
+
+# Compile manifest에 scheduler-coupled roofline 결과 기록
+c:/projects/silicontoai/.venv312/Scripts/python.exe -m l6_toolchain compile --program-json l6/generated/program.json --output-dir l6/generated/compiled_with_roofline --include-roofline-manifest --roofline-profile sim_default
+
+# Preset 기반 값에서 일부만 override
+c:/projects/silicontoai/.venv312/Scripts/python.exe -m l6_toolchain compile --program-json l6/generated/program.json --output-dir l6/generated/compiled_with_roofline --include-roofline-manifest --roofline-profile pynq_z2_overlay --roofline-clock-mhz 125.0
+```
+
+`--include-roofline-manifest`를 주지 않으면 `compile_manifest.json`에는 roofline 필드가 기록되지 않습니다.
+옵션을 주면 top-level `roofline_config`와 compute step별 `roofline` 블록이 추가됩니다.
+roofline 값은 `--roofline-profile` preset에서 가져오고, 필요할 때만 개별 플래그로 override 합니다.
+고정 스키마는 `docs/l6_roofline_manifest_schema.md`를 따릅니다.
+
+Inspect CLI 예시:
+
+```powershell
+# compile output 루트에서 human-readable performance summary 출력
+c:/projects/silicontoai/.venv312/Scripts/python.exe -m l6_toolchain inspect l6/generated/compiled_with_roofline
+
+# JSON 요약 출력
+c:/projects/silicontoai/.venv312/Scripts/python.exe -m l6_toolchain inspect l6/generated/compiled_with_roofline --json
 ```
 
 Python API로 직접 사용:
@@ -258,8 +288,21 @@ result = compile_program(program, CompilerOptions(
     output_dir="l6/generated/my_model",
     schedule_strategy="weight_reuse",
     include_schedule_metadata=True,
+    roofline_profile="sim_default",
+    include_roofline_in_manifest=True,
 ))
 print(result.plan.total_estimated_cycles)
+```
+
+Inspection API 예시:
+
+```python
+from l6_toolchain.api import format_performance_summary, inspect_package_summary
+
+summary = inspect_package_summary("l6/generated/my_model/program_package")
+print(summary["steps"][0]["compiler"]["roofline"])
+
+print(format_performance_summary("l6/generated/my_model"))
 ```
 
 ## 다음 학습 순서

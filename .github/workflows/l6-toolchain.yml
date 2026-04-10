@@ -96,6 +96,16 @@ jobs:
         run: |
           & $env:PYTHON_EXE -c "import npu_cuda.golden_accel as g; g.force_backend('numpy'); import pytest, sys; sys.exit(pytest.main(['l6/tests','-v','--tb=short','-x','--ignore=l6/tests/test_asset_drift.py','--ignore=l6/tests/test_m3_ops_tracer.py','-k','not nn_module']))"
 
+      - name: Build system replay binary (split-k gate prerequisite)
+        shell: powershell
+        run: |
+          & $env:PYTHON_EXE -c "from pathlib import Path; from l6_toolchain.api import build_system_replay_binary; repo=Path('.').resolve(); out=repo / 'build_system' / 'Vnpu_system_top'; build_system_replay_binary(repo_root=repo, binary_path=out); print(out)"
+
+      - name: Run replay bridge split-k gate
+        shell: powershell
+        run: |
+          & $env:PYTHON_EXE -c "import npu_cuda.golden_accel as g; g.force_backend('numpy'); import pytest, sys; sys.exit(pytest.main(['l6/tests/test_replay_bridge.py','-v','--tb=short','-k','splitk_tiled_package or splitk_tail_multi_step_program_sequence or fixed_splitk_tail_regression_asset']))"
+
       - name: Run tracer dependency gate (advisory)
         continue-on-error: true
         shell: powershell

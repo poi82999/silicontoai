@@ -1,1 +1,1 @@
-__all__ = ["api", "common", "compiler", "linear_export", "frontend", "lowering", "emitter", "inspector", "validator", "ir", "replay_bridge", "scheduler", "tracer"]
+__all__ = ["api", "common", "compiler", "fusion", "linear_export", "frontend", "lowering", "emitter", "inspector", "validator", "ir", "replay_bridge", "scheduler", "tracer", "roofline", "roofline_profiles"]

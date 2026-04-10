@@ -168,6 +168,53 @@ Current L5 baseline (streamlined DMA-execute):
 - Expected negative package behavior:
   - `system_negative_invalid_dma_bytes` must be reported as `PACKAGE_ERROR`
 
+### L6 Roofline / Compiler Manifest Verification
+
+Purpose:
+
+- verify roofline model math and scheduler-coupled throughput estimation
+- guard optional compile-manifest roofline recording path
+- verify preset-based roofline configuration and inspector summary exposure
+
+Primary files:
+
+- `docs/l6_roofline_manifest_schema.md`
+- `l6/src/l6_toolchain/roofline.py`
+- `l6/src/l6_toolchain/roofline_profiles.py`
+- `l6/src/l6_toolchain/compiler.py`
+- `l6/src/l6_toolchain/__main__.py`
+- `l6/src/l6_toolchain/inspector.py`
+- `l6/tests/test_roofline.py`
+- `l6/tests/test_compiler.py`
+- `l6/tests/test_package_tools.py`
+
+Commands:
+
+- `c:/projects/silicontoai/.venv/Scripts/python.exe -m pytest l6/tests/test_roofline.py -q`
+- `c:/projects/silicontoai/.venv/Scripts/python.exe -m pytest l6/tests/test_compiler.py -q`
+- `c:/projects/silicontoai/.venv/Scripts/python.exe -m pytest l6/tests/test_package_tools.py -q`
+- `c:/projects/silicontoai/.venv/Scripts/python.exe -m l6_toolchain inspect l6/generated/compiled_with_roofline`
+
+CLI opt-in example (compile manifest roofline 기록):
+
+- `c:/projects/silicontoai/.venv/Scripts/python.exe -m l6_toolchain compile --program-json l6/generated/program.json --output-dir l6/generated/compiled_with_roofline --include-roofline-manifest --roofline-profile sim_default`
+- `c:/projects/silicontoai/.venv/Scripts/python.exe -m l6_toolchain compile --program-json l6/generated/program.json --output-dir l6/generated/compiled_with_roofline --include-roofline-manifest --roofline-profile pynq_z2_overlay --roofline-clock-mhz 125.0`
+
+Expected markers:
+
+- default compile 결과의 `compile_manifest.json`에는 `roofline_config`/step `roofline` 필드가 없어야 함
+- `--include-roofline-manifest` 사용 시
+  - top-level `roofline_config` 존재
+  - compute step entry에 `roofline` 블록 존재
+  - program_sequence step manifest의 `compiler.roofline`도 존재
+  - `roofline.estimated_cycles` 값이 scheduler summary와 일관되게 채워짐
+  - `roofline.profile`이 선택한 preset 이름과 일치함
+- `inspect` CLI 기본 출력은 compile/package 경로에서 사람이 바로 읽을 수 있는 성능 요약을 제공해야 함
+
+Contract note:
+
+- inspector와 CI는 `docs/l6_roofline_manifest_schema.md`에 정의된 경로/필드 이름만 계약으로 사용해야 함
+
 ---
 
 ## Artifact Layout
@@ -273,5 +320,6 @@ If you modify any of the following, update this document.
 - coverage generation flow
 - artifact layout
 - top-level verification commands
+- roofline analysis gate or compile manifest schema for performance metadata
 
 For the actual maintenance checklist/template, use [docs/report_update_checklist.md](./report_update_checklist.md).

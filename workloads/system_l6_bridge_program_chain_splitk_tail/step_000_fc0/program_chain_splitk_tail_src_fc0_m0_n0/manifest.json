@@ -63,8 +63,8 @@
     "memory": {
       "weights_src_addr": 0,
       "activations_src_addr": 8192,
-      "weights_total_bytes": 512,
-      "activations_total_bytes": 512
+      "weights_total_bytes": 1024,
+      "activations_total_bytes": 1024
     },
     "dma": {
       "weight_burst_len": 15,
@@ -113,8 +113,8 @@
         },
         {
           "pass_index": 1,
-          "weights_src_addr": 256,
-          "activations_src_addr": 8448,
+          "weights_src_addr": 512,
+          "activations_src_addr": 8704,
           "weight_burst_len": 15,
           "weight_total_bursts": 1,
           "activation_burst_len": 15,

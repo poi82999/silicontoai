@@ -17,20 +17,19 @@ Detailed analysis is split into architecture, verification, and debugging docume
 4. [docs/workload_package_report.md](./workload_package_report.md)
 5. [docs/core_replay_loader_report.md](./core_replay_loader_report.md)
 6. [docs/l5_system_replay_scenarios_report.md](./l5_system_replay_scenarios_report.md)
-7. [docs/l5_signoff_report_template.md](./l5_signoff_report_template.md)
+7. [docs/l5_signoff_report.md](./l5_signoff_report.md)
 8. [docs/system_replay_phase_executor_report.md](./system_replay_phase_executor_report.md)
-9. [docs/l5_signoff_sample_report.md](./l5_signoff_sample_report.md)
-10. [docs/architecture_report.md](./architecture_report.md)
-11. [docs/verification_report.md](./verification_report.md)
-12. [docs/debugging_report.md](./debugging_report.md)
-13. [docs/report_update_checklist.md](./report_update_checklist.md)
-14. [docs/factory_analogy_architecture.md](./factory_analogy_architecture.md)
-15. [docs/m5_end_to_end_compiler_design.md](./m5_end_to_end_compiler_design.md)
-16. `l6/README.md`
-17. `l6/src/l6_toolchain/api.py`
-18. `rtl/npu_system_top.sv`
-19. `rtl/npu_core_top.sv`
-20. `tb/npu_uvm_pkg.sv`
+9. [docs/architecture_report.md](./architecture_report.md)
+10. [docs/verification_report.md](./verification_report.md)
+11. [docs/debugging_report.md](./debugging_report.md)
+12. [docs/report_update_checklist.md](./report_update_checklist.md)
+13. [docs/factory_analogy_architecture.md](./factory_analogy_architecture.md)
+14. [docs/m5_end_to_end_compiler_design.md](./m5_end_to_end_compiler_design.md)
+15. `l6/README.md`
+16. `l6/src/l6_toolchain/api.py`
+17. `rtl/npu_system_top.sv`
+18. `rtl/npu_core_top.sv`
+19. `tb/npu_uvm_pkg.sv`
 
 ---
 
@@ -48,14 +47,11 @@ Detailed analysis is split into architecture, verification, and debugging docume
 - [docs/l5_system_replay_scenarios_report.md](./l5_system_replay_scenarios_report.md)
   - L5 package family matrix, required scenario coverage, execution order, and scenario exit criteria.
 
-- [docs/l5_signoff_report_template.md](./l5_signoff_report_template.md)
-  - Draft sign-off template for package-level L5 reporting, defect classification, waivers, and final decision tracking.
+- [docs/l5_signoff_report.md](./l5_signoff_report.md)
+  - Final L5 sign-off report with 8-package regression evidence, assertion summaries, and closure decision.
 
 - [docs/system_replay_phase_executor_report.md](./system_replay_phase_executor_report.md)
   - System replay runner architecture, normalized phase plan, pass expansion rules, and error classification.
-
-- [docs/l5_signoff_sample_report.md](./l5_signoff_sample_report.md)
-  - First filled sample sign-off report using current repository evidence and explicitly calling out remaining L5 gaps.
 
 - [docs/architecture_report.md](./architecture_report.md)
   - Module roles, dataflow, timing model, design invariants, and Mermaid connectivity diagram.

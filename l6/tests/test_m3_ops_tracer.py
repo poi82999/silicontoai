@@ -4,8 +4,10 @@ import json
 from pathlib import Path
 
 import numpy as np
-import torch
-import torch.nn as nn
+import pytest
+
+torch = pytest.importorskip("torch", reason="torch is not installed")
+nn = pytest.importorskip("torch.nn", reason="torch is not installed")
 
 from l6_toolchain.api import (
     OpNode,

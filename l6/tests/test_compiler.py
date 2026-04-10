@@ -5,6 +5,13 @@ from pathlib import Path
 
 import pytest
 
+try:
+    import torch.nn as nn  # type: ignore[import-not-found]
+    HAS_TORCH = True
+except Exception:  # pragma: no cover - environment-dependent
+    nn = None  # type: ignore[assignment]
+    HAS_TORCH = False
+
 from l6_toolchain.api import (
     OpNode,
     Program,
@@ -92,9 +99,8 @@ class TestBuildProgramFromSource:
         result = build_program_from_source(program)
         assert result is program
 
+    @pytest.mark.skipif(not HAS_TORCH, reason="torch is not installed")
     def test_nn_module_trace(self) -> None:
-        import torch.nn as nn
-
         class TinyModel(nn.Module):
             def __init__(self) -> None:
                 super().__init__()
@@ -107,9 +113,8 @@ class TestBuildProgramFromSource:
         assert isinstance(program, Program)
         assert len(program.ops) >= 1
 
+    @pytest.mark.skipif(not HAS_TORCH, reason="torch is not installed")
     def test_nn_module_requires_input_shape(self) -> None:
-        import torch.nn as nn
-
         model = nn.Linear(4, 2)
         with pytest.raises(ValueError, match="input_shape is required"):
             build_program_from_source(model)
@@ -143,7 +148,7 @@ class TestCreateCompilePlan:
 
     def test_two_layer_plan_counts(self) -> None:
         program = _make_two_layer_program()
-        options = CompilerOptions(package_id="test_two_layer")
+        options = CompilerOptions(package_id="test_two_layer", enable_fusion=False)
         plan = create_compile_plan(program, options=options)
 
         assert plan.total_compute_steps == 2
@@ -201,10 +206,9 @@ class TestCreateCompilePlan:
         sp = plan.step_plans[0]
         assert sp.replay_package_count == 2  # n=20 -> 2 n-tiles
 
+    @pytest.mark.skipif(not HAS_TORCH, reason="torch is not installed")
     def test_nn_module_plan(self) -> None:
         """create_compile_plan should accept an nn.Module source."""
-        import torch.nn as nn
-
         class TinyModel(nn.Module):
             def __init__(self) -> None:
                 super().__init__()
@@ -285,6 +289,7 @@ class TestCompileProgram:
         options = CompilerOptions(
             package_id="two_layer",
             output_dir=tmp_path / "two_layer",
+            enable_fusion=False,
         )
         result = compile_program(program, options=options)
 
@@ -321,9 +326,8 @@ class TestCompileProgram:
         manifest = json.loads(Path(result.artifacts.compile_manifest_path).read_text(encoding="utf-8"))
         assert manifest["replay_enabled"] is False
 
+    @pytest.mark.skipif(not HAS_TORCH, reason="torch is not installed")
     def test_nn_module_compile(self, tmp_path: Path) -> None:
-        import torch.nn as nn
-
         class TinyModel(nn.Module):
             def __init__(self) -> None:
                 super().__init__()
@@ -446,6 +450,28 @@ class TestSchedulerExportBridge:
         assert isinstance(compiler_meta["memory_fits"], bool)
         assert "tile_order" not in compiler_meta  # tile_order is internal, not serialized
 
+    def test_step_manifest_includes_roofline_when_enabled(self, tmp_path: Path) -> None:
+        """Per-step manifest compiler block should include roofline when enabled."""
+        program = _make_linear_program(m=16, k=16, n=16)
+        options = CompilerOptions(
+            package_id="step_roofline",
+            output_dir=tmp_path / "step_roofline",
+            include_schedule_metadata=True,
+            include_roofline_in_manifest=True,
+            roofline_profile="sim_default",
+        )
+        result = compile_program(program, options=options)
+
+        pkg = Path(result.artifacts.program_package_dir)
+        step_manifest_path = pkg / "steps" / "step_000_fc0" / "manifest.json"
+        step_manifest = json.loads(step_manifest_path.read_text(encoding="utf-8"))
+
+        assert "compiler" in step_manifest
+        compiler_meta = step_manifest["compiler"]
+        assert "roofline" in compiler_meta
+        assert compiler_meta["roofline"]["profile"] == "sim_default"
+        assert compiler_meta["roofline"]["estimated_cycles"] is not None
+
     def test_no_metadata_when_disabled(self, tmp_path: Path) -> None:
         """include_schedule_metadata=False should omit compiler block from manifests."""
         program = _make_linear_program()
@@ -467,6 +493,7 @@ class TestSchedulerExportBridge:
         options = CompilerOptions(
             package_id="noncompute_meta",
             output_dir=tmp_path / "noncompute",
+            enable_fusion=False,
         )
         result = compile_program(program, options=options)
 
@@ -508,6 +535,47 @@ class TestCompilerCLI:
         assert (output_dir / "compile_manifest.json").exists()
         assert (output_dir / "program_package" / "manifest.json").exists()
 
+    def test_cli_compile_with_roofline_manifest(self, tmp_path: Path) -> None:
+        """CLI should emit optional roofline manifest fields when requested."""
+        program_json = {
+            "inputs": [{"name": "x", "shape": [16, 16], "dtype": "int8"}],
+            "tensors": [
+                {"name": "x", "shape": [16, 16], "dtype": "int8"},
+                {"name": "y", "shape": [16, 16], "dtype": "int32"},
+            ],
+            "ops": [
+                {"name": "fc0", "kind": "linear", "inputs": ["x"], "outputs": ["y"], "attrs": {"in_features": 16, "out_features": 16}},
+            ],
+            "outputs": ["y"],
+        }
+        json_path = tmp_path / "program_roofline.json"
+        json_path.write_text(json.dumps(program_json), encoding="utf-8")
+
+        output_dir = tmp_path / "cli_roofline_output"
+        from l6_toolchain.__main__ import main
+
+        main([
+            "compile",
+            "--output-dir", str(output_dir),
+            "--package-id", "cli_roofline_test",
+            "--program-json", str(json_path),
+            "--include-roofline-manifest",
+            "--roofline-profile", "sim_default",
+            "--roofline-dma-bandwidth-gbps", "3.2",
+            "--roofline-mac-throughput", "256",
+            "--roofline-clock-mhz", "100.0",
+        ])
+
+        manifest = json.loads((output_dir / "compile_manifest.json").read_text(encoding="utf-8"))
+        assert manifest["roofline_config"] == {
+            "profile": "sim_default",
+            "description": "Simulation baseline from rtl/include/npu_def_pkg.sv: EXT_AXI_DATA_WIDTH=256 at a 100 MHz proxy clock, yielding 25.6 Gbit/s.",
+            "dma_bandwidth_gbps": 3.2,
+            "mac_throughput": 256,
+            "clock_mhz": 100.0,
+        }
+        assert "roofline" in manifest["steps"][0]
+
 
 # ---- DMA scheduler integration tests ----------------------------------------
 
@@ -526,7 +594,7 @@ class TestDMASchedulerIntegration:
     def test_noncompute_step_has_no_dma_schedule(self) -> None:
         """Non-compute steps should have dma_schedule=None."""
         program = _make_two_layer_program()
-        plan = create_compile_plan(program, options=CompilerOptions())
+        plan = create_compile_plan(program, options=CompilerOptions(enable_fusion=False))
         relu_step = next(sp for sp in plan.step_plans if not sp.compute_required)
         assert relu_step.dma_schedule is None
 
@@ -570,6 +638,51 @@ class TestDMASchedulerIntegration:
         assert dma["split_k_passes"] >= 1
         assert isinstance(dma["double_buffer_enabled"], bool)
         assert isinstance(dma["sram_feasible"], bool)
+
+    def test_compile_manifest_roofline_disabled_by_default(self, tmp_path: Path) -> None:
+        """compile_manifest should not include roofline fields unless explicitly enabled."""
+        program = _make_linear_program(m=16, k=16, n=16)
+        options = CompilerOptions(package_id="roofline_default", output_dir=tmp_path / "roofline_default")
+        result = compile_program(program, options=options)
+
+        manifest = json.loads(Path(result.artifacts.compile_manifest_path).read_text(encoding="utf-8"))
+        assert "roofline_config" not in manifest
+        step = manifest["steps"][0]
+        assert "roofline" not in step
+
+    def test_compile_manifest_roofline_enabled(self, tmp_path: Path) -> None:
+        """compile_manifest should include scheduler-coupled roofline fields when enabled."""
+        program = _make_linear_program(m=16, k=16, n=16)
+        options = CompilerOptions(
+            package_id="roofline_enabled",
+            output_dir=tmp_path / "roofline_enabled",
+            roofline_profile="sim_default",
+            include_roofline_in_manifest=True,
+            roofline_dma_bandwidth_gbps=3.2,
+            roofline_mac_throughput=256,
+            roofline_clock_mhz=100.0,
+        )
+        result = compile_program(program, options=options)
+
+        manifest = json.loads(Path(result.artifacts.compile_manifest_path).read_text(encoding="utf-8"))
+        assert manifest["roofline_config"] == {
+            "profile": "sim_default",
+            "description": "Simulation baseline from rtl/include/npu_def_pkg.sv: EXT_AXI_DATA_WIDTH=256 at a 100 MHz proxy clock, yielding 25.6 Gbit/s.",
+            "dma_bandwidth_gbps": 3.2,
+            "mac_throughput": 256,
+            "clock_mhz": 100.0,
+        }
+
+        step = manifest["steps"][0]
+        assert "roofline" in step
+        roofline = step["roofline"]
+        assert roofline["m"] == 16
+        assert roofline["k"] == 16
+        assert roofline["n"] == 16
+        assert roofline["schedule_strategy"] == "weight_reuse"
+        assert roofline["bottleneck"] in ("compute", "memory")
+        assert roofline["estimated_cycles"] is not None
+        assert roofline["achieved_gops"] <= roofline["achievable_gops"]
 
     def test_dma_schedule_sram_feasible_for_small_tile(self) -> None:
         """A single 16×16×16 tile should fit in 64KB SRAM budget."""

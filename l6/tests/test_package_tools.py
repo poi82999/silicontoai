@@ -13,10 +13,14 @@ from l6_toolchain.api import (
     export_linear_tile_package,
     export_linear_tiled_package,
     export_program_package,
+    format_performance_summary,
+    inspect_compile_output_summary,
+    inspect_package_summary,
     reconstruct_output_matrix,
     validate_package,
     validate_package_report,
 )
+from l6_toolchain.compiler import CompilerOptions, compile_program
 
 
 def test_reconstruct_output_matrix_reads_single_tile_package(tmp_path: Path) -> None:
@@ -178,6 +182,131 @@ def test_validate_package_accepts_program_sequence_package(tmp_path: Path) -> No
     assert report.shape is None
     assert report.tile_count is None
     assert report.issues == ()
+
+
+def test_inspect_package_summary_reads_program_step_roofline(tmp_path: Path) -> None:
+    output_dir = tmp_path / "inspect_program_sequence"
+    program = Program(
+        inputs=(TensorValue(name="x", shape=(16, 16), dtype="int8"),),
+        tensors=(
+            TensorValue(name="x", shape=(16, 16), dtype="int8"),
+            TensorValue(name="y", shape=(16, 16), dtype="int32"),
+        ),
+        ops=(
+            OpNode(name="fc0", kind="linear", inputs=("x",), outputs=("y",), attrs={"in_features": 16, "out_features": 16}),
+        ),
+        outputs=("y",),
+    )
+
+    compile_program(
+        program,
+        options=CompilerOptions(
+            package_id="inspect_program_sequence",
+            output_dir=output_dir,
+            include_roofline_in_manifest=True,
+            roofline_profile="sim_default",
+        ),
+    )
+
+    summary = inspect_package_summary(output_dir / "program_package")
+    assert summary["op_type"] == "program_sequence"
+    steps = summary["steps"]
+    assert isinstance(steps, list)
+    assert steps[0]["name"] == "fc0"
+    assert steps[0]["compiler"]["roofline"]["profile"] == "sim_default"
+
+
+def test_inspect_compile_output_summary_reads_roofline_config(tmp_path: Path) -> None:
+    output_dir = tmp_path / "inspect_compile_output"
+    program = Program(
+        inputs=(TensorValue(name="x", shape=(16, 16), dtype="int8"),),
+        tensors=(
+            TensorValue(name="x", shape=(16, 16), dtype="int8"),
+            TensorValue(name="y", shape=(16, 16), dtype="int32"),
+        ),
+        ops=(
+            OpNode(name="fc0", kind="linear", inputs=("x",), outputs=("y",), attrs={"in_features": 16, "out_features": 16}),
+        ),
+        outputs=("y",),
+    )
+
+    compile_program(
+        program,
+        options=CompilerOptions(
+            package_id="inspect_compile_output",
+            output_dir=output_dir,
+            include_roofline_in_manifest=True,
+            roofline_profile="sim_default",
+        ),
+    )
+
+    summary = inspect_compile_output_summary(output_dir)
+    assert summary["package_id"] == "inspect_compile_output"
+    assert summary["roofline_config"]["profile"] == "sim_default"
+    assert summary["roofline_config"]["dma_bandwidth_gbps"] == 25.6
+    assert summary["steps"][0]["roofline"]["profile"] == "sim_default"
+
+
+def test_format_performance_summary_renders_human_readable_output(tmp_path: Path) -> None:
+    output_dir = tmp_path / "inspect_format_output"
+    program = Program(
+        inputs=(TensorValue(name="x", shape=(16, 16), dtype="int8"),),
+        tensors=(
+            TensorValue(name="x", shape=(16, 16), dtype="int8"),
+            TensorValue(name="y", shape=(16, 16), dtype="int32"),
+        ),
+        ops=(
+            OpNode(name="fc0", kind="linear", inputs=("x",), outputs=("y",), attrs={"in_features": 16, "out_features": 16}),
+        ),
+        outputs=("y",),
+    )
+
+    compile_program(
+        program,
+        options=CompilerOptions(
+            package_id="inspect_format_output",
+            output_dir=output_dir,
+            include_roofline_in_manifest=True,
+            roofline_profile="sim_default",
+        ),
+    )
+
+    text = format_performance_summary(output_dir)
+    assert "Package: inspect_format_output" in text
+    assert "Roofline config: profile=sim_default bw=25.6 Gbit/s" in text
+    assert "bottleneck=" in text
+
+
+def test_cli_inspect_renders_text_summary(tmp_path: Path, capsys) -> None:
+    output_dir = tmp_path / "inspect_cli_output"
+    program = Program(
+        inputs=(TensorValue(name="x", shape=(16, 16), dtype="int8"),),
+        tensors=(
+            TensorValue(name="x", shape=(16, 16), dtype="int8"),
+            TensorValue(name="y", shape=(16, 16), dtype="int32"),
+        ),
+        ops=(
+            OpNode(name="fc0", kind="linear", inputs=("x",), outputs=("y",), attrs={"in_features": 16, "out_features": 16}),
+        ),
+        outputs=("y",),
+    )
+
+    compile_program(
+        program,
+        options=CompilerOptions(
+            package_id="inspect_cli_output",
+            output_dir=output_dir,
+            include_roofline_in_manifest=True,
+            roofline_profile="sim_default",
+        ),
+    )
+
+    from l6_toolchain.__main__ import main
+
+    main(["inspect", str(output_dir)])
+    captured = capsys.readouterr()
+    assert "Package: inspect_cli_output" in captured.out
+    assert "Roofline config: profile=sim_default" in captured.out
 
 
 def test_validate_package_rejects_program_sequence_with_wrong_compute_dir(tmp_path: Path) -> None:

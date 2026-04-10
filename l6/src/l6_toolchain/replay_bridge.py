@@ -176,13 +176,22 @@ def build_system_replay_binary(
             "-lc",
             f"cd {scripts_dir_wsl} && make -f Makefile build-system",
         ]
-        completed = subprocess.run(command, capture_output=True, text=True, check=False)
+        completed = subprocess.run(
+            command,
+            capture_output=True,
+            text=True,
+            encoding="utf-8",
+            errors="replace",
+            check=False,
+        )
     else:
         completed = subprocess.run(
             ["make", "-f", "Makefile", "build-system"],
             cwd=str(resolved_repo_root / "scripts"),
             capture_output=True,
             text=True,
+            encoding="utf-8",
+            errors="replace",
             check=False,
         )
 
@@ -466,8 +475,11 @@ def _build_system_metadata(
 ) -> dict[str, object]:
     phase_sequence: list[str] = []
     passes: list[dict[str, object]] = []
-    per_pass_activation_bytes = tile_rows * 16
-    per_pass_weight_bytes = 16 * 16
+    # Replay payload rows are serialized as 16 lanes of 16-bit units.
+    bytes_per_lane = 2
+    lanes_per_row = 16
+    per_pass_activation_bytes = tile_rows * lanes_per_row * bytes_per_lane
+    per_pass_weight_bytes = lanes_per_row * lanes_per_row * bytes_per_lane
 
     for pass_index, acc_clear in enumerate(acc_clear_pattern):
         weight_src_addr = weights_src_base + pass_index * per_pass_weight_bytes
@@ -495,8 +507,6 @@ def _build_system_metadata(
     phase_sequence.extend(["flush", "drain"])
 
     # Build DMA schedule via dma_scheduler for MMIO analysis (supplementary metadata).
-    # Note: Uses TILE_SIZE for tile_k (INT8 model uses 1 byte/elem, dma_scheduler models
-    # 2 bytes/elem — byte counts are relative models only, not absolute HW values).
     _dma_sched_meta: dict[str, object] | None = None
     try:
         _tile_estimates = [
@@ -614,9 +624,18 @@ def _run_system_command(command: list[str]) -> subprocess.CompletedProcess[str]:
             [str(bash_path), "-lc", " ".join(wsl_command)],
             capture_output=True,
             text=True,
+            encoding="utf-8",
+            errors="replace",
             check=False,
         )
-    return subprocess.run(command, capture_output=True, text=True, check=False)
+    return subprocess.run(
+        command,
+        capture_output=True,
+        text=True,
+        encoding="utf-8",
+        errors="replace",
+        check=False,
+    )
 
 
 def _looks_like_elf_binary(path: Path) -> bool:

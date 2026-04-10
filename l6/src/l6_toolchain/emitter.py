@@ -74,9 +74,9 @@ def _compute_product(activations: np.ndarray, weights: np.ndarray, bias: np.ndar
 
 def _golden_outputs_from_product(product: np.ndarray, global_row_base: int, global_col_base: int) -> list[dict[str, object]]:
     outputs: list[dict[str, object]] = []
-    # Cast float32 matrix directly viewing its IEEE 754 bit layout as int32
-    bit_representations = product.view(np.int32).tolist()
-    for row_idx, vector in enumerate(bit_representations):
+    # Use numeric INT32 values matching RTL signed accumulate semantics.
+    int_vectors = product.astype(np.int32).tolist()
+    for row_idx, vector in enumerate(int_vectors):
         outputs.append(
             {
                 "drain_addr": row_idx,

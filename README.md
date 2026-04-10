@@ -13,6 +13,9 @@ silicontoai/
 │   ├── ai_analysis_report.md
 │   ├── architecture_report.md
 │   ├── current_status_report.md
+│   ├── l5_signoff_report.md
+│   ├── l6_roofline_manifest_schema.md
+│   ├── l6_signed_int8_design.md
 │   ├── l7_environment_setup.md
 │   ├── verification_report.md
 │   ├── debugging_report.md
@@ -53,8 +56,9 @@ silicontoai/
 │   └── mock_allocator.h
 │
 ├── l6/                     # Python 기반 L6 학습/툴체인 공간
-│   ├── src/l6_toolchain/   # exporter / golden generator 코드
-│   ├── tests/              # L6 단위 테스트
+│   ├── src/l6_toolchain/   # compiler, fusion, exporter, golden generator
+│   ├── tests/              # L6 단위 테스트 (170+ tests)
+│   ├── generate_model_workloads.py  # Real model workload 생성기
 │   └── README.md           # 학습 순서와 실행 방법
 │
 ├── scripts/                # 시뮬레이션 실행 스크립트
@@ -85,17 +89,15 @@ silicontoai/
 6. `docs/workload_package_report.md`
 7. `docs/core_replay_loader_report.md`
 8. `docs/l5_system_replay_scenarios_report.md`
-9. `docs/l5_signoff_report_template.md`
+9. `docs/l5_signoff_report.md`
 10. `docs/system_replay_phase_executor_report.md`
-11. `docs/l5_signoff_sample_report.md`
-12. `docs/architecture_report.md`
-13. `docs/verification_report.md`
-14. `docs/debugging_report.md`
-15. `docs/report_update_checklist.md`
-16. `l6/README.md`
-17. `rtl/npu_system_top.sv`
-18. `rtl/npu_core_top.sv`
-19. `tb/npu_uvm_pkg.sv`
+11. `docs/verification_report.md`
+13. `docs/debugging_report.md`
+14. `docs/report_update_checklist.md`
+15. `l6/README.md`
+16. `rtl/npu_system_top.sv`
+17. `rtl/npu_core_top.sv`
+18. `tb/npu_uvm_pkg.sv`
 
 문서 역할:
 
@@ -106,10 +108,11 @@ silicontoai/
 - `docs/workload_package_report.md`: L2 workload package 개념, manifest 필드, replay 기준 예시
 - `docs/core_replay_loader_report.md`: L4 core replay loader 설계, 실행 순서, mismatch 리포트 기준
 - `docs/l5_system_replay_scenarios_report.md`: L5에서 어떤 package family를 어떤 순서와 목적로 검증해야 하는지 정리한 시나리오 표
-- `docs/l5_signoff_report_template.md`: package 기반 L5 결과를 정리하고 sign-off 판단을 남기기 위한 보고서 초안
+- `docs/l5_signoff_report.md`: 8-package L5 sign-off 최종 결과 (pass/fail, coverage, assertion 증거)
 - `docs/system_replay_phase_executor_report.md`: future system replay runner가 package를 phase list로 확장하고 실행할 때 따라야 할 설계 기준
-- `docs/l5_signoff_sample_report.md`: 현재 저장된 실제 로그/coverage 근거를 반영해 채워 본 첫 L5 sign-off 샘플
 - `docs/architecture_report.md`: 핵심 RTL 구조, 데이터 흐름, Mermaid 연결도
+- `docs/l6_signed_int8_design.md`: INT8 signed 연산 계약 설계 및 체크리스트
+- `docs/l6_roofline_manifest_schema.md`: Roofline 분석 메타데이터 스키마 정의
 - `docs/verification_report.md`: 검증 구조, 명령어, 산출물 위치
 - `docs/debugging_report.md`: 증상별 디버깅 가이드
 - `docs/report_update_checklist.md`: RTL/검증 변경 시 문서 동기화 체크리스트와 템플릿

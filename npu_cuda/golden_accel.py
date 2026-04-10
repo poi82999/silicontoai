@@ -31,6 +31,21 @@ if TYPE_CHECKING:
 _BACKEND: str | None = None
 
 
+def _probe_cupy_backend() -> None:
+    """Run a tiny CuPy workload that forces JIT kernel compilation.
+
+    Some environments can import CuPy and pass trivial reductions but still
+    fail later when compiling element-wise kernels for broadcasted ops.
+    """
+    import cupy as cp
+
+    a = cp.ones((2, 2), dtype=cp.float16)
+    b = cp.ones((2, 2), dtype=cp.float16)
+    # Force the same broadcasted multiply + reduction pattern used in runtime.
+    out = cp.sum(a[:, :, None] * b[None, :, :], axis=1)
+    _ = cp.asnumpy(out)
+
+
 def _detect_backend() -> str:
     """Detect the best available backend. Cached after first call.
 
@@ -42,11 +57,11 @@ def _detect_backend() -> str:
 
     # Try CuPy first (fastest for batch operations)
     try:
-        import cupy as cp  # noqa: F401
-        cp.cuda.runtime.getDeviceCount()
-        # Quick smoke test — some installs have driver but missing libs
-        _test = cp.array([1, 2], dtype=cp.int32)
-        _ = cp.sum(_test)
+        import cupy as cp
+        device_count = cp.cuda.runtime.getDeviceCount()
+        if device_count <= 0:
+            raise RuntimeError("No CUDA device detected for CuPy backend")
+        _probe_cupy_backend()
         _BACKEND = "cupy"
         return _BACKEND
     except Exception:
@@ -134,18 +149,14 @@ class BatchResult:
 
 
 def _compute_numpy(act: np.ndarray, wt: np.ndarray, bias: np.ndarray | None = None) -> np.ndarray:
-    """Bit-accurate FP16→FP32 matmul matching NPU RTL semantics.
+    """Bit-accurate INT8→INT32 matmul matching current NPU RTL semantics.
 
-    RTL equivalent:
-        psum_out <= psum_in + (FP32)($shortrealtobits(act_in) * $shortrealtobits(weight_reg))
-
-    This performs: C[m,n] = sum_k( float32(float16(act[m,k]) * float16(wt[k,n])) ) + bias[m,n]
+    This performs: C[m,n] = sum_k( int32(act[m,k]) * int32(wt[k,n]) ) + bias[m,n]
     """
-    product = act.astype(np.float16) @ wt.astype(np.float16)
-    product = product.astype(np.float32)
+    product = act.astype(np.int32) @ wt.astype(np.int32)
     if bias is not None:
-        product = product + bias.astype(np.float32)
-    return product
+        product = product + bias.astype(np.int32)
+    return product.astype(np.int32)
 
 
 def _compute_batch_numpy(tiles: list[TileInput]) -> list[np.ndarray]:
@@ -164,18 +175,17 @@ def _compute_batch_numpy(tiles: list[TileInput]) -> list[np.ndarray]:
 
 
 def _compute_cupy(act: np.ndarray, wt: np.ndarray, bias: np.ndarray | None = None) -> np.ndarray:
-    """Bit-accurate FP16→FP32 matmul on GPU using CuPy element-wise ops."""
+    """Bit-accurate INT8→INT32 matmul on GPU using CuPy element-wise ops."""
     import cupy as cp
 
-    act_gpu = cp.asarray(act, dtype=cp.float16)  # [M, K]
-    wt_gpu = cp.asarray(wt, dtype=cp.float16)    # [K, N]
+    act_gpu = cp.asarray(act, dtype=cp.int32)  # [M, K]
+    wt_gpu = cp.asarray(wt, dtype=cp.int32)    # [K, N]
 
     # Matmul via broadcasting: act[M,K,1] * wt[1,K,N] → [M,K,N] → sum over K
-    product = cp.sum(act_gpu[:, :, None] * wt_gpu[None, :, :], axis=1)
-    product = product.astype(cp.float32)
+    product = cp.sum(act_gpu[:, :, None] * wt_gpu[None, :, :], axis=1, dtype=cp.int32)
 
     if bias is not None:
-        bias_gpu = cp.asarray(bias, dtype=cp.float32)
+        bias_gpu = cp.asarray(bias, dtype=cp.int32)
         product = product + bias_gpu
     return cp.asnumpy(product)
 
@@ -251,15 +261,15 @@ def _compute_torch(act: np.ndarray, wt: np.ndarray, bias: np.ndarray | None = No
     """Bit-accurate INT8→INT32 matmul on GPU using PyTorch CUDA."""
     import torch
 
-    act_pt = torch.tensor(act, dtype=torch.float16, device="cuda")  # [M, K]
-    wt_pt = torch.tensor(wt, dtype=torch.float16, device="cuda")    # [K, N]
+    act_pt = torch.tensor(act, dtype=torch.int32, device="cuda")  # [M, K]
+    wt_pt = torch.tensor(wt, dtype=torch.int32, device="cuda")    # [K, N]
 
     # Matmul via broadcasting matching CuPy logic
     product = torch.sum(act_pt.unsqueeze(2) * wt_pt.unsqueeze(0), dim=1)
-    product = product.to(torch.float32)
+    product = product.to(torch.int32)
 
     if bias is not None:
-        bias_pt = torch.tensor(bias, dtype=torch.float32, device="cuda")
+        bias_pt = torch.tensor(bias, dtype=torch.int32, device="cuda")
         product = product + bias_pt
     return product.cpu().numpy()
 
@@ -293,19 +303,31 @@ def _compute_batch_torch_uniform(tiles: list[TileInput]) -> list[np.ndarray]:
         act_batch[i] = t.activations
         wt_batch[i] = t.weights
 
-    act_pt = torch.tensor(act_batch, dtype=torch.float16, device="cuda")
-    wt_pt = torch.tensor(wt_batch, dtype=torch.float16, device="cuda")
+    act_pt = torch.tensor(act_batch, dtype=torch.int32, device="cuda")
+    wt_pt = torch.tensor(wt_batch, dtype=torch.int32, device="cuda")
 
     out_pt = torch.sum(act_pt.unsqueeze(3) * wt_pt.unsqueeze(1), dim=2)
-    out_pt = out_pt.to(torch.float32)
+    out_pt = out_pt.to(torch.int32)
     out_host = out_pt.cpu().numpy()
 
     if has_bias:
         for i, t in enumerate(tiles):
             if t.bias is not None:
-                out_host[i] = out_host[i] + t.bias.astype(np.float32)
+                out_host[i] = out_host[i] + t.bias.astype(np.int32)
 
     return [out_host[i] for i in range(n)]
+
+
+def _fallback_backend_after_failure(failed_backend: str) -> str:
+    """Select a safe fallback backend after a runtime backend failure."""
+    if failed_backend == "cupy":
+        try:
+            import torch
+            if torch.cuda.is_available():
+                return "torch"
+        except Exception:
+            pass
+    return "numpy"
 
 
 # ---------------------------------------------------------------------------
@@ -337,12 +359,25 @@ def compute_golden_single(
         golden = compute_golden_single(act, wt)
         # golden[i][j] == 3 * 5 * 16 == 240  (for all i, j)
     """
+    global _BACKEND
+
     backend = _detect_backend()
-    if backend == "cupy":
-        return _compute_cupy(activations, weights, bias)
-    if backend == "torch":
-        return _compute_torch(activations, weights, bias)
-    return _compute_numpy(activations, weights, bias)
+    try:
+        if backend == "cupy":
+            return _compute_cupy(activations, weights, bias)
+        if backend == "torch":
+            return _compute_torch(activations, weights, bias)
+        return _compute_numpy(activations, weights, bias)
+    except Exception:
+        # Runtime fallback: keep golden generation available on partial GPU setups.
+        fallback = _fallback_backend_after_failure(backend)
+        _BACKEND = fallback
+        if fallback == "torch":
+            try:
+                return _compute_torch(activations, weights, bias)
+            except Exception:
+                _BACKEND = "numpy"
+        return _compute_numpy(activations, weights, bias)
 
 
 def compute_golden_batch(tiles: list[TileInput]) -> BatchResult:
@@ -365,14 +400,32 @@ def compute_golden_batch(tiles: list[TileInput]) -> BatchResult:
         for output in result.outputs:
             print(output.shape)  # (16, 16)
     """
+    global _BACKEND
+
     backend = _detect_backend()
-    if backend == "cupy":
-        outputs = _compute_batch_cupy(tiles)
-    elif backend == "torch":
-        outputs = _compute_batch_torch(tiles)
-    else:
-        outputs = _compute_batch_numpy(tiles)
-    return BatchResult(outputs=outputs, backend=backend, tile_count=len(tiles))
+    active_backend = backend
+    try:
+        if backend == "cupy":
+            outputs = _compute_batch_cupy(tiles)
+        elif backend == "torch":
+            outputs = _compute_batch_torch(tiles)
+        else:
+            outputs = _compute_batch_numpy(tiles)
+    except Exception:
+        fallback = _fallback_backend_after_failure(backend)
+        _BACKEND = fallback
+        active_backend = fallback
+        if fallback == "torch":
+            try:
+                outputs = _compute_batch_torch(tiles)
+            except Exception:
+                _BACKEND = "numpy"
+                active_backend = "numpy"
+                outputs = _compute_batch_numpy(tiles)
+        else:
+            outputs = _compute_batch_numpy(tiles)
+
+    return BatchResult(outputs=outputs, backend=active_backend, tile_count=len(tiles))
 
 
 def compute_golden_splitk(passes: list[SplitKPass]) -> np.ndarray:

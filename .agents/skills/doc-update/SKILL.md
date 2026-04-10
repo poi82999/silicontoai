@@ -40,11 +40,12 @@ docs/
 ├── debugging_report.md              # Debug patterns
 ├── workload_package_report.md       # Package schema docs
 ├── l5_system_replay_scenarios_report.md  # Replay scenario table
-├── l5_signoff_report_template.md    # Sign-off template
-├── l5_signoff_sample_report.md      # Sample sign-off
+├── l5_signoff_report.md             # L5 sign-off evidence
 ├── core_replay_loader_report.md     # Core replay design
 ├── system_replay_phase_executor_report.md  # System replay design
 ├── l6_arithmetic_semantics_report.md # L6 arithmetic policy
+├── l6_signed_int8_design.md         # Signed-int8 design & checklist
+├── l6_roofline_manifest_schema.md   # Roofline schema contract
 ├── l7_environment_setup.md          # FPGA environment
 ├── l7_preboard_bringup_results.md   # FPGA results
 ├── report_update_checklist.md       # Original checklist
