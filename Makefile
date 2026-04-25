@@ -1,4 +1,4 @@
-.PHONY: all sim sim-system build-core build-system l5-signoff l5-repeatability sys uvm uvm-smoke uvm-basic uvm-stress uvm-merge-cov verify verify-fast concat clean clean-artifacts
+.PHONY: all sim sim-system build-core build-system l5-signoff l5-repeatability sys uvm uvm-smoke uvm-basic uvm-stress uvm-merge-cov verify verify-fast verify-all verify-all-fast concat clean clean-artifacts
 
 # ============================================================
 # Root Makefile — NPU SiliconToAI Project
@@ -75,6 +75,14 @@ verify-fast:
 
 verify:
 	@bash scripts/verify.sh full
+
+# Full-stack one-step verification: L6 pytest + RTL verify-fast + L5 sign-off.
+# Use `make verify-all-fast` to skip L5 (faster).
+verify-all:
+	@bash scripts/verify_all.sh
+
+verify-all-fast:
+	@bash scripts/verify_all.sh --skip-l5
 
 clean-artifacts:
 	@if [ "$(OS)" = "Windows_NT" ]; then \
