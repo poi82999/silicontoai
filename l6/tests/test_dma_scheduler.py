@@ -5,7 +5,7 @@ Unit tests for DMA scheduler module.
 import pytest
 from pathlib import Path
 
-from l6.src.l6_toolchain.dma_scheduler import (
+from l6_toolchain.dma_scheduler import (
     DMAAXIBurst,
     DMACommand,
     DMAScheduleSequence,
@@ -17,8 +17,8 @@ from l6.src.l6_toolchain.dma_scheduler import (
     generate_mmio_sequence,
     AXI_BEAT_BYTES,
 )
-from l6.src.l6_toolchain.lowering import TilePlanEntry
-from l6.src.l6_toolchain.scheduler import estimate_tile_cost, TileCostEstimate
+from l6_toolchain.lowering import TilePlanEntry
+from l6_toolchain.scheduler import estimate_tile_cost, TileCostEstimate
 
 
 class TestPayloadCalculators:

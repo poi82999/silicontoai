@@ -5,14 +5,14 @@ Advanced DMA scheduler tests for split-K, memory optimization, and double-buffer
 import pytest
 from pathlib import Path
 
-from l6.src.l6_toolchain.dma_scheduler import (
+from l6_toolchain.dma_scheduler import (
     SRAMAllocation,
     calculate_activation_payload_bytes,
     build_dma_schedule,
     generate_mmio_sequence,
 )
-from l6.src.l6_toolchain.lowering import TilePlanEntry
-from l6.src.l6_toolchain.scheduler import estimate_tile_cost
+from l6_toolchain.lowering import TilePlanEntry
+from l6_toolchain.scheduler import estimate_tile_cost
 
 
 class TestSRAMAllocation:
