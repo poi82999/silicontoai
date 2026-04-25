@@ -89,7 +89,8 @@ jobs:
         shell: powershell
         run: |
           & $env:PYTHON_EXE -m pip install --upgrade pip
-          & $env:PYTHON_EXE -m pip install -e ".[dev]"
+          & $env:PYTHON_EXE -m pip install -e ".[dev,torch]"
+          & $env:PYTHON_EXE -c "import torch; print(f'torch version: {torch.__version__}')"
 
       - name: Run L6 CPU/core unit tests
         shell: powershell
@@ -106,18 +107,20 @@ jobs:
         run: |
           & $env:PYTHON_EXE -c "import npu_cuda.golden_accel as g; g.force_backend('numpy'); import pytest, sys; sys.exit(pytest.main(['l6/tests/test_replay_bridge.py','-v','--tb=short','-k','splitk_tiled_package or splitk_tail_multi_step_program_sequence or fixed_splitk_tail_regression_asset']))"
 
-      - name: Run tracer dependency gate (advisory)
-        continue-on-error: true
+      - name: Run tracer gate (required)
         shell: powershell
         run: |
-          # TODO: Promote to required (remove continue-on-error) once runner torch environment is guaranteed
-          # Prerequisites: torch installed on self-hosted Windows runner or CI worker setup includes torch dependency
           & $env:PYTHON_EXE -m pytest l6/tests/test_m3_ops_tracer.py -v --tb=short
 
       - name: Run asset drift gate
         shell: powershell
         run: |
           & $env:PYTHON_EXE -c "import npu_cuda.golden_accel as g; g.force_backend('numpy'); import pytest, sys; sys.exit(pytest.main(['l6/tests/test_asset_drift.py','-v','--tb=long']))"
+
+      - name: Run model workload regression gate
+        shell: powershell
+        run: |
+          & $env:PYTHON_EXE -c "import npu_cuda.golden_accel as g; g.force_backend('numpy'); import pytest, sys; sys.exit(pytest.main(['l6/tests/test_model_workloads.py','-v','--tb=short']))"
 
       - name: Upload test results
         if: always()

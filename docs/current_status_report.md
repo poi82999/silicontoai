@@ -152,7 +152,7 @@ Current evidence:
 
 > Goal: compiler/backend, higher-level operator tiling, FPGA implementation과 timing closure까지 확장
 
-- L6 compiler/backend linkage: ██████████ 96%
+- L6 compiler/backend linkage: ██████████ 98%
   - [x] Python 3.12 기반 L6 workspace와 public API surface 정리
   - [x] `gemm_tile` / `gemm_tiled` exporter, inspector, validator 구축
   - [x] Torch `Linear` / `Conv2d` frontend와 grouped-conv real-data lowering 경로 구축
@@ -166,6 +166,9 @@ Current evidence:
   - [x] M5 end-to-end compiler entry (`compile_program`), scheduler→export bridge, schedule metadata in manifest, CLI
   - [x] B-1 Operator Fusion: Linear+ReLU, Conv+ReLU, Conv+BN folding (numerical weight folding via numpy)
   - [x] E-1 Real Model Workloads: MobileNetV2 layer1, ResNet-18 block1, Transformer QKV — 3종 생성/검증
+  - [x] Sprint-8 A-3: `quantize.py` 구현 — per-tensor symmetric INT8 양자화 + 역양자화, Linear/Conv2d 레이어 양자화 헬퍼 (23 tests PASS)
+  - [x] Sprint-8 B-3: `memory_planner.py` 구현 — 멀티레이어 텐서 수명 분석, SRAM in-place/ping-pong/evict 전략, 외부 메모리 전송량 추정 (11 tests PASS)
+  - [x] DMA 스케줄러 테스트 import 경로 수정 (l6.src.l6_toolchain → l6_toolchain) — 170 tests PASS / 5 skipped
   - [ ] 현재 지원 op를 넘는 broader importer / model-level coverage 확장
 - L7 FPGA implementation: ███████░░░ 70%
   - [x] Vivado simulation flow 확보
@@ -291,6 +294,91 @@ Phase B (full-stack PyTorch → Verilator → 검증) 파이프라인이 보드 
 ---
 
 ## Weekly Update Log
+
+**[2026.04.25 update #16]**
+
+- Status: 🟢 정상 진행
+- One-line summary: L6 op coverage 4종 추가(avg_pool2d/sigmoid/gelu/mul) + Transformer FFN workload + CI tracer gate required 승격 + asset drift gate 자동화 완료
+
+Completed since the previous snapshot:
+
+- [x] L6 broader op coverage 확장 (4 ops, RTL 변경 없이 elementwise post-op로 추가)
+  - `ir.py`: lowering rule + validation rule + numpy executor for `avg_pool2d`, `sigmoid`, `gelu`, `mul`
+  - `tracer.py`: torch.fx call_module/call_function/call_method 분기 (`nn.AvgPool2d`, `nn.Sigmoid`, `nn.GELU`, `torch.mul`/`F.gelu`/`F.sigmoid`/`*` 연산자)
+  - `gelu` 산식: tanh-approximation `0.5x(1+tanh(√(2/π)(x+0.044715x³)))`
+  - `sigmoid` 산식: `1/(1+exp(-x))` × 127로 INT8-range 매핑
+- [x] L6 model regression workload 4번째 추가
+  - `generate_model_workloads.py`: `_transformer_ffn_program()` (Linear→GELU→Linear, d=64→256→64)
+  - `test_model_workloads.py`: `TestTransformerFFN` 3 tests + cross-model 4-way 확장
+- [x] L6 tracer gate CI 승격 (advisory → required)
+  - `pyproject.toml`: `[project.optional-dependencies] torch` extra 추가 (`torch>=2.2,<3`)
+  - `.github/workflows/l6-toolchain.yml`:
+    - `pip install -e ".[dev,torch]"`로 torch 강제 설치
+    - `Run tracer dependency gate (advisory)` → `Run tracer gate (required)` (`continue-on-error` 제거)
+    - 새 step `Run model workload regression gate` 추가
+- [x] **Asset drift gate**는 이미 required로 동작 중이었음 (이번 변경 없음, baseline 유지)
+
+Validation highlights:
+
+- 전체 L6 테스트: **306 passed, 0 failed, 0 skipped** (이전: 275 passed + 5 skipped)
+- 새 op test 12건 (lower 4 + execute 4 + trace 4) 모두 PASS
+- TestTransformerFFN 3건 PASS (program validate / op kinds / 2 compute steps)
+- asset drift PASS, 기존 회귀 모두 PASS
+
+Reference artifacts:
+
+- `l6/src/l6_toolchain/ir.py` (avg_pool2d/sigmoid/gelu/mul lower + validate + execute 추가)
+- `l6/src/l6_toolchain/tracer.py` (4 op torch.fx 분기 추가)
+- `l6/tests/test_m3_ops_tracer.py` (+12 tests)
+- `l6/generate_model_workloads.py` (`_transformer_ffn_program`, `generate_transformer_ffn`)
+- `l6/tests/test_model_workloads.py` (`TestTransformerFFN` + 4-way cross-model checks)
+- `pyproject.toml` (`torch` optional extra)
+- `.github/workflows/l6-toolchain.yml` (torch install + tracer gate required + model workload gate)
+
+---
+
+**[2026.04.13 update #15]**
+
+- Status: 🟢 정상 진행
+- One-line summary: Sprint-9 Track C-2 cycle_sim + Track C-3 auto_tile 완료, 고급 양자화 3종(per-channel/SmoothQuant/GPTQ) 추가
+
+Completed since the previous snapshot:
+
+- [x] Sprint-8 고급 양자화 확장 (이전 세션 이어서 완료)
+  - `quantize.py` per-channel quantization (`axis=` param, `_quantize_per_channel`)
+  - `quantize.py` SmoothQuant (`SmoothQuantResult`, `smooth_quant()`)
+  - `quantize.py` GPTQ (`GPTQResult`, `gptq_quantize_weight()`)
+  - `quantize_linear_layer` / `quantize_conv2d_layer` `per_channel=True` 기본값 파라미터 추가
+  - api.py 수출: `GPTQResult`, `SmoothQuantResult`, `gptq_quantize_weight`, `smooth_quant`
+  - 새 테스트: `TestPerChannelQuantize` (8), `TestSmoothQuant` (8), `TestGPTQ` (8) = 24건 추가
+  - 전체 228 passed 달성
+- [x] Sprint-9 Track C-2: 사이클-정확 시뮬레이터
+  - `l6/src/l6_toolchain/cycle_sim.py` 신규 (~200 lines)
+  - 핵심 API: `simulate_tile_schedule(tiles, *, double_buffer=True)` → `SimResult`
+  - 2-stream 파이프라인 모델: DMA 스트림 ∥ Compute 스트림 (preload + execute + flush + drain)
+  - 더블 버퍼링: tile i+1 DMA가 tile i execute와 오버랩; stall/overlap 사이클 정량화
+  - `SimComparison` + `compare_sim_schedules()`: sequential vs double-buffered 비교
+  - api.py 수출: `PhaseInterval`, `SimResult`, `SimComparison`, `compare_sim_schedules`, `simulate_tile_schedule`
+  - 24 tests PASS
+- [x] Sprint-9 Track C-3: 자동 타일 크기 탐색
+  - `l6/src/l6_toolchain/auto_tile.py` 신규 (~230 lines)
+  - 검색 공간: tile_m ∈ {4,8,16,32,48,64,128}, tile_k ∈ {16,32,64,128}, tile_n ∈ {16,32,64}
+  - SRAM 예산 검증 (2-bank ping-pong, per_bank ≤ sram_budget/2)
+  - 분석적 사이클 추정 (weight reuse N-major ordering 반영)
+  - `search_tile_sizes(m,k,n)` → `AutoTileResult` (best + all_candidates + budget)
+  - `get_optimal_tile(m,k,n)` → `(tile_m, tile_k, tile_n)` 편의 래퍼
+  - api.py 수출: `AutoTileResult`, `TileCandidate`, `search_tile_sizes`, `get_optimal_tile`
+  - 23 tests PASS
+- [x] **전체 테스트: 275 passed, 5 skipped, 0 failed** (이전: 228)
+
+Reference artifacts:
+
+- `l6/src/l6_toolchain/cycle_sim.py`
+- `l6/tests/test_cycle_sim.py`
+- `l6/src/l6_toolchain/auto_tile.py`
+- `l6/tests/test_auto_tile.py`
+
+---
 
 **[2026.04.10 update #14]**
 

@@ -262,6 +262,54 @@ def lower_program_to_steps(program: Program) -> list[LoweredOp]:
             )
             continue
 
+        if op.kind == "avg_pool2d":
+            input_tensor = tensor_map[op.inputs[0]]
+            kernel_h, kernel_w = normalize_pair(op.attrs.get("kernel_size"), name="kernel_size")
+            stride_h, stride_w = normalize_pair(op.attrs.get("stride", kernel_h), name="stride")
+            pad_h, pad_w = normalize_pair(op.attrs.get("padding", 0), name="padding")
+            lowered_steps.append(
+                LoweredOp(
+                    name=op.name,
+                    source_kind=op.kind,
+                    lowered_kind="elementwise_post_op",
+                    inputs=op.inputs,
+                    outputs=op.outputs,
+                    attrs={
+                        "kernel_size": (kernel_h, kernel_w),
+                        "stride": (stride_h, stride_w),
+                        "padding": (pad_h, pad_w),
+                        "logical_input_shape": input_tensor.shape,
+                    },
+                )
+            )
+            continue
+
+        if op.kind in ("sigmoid", "gelu"):
+            lowered_steps.append(
+                LoweredOp(
+                    name=op.name,
+                    source_kind=op.kind,
+                    lowered_kind="elementwise_post_op",
+                    inputs=op.inputs,
+                    outputs=op.outputs,
+                    attrs={},
+                )
+            )
+            continue
+
+        if op.kind == "mul":
+            lowered_steps.append(
+                LoweredOp(
+                    name=op.name,
+                    source_kind=op.kind,
+                    lowered_kind="elementwise_post_op",
+                    inputs=op.inputs,
+                    outputs=op.outputs,
+                    attrs={},
+                )
+            )
+            continue
+
         raise ValueError(f"Unsupported mini IR op kind: {op.kind}")
 
     return lowered_steps
@@ -506,6 +554,44 @@ def _validate_op_node(op: OpNode, tensor_map: dict[str, TensorValue]) -> None:
             raise ValueError(f"AdaptiveAvgPool op {op.name} output shape does not match output_size.")
         return
 
+    if op.kind == "avg_pool2d":
+        if len(op.inputs) != 1 or len(op.outputs) != 1:
+            raise ValueError(f"AvgPool op {op.name} must have exactly one input and one output.")
+        input_tensor = tensor_map[op.inputs[0]]
+        output_tensor = tensor_map[op.outputs[0]]
+        if len(input_tensor.shape) != 4 or len(output_tensor.shape) != 4:
+            raise ValueError(f"AvgPool op {op.name} expects rank-4 NCHW input and output tensors.")
+        kernel_h, kernel_w = normalize_pair(op.attrs.get("kernel_size"), name="kernel_size")
+        stride_h, stride_w = normalize_pair(op.attrs.get("stride", kernel_h), name="stride")
+        pad_h, pad_w = normalize_pair(op.attrs.get("padding", 0), name="padding")
+        batch, channels, in_h, in_w = input_tensor.shape
+        expected_out_h = conv_output_dim(in_h, kernel_h, stride_h, pad_h, 1)
+        expected_out_w = conv_output_dim(in_w, kernel_w, stride_w, pad_w, 1)
+        if output_tensor.shape != (batch, channels, expected_out_h, expected_out_w):
+            raise ValueError(f"AvgPool op {op.name} output shape does not match kernel/stride/padding.")
+        return
+
+    if op.kind in ("sigmoid", "gelu"):
+        if len(op.inputs) != 1 or len(op.outputs) != 1:
+            raise ValueError(f"{op.kind} op {op.name} must have exactly one input and one output.")
+        input_tensor = tensor_map[op.inputs[0]]
+        output_tensor = tensor_map[op.outputs[0]]
+        if input_tensor.shape != output_tensor.shape:
+            raise ValueError(f"{op.kind} op {op.name} must preserve tensor shape.")
+        return
+
+    if op.kind == "mul":
+        if len(op.inputs) != 2 or len(op.outputs) != 1:
+            raise ValueError(f"Mul op {op.name} must have exactly two inputs and one output.")
+        lhs_tensor = tensor_map[op.inputs[0]]
+        rhs_tensor = tensor_map[op.inputs[1]]
+        output_tensor = tensor_map[op.outputs[0]]
+        if lhs_tensor.shape != rhs_tensor.shape:
+            raise ValueError(f"Mul op {op.name} requires both inputs to have the same shape.")
+        if lhs_tensor.shape != output_tensor.shape:
+            raise ValueError(f"Mul op {op.name} must preserve tensor shape.")
+        return
+
     raise ValueError(f"Unsupported mini IR op kind: {op.kind}")
 
 
@@ -668,6 +754,45 @@ def _execute_program_op(op: OpNode, runtime_tensors: dict[str, np.ndarray]) -> L
         if start_dim != 1:
             raise ValueError("Mini IR real-data export currently supports only start_dim=1 for flatten ops.")
         runtime_tensors[op.outputs[0]] = input_array.reshape(input_array.shape[0], -1)
+        return None
+
+    if op.kind == "avg_pool2d":
+        kernel_h, kernel_w = normalize_pair(op.attrs.get("kernel_size"), name="kernel_size")
+        stride_h, stride_w = normalize_pair(op.attrs.get("stride", kernel_h), name="stride")
+        pad_h, pad_w = normalize_pair(op.attrs.get("padding", 0), name="padding")
+        batch, channels, in_h, in_w = input_array.shape
+        out_h = conv_output_dim(in_h, kernel_h, stride_h, pad_h, 1)
+        out_w = conv_output_dim(in_w, kernel_w, stride_w, pad_w, 1)
+        padded = np.zeros((batch, channels, in_h + 2 * pad_h, in_w + 2 * pad_w), dtype=np.int64)
+        padded[:, :, pad_h:pad_h + in_h, pad_w:pad_w + in_w] = input_array
+        output = np.empty((batch, channels, out_h, out_w), dtype=input_array.dtype)
+        window_size = kernel_h * kernel_w
+        for oh in range(out_h):
+            for ow in range(out_w):
+                h_start = oh * stride_h
+                w_start = ow * stride_w
+                window = padded[:, :, h_start:h_start + kernel_h, w_start:w_start + kernel_w]
+                output[:, :, oh, ow] = (window.reshape(batch, channels, -1).sum(axis=2) // window_size).astype(input_array.dtype)
+        runtime_tensors[op.outputs[0]] = output
+        return None
+
+    if op.kind == "sigmoid":
+        x = input_array.astype(np.float64)
+        result = 1.0 / (1.0 + np.exp(-x))
+        runtime_tensors[op.outputs[0]] = (result * 127.0).astype(np.int32)
+        return None
+
+    if op.kind == "gelu":
+        x = input_array.astype(np.float64)
+        # Tanh-approximation: 0.5 * x * (1 + tanh(sqrt(2/pi) * (x + 0.044715 * x^3)))
+        c = np.sqrt(2.0 / np.pi)
+        result = 0.5 * x * (1.0 + np.tanh(c * (x + 0.044715 * np.power(x, 3))))
+        runtime_tensors[op.outputs[0]] = result.astype(np.int32)
+        return None
+
+    if op.kind == "mul":
+        rhs_array = runtime_tensors[op.inputs[1]]
+        runtime_tensors[op.outputs[0]] = (input_array.astype(np.int32) * rhs_array.astype(np.int32)).astype(np.int32)
         return None
 
     raise ValueError(f"Unsupported mini IR op kind: {op.kind}")

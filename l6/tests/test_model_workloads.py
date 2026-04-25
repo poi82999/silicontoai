@@ -16,6 +16,7 @@ from generate_model_workloads import (
     _mobilenet_v2_layer1_program,
     _resnet18_block1_program,
     _transformer_qkv_program,
+    _transformer_ffn_program,
 )
 
 
@@ -138,22 +139,56 @@ class TestTransformerQKV:
 
 
 # ---------------------------------------------------------------------------
+# Transformer FFN (Linear -> GELU -> Linear) — broader op coverage
+# ---------------------------------------------------------------------------
+
+class TestTransformerFFN:
+    def test_program_validates(self) -> None:
+        program, _ = _transformer_ffn_program()
+        validate_program(program)
+
+    def test_has_gelu_between_linears(self) -> None:
+        program, _ = _transformer_ffn_program()
+        assert [op.kind for op in program.ops] == ["linear", "gelu", "linear"]
+
+    def test_compile_produces_two_compute_steps(self, tmp_path: Path) -> None:
+        program, tensor_data = _transformer_ffn_program()
+        options = CompilerOptions(
+            package_id="test_transformer_ffn",
+            output_dir=tmp_path / "ffn",
+            tiled=True,
+            replay_enabled=True,
+            tensor_data=tensor_data,
+        )
+        result = compile_program(program, options=options)
+        # Two linear ops -> two compute steps; gelu lowers to elementwise post-op
+        assert result.plan.total_compute_steps == 2
+        assert len(result.artifacts.replay_package_dirs) >= 2
+
+
+# ---------------------------------------------------------------------------
 # Cross-model checks
 # ---------------------------------------------------------------------------
 
 class TestModelWorkloadCross:
-    def test_all_three_programs_valid(self) -> None:
-        """Quick validation that all 3 model programs pass IR validation."""
-        for builder in [_mobilenet_v2_layer1_program, _resnet18_block1_program, _transformer_qkv_program]:
+    def test_all_four_programs_valid(self) -> None:
+        """Quick validation that all 4 model programs pass IR validation."""
+        for builder in [
+            _mobilenet_v2_layer1_program,
+            _resnet18_block1_program,
+            _transformer_qkv_program,
+            _transformer_ffn_program,
+        ]:
             program, _ = builder()
             validate_program(program)
 
-    def test_all_three_compile(self, tmp_path: Path) -> None:
-        """All 3 models compile without errors."""
+    def test_all_four_compile(self, tmp_path: Path) -> None:
+        """All 4 models compile without errors."""
         builders = [
             ("mobilenet", _mobilenet_v2_layer1_program),
             ("resnet", _resnet18_block1_program),
-            ("transformer", _transformer_qkv_program),
+            ("transformer_qkv", _transformer_qkv_program),
+            ("transformer_ffn", _transformer_ffn_program),
         ]
         for name, builder in builders:
             program, tensor_data = builder()

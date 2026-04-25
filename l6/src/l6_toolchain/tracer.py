@@ -8,13 +8,14 @@ import numpy as np
 from .ir import OpNode, Program, TensorValue
 
 _OPERATOR_ADD = operator.add
+_OPERATOR_MUL = operator.mul
 
 
 def trace_torch_module(model: Any, input_shape: tuple[int, ...]) -> Program:
     """Trace a PyTorch nn.Module via torch.fx and convert to an L6 Program.
 
-    Supported ops: linear, conv2d, relu, add, batch_norm, max_pool2d,
-    adaptive_avg_pool2d, flatten.
+    Supported ops: linear, conv2d, relu, sigmoid, gelu, add, mul, batch_norm,
+    max_pool2d, avg_pool2d, adaptive_avg_pool2d, flatten.
     """
     import torch
     import torch.fx
@@ -123,6 +124,23 @@ def trace_torch_module(model: Any, input_shape: tuple[int, ...]) -> Program:
                 }
                 ops.append(OpNode(name=output_name, kind="max_pool2d", inputs=input_names, outputs=(output_name,), attrs=attrs))
 
+            elif isinstance(target_module, nn.AvgPool2d):
+                _record_tensor(output_name, tuple(out.shape), tensor_dtypes.get(input_names[0], "int8"))
+                attrs = {
+                    "kernel_size": target_module.kernel_size if isinstance(target_module.kernel_size, tuple) else (target_module.kernel_size, target_module.kernel_size),
+                    "stride": target_module.stride if isinstance(target_module.stride, tuple) else (target_module.stride, target_module.stride),
+                    "padding": target_module.padding if isinstance(target_module.padding, tuple) else (target_module.padding, target_module.padding),
+                }
+                ops.append(OpNode(name=output_name, kind="avg_pool2d", inputs=input_names, outputs=(output_name,), attrs=attrs))
+
+            elif isinstance(target_module, nn.Sigmoid):
+                _record_tensor(output_name, tuple(out.shape), tensor_dtypes.get(input_names[0], "int8"))
+                ops.append(OpNode(name=output_name, kind="sigmoid", inputs=input_names, outputs=(output_name,)))
+
+            elif isinstance(target_module, nn.GELU):
+                _record_tensor(output_name, tuple(out.shape), tensor_dtypes.get(input_names[0], "int8"))
+                ops.append(OpNode(name=output_name, kind="gelu", inputs=input_names, outputs=(output_name,)))
+
             elif isinstance(target_module, nn.AdaptiveAvgPool2d):
                 _record_tensor(output_name, tuple(out.shape), tensor_dtypes.get(input_names[0], "int8"))
                 output_size = target_module.output_size
@@ -149,6 +167,40 @@ def trace_torch_module(model: Any, input_shape: tuple[int, ...]) -> Program:
                 env[output_name] = out
                 _record_tensor(output_name, tuple(out.shape), tensor_dtypes.get(input_names[0], "int8"))
                 ops.append(OpNode(name=output_name, kind="add", inputs=input_names, outputs=(output_name,)))
+
+            elif node.target is torch.mul or node.target is _OPERATOR_MUL:
+                input_tensors = [env[n] for n in input_names]
+                out = input_tensors[0] * input_tensors[1]
+                env[output_name] = out
+                _record_tensor(output_name, tuple(out.shape), tensor_dtypes.get(input_names[0], "int8"))
+                ops.append(OpNode(name=output_name, kind="mul", inputs=input_names, outputs=(output_name,)))
+
+            elif node.target is torch.sigmoid or node.target is torch.nn.functional.sigmoid:
+                input_tensors = [env[n] for n in input_names]
+                out = torch.sigmoid(input_tensors[0])
+                env[output_name] = out
+                _record_tensor(output_name, tuple(out.shape), tensor_dtypes.get(input_names[0], "int8"))
+                ops.append(OpNode(name=output_name, kind="sigmoid", inputs=input_names, outputs=(output_name,)))
+
+            elif node.target is torch.nn.functional.gelu:
+                input_tensors = [env[n] for n in input_names]
+                out = torch.nn.functional.gelu(input_tensors[0])
+                env[output_name] = out
+                _record_tensor(output_name, tuple(out.shape), tensor_dtypes.get(input_names[0], "int8"))
+                ops.append(OpNode(name=output_name, kind="gelu", inputs=input_names, outputs=(output_name,)))
+
+            elif node.target is torch.nn.functional.avg_pool2d:
+                input_tensors = [env[n] for n in input_names]
+                kernel_size = node.args[1] if len(node.args) > 1 else node.kwargs.get("kernel_size")
+                stride = node.kwargs.get("stride", kernel_size)
+                padding = node.kwargs.get("padding", 0)
+                out = torch.nn.functional.avg_pool2d(input_tensors[0], kernel_size, stride=stride, padding=padding)
+                env[output_name] = out
+                k_pair = kernel_size if isinstance(kernel_size, tuple) else (kernel_size, kernel_size)
+                s_pair = stride if isinstance(stride, tuple) else (stride, stride)
+                p_pair = padding if isinstance(padding, tuple) else (padding, padding)
+                _record_tensor(output_name, tuple(out.shape), tensor_dtypes.get(input_names[0], "int8"))
+                ops.append(OpNode(name=output_name, kind="avg_pool2d", inputs=input_names, outputs=(output_name,), attrs={"kernel_size": k_pair, "stride": s_pair, "padding": p_pair}))
 
             elif node.target is torch.flatten:
                 start_dim = node.args[1] if len(node.args) > 1 else node.kwargs.get("start_dim", 1)
@@ -195,6 +247,20 @@ def trace_torch_module(model: Any, input_shape: tuple[int, ...]) -> Program:
                 env[output_name] = out
                 _record_tensor(output_name, tuple(out.shape), tensor_dtypes.get(input_names[0], "int8"))
                 ops.append(OpNode(name=output_name, kind="add", inputs=input_names, outputs=(output_name,)))
+
+            elif node.target == "mul" or node.target == "__mul__":
+                input_tensors = [env[n] for n in input_names]
+                out = input_tensors[0] * input_tensors[1]
+                env[output_name] = out
+                _record_tensor(output_name, tuple(out.shape), tensor_dtypes.get(input_names[0], "int8"))
+                ops.append(OpNode(name=output_name, kind="mul", inputs=input_names, outputs=(output_name,)))
+
+            elif node.target == "sigmoid":
+                import torch as _torch
+                out = _torch.sigmoid(env[input_names[0]])
+                env[output_name] = out
+                _record_tensor(output_name, tuple(out.shape), tensor_dtypes.get(input_names[0], "int8"))
+                ops.append(OpNode(name=output_name, kind="sigmoid", inputs=input_names, outputs=(output_name,)))
 
             else:
                 raise ValueError(f"Unsupported method in torch.fx trace: {node.target}")

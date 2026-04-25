@@ -1,9 +1,10 @@
 """Generate real-model-layer workload packages (Track E-1).
 
-Three model workloads:
+Four model workloads:
   1. MobileNetV2 first layer: Conv2d(3,32,3,stride=2,padding=1) + BN + ReLU
   2. ResNet-18 residual block: Conv+BN+ReLU + Conv+BN + skip-add
   3. Transformer QKV projection: Linear(768, 2304)
+  4. Transformer FFN block: Linear → GELU → Linear (broader op coverage)
 
 Each is compiled via ``compile_program`` and written under ``workloads/``.
 """
@@ -265,6 +266,79 @@ def generate_transformer_qkv() -> Path:
 
 
 # ---------------------------------------------------------------------------
+# 4. Transformer FFN block (Linear -> GELU -> Linear)
+# ---------------------------------------------------------------------------
+
+def _transformer_ffn_program() -> tuple[Program, dict[str, np.ndarray]]:
+    """Standard Transformer FFN: Linear(d, 4d) -> GELU -> Linear(4d, d).
+
+    Exercises the broader op coverage path: linear chain + GELU activation.
+    Input: (1, 64) -> hidden (1, 256) -> output (1, 64).
+    """
+    rng = np.random.default_rng(2026)
+
+    d_model = 64
+    d_ff = 256
+    x_shape = (1, d_model)
+    hidden_shape = (1, d_ff)
+    out_shape = (1, d_model)
+
+    fc1_weight = rng.integers(-8, 8, size=(d_ff, d_model), dtype=np.int8)
+    fc1_bias = rng.integers(-16, 16, size=(d_ff,), dtype=np.int8)
+    fc2_weight = rng.integers(-8, 8, size=(d_model, d_ff), dtype=np.int8)
+    fc2_bias = rng.integers(-16, 16, size=(d_model,), dtype=np.int8)
+
+    program = Program(
+        inputs=(TensorValue("x", x_shape, "int8"),),
+        tensors=(
+            TensorValue("x", x_shape, "int8"),
+            TensorValue("fc1_out", hidden_shape, "int32"),
+            TensorValue("gelu_out", hidden_shape, "int32"),
+            TensorValue("fc2_out", out_shape, "int32"),
+        ),
+        ops=(
+            OpNode("fc1", "linear", ("x",), ("fc1_out",), {
+                "in_features": d_model, "out_features": d_ff,
+                "weight": fc1_weight.tolist(),
+                "bias": fc1_bias.tolist(),
+            }),
+            OpNode("gelu0", "gelu", ("fc1_out",), ("gelu_out",)),
+            OpNode("fc2", "linear", ("gelu_out",), ("fc2_out",), {
+                "in_features": d_ff, "out_features": d_model,
+                "weight": fc2_weight.tolist(),
+                "bias": fc2_bias.tolist(),
+            }),
+        ),
+        outputs=("fc2_out",),
+    )
+
+    tensor_data = {
+        "x": rng.integers(-8, 8, size=x_shape, dtype=np.int8),
+    }
+
+    return program, tensor_data
+
+
+def generate_transformer_ffn() -> Path:
+    print("Generating Transformer FFN workload...")
+    program, tensor_data = _transformer_ffn_program()
+    output_dir = WORKLOADS_DIR / "model_transformer_ffn"
+    options = CompilerOptions(
+        package_id="model_transformer_ffn",
+        output_dir=output_dir,
+        tiled=True,
+        replay_enabled=True,
+        tensor_data=tensor_data,
+        enable_fusion=True,
+    )
+    result = compile_program(program, options=options)
+    print(f"  Steps: {len(result.plan.step_plans)} ({result.plan.total_compute_steps} compute)")
+    print(f"  Estimated cycles: {result.plan.total_estimated_cycles}")
+    print(f"  Replay packages: {len(result.artifacts.replay_package_dirs)}")
+    return output_dir
+
+
+# ---------------------------------------------------------------------------
 # Main
 # ---------------------------------------------------------------------------
 
@@ -277,6 +351,8 @@ def main() -> None:
     dirs.append(generate_resnet18_block1())
     print()
     dirs.append(generate_transformer_qkv())
+    print()
+    dirs.append(generate_transformer_ffn())
 
     print("\n=== Summary ===")
     for d in dirs:

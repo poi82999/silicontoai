@@ -82,3 +82,6 @@ l6/generated/
 
 # Notebook-generated images (regenerable via host/*.ipynb)
 docs/*.png
+
+# Claude Code local config
+.claude/

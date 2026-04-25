@@ -330,3 +330,247 @@ def test_trace_operator_add_in_residual() -> None:
     op_kinds = [o.kind for o in program.ops]
     assert "add" in op_kinds
     validate_program(program)
+
+
+# --- New op (avg_pool2d, sigmoid, gelu, mul) lowering/validation tests ---
+
+
+def test_lower_avg_pool2d_op() -> None:
+    program = Program(
+        inputs=(TensorValue(name="x", shape=(1, 1, 4, 4), dtype="int8"),),
+        tensors=(
+            TensorValue(name="x", shape=(1, 1, 4, 4), dtype="int8"),
+            TensorValue(name="pool_out", shape=(1, 1, 2, 2), dtype="int8"),
+        ),
+        ops=(
+            OpNode(
+                name="avgpool0",
+                kind="avg_pool2d",
+                inputs=("x",),
+                outputs=("pool_out",),
+                attrs={"kernel_size": 2, "stride": 2, "padding": 0},
+            ),
+        ),
+        outputs=("pool_out",),
+    )
+    validate_program(program)
+    steps = lower_program_to_steps(program)
+    assert len(steps) == 1
+    assert steps[0].lowered_kind == "elementwise_post_op"
+    assert steps[0].source_kind == "avg_pool2d"
+    assert steps[0].attrs["kernel_size"] == (2, 2)
+
+
+def test_lower_sigmoid_op() -> None:
+    program = Program(
+        inputs=(TensorValue(name="x", shape=(1, 4), dtype="int32"),),
+        tensors=(
+            TensorValue(name="x", shape=(1, 4), dtype="int32"),
+            TensorValue(name="y", shape=(1, 4), dtype="int32"),
+        ),
+        ops=(OpNode(name="sig0", kind="sigmoid", inputs=("x",), outputs=("y",)),),
+        outputs=("y",),
+    )
+    validate_program(program)
+    steps = lower_program_to_steps(program)
+    assert len(steps) == 1
+    assert steps[0].lowered_kind == "elementwise_post_op"
+    assert steps[0].source_kind == "sigmoid"
+
+
+def test_lower_gelu_op() -> None:
+    program = Program(
+        inputs=(TensorValue(name="x", shape=(1, 8), dtype="int32"),),
+        tensors=(
+            TensorValue(name="x", shape=(1, 8), dtype="int32"),
+            TensorValue(name="y", shape=(1, 8), dtype="int32"),
+        ),
+        ops=(OpNode(name="gelu0", kind="gelu", inputs=("x",), outputs=("y",)),),
+        outputs=("y",),
+    )
+    validate_program(program)
+    steps = lower_program_to_steps(program)
+    assert len(steps) == 1
+    assert steps[0].lowered_kind == "elementwise_post_op"
+    assert steps[0].source_kind == "gelu"
+
+
+def test_lower_mul_op() -> None:
+    program = Program(
+        inputs=(
+            TensorValue(name="a", shape=(1, 4), dtype="int32"),
+            TensorValue(name="b", shape=(1, 4), dtype="int32"),
+        ),
+        tensors=(
+            TensorValue(name="a", shape=(1, 4), dtype="int32"),
+            TensorValue(name="b", shape=(1, 4), dtype="int32"),
+            TensorValue(name="c", shape=(1, 4), dtype="int32"),
+        ),
+        ops=(OpNode(name="mul0", kind="mul", inputs=("a", "b"), outputs=("c",)),),
+        outputs=("c",),
+    )
+    validate_program(program)
+    steps = lower_program_to_steps(program)
+    assert len(steps) == 1
+    assert steps[0].lowered_kind == "elementwise_post_op"
+    assert steps[0].source_kind == "mul"
+
+
+# --- New op execution tests ---
+
+
+def test_execute_avg_pool2d_op(tmp_path: Path) -> None:
+    program = Program(
+        inputs=(TensorValue(name="x", shape=(1, 1, 4, 4), dtype="int8"),),
+        tensors=(
+            TensorValue(name="x", shape=(1, 1, 4, 4), dtype="int8"),
+            TensorValue(name="pool_out", shape=(1, 1, 2, 2), dtype="int8"),
+        ),
+        ops=(
+            OpNode(
+                name="avgpool0",
+                kind="avg_pool2d",
+                inputs=("x",),
+                outputs=("pool_out",),
+                attrs={"kernel_size": 2, "stride": 2, "padding": 0},
+            ),
+        ),
+        outputs=("pool_out",),
+    )
+    # Average of [[1,2],[5,6]] = 14//4 = 3 ; etc.
+    x = [[[[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12], [13, 14, 15, 16]]]]
+    export_program_package(tmp_path / "avgpool_test", program, tensor_data={"x": x})
+    step_manifest = json.loads((tmp_path / "avgpool_test" / "steps" / "step_000_avgpool0" / "manifest.json").read_text())
+    assert step_manifest["runtime"]["output_summary"]["shape"] == [1, 1, 2, 2]
+    # First window (1+2+5+6)//4 = 3
+    assert step_manifest["runtime"]["output_summary"]["min"] == 3
+
+
+def test_execute_sigmoid_op(tmp_path: Path) -> None:
+    program = Program(
+        inputs=(TensorValue(name="x", shape=(1, 4), dtype="int32"),),
+        tensors=(
+            TensorValue(name="x", shape=(1, 4), dtype="int32"),
+            TensorValue(name="y", shape=(1, 4), dtype="int32"),
+        ),
+        ops=(OpNode(name="sig0", kind="sigmoid", inputs=("x",), outputs=("y",)),),
+        outputs=("y",),
+    )
+    # sigmoid(0)=0.5 -> 63 (int from *127), sigmoid(large)~1 -> ~127
+    export_program_package(tmp_path / "sigmoid_test", program, tensor_data={"x": [[-100, 0, 1, 100]]})
+    step_manifest = json.loads((tmp_path / "sigmoid_test" / "steps" / "step_000_sig0" / "manifest.json").read_text())
+    assert step_manifest["runtime"]["output_summary"]["shape"] == [1, 4]
+    assert step_manifest["runtime"]["output_summary"]["max"] == 127
+    assert step_manifest["runtime"]["output_summary"]["min"] == 0
+
+
+def test_execute_gelu_op(tmp_path: Path) -> None:
+    program = Program(
+        inputs=(TensorValue(name="x", shape=(1, 4), dtype="int32"),),
+        tensors=(
+            TensorValue(name="x", shape=(1, 4), dtype="int32"),
+            TensorValue(name="y", shape=(1, 4), dtype="int32"),
+        ),
+        ops=(OpNode(name="gelu0", kind="gelu", inputs=("x",), outputs=("y",)),),
+        outputs=("y",),
+    )
+    # gelu(0)=0, gelu(2)~1.95, gelu(-3)~-0.0036, gelu(5)~4.999 (truncates to 4)
+    export_program_package(tmp_path / "gelu_test", program, tensor_data={"x": [[-3, 0, 2, 5]]})
+    step_manifest = json.loads((tmp_path / "gelu_test" / "steps" / "step_000_gelu0" / "manifest.json").read_text())
+    assert step_manifest["runtime"]["output_summary"]["shape"] == [1, 4]
+    # gelu(5) ≈ 4.999 truncates to 4 under int32 cast
+    assert step_manifest["runtime"]["output_summary"]["max"] == 4
+
+
+def test_execute_mul_op(tmp_path: Path) -> None:
+    program = Program(
+        inputs=(
+            TensorValue(name="a", shape=(1, 4), dtype="int32"),
+            TensorValue(name="b", shape=(1, 4), dtype="int32"),
+        ),
+        tensors=(
+            TensorValue(name="a", shape=(1, 4), dtype="int32"),
+            TensorValue(name="b", shape=(1, 4), dtype="int32"),
+            TensorValue(name="c", shape=(1, 4), dtype="int32"),
+        ),
+        ops=(OpNode(name="mul0", kind="mul", inputs=("a", "b"), outputs=("c",)),),
+        outputs=("c",),
+    )
+    export_program_package(tmp_path / "mul_test", program, tensor_data={"a": [[1, 2, 3, 4]], "b": [[10, 20, 30, 40]]})
+    step_manifest = json.loads((tmp_path / "mul_test" / "steps" / "step_000_mul0" / "manifest.json").read_text())
+    assert step_manifest["runtime"]["output_summary"]["min"] == 10
+    assert step_manifest["runtime"]["output_summary"]["max"] == 160
+
+
+# --- New op tracer tests ---
+
+
+def test_trace_sigmoid_module() -> None:
+    class SigBlock(nn.Module):
+        def __init__(self) -> None:
+            super().__init__()
+            self.fc = nn.Linear(8, 8)
+            self.sig = nn.Sigmoid()
+
+        def forward(self, x: torch.Tensor) -> torch.Tensor:
+            return self.sig(self.fc(x))
+
+    model = SigBlock()
+    program = trace_torch_module(model, input_shape=(1, 8))
+    assert [op.kind for op in program.ops] == ["linear", "sigmoid"]
+    validate_program(program)
+
+
+def test_trace_gelu_in_ffn() -> None:
+    class FFN(nn.Module):
+        def __init__(self) -> None:
+            super().__init__()
+            self.fc1 = nn.Linear(16, 32)
+            self.gelu = nn.GELU()
+            self.fc2 = nn.Linear(32, 16)
+
+        def forward(self, x: torch.Tensor) -> torch.Tensor:
+            return self.fc2(self.gelu(self.fc1(x)))
+
+    model = FFN()
+    program = trace_torch_module(model, input_shape=(1, 16))
+    assert [op.kind for op in program.ops] == ["linear", "gelu", "linear"]
+    validate_program(program)
+
+
+def test_trace_avg_pool2d_module() -> None:
+    class AvgBlock(nn.Module):
+        def __init__(self) -> None:
+            super().__init__()
+            self.conv = nn.Conv2d(1, 4, kernel_size=3, padding=1)
+            self.avgpool = nn.AvgPool2d(kernel_size=2, stride=2)
+
+        def forward(self, x: torch.Tensor) -> torch.Tensor:
+            return self.avgpool(self.conv(x))
+
+    model = AvgBlock()
+    model.eval()
+    program = trace_torch_module(model, input_shape=(1, 1, 8, 8))
+    assert [op.kind for op in program.ops] == ["conv2d", "avg_pool2d"]
+    validate_program(program)
+
+
+def test_trace_mul_operator_in_gating() -> None:
+    """SE-style gating: sigmoid(scale) * features."""
+    class GateBlock(nn.Module):
+        def __init__(self) -> None:
+            super().__init__()
+            self.scale_fc = nn.Linear(8, 8)
+            self.sig = nn.Sigmoid()
+
+        def forward(self, x: torch.Tensor) -> torch.Tensor:
+            scale = self.sig(self.scale_fc(x))
+            return x * scale
+
+    model = GateBlock()
+    program = trace_torch_module(model, input_shape=(1, 8))
+    op_kinds = [op.kind for op in program.ops]
+    assert "linear" in op_kinds
+    assert "sigmoid" in op_kinds
+    assert "mul" in op_kinds
+    validate_program(program)

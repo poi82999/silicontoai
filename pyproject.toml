@@ -15,6 +15,9 @@ l6-compile = "l6_toolchain.__main__:main"
 dev = [
     "pytest>=8.4,<9",
 ]
+torch = [
+    "torch>=2.2,<3",
+]
 
 [build-system]
 requires = ["setuptools>=75"]
