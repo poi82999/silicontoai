@@ -7,6 +7,45 @@
 
 ---
 
+## 📚 학술적 배경: 메모리 계층과 ping-pong 버퍼링
+
+### 1. 왜 SRAM인가? — Memory Hierarchy 관점 (P&H Ch.5)
+
+> Patterson, D., Hennessy, J. — *Computer Organization and Design*, Ch.5 "Large and Fast: Exploiting Memory Hierarchy".
+
+ML 가속기에서 데이터 이동 비용은 PE 연산 비용보다 훨씬 큽니다 (Sze Ch.4):
+
+| 위치 | 1 word read 에너지 (45nm) | 상대 비용 |
+|---|---|---|
+| Register File | ~1 pJ | 1× |
+| **SRAM (이 bank)** | ~5 pJ | 5× |
+| DRAM (LPDDR4) | ~640 pJ | **640×** |
+| 그리고 1 INT8 MAC | ~0.2 pJ | (참고) |
+
+→ **DRAM read 1번 = INT8 MAC 3,200번**. 따라서 DMA로 한 번 가져온 데이터를 **on-chip SRAM에 머물게** 하고 PE가 최대한 재사용하는 것이 핵심. 이 SRAM bank가 그 "머무는 장소".
+
+### 2. Double Buffering의 학술적 뿌리
+
+Double buffering(=ping-pong)은 1960년대 vector machine (Cray-1, CDC Star-100)에서 시작된 기법입니다. 핵심 아이디어:
+
+> **두 개의 동일한 buffer를 번갈아 사용해서 producer와 consumer가 동시에 동작하게 한다.**
+
+- Buffer A: DMA가 다음 tile을 채우는 중
+- Buffer B: PE가 현재 tile을 소비 중
+- Tile 경계에서 swap → DMA 대기 시간을 PE 연산 시간에 **숨김** (latency hiding)
+
+이 프로젝트의 4개 bank = 2 (weight ping-pong) × 2 (activation ping-pong). 만약 ping-pong이 없었다면, 매 tile마다 PE가 DMA 완료를 기다려야 함 → utilization < 50% 가능.
+
+📖 참고: H&P Appendix C.5 (Pipeline의 데이터 hazard와 stall 회피), [`l6/src/l6_toolchain/cycle_sim.py`](../../../l6/src/l6_toolchain/cycle_sim.py)에서 ping-pong이 cycle을 어떻게 절약하는지 시뮬레이션 가능.
+
+### 3. Dual-port SRAM의 하드웨어 제약
+
+Xilinx 7-series BRAM은 36Kbit 블록이며 **물리적으로 2 port**를 지원합니다 (port A, port B 각각 read/write 가능). 이 SRAM bank가 그것을 그대로 사용. ASIC에서는 dual-port SRAM이 single-port 대비 약 **1.4배 면적**이지만, ping-pong을 single-port로 흉내내려면 시간 분할(time-multiplexing) 필요 → 사실상 throughput 절반. 그래서 hardware 설계자는 거의 항상 dual-port 선택.
+
+📖 참고: Weste & Harris *CMOS VLSI Design* Ch.12 "Memory" (Phase 6 자료).
+
+---
+
 ## 전체 코드 (26줄 — 프로젝트에서 가장 짧은 RTL)
 
 ```systemverilog
@@ -86,6 +125,45 @@ Phase 2: (반복)
 | Bank 1개 | 1024 × 128bit = 16KB |
 | Bank 4개 | 64KB |
 | MEM_ADDR_WIDTH=9 (실제 사용) | 512 × 128bit = 8KB/bank |
+
+---
+
+## 🔬 전문가 관점: 64KB는 충분한가?
+
+### Working set 분석
+
+ResNet-18의 한 conv layer (3×3, 64in→64out, 56×56 feature map):
+- Weight: 64 × 64 × 9 × 1B = 36 KB ✅ (한 bank에 들어감)
+- Input activation: 56 × 56 × 64 × 1B = 196 KB ❌ (4 bank 합쳐도 부족)
+
+→ Activation은 **tile 단위로 나눠서** SRAM에 올림. 이것이 [`l6/src/l6_toolchain/lowering.py`](../../../l6/src/l6_toolchain/lowering.py)의 tiling 알고리즘이 하는 일.
+
+### 산업계 비교
+
+| 칩 | 온칩 SRAM | 비고 |
+|---|---|---|
+| 이 프로젝트 | 64 KB (FPGA BRAM) | PYNQ-Z2 자원 한계 |
+| Google TPU v1 | 24 MB UB + 4 MB AB | datacenter, 무거운 모델 |
+| Apple Neural Engine (M1) | ~10 MB | edge AI |
+| Tesla FSD chip | 32 MB SRAM | autonomy |
+| Cerebras WSE-2 | **40 GB on-wafer SRAM** | 극단적 사례 |
+
+> **💡 SRAM 크기 → 모델 크기 영향**
+>
+> 이 프로젝트가 실제로 BERT-Tiny(~14MB) 같은 큰 모델을 돌리려면 **SRAM 부족** → DMA round-trip이 잦아짐 → utilization 하락. 그래서 [`l6/src/l6_toolchain/memory_planner.py`](../../../l6/src/l6_toolchain/memory_planner.py)가 **tensor lifetime 분석 + in-place 재사용**을 통해 SRAM 사용량을 줄임. 이것이 작은 칩으로 큰 모델을 돌리는 컴파일러의 핵심 가치.
+
+---
+
+## 📖 더 깊이 공부하기
+
+| 깊이 | 자료 | 어느 부분 |
+|---|---|---|
+| 🟢 입문 | P&H Ch.5 (Phase 1) | SRAM vs DRAM 트레이드오프, locality |
+| 🟢 입문 | CMU 15-213 Cache Lab (Phase 1) | 메모리 계층의 직접 측정 |
+| 🟡 중급 | Sze 교과서 Ch.4 (Phase 3) | Memory hierarchy energy table |
+| 🟡 중급 | H&P Appendix C.5 — pipeline hazard avoidance | ping-pong = spatial hazard avoidance |
+| 🔴 심화 | Weste & Harris Ch.12 (Phase 6) | Dual-port SRAM 회로 설계 |
+| 🔴 심화 | TPU 논문 §3 — UB(Unified Buffer) 구조 | 24MB SRAM의 산업적 결정 근거 |
 
 ---
 

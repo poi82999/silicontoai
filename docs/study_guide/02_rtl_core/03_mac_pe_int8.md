@@ -14,6 +14,37 @@
 
 ---
 
+## 📚 학술적 배경: PE는 왜 이렇게 설계되었나
+
+### 1. Systolic Array의 뿌리 — H.T. Kung (1982)
+
+> Kung, H.T. — "Why Systolic Architectures?" *IEEE Computer* 15(1), 1982.
+
+이 논문에서 Kung은 두 가지 통찰을 제시했습니다.
+
+1. **데이터 재사용 (Data Reuse)**: 메모리에서 한 번 읽어온 데이터를 가능한 많은 PE가 재사용해야 에너지 효율이 좋다. 그래서 데이터가 PE 사이를 "흘러가야(systolic = 심장 박동처럼 박동하는)" 한다.
+2. **Local Communication**: 글로벌 와이어는 길고 느리다 (RC delay). PE 간 **인접한 1-hop 통신**만 허용 → 지금 이 PE의 `act_in/act_out`, `psum_in/psum_out`이 바로 이 원칙의 구현체.
+
+이 PE의 `always_ff`에 들어있는 `act_out <= act_in;`이 바로 Kung 논문의 "심장 박동"입니다 — 매 cycle 데이터가 한 칸씩 옆으로 전진.
+
+### 2. INT8 선택의 이론적 근거 — Vivienne Sze 교과서
+
+> Sze, V., Chen, Y.-H., Yang, T.-J., Emer, J. — *Efficient Processing of Deep Neural Networks*, Morgan & Claypool, 2020. (Ch.2-3)
+
+- **에너지 코스트 비율** (45nm CMOS, Sze 2.10절): INT8 MAC ≈ 0.2pJ, FP16 MAC ≈ 1.1pJ, FP32 MAC ≈ 3.7pJ. **INT8은 FP32 대비 18배 에너지 절약**.
+- **메모리 대역폭**: INT8은 FP32 대비 4배 적은 byte → DRAM/SRAM 대역폭에서도 4배 유리.
+- **정확도 손실**: ResNet/MobileNet에서 well-quantized INT8은 FP32 대비 < 1% top-1 손실. ([Jacob et al. CVPR'18](https://arxiv.org/abs/1712.05877) "Quantization and Training of Neural Networks for Efficient Integer-Arithmetic-Only Inference")
+
+→ 이 PE가 INT8을 받는 이유는 단순히 "작은 거 좋아서"가 아니라 **학계가 정량적으로 검증한 트레이드오프**입니다.
+
+### 3. 산업계의 직접 원조 — Google TPU v1 (2017)
+
+> Jouppi, N. et al. — "In-Datacenter Performance Analysis of a Tensor Processing Unit", *ISCA 2017*.
+
+TPU v1은 256×256 INT8 systolic array. 이 프로젝트의 PE는 **TPU v1 PE의 1/256 축소판**입니다. TPU 논문 Fig.4의 "Matrix Multiply Unit" 다이어그램이 정확히 이 파일의 16×16 버전.
+
+---
+
 ## 전체 코드 (74줄)
 
 ```systemverilog
@@ -115,6 +146,17 @@ logic [7:0] weight_reg;
 - **Weight-Stationary의 핵심**: 이 레지스터에 weight를 한번 로드하면, 여러 activation이 지나가는 동안 **고정**
 - 공장 비유: 금형을 한번 끼우면 작업물이 바뀌어도 금형은 그대로
 
+> **💡 배경: 왜 "Weight" Stationary인가?**
+>
+> Eyeriss(MIT, ISSCC 2016)의 분류에 따르면 dataflow는 **무엇을 PE에 멈춰두는가**로 나뉩니다:
+> - **WS (Weight Stationary)** — TPU v1, 이 프로젝트. Weight 재사용이 Activation 재사용보다 클 때 유리. CNN의 큰 conv kernel, transformer의 weight-heavy linear에 좋음.
+> - **OS (Output Stationary)** — Partial sum을 PE에 누적. 메모리 write back을 줄임. ShiDianNao(2015) 등.
+> - **RS (Row Stationary)** — Eyeriss. 모든 데이터를 가능한 재사용. 가장 정교하지만 컨트롤 복잡.
+>
+> Weight를 두는 비용은 register 1개 (`weight_reg`)이지만, 한 번 로드 후 N번의 activation을 처리할 수 있으면 **weight DRAM read를 N분의 1로 줄임**. 이것이 이 프로젝트가 WS를 선택한 이유.
+>
+> 📖 참고: Sze 교과서 Ch.5 Dataflow Taxonomy, [Chen et al. ISSCC'16](https://people.csail.mit.edu/emer/papers/2016.isscc.eyeriss.pdf)
+
 ### [L46-47] 곱셈 (Combinational)
 ```systemverilog
 logic signed [31:0] int32_product;
@@ -126,6 +168,18 @@ assign int32_product = $signed(act_in[7:0]) * $signed(weight_reg);
 - **곱셈 결과**: signed 8비트 × signed 8비트 = signed 16비트이지만, 32비트로 sign-extend
   - 최악의 경우: (-128) × (-128) = +16,384 → 16비트로 충분하지만 누적 대비 32비트 확보
 - **`assign`** = combinational logic (클럭 없이 즉시 계산)
+
+> **💡 배경: 왜 32비트로 누적하는가? (Accumulator Bit-width 이론)**
+>
+> 16×16 systolic array에서 한 column의 dot product는 **16개 INT8 곱의 합**입니다.
+> - 한 곱의 max magnitude: $2^{15} = 32{,}768$ (signed 16-bit 범위)
+> - 16개 합의 max magnitude: $16 \times 2^{15} = 2^{19}$ → 20비트로 충분.
+>
+> 그런데 왜 32비트? **Split-K** 때문입니다 (`l6/lowering.py` 참고). 큰 K 차원을 16-tile 단위로 쪼개서 partial sum을 NPU 외부 buffer에서 누적. 즉 PE는 16개가 아니라 **수천 개의 INT8 곱**을 누적할 수 있어야 함. 32비트면 $2^{31}/2^{15} = 2^{16} = 65{,}536$개의 곱셈을 overflow 없이 누적 가능.
+>
+> 산업계도 같음: TPU v1 = INT32 accumulator, NVIDIA Tensor Core (INT8) = INT32 accumulator. 이것이 왜 "INT8 in / INT32 out"이 표준 패턴인지의 이유.
+>
+> 📖 참고: P&H *Computer Organization* Ch.3 (산술), Sze 교과서 Ch.7 "Reduce Precision".
 
 ### [L50-51] 덧셈 (Combinational)
 ```systemverilog
@@ -221,6 +275,38 @@ psum_out <= int32_mac_result;
 - Weight 로드 = 1회 (16 cycle)
 - Activation 실행 = N회 반복 가능
 - Weight를 매번 다시 로드하는 것보다 **에너지 효율적** (데이터 이동 = 전력 소모)
+
+---
+
+## 🔬 전문가 관점: 이 PE를 산업계 칩과 비교
+
+| 항목 | 이 프로젝트 PE | TPU v1 PE | NVIDIA Tensor Core | Eyeriss PE |
+|---|---|---|---|---|
+| Dataflow | WS | WS | WS+OS hybrid | RS (Row Stationary) |
+| Precision | INT8 × INT8 → INT32 | INT8 × INT8 → INT32 | INT8/FP16 → INT32/FP32 | 16-bit fixed |
+| 1 PE / cycle | 1 MAC | 1 MAC | 64 MAC (4×4×4 sub-tile) | 1 MAC + RF |
+| 로컬 storage | weight 1개 (8b) | weight 1개 (8b) | weight tile (4×4) | RF + scratchpad |
+| 1-cycle latency | ✅ (registered out) | ✅ | ✅ | ✅ |
+
+**가장 큰 차이**: NVIDIA Tensor Core는 한 PE 안에서 **4×4×4 = 64 MAC**을 한 cycle에 처리. 이 프로젝트는 1 MAC. 대신 256 PE를 spatial하게 펼쳐서 throughput을 맞춥니다. 두 접근의 트레이드오프는 **utilization vs flexibility** — Tensor Core는 작은 행렬에서 utilization이 떨어지고, SA는 큰 행렬에 더 유리.
+
+📖 더 깊이: NVIDIA A100 White Paper (2020), Sze 교과서 Ch.6 "Spatial Architectures".
+
+---
+
+## 📖 더 깊이 공부하기 — 전문가 학습 로드맵 매핑
+
+이 파일을 완전히 이해하려면 [전문가_학습_로드맵.md](../전문가_학습_로드맵.md)의 다음 자료들을 추천합니다:
+
+| 깊이 | 자료 | 어느 부분이 이 PE와 연결되는가 |
+|---|---|---|
+| 🟢 입문 | P&H *Computer Organization* Ch.4 (Phase 1) | Pipeline register와 1-cycle latency |
+| 🟢 입문 | MIT 6.004 강의 5~10강 (Phase 1) | `always_ff` 와 sequential logic |
+| 🟡 중급 | Sze 교과서 Ch.2-3, 5 (Phase 3) | INT8 에너지 분석, WS dataflow 분류 |
+| 🟡 중급 | Eyeriss ISSCC'16 논문 (Phase 5) | RS dataflow와 비교 — 왜 WS가 더 단순한가 |
+| 🔴 심화 | TPU ISCA'17 논문 (Phase 5) | 256×256 산업 구현 — 이 PE의 1024배 버전 |
+| 🔴 심화 | H.T. Kung 1982 "Why Systolic" | systolic의 철학적 origin |
+| 🔴 심화 | Jacob et al. CVPR'18 (Quantization) | INT8 inference의 수학적 정합성 |
 
 ---
 

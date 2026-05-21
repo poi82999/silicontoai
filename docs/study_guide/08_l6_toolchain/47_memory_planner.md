@@ -13,6 +13,56 @@ L6 컴파일러는 step-by-step으로 NPU에 일을 시킵니다. 매 step마다
 
 ---
 
+## 📚 학술적 배경: Memory planning은 register allocation의 일반화
+
+### 1. Liveness analysis — Dragon Book Ch.9
+
+> Aho et al. — *Compilers* (2판), Ch.9 "Machine-Independent Optimizations" §9.2 "Data-Flow Analysis".
+
+전통적 컴파일러: variable의 **live range** = `def` 시점부터 마지막 `use` 시점까지. CPU 컴파일러는 이 range를 활용해 register allocation:
+- 두 변수의 live range가 안 겹치면 같은 register에 할당 가능 = **Graph coloring** (Chaitin 1982)
+
+이 NPU 컴파일러:
+- "Variable" = 중간 tensor
+- "Register" = SRAM bank slot
+- "Live range" = `birth_step ~ death_step`
+- → SRAM 안의 같은 영역을 **lifetime 안 겹치는 두 tensor가 공유** (`in_place` 전략)
+
+차이점: tensor는 KB 단위, register는 4-8 byte. Coalescing decision이 dominant.
+
+### 2. Chaitin's Graph Coloring 알고리즘 (1982)
+
+> Chaitin, G. — "Register Allocation & Spilling via Graph Coloring", *SIGPLAN 1982*.
+
+오늘날 GCC, LLVM의 register allocator의 모태:
+1. Build interference graph (두 var의 live range 겹치면 edge)
+2. Try k-coloring (k = register 수)
+3. 실패하면 spill (register → memory)
+
+이 NPU 컴파일러:
+1. Tensor lifetime → interval graph
+2. Try fitting in 64KB SRAM
+3. 실패하면 evict (SRAM → DDR)
+
+→ **Spill = Evict**. 이름만 다른 같은 알고리즘.
+
+### 3. 산업급 메모리 플래너의 모범 — TFLite, TVM Storage Planner
+
+| 시스템 | 알고리즘 | 비고 |
+|---|---|---|
+| **이 프로젝트** | First-fit + lifetime overlap | 단순 (≤ 30 step에 적합) |
+| TFLite Memory Planner | **Greedy by size** (큰 tensor 먼저) | 모바일 inference 표준 |
+| TVM USMP (Unified Static Memory Planner) | ILP-based optimal | 임베디드 micro-controller |
+| Glow Static Allocator | First-fit decreasing + alignment | Facebook AI inference |
+
+대표 휴리스틱: 큰 tensor를 먼저 배치하면 fragmentation 감소 — **Bin Packing**의 First-Fit Decreasing 결과 (Coffman-Garey-Johnson 1996).
+
+📖 참고: [TFLite Memory Planner code](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/simple_memory_arena.cc), Chaitin SIGPLAN'82, Cooper & Torczon Ch.13 "Register Allocation" (Phase 3).
+
+> **💡 NPU만의 trade-off**: CPU는 register spill 비용 = ~100 cycle (DRAM access). NPU는 SRAM evict 비용 = DMA round-trip = 수백 cycle + 전력. **Spill은 더욱 비싸짐** → planner의 결정 정확도가 더 중요.
+
+---
+
 ## 큰 그림: 3가지 단계
 
 ```

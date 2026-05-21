@@ -15,6 +15,33 @@
 
 ---
 
+## 📚 학술적 배경: RAW forwarding은 CPU 파이프라인의 직계 후손
+
+> Patterson, D., Hennessy, J. — *Computer Organization*, Ch.4.7-4.8 "Data Hazards and Forwarding".
+
+CPU 파이프라인에서 `ADD R1, R2, R3` 직후 `SUB R4, R1, R5`는 **R1의 값이 아직 register file에 안 써졌는데 다음 instruction이 읽으려는 상황** = **RAW(Read-After-Write) hazard**. 해법:
+- **Stall**: 1 cycle 기다림 (성능 손실)
+- **Forwarding**: ALU 결과를 register file 거치지 않고 다음 stage 입력으로 bypass — **이 모듈이 정확히 그것**
+
+이 NPU에서:
+- BRAM write latency = 1 cycle (`always_ff`로 클럭 후 메모리 갱신)
+- BRAM read latency = 1 cycle (synchronous read)
+- ⇒ **연속 cycle에서 같은 addr에 write→read 하면 stale data 위험**
+
+해법 (이 모듈이 구현):
+```
+if (write_addr == read_addr && write_en && read_en):
+    read_data ← write_data    # bypass, BRAM 거치지 않고 직결
+```
+
+→ Patterson 1985년 RISC 파이프라인의 forwarding 회로가 30년 후 NPU에서 partial sum accumulator로 재등장. **Computer Architecture의 보편 패턴**.
+
+📖 참고: P&H Ch.4.7 (Phase 1), H&P Appendix C.2 (forwarding 정량 분석), [전문가 학습 로드맵](../전문가_학습_로드맵.md) Phase 1.
+
+> **💡 NPU 특화 변형**: CPU forwarding은 같은 register이면 항상 bypass. NPU accumulator는 **`acc_clear=1`이면 bypass 안 함** (덮어쓰기 의도 보존). 이것이 split-K의 첫 패스 처리 방식.
+
+---
+
 ## 주요 포트
 
 | 포트 | 방향 | 의미 |

@@ -13,6 +13,82 @@ NPU 하드웨어는 **INT8만 받습니다**. 하지만 PyTorch 모델은 FP32. 
 
 ---
 
+## 📚 학술적 배경: PTQ는 5년간 격렬히 발전한 분야
+
+### 1. Quantization의 정량적 출발 — Jacob et al. CVPR'18
+
+> Jacob, B. et al. — "Quantization and Training of Neural Networks for Efficient Integer-Arithmetic-Only Inference", *CVPR 2018*.
+
+Google MobileNet의 quantization 논문. 핵심 공식:
+$$x_{\text{int}} = \text{round}\left(\frac{x_{\text{float}}}{\text{scale}}\right) + \text{zero\_point}$$
+
+이 프로젝트는 `zero_point=0`만 사용 (symmetric). 이유:
+- **하드웨어 단순화**: NPU MAC가 `(act - z_act) * (w - z_w)`를 계산하지 않아도 됨
+- **정확도 trade-off**: ReLU 후 (≥0) activation은 asymmetric이 유리하지만, 일반적으로 1% 이내 손실
+
+**산업계 추세**: TensorRT, ONNX Runtime, CoreML 모두 symmetric weight + asymmetric activation을 default로 사용. 이 프로젝트는 weight/activation 모두 symmetric — **하드웨어 단순성을 위한 의도적 선택**.
+
+📖 참고: Jacob CVPR'18, Sze 교과서 Ch.7 "Reduce Numerical Precision".
+
+### 2. Per-channel quantization의 등장 — Krishnamoorthi (2018)
+
+> Krishnamoorthi, R. — "Quantizing deep convolutional networks for efficient inference: A whitepaper", arXiv 2018.
+
+Per-tensor quantization은 **outlier channel** 1개 때문에 다른 channel들의 dynamic range를 낭비합니다. Krishnamoorthi의 분석:
+- ResNet-50 Conv weight: per-tensor INT8 → top-1 손실 ~3%
+- Per-channel INT8 → 손실 < 0.5%
+
+→ "공짜 점심" — 추가 연산 비용이 거의 없으면서 정확도 크게 향상. 이 프로젝트의 `_quantize_per_channel`이 직접 구현.
+
+**왜 Linear/Conv weight만 per-channel?** Activation은 batch마다 통계가 달라지므로 per-tensor가 안전. Weight는 한 번 학습 후 고정 → per-channel이 안전.
+
+### 3. SmoothQuant — Xiao et al. ICML'23
+
+> Xiao, G. et al. — "SmoothQuant: Accurate and Efficient Post-Training Quantization for Large Language Models", *ICML 2023*.
+
+LLM (GPT-3, BLOOM)의 activation은 **systematic outlier**가 있습니다 — 특정 channel이 다른 채널보다 100배 이상 큰 값. 이는 LLM의 attention 메커니즘 때문이고, 학습 후에도 사라지지 않음.
+
+핵심 통찰:
+- Activation은 outlier 때문에 quantize 어려움
+- Weight는 per-channel quantize 잘 됨
+- → Activation의 어려움을 weight로 **수학적으로 동일한 transformation**으로 옮김
+
+수식:
+$$Y = X \cdot W = (X \cdot \text{diag}(s)^{-1}) \cdot (\text{diag}(s) \cdot W) = X' \cdot W'$$
+
+이 프로젝트 `smooth_quant`가 정확히 그것 (`α=0.5`는 논문 default와 동일).
+
+→ SmoothQuant 없이 LLM을 INT8로 양자화하면 perplexity 발산. 이 함수가 LLM 시대의 NPU에 critical.
+
+### 4. GPTQ — Frantar et al. ICLR'23
+
+> Frantar, E., Ashkboos, S., Hoefler, T., Alistarh, D. — "GPTQ: Accurate Post-Training Quantization for Generative Pre-trained Transformers", *ICLR 2023*.
+
+Optimal Brain Surgeon (LeCun 1990, "OBS")의 weight pruning 알고리즘을 quantization에 적용.
+
+핵심 아이디어:
+- Quantization 오차 $e = W - \hat{W}$를 그냥 줄이지 말고 모델 출력에 미치는 second-order effect를 줄이자
+- $\min e^T H e$ where $H = X X^T$ (입력의 통계)
+- Column j를 quantize하고 발생한 오차를 column j+1, j+2, ...에 보정
+
+이 프로젝트 `gptq_quantize_weight`이 그 직접 구현. Cholesky decomposition + lazy-batch 트릭으로 큰 weight matrix도 처리 가능.
+
+**산업계 채택**: LLaMA-2 70B, Falcon, Mixtral 모두 GPTQ로 INT4까지 양자화하여 consumer GPU에서 inference 가능. 이 함수가 그 알고리즘의 INT8 버전.
+
+📖 참고: Frantar ICLR'23, Optimal Brain Surgeon (LeCun NeurIPS'90), [GPTQ 공식 repo](https://github.com/IST-DASLab/gptq).
+
+### 5. ADAROUND (Nagel et al. ICML'20)
+
+> Nagel, M. et al. — "Up or Down? Adaptive Rounding for Post-Training Quantization", *ICML 2020*.
+
+`round()`는 단순히 가까운 정수로 가는 것이 항상 최적은 아닙니다. ADAROUND는 각 weight마다 **올림/내림을 학습** (small calibration set으로 reconstruction loss 최소화).
+
+이 파일에는 아직 ADAROUND가 없지만, 다음 확장 후보. GPTQ보다 단순하면서 per-tensor 대비 큰 향상.
+
+📖 참고: Nagel ICML'20, [Brevitas](https://github.com/Xilinx/brevitas) (Xilinx의 PTQ/QAT 라이브러리).
+
+---
+
 ## 큰 그림: 4단계 quantization 메뉴
 
 ```
@@ -253,6 +329,52 @@ def check_quantization_error(original, quantized_result, threshold_pct=5.0):
 | **Per-channel axis** | Linear/Conv는 axis=0 (out 차원) |
 | **α (alpha) in SmoothQuant** | activation/weight 부담 분배 (0.5 default) |
 | **Hessian H** | 입력 통계 → 오차의 2차 영향 |
+
+---
+
+## 🔬 전문가 관점: 이 파일의 위치와 한계
+
+### 산업급 PTQ pipeline과의 비교
+
+| 단계 | 이 프로젝트 | 산업급 (NVIDIA TensorRT, Xilinx Brevitas) |
+|---|---|---|
+| 1. Calibration | (수동 입력) | 자동 (~100 샘플 forward) |
+| 2. Range estimation | max-abs (clipping 없음) | percentile (99.9%), MSE-optimal, KL-divergence |
+| 3. Weight quantize | per-channel (basic) + GPTQ | + ADAROUND, AdaQuant, BRECQ |
+| 4. Activation quantize | per-tensor (basic) + SmoothQuant | + LSQ, QAT fine-tuning |
+| 5. Validation | mean/max abs error | task-level metric (top-1, BLEU) |
+
+→ 이 파일은 **PTQ의 4가지 algorithm 깊이**(per-tensor → per-channel → SmoothQuant → GPTQ)를 다 갖췄지만, **calibration data를 자동으로 사용하는 framework**가 빠져 있음. 향후 확장:
+- `calibrate.py`: forward pass로 자동 통계 수집
+- `qat.py`: Quantization-Aware Training 지원
+- task-level evaluation harness
+
+### INT8 → INT4 → INT2 trend
+
+2024 trend는 **더 낮은 비트**:
+- LLM weight: INT4 (GPTQ) standard, INT3/INT2도 active research
+- Activation: INT8 still dominant (memory bandwidth critical)
+- Hardware: NVIDIA H100 = FP8/INT8/INT4 모두 native
+
+이 프로젝트 NPU는 INT8 only. INT4를 지원하려면 **하드웨어 변경 필요** (PE 안의 곱셈기 폭). **Quantization은 알고리즘+하드웨어 공동설계의 정점** — 두 영역을 모두 아는 엔지니어가 가장 가치 있음.
+
+📖 참고: NVIDIA H100 white paper (2022), MIT 6.5940 Lec.6 "Quantization" (Phase 3 자료).
+
+---
+
+## 📖 더 깊이 공부하기
+
+| 깊이 | 자료 | 어느 부분 |
+|---|---|---|
+| 🟢 입문 | Sze 교과서 Ch.7 (Phase 3) | Quantization 분류와 트레이드오프 |
+| 🟢 입문 | MIT 6.5940 Lec.6 (Phase 3) | PTQ vs QAT, 산업 사례 |
+| 🟡 중급 | Jacob CVPR'18 (Phase 5) | Symmetric/asymmetric, INT8 inference 정합성 |
+| 🟡 중급 | Krishnamoorthi 2018 whitepaper | Per-channel의 정량 분석 |
+| 🔴 심화 | SmoothQuant ICML'23 (Phase 5) | LLM activation outlier |
+| 🔴 심화 | GPTQ ICLR'23 (Phase 5) | Hessian-guided quantization |
+| 🔴 심화 | Optimal Brain Surgeon (LeCun NeurIPS'90) | GPTQ의 35년 전 origin |
+| 🔴 심화 | ADAROUND ICML'20 (Phase 5) | Adaptive rounding 이론 |
+| 🔴 심화 | Brevitas docs (Xilinx) | 산업급 PTQ/QAT framework |
 
 ---
 

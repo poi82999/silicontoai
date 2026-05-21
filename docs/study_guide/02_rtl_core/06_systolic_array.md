@@ -16,6 +16,45 @@
 
 ---
 
+## 📚 학술적 배경: 16×16이라는 숫자는 어떻게 결정되나?
+
+### Roofline Model의 관점 — Williams, Waterman, Patterson (CACM 2009)
+
+> Williams, S., Waterman, A., Patterson, D. — "Roofline: An Insightful Visual Performance Model for Multicore Architectures", *Communications of the ACM*, 52(4), 2009.
+
+Systolic array 크기는 두 제약 사이의 균형입니다:
+
+```
+Peak Compute (FLOPS) = 2 × N × N × clk_freq          (N×N array, MAC=2 ops)
+Peak Bandwidth       = (N × W_bits / 8) × clk_freq   (한 cycle에 N개 act 입력)
+Arithmetic Intensity = Peak FLOPS / Peak Bandwidth
+                     = (2 × N × N) / N             # bytes 단위로 정리
+                     = 2N ops/byte
+```
+
+→ **N이 클수록 compute-bound 영역**이 커집니다 (메모리 대역폭이 부족해도 PE가 잘 활용됨).
+
+이 프로젝트 N=16의 의미:
+- Peak FLOPS @ 100MHz = 2 × 16 × 16 × 1e8 = **51.2 GOPS** (INT8)
+- Peak BW = 16 × 8b × 100MHz = **1.6 GB/s** (한 방향)
+- Arithmetic intensity for full GEMM: **32 ops/byte** → 대부분 ML workload (~10-100 ops/byte)에 잘 맞음
+
+산업계 비교:
+- TPU v1: 256×256 → AI ≈ 512 → 매우 compute-bound (DRAM 대역폭이 충분히 확보 가능한 데이터센터에 맞음)
+- 이 프로젝트 16×16 → AI ≈ 32 → FPGA의 적당한 BRAM 대역폭에 맞춤
+
+📖 참고: [`l6/src/l6_toolchain/roofline.py`](../../../l6/src/l6_toolchain/roofline.py)에 이 계산이 자동화되어 있음. H&P 1.10절(Roofline) 또는 [Williams 원논문 PDF](https://people.eecs.berkeley.edu/~kubitron/cs252/handouts/papers/RooflineVyNoYellow.pdf).
+
+### Skew/Deskew의 수학적 필연성 — Kung & Leiserson (1979)
+
+> Kung, H.T., Leiserson, C.E. — "Systolic Arrays for VLSI", *Sparse Matrix Proceedings*, 1979.
+
+원래 Kung-Leiserson 논문은 **모든 데이터가 PE에 동시에 도착해야** dot product가 정렬된다는 것을 증명했습니다. 그런데 단일 broadcast wire로는 N개 PE에 동시 도착이 불가능 (clock skew, RC delay 누적). 해법이 **데이터를 미리 비스듬히 (skew) 보내고, 출력을 다시 정렬 (deskew)**하는 것.
+
+→ 이 파일의 31-cycle 파이프라인 = skew(15) + propagation(1) + deskew(15)의 형태가 바로 Kung-Leiserson 1979의 직접 구현입니다.
+
+---
+
 ## 코드 구조 개요
 
 ```systemverilog
@@ -167,6 +206,47 @@ Cycle 16:      첫 psum이 array 최하단 도달 (col 0)
 Cycle 30:      모든 column의 psum이 정렬되어 출력
                 = 총 31 cycle (0~30)
 ```
+
+> **💡 배경: 31-cycle latency가 큰 문제인가?**
+>
+> 한 16×16 GEMM tile의 **fill latency**는 31 cycle이지만, **steady-state throughput**은 1 cycle당 256 MAC. tile size가 16일 때 256 cycle을 실행하면 utilization = 256/(256+31) ≈ **89%**. tile size를 늘리거나 (sequential tiles), pipeline overlapping을 하면 95%+ 가능.
+>
+> 이것이 **Amdahl's Law의 실전 적용**: 직렬 부분(fill/drain)을 병렬 부분(steady-state)으로 amortize. P&H 1.10절 또는 H&P Ch.1 참고.
+>
+> 산업계 사례: TPU v1은 256×256 → fill latency 511 cycle. 하지만 batch=128, sequence=512 같은 큰 workload에서 utilization이 99%+. 이것이 TPU가 **데이터센터** 가속기로 위치하는 이유.
+
+---
+
+## 🔬 전문가 관점: 만약 N=8 또는 N=32였다면?
+
+| N (한 변) | Peak GOPS @100MHz | PE 수 | Arithmetic Intensity | 전형적 utilization | 비고 |
+|---|---|---|---|---|---|
+| 8 | 12.8 | 64 | 16 | 더 작은 tile에 유리 | edge AI, low-power |
+| **16** | **51.2** | **256** | **32** | **이 프로젝트** | FPGA mid-range |
+| 32 | 204.8 | 1024 | 64 | 큰 batch 필요 | high-end FPGA |
+| 256 | 13107.2 | 65536 | 512 | datacenter only | TPU v1 |
+
+**왜 16인가?**
+1. **PYNQ-Z2 (Zynq-7020) 자원 제약**: 220 DSP48E1 → 256 MAC을 LUT+DSP 혼합으로 합성 가능
+2. **BRAM 대역폭**: 4 banks × 256-bit @ 100MHz = 12.8 GB/s ≈ peak compute가 요구하는 대역폭과 일치
+3. **Sweet spot for ML 모델**: ResNet conv(typical K=3, C=64) → im2col 후 GEMM이 K=576 — 16 단위로 나누면 36 tile, 8 단위로 나누면 72 tile (control overhead 2배)
+
+📖 참고: [Sze 교과서 Ch.6](https://efficientdeeplearning.mit.edu/) Spatial Architecture sizing, [Eyeriss v2 (JSSC'19)](https://arxiv.org/abs/1807.07928)의 hierarchical mesh가 이 trade-off를 hierarchically 풀어낸 사례.
+
+---
+
+## 📖 더 깊이 공부하기 — 전문가 학습 로드맵 매핑
+
+| 깊이 | 자료 | 어느 부분 |
+|---|---|---|
+| 🟢 입문 | P&H *Computer Organization* Ch.4 (파이프라인 hazard) | skew/deskew = "데이터 hazard"의 spatial 해결 |
+| 🟢 입문 | MIT 6.004 강의 11~20강 (Phase 1) | generate 구문, 2D mesh 합성 |
+| 🟡 중급 | H&P *Quantitative* Ch.4 (SIMD/벡터) | 16-lane MAC ↔ SIMD lane 비유 |
+| 🟡 중급 | Williams CACM'09 Roofline 논문 (Phase 5) | 이 SA가 compute/memory bound인지 판단 |
+| 🟡 중급 | [`l6/src/l6_toolchain/roofline.py`](../../../l6/src/l6_toolchain/roofline.py) | 이 SA의 roofline 자동 계산 (직접 실행해보기) |
+| 🔴 심화 | Kung-Leiserson "Systolic Arrays for VLSI" (1979) | skew의 수학적 증명 |
+| 🔴 심화 | TPU ISCA'17 논문 — Fig.4 (Phase 5) | 256×256 array의 산업 구현 |
+| 🔴 심화 | NVIDIA A100 White Paper | Tensor Core(64 MAC/cycle/PE)와의 trade-off 비교 |
 
 ---
 

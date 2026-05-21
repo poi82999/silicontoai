@@ -7,6 +7,28 @@
 
 ---
 
+## 📚 학술적 배경: Skewing은 SA의 수학적 필연
+
+> Kung, H.T., Leiserson, C.E. — "Systolic Arrays for VLSI", *Sparse Matrix Proceedings* 1979.
+
+Kung-Leiserson 1979는 GEMM을 SA로 매핑할 때 **데이터를 spatial-temporal하게 정렬**하는 두 가지 기법을 제시했습니다:
+
+1. **Hexagonal layout** (원조) — 6각형 PE 배치 + 양방향 데이터 흐름
+2. **Square + skew** (이 프로젝트) — 4각형 mesh + 입력 측 skew + 출력 측 deskew
+
+수학적 증명: PE[i][j]에서 두 데이터 $A_{ik}$와 $B_{kj}$가 동시 도착해야 곱셈이 valid. 행렬 인덱스의 격자 거리를 **시간 축으로 환산**하면, $A$를 $i$ cycle 늦게, $B$를 $j$ cycle 늦게 보내야 정렬됨 → 그것이 이 모듈이 만드는 대각선 지연.
+
+> **💡 정량 비용**
+> - Skewing 비용 = $\sum_{i=0}^{15} i = 120$ 개 flip-flop × 8-bit (INT8) = **960 bits**
+> - Deskewing 비용 = 동일 (output 측) × 32-bit (psum) = **3,840 bits**
+> - 합계 = ~4,800 bits ≈ FPGA로는 ~600 LUT-FF 페어 (전체 SA 자원의 < 5%)
+>
+> 이 작은 비용으로 256개 PE의 일관된 데이터 정렬을 보장 — Kung-Leiserson 1979의 핵심 통찰.
+
+📖 참고: H&P Appendix C.5 (pipeline hazard avoidance), [`Eyeriss ISSCC'16`](https://people.csail.mit.edu/emer/papers/2016.isscc.eyeriss.pdf) §III.B (RS dataflow는 skew를 다른 방식으로 푸는 사례).
+
+---
+
 ## 왜 Skewing이 필요한가?
 
 행렬 곱셈 C = A × B에서, C[0][0]을 계산하려면:

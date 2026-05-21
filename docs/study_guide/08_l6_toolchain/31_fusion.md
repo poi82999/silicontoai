@@ -13,6 +13,64 @@
 
 ---
 
+## 📚 학술적 배경: Operator Fusion의 이론
+
+### 1. Halide의 schedule abstraction — Ragan-Kelley et al. PLDI'13
+
+> Ragan-Kelley, J. et al. — "Halide: A Language and Compiler for Optimizing Parallelism, Locality, and Recomputation in Image Processing Pipelines", *PLDI 2013*.
+
+Halide는 **알고리즘과 schedule을 분리**한 최초의 영향력 있는 컴파일러:
+- **Algorithm**: 무엇을 계산할지 (`y(x) = blur(x) + 1`)
+- **Schedule**: 언제/어디서/어떻게 계산할지 (fuse, tile, vectorize, parallelize)
+
+Fusion은 **schedule decision의 일종**: 두 stage를 producer-consumer 관계로 inline해서 중간 결과를 메모리에 쓰지 않음. 이 파일의 `apply_linear_relu_fusion`이 정확히 그것의 ML 버전.
+
+수학적으로:
+```
+원래:  T_total = T_compute_op1 + T_DRAM_write(intermediate)
+              + T_DRAM_read(intermediate) + T_compute_op2
+Fused: T_total = T_compute_op1 + T_compute_op2_inplace
+       절약 = T_DRAM_write + T_DRAM_read   ≈ DRAM round-trip
+```
+
+DRAM round-trip 비용 = ~100 cycle latency × tensor size. 연산이 작은 ReLU/BatchNorm은 사실상 **메모리 시간이 전부** → fusion이 핵심.
+
+📖 참고: Ragan-Kelley *Halide* PLDI'13 PDF (Phase 7 자료).
+
+### 2. TVM의 fusion rule generalization — Chen et al. OSDI'18
+
+> Chen, T. et al. — "TVM: An Automated End-to-End Optimizing Compiler for Deep Learning", *OSDI 2018*.
+
+TVM은 op를 4가지 카테고리로 분류해서 fusion 규칙을 일반화했습니다:
+
+| Op type | 예시 | Fusion 가능 패턴 |
+|---|---|---|
+| **kElemWise** | ReLU, Add | 어디든 fuse 가능 |
+| **kBroadcast** | BatchNorm scale/shift | injective와 연속 가능 |
+| **kInjective** | reshape, transpose | (조건적) |
+| **kCommReduce** | sum, max | post-reduction op만 |
+| **kOutEWiseFusable** | conv2d, GEMM | "ElemWise를 끝에 붙일 수 있는" 연산 |
+| **kOpaque** | sort, custom op | fuse 불가 |
+
+이 프로젝트의 3가지 fusion (Linear+ReLU, Conv+ReLU, Conv+BN)이 모두 **kOutEWiseFusable + kElemWise** 패턴. TVM의 일반 규칙이 이 프로젝트에서는 hard-code되어 있는 셈. 산업급 컴파일러는 이 분류를 활용해 자동으로 패턴 발견.
+
+📖 참고: [TVM Operator Fusion 문서](https://tvm.apache.org/docs/arch/relay_op_strategy.html).
+
+### 3. BN folding의 수학적 정합성 — Jacob et al. CVPR'18
+
+> Jacob, B. et al. — "Quantization and Training of Neural Networks for Efficient Integer-Arithmetic-Only Inference", *CVPR 2018*. (Google MobileNet quantization 논문)
+
+이 논문 §3.4가 "Folding batch normalization layers"를 정확히 다룹니다. 핵심:
+- BN은 inference 시 affine transformation $y = \gamma\frac{x-\mu}{\sqrt{\sigma^2+\epsilon}} + \beta$
+- 이를 $y = sx + b$ 형태로 만든 후 **이전 conv weight에 흡수** ($W' = sW$, $b' = sb_{\text{conv}} + b$)
+- → BN을 별도 layer 없이 conv 한 번에 흡수. **추가 계산 0, 정확도 손실 0** (수학적으로 동일).
+
+이 파일의 `apply_conv_bn_folding`이 정확히 이 수식의 직접 구현. 산업계 모든 inference engine (TensorRT, ONNX Runtime, CoreML)이 같은 작업을 수행.
+
+📖 참고: Jacob CVPR'18 §3.4, Sze 교과서 Ch.7 "Reduce Numerical Precision".
+
+---
+
 ## 큰 그림: 3가지 fusion pass
 
 ```
@@ -236,6 +294,53 @@ def compile_program(program, options):
 | **BN folding 수학** | `y = scale*x + shift` → Conv weight/bias로 흡수 | `apply_conv_bn_folding` |
 | **Pass 순서** | BN → Conv+ReLU → Linear+ReLU | `apply_all_fusions` |
 | **In-place attrs** | `relu=True`, `bn_folded=True` 마커 추가 | dict copy |
+
+---
+
+## 🔬 전문가 관점: Fusion이 못 잡는 패턴
+
+이 파일은 **인접한 두 op만** fusion합니다. 산업급 컴파일러는 더 넓은 패턴을 잡습니다:
+
+### 1. Multi-input fusion (Vertical fusion 확장)
+```
+원래:    z = ReLU(BN(Conv(x))) + ReLU(BN(Conv(y)))
+fusion:  z = fused_residual_block(x, y)   ← 5개 op를 1개로
+```
+이 프로젝트는 multi-input fusion 미지원. 향후 확장 포인트.
+
+### 2. Horizontal fusion (Same-input fusion)
+```
+원래:    a = Conv1(x); b = Conv2(x)   # 같은 x 두 번 읽음
+fusion:  (a, b) = fused_double_conv(x)  # x 한 번만 읽음
+```
+TVM Ansor가 이걸 자동으로 함. 이 프로젝트 미지원.
+
+### 3. Loop-level fusion (Halide/MLIR linalg)
+Halide의 `compute_with` 또는 MLIR linalg의 `linalg.fuse`는 **inner loop level**에서 fusion. 즉 두 op의 inner loop가 같은 iteration space를 가지면 한 loop nest에 합침.
+
+이 프로젝트는 op-level (graph) fusion만 함. Loop-level은 컴파일러가 더 발전해야 함.
+
+### 4. Algorithm-hardware co-design (FlashAttention)
+
+> Dao, T. et al. — "FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness", *NeurIPS 2022*.
+
+FlashAttention은 그저 fusion이 아니라 **수학적 알고리즘 자체를 재구성**해서 attention의 softmax를 tile 단위로 streaming 계산. 이런 수준은 컴파일러가 자동으로 못 함 — 알고리즘 + 하드웨어 양쪽을 아는 엔지니어가 직접 새 op로 등록해야 함. **이것이 "대체 불가" 엔지니어가 만드는 가치** (전문가 로드맵 §"포지셔닝 전략" 참고).
+
+📖 참고: FlashAttention NeurIPS'22, "FlashAttention-2" Dao ICLR'24 (Phase 5).
+
+---
+
+## 📖 더 깊이 공부하기
+
+| 깊이 | 자료 | 어느 부분 |
+|---|---|---|
+| 🟢 입문 | Dragon Book Ch.8 (Phase 3) | Code optimization, peephole = mini-fusion |
+| 🟢 입문 | Cooper & Torczon Ch.8 (Phase 3) | DAG-based optimization |
+| 🟡 중급 | Halide PLDI'13 (Phase 3, 7) | algorithm/schedule 분리, fusion = schedule |
+| 🟡 중급 | TVM OSDI'18 + Operator Strategy 문서 (Phase 7) | fusion 규칙 일반화 |
+| 🔴 심화 | Jacob CVPR'18 §3.4 (Phase 5) | BN folding 정확도 분석 |
+| 🔴 심화 | FlashAttention NeurIPS'22 (Phase 5) | 알고리즘+하드웨어 공동설계 사례 |
+| 🔴 심화 | MIT 6.5940 Lec.8 (Phase 3) | "Kernel Fusion" 강의 — 이 프로젝트와 1:1 |
 
 ---
 

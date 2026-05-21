@@ -7,6 +7,51 @@
 
 ---
 
+## 📚 학술적 배경: 가속기 시스템 통합의 패턴
+
+### 1. Accelerator System Architecture 패러다임
+
+NPU/GPU 같은 가속기를 시스템에 통합하는 데에는 세 가지 표준 패턴이 있습니다 (Sze 교과서 Ch.6).
+
+| 패턴 | 통합 방식 | 사례 |
+|---|---|---|
+| **Coprocessor (loosely coupled)** | Host가 MMIO로 명령, DMA로 데이터, polling/interrupt로 완료 확인 | **이 프로젝트**, TPU v1, Edge TPU |
+| Cache-coherent | 가속기가 host cache와 일관성 유지 (CXL.cache) | NVIDIA Grace Hopper, Intel SPR |
+| Wafer-scale | 가속기가 host를 흡수 (or 거꾸로) | Cerebras WSE, Tesla Dojo |
+
+→ **이 모듈이 구현하는 것은 "loosely coupled coprocessor" 패턴**. Host(ARM A9)는 무엇을 할지 명령만 내리고, NPU가 알아서 끝낼 때까지 polling 또는 다른 일을 함. 산업계 99%의 ML 가속기가 이 패턴.
+
+### 2. FSM 기반 제어 — Mealy vs Moore (P&H Appendix A)
+
+> Patterson, D., Hennessy, J. — *Computer Organization*, Appendix A "Logic Design Basics".
+
+이 모듈의 6-state FSM (IDLE → DMA_WT → PRELOAD → DMA_ACT → EXECUTE → DRAIN)는 전형적인 **Moore machine** (출력이 현재 state에만 의존). 산업계 가속기 컨트롤러는 거의 항상 Moore machine — 이유:
+- **검증이 쉬움** (state 수만 N개, 입력 조합은 무관)
+- **타이밍 closure 쉬움** (state register → output이 단 1 cycle delay)
+- **SVA(SystemVerilog Assertion)에서 state-property 검사 직관적**
+
+만약 Mealy로 했다면 (출력이 입력+state에 의존), state 수는 줄지만 transition logic이 combinational path 길어져 timing 깨질 위험. 이 프로젝트가 Moore를 선택한 이유.
+
+📖 참고: Sutherland *SystemVerilog for Design* Ch.5 "Always Blocks" (Phase 2 자료).
+
+### 3. Decoupled Access-Execute (Smith 1982)
+
+> Smith, J.E. — "Decoupled Access/Execute Computer Architectures", *ISCA 1982*.
+
+40년 전 논문이지만 이 NPU에 그대로 적용됩니다:
+
+```
+Access stream:  DMA가 메모리에서 데이터 읽기 (memory bound)
+Execute stream: SA가 PE에서 연산 (compute bound)
+                → 두 stream을 분리하면 서로의 stall이 다른 stream을 막지 않음
+```
+
+이 모듈의 ping-pong + outstanding DMA + AXI-Stream backpressure가 모두 Smith 1982의 직접 구현. 컴파일러 측면에서는 [`l6/src/l6_toolchain/dma_scheduler.py`](../../../l6/src/l6_toolchain/dma_scheduler.py)가 두 stream을 cycle-level에서 인터리빙합니다.
+
+📖 참고: H&P Appendix M.4 (Decoupled architectures historical perspective).
+
+---
+
 ## 이 파일이 최상위인 이유
 
 RTL에서 가장 바깥쪽 모듈. Host(CPU)와 직접 통신하며, 내부의 모든 서브모듈을 인스턴스화합니다.
@@ -103,6 +148,44 @@ Phase 1: DMA writes → Bank 2,3   |   Core reads ← Bank 0,1
 | MMIO-driven | Host가 레지스터를 통해 단계별 명령. HW가 자동 실행 |
 | Ping-pong | DMA와 compute가 서로 다른 bank를 사용하여 동시 동작 |
 | Dataflow streaming | DMA → SRAM → MXE 구간이 AXI-Stream으로 연결 |
+
+---
+
+## 🔬 전문가 관점: 이 system top이 더 발전하면?
+
+### 단계별 진화 가능 경로
+
+| 진화 단계 | 추가 기능 | 어떤 산업 칩과 비슷해지나 |
+|---|---|---|
+| **현재** | Single-stream sequential execution | Edge TPU v1 |
+| Step 1: Out-of-order DMA | DMA 예약 큐 + reorder buffer | NVIDIA A100 DMA engine |
+| Step 2: Multi-tenant | Process ID, address space isolation | TPU v4, AWS Inferentia |
+| Step 3: NoC interconnect | PE clusters 간 mesh routing | Tenstorrent Wormhole, Cerebras |
+| Step 4: Cache coherency (CXL.cache) | LLC와 NPU SRAM 일관성 | NVIDIA Grace Hopper |
+| Step 5: Multi-die | UCIe로 die 간 통신 | TPU v5p, NVIDIA Blackwell |
+
+### 검증 측면의 시사점
+
+이 모듈이 **시스템 통합의 첫 검증 지점**입니다. 왜?
+- 단위 모듈은 통과해도 통합에서 실패하는 버그가 80% (Bergeron *Writing Testbenches* Ch.1)
+- 그래서 [`tb/uvm_npu_tb/`](../../../tb/uvm_npu_tb/)의 UVM 환경이 이 모듈 레벨에서 동작
+- **functional coverage** ([`tb/sv_assertions/`](../../../tb/sv_assertions/))가 이 모듈의 모든 state transition을 커버해야 함
+
+📖 참고: Spear *SystemVerilog for Verification* Ch.12 "Coverage" (Phase 2).
+
+---
+
+## 📖 더 깊이 공부하기
+
+| 깊이 | 자료 | 어느 부분 |
+|---|---|---|
+| 🟢 입문 | P&H Appendix A (FSM) | 6-state Moore machine |
+| 🟢 입문 | P&H Ch.4.5 (control unit) | hardwired vs microprogrammed |
+| 🟡 중급 | Sutherland Ch.5 (Phase 2) | `always_ff` + state encoding 패턴 |
+| 🟡 중급 | Smith *Decoupled Access/Execute* (1982) | ping-pong의 학술적 origin |
+| 🔴 심화 | TPU 논문 §3 — System Integration (Phase 5) | 산업급 Coprocessor pattern |
+| 🔴 심화 | Tenstorrent *Wormhole* arch overview | NoC 기반 multi-PE 시스템 |
+| 🔴 심화 | CXL 3.0 spec — type 2 device (CXL.cache) | 차세대 가속기 통합 |
 
 ---
 

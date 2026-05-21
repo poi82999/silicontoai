@@ -7,6 +7,45 @@
 
 ---
 
+## 📚 학술적 배경: MMIO는 가속기 제어의 표준 패러다임
+
+### CSR (Control & Status Register)의 universality
+
+> Patterson, D., Hennessy, J. — *Computer Organization*, Ch.5.5 "Memory-Mapped I/O".
+
+MMIO(Memory-Mapped I/O) 패턴: I/O device의 control/status를 **memory address space의 일부**로 노출. CPU는 평소처럼 `LOAD`/`STORE`로 device 제어. 이 모듈이 그것의 NPU 버전.
+
+**왜 separate I/O instruction(x86 `IN`/`OUT`)이 아니라 MMIO인가?**
+- **Toolchain 단순화**: 일반 pointer로 device 제어 (Linux의 `mmap`, PYNQ의 `MMIO` 클래스)
+- **Cache control 일관**: PCIe device → BAR mapping → MMIO. 산업 표준
+- **Virtualization**: IOMMU가 MMIO range 권한 관리 (KVM, Xen)
+
+이 NPU는 PYNQ-Z2의 ARM Cortex-A9에서:
+```
+mmio.write(0x00, 0x01)   # CTRL = start_dma
+       ↓
+ARM AXI bus → AXI-Lite → 이 모듈 → control_reg[0]
+       ↓
+이 비트가 그대로 dma_controller의 start signal로 결선
+```
+
+→ Host에서 보면 그냥 `*ptr = 1` 한 줄. RTL에서는 4-cycle handshake. **추상화의 우아한 사례**.
+
+### AXI-Lite vs AXI4 — 왜 분리하는가?
+
+| 측면 | AXI-Lite (이 모듈) | AXI4 Full ([dma_controller](13_dma_controller.md)) |
+|---|---|---|
+| Burst | 단일 transaction (1 beat) | 최대 256 beat |
+| 용도 | CSR access (1~4 byte 단위) | bulk data transfer (KB~MB) |
+| 면적 | 매우 작음 (~50 LUT) | 큼 (FIFO, ID tracking) |
+| Latency | 한 transaction이 완전히 끝나야 다음 발행 | outstanding 다수 가능 |
+
+**design rule**: control은 AXI-Lite, data는 AXI4. 이 프로젝트가 정확히 그 패턴을 따름. ARM AMBA 4 spec의 권장 사항.
+
+📖 참고: ARM AMBA AXI Protocol Spec §B "AXI-Lite" (Phase 2 자료), CMU 15-213 Lec.20 "I/O" (Phase 1).
+
+---
+
 ## Register Map
 
 | 주소 | 이름 | R/W | 비트 필드 |

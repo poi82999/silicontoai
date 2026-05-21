@@ -13,6 +13,62 @@
 
 ---
 
+## 📚 학술적 배경: GEMM tiling은 50년된 문제
+
+### 1. Cache blocking의 역사 — Lam, Rothberg, Wolf (ASPLOS 1991)
+
+> Lam, M., Rothberg, E., Wolf, M. — "The Cache Performance and Optimizations of Blocked Algorithms", *ASPLOS 1991*.
+
+이 논문이 GEMM tiling의 학술적 출발점입니다. 핵심 통찰:
+- 무지성 GEMM (3중 i-j-k 루프)은 매번 row/column을 처음부터 읽음 → cache miss 폭발
+- **Tile size를 cache size에 맞게** 잡으면 한 tile 안의 모든 데이터가 cache에 들어감 → reuse
+- 결과: ~10× speedup (당시 SUN SPARC 기준)
+
+이 NPU는 cache 대신 **on-chip SRAM**이 같은 역할:
+- Tile size = 16×16 = SRAM bank의 한 entry에 정확히 맞음
+- Tile loop의 inner-most가 K → activation/weight tile을 SRAM에 한 번 올리고 모든 partial sum 계산
+- → **GPU/CPU의 cache blocking을 NPU의 SRAM tiling으로 직접 번역한 것**
+
+📖 참고: H&P Ch.4 (SIMD/Vector) §4.5 "Detecting and Enhancing Loop-Level Parallelism" — Phase 1 자료. P&H Ch.5 working set 분석.
+
+### 2. Goto algorithm — Goto & van de Geijn (TOMS 2008)
+
+> Goto, K., van de Geijn, R. — "Anatomy of High-Performance Matrix Multiplication", *ACM TOMS* 34(3), 2008.
+
+OpenBLAS/GotoBLAS의 핵심 알고리즘. **3-level blocking**을 도입:
+
+```
+┌─ Mc × Nc       (L3 cache block)
+│  ┌─ Mc × Kc    (L2 cache block, "panel")
+│  │  ┌─ Mr × Nr (register block, micro-kernel)
+│  │  │  ┌─ scalar MACs in registers
+```
+
+이 NPU의 hierarchy는 더 단순:
+```
+┌─ M × N         (전체 GEMM)
+│  ┌─ Mc × Nc    (SRAM tile = K split scope)
+│  │  ┌─ 16 × 16 (systolic array tile = micro-kernel)
+```
+
+Goto의 micro-kernel은 CPU register (~10개), 이 프로젝트는 256개 PE. 본질은 같음.
+
+📖 참고: Goto TOMS'08 PDF (논문은 무료), 또는 Kazushige Goto 강의 노트. CMU 15-418 (Parallel Computing) Lec.5.
+
+### 3. Split-K와 atomic reduction
+
+K가 매우 크면 (예: BERT FFN의 hidden dim 3072), single-pass GEMM은 누산기가 정밀도 부족 + utilization 저하. 해법은 **K축을 분할**:
+- 각 K-chunk를 다른 PE 또는 시간에 계산
+- 결과를 **외부 atomic add**로 합침
+
+이 프로젝트는 시간 분할 (`k_pass_index`로 순차 누산). NVIDIA cuBLAS는 공간 분할 (다른 SM에서 partial → atomic add). 둘 다 유효.
+
+→ **Tile order는 단지 reordering이 아니라 hardware execution semantics를 결정**합니다 (`acc_clear`, `emit_drain_after`가 RTL 신호로 직결).
+
+📖 참고: NVIDIA CUTLASS docs "Efficient GEMM" (Phase 4 자료), "FlashAttention" Dao'22 §3 (split-K + softmax).
+
+---
+
 ## 전체 코드 한눈에
 
 ```python
@@ -147,6 +203,43 @@ manifest.json + activation/weight/golden binary
 | **tail tile** | 마지막 타일 ≤ 16 (with `tile_m < 16`) | L47-49 |
 | **split-K** | K > 16일 때 여러 패스로 분할 누산 | `k_pass_index`, `k_tile_count` |
 | **`acc_clear`/`emit_drain_after`** | 누산기 초기화 + drain 신호 비트 | L61-62 |
+
+---
+
+## 🔬 전문가 관점: tile order 선택의 trade-off
+
+| Loop order | 무엇이 reuse되나 | 단점 |
+|---|---|---|
+| **m → n → k** (이 프로젝트 default) | output (m,n) tile + accumulator | weight reload 자주 |
+| m → k → n | input activation row | output write 자주 |
+| k → m → n | weight matrix | output 누산 위치 분산 (atomic 필요) |
+| **n → m → k** (`scheduler.py` weight_reuse) | **weight column** (16개 row 동안 weight 한 번만 로드) | activation reload 자주 |
+
+→ 이 프로젝트의 default는 **output reuse 우선** (가장 단순). 그러나 weight가 큰 transformer FFN에서는 `n → m → k` (weight reuse)가 훨씬 효율적. 그래서 [`scheduler.py`](../../../l6/src/l6_toolchain/scheduler.py)에서 `weight_reuse` 모드로 reorder.
+
+**산업급 컴파일러의 진화** (Ansor, OSDI'20):
+- **Auto-tuning**: 모든 loop order × tile size를 탐색 (`auto_tile.py`가 mini-version)
+- **Cost model**: 각 schedule의 사이클을 ML model로 예측 (cycle_sim.py가 mini-version)
+- **Random search → Evolutionary**: 100~1000 schedule을 자동 비교
+
+이 프로젝트는 hand-tuned heuristic (default + weight_reuse). 다음 진화 step이 auto-tuning. 이미 [`auto_tile.py`](../../../l6/src/l6_toolchain/auto_tile.py)에서 시작됨.
+
+📖 참고: Zheng et al. — "Ansor: Generating High-Performance Tensor Programs", OSDI 2020 (Phase 7).
+
+---
+
+## 📖 더 깊이 공부하기
+
+| 깊이 | 자료 | 어느 부분 |
+|---|---|---|
+| 🟢 입문 | P&H Ch.5 (Phase 1) | locality, tiling 개념 |
+| 🟢 입문 | CMU 15-213 Cache Lab (Phase 1) | tiling을 직접 구현하며 cache miss 측정 |
+| 🟡 중급 | H&P Ch.4 (Phase 1) | Loop-level parallelism, tiling 변형 |
+| 🟡 중급 | Goto & van de Geijn TOMS'08 | hierarchical blocking 정수 |
+| 🟡 중급 | Lam-Rothberg-Wolf ASPLOS'91 | cache blocking 정량 분석 |
+| 🔴 심화 | Halide PLDI'13 (Phase 7) | tile = schedule decision |
+| 🔴 심화 | Ansor OSDI'20 (Phase 7) | auto-tuning의 산업적 표준 |
+| 🔴 심화 | NVIDIA CUTLASS docs (Phase 4) | GEMM micro-kernel 산업급 구현 |
 
 ---
 

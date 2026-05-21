@@ -1,0 +1,6 @@
+# Keep the study-materials folder structure and templates tracked, but do not
+# commit downloaded PDFs, slides, videos, or local notes by accident.
+*
+!.gitignore
+!README.md
+!00_index_template.md

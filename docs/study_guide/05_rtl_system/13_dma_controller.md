@@ -7,6 +7,47 @@
 
 ---
 
+## 📚 학술적 배경: DMA가 NPU의 운명을 결정한다
+
+### 1. Memory wall 문제 — Wulf & McKee (1995)
+
+> Wulf, W., McKee, S. — "Hitting the Memory Wall: Implications of the Obvious", *ACM SIGARCH Computer Architecture News* 23(1), 1995.
+
+CPU 성능은 매년 ~50% 증가했지만 DRAM 지연시간은 ~7%만 줄었습니다 (1980-2000년대). 이 격차가 누적되어 **연산 속도와 메모리 속도의 비대칭**이 모든 가속기 설계의 첫 번째 적이 되었습니다.
+
+이 NPU도 같은 문제: SA가 100MHz @ 256 PE = 25.6 GOPS이지만, DDR3 (PYNQ-Z2) 단일 채널 ~6 GB/s. INT8이라 ops/byte가 4배 유리해도 여전히 memory-bound 가능. 이 DMA 컨트롤러가 그 격차를 메우는 핵심 무기입니다.
+
+### 2. Outstanding requests = Little's Law의 응용
+
+> Little, J.D.C. — "A Proof for the Queuing Formula L = λW", *Operations Research* 9(3), 1961.
+
+대기열 이론의 핵심 공식:
+$$L = \lambda \cdot W$$
+- $L$ = 시스템 안의 평균 요청 수 (outstanding requests)
+- $\lambda$ = 처리율 (bandwidth in bursts/sec)
+- $W$ = 평균 응답 지연 (memory latency)
+
+**적용**: PYNQ-Z2 DDR3 latency ≈ 100 cycle, 원하는 처리율 = 1 burst/cycle (peak BW). 그러면 **L = 100개 outstanding이 필요**.
+
+이 DMA의 `MAX_OUTSTANDING=8`은 PYNQ-Z2의 짧은 burst length(16 beat) + 짧은 read queue 깊이에 맞춘 값. 더 빠른 DDR4/HBM에서는 16~64까지 늘려야 peak BW 도달.
+
+→ 즉 outstanding은 "선택사항"이 아니라 **메모리 시스템의 BW 도달 여부를 결정하는 1차 변수**입니다.
+
+📖 참고: H&P Ch.2 "Memory Hierarchy Design" §2.4 (Memory-Level Parallelism), CMU 15-213 Lec.21 (System-level I/O).
+
+### 3. AXI4 burst의 산업 표준화
+
+AXI(Advanced eXtensible Interface)는 ARM AMBA 4의 일부로 2003년 표준화. 이전에는 PCI/AHB/Wishbone 등 partikular 프로토콜이 난립했지만, AXI는 **decoupled handshake** + **out-of-order completion** + **burst transactions**를 모두 지원하면서 표준이 되었습니다.
+
+이 프로젝트가 AXI4를 쓰는 이유:
+- **Vivado 자동 통합**: Zynq PS(ARM)와 PL(FPGA) 간 표준 인터페이스
+- **메모리 컨트롤러 호환**: DDR3/4, HBM2/3 모두 AXI4 frontend 제공
+- **Tools eco**: Vivado의 ILA(Integrated Logic Analyzer)가 AXI 트랜잭션을 자동 디코딩 → 디버깅 용이
+
+📖 참고: [ARM AMBA AXI Protocol Specification](https://developer.arm.com/documentation/ihi0022/latest/), Sutherland *SystemVerilog for Design* Ch.6 (Interface) — Phase 2 자료.
+
+---
+
 ## AXI4 Read 프로토콜 간단 설명
 
 ```
@@ -63,6 +104,42 @@ Without outstanding (1개씩):
 With outstanding=8:
   AR발행×8 → R수신×8 연속  (메모리 지연 숨김)
 ```
+
+> **💡 정량적 분석: outstanding=8이 BW에 미치는 영향**
+>
+> 가정: DDR3 latency 100 cycle, burst length 16 beat, beat당 64B → burst당 1024B.
+>
+> - **Outstanding = 1**: 1024B / (100 cycle / 100MHz) = **1.024 GB/s** (peak의 ~17%)
+> - **Outstanding = 8**: min(8 × 1024B / 100 cycle, peak BW) = ~8 GB/s but capped → **6 GB/s** (peak의 100%)
+>
+> → outstanding 1개와 8개의 차이가 **6배 throughput**. memory wall이 가속기 설계에 얼마나 critical한지의 정량적 근거.
+
+---
+
+## 🔬 전문가 관점: DMA 컨트롤러의 산업적 변화
+
+| 구조 | 사용처 | trade-off |
+|---|---|---|
+| **이 프로젝트 (single-channel AXI Read DMA)** | FPGA bringup, edge | 단순. 한 번에 한 흐름 |
+| Multi-channel DMA | TPU UB DMA, GPU DMA | 동시 stream 여러 개 (read + write 병렬) |
+| Scatter-gather DMA | Linux kernel, NIC | 비연속 메모리 영역 한 번에 처리 |
+| Tensor DMA (Tenstorrent NoC) | Tenstorrent Wormhole | NoC 라우팅 + tensor reshape on-the-fly |
+| Direct cache access (DCA) | Intel Xeon | DMA가 LLC에 직접 push (latency 절감) |
+
+이 프로젝트는 **가장 단순한 형태**지만, [`l6/src/l6_toolchain/dma_scheduler.py`](../../../l6/src/l6_toolchain/dma_scheduler.py)에서 **컴파일러가 DMA 명령을 미리 정렬해서** 사실상 multi-channel 효과를 냅니다 (compute와 DMA를 cycle level에서 overlap). **하드웨어 단순함을 컴파일러가 보완하는 패턴**은 RISC 철학(P&H 1장)의 ML 가속기 버전입니다.
+
+---
+
+## 📖 더 깊이 공부하기
+
+| 깊이 | 자료 | 어느 부분 |
+|---|---|---|
+| 🟢 입문 | CMU 15-213 Lec.20-21 (Phase 1) | I/O와 mmap, DMA 개념 |
+| 🟢 입문 | P&H Ch.5.10 (Phase 1) | 메모리 controller와 burst |
+| 🟡 중급 | H&P Ch.2.4 — Memory-Level Parallelism (Phase 1) | Outstanding/MSHR 분석 |
+| 🟡 중급 | ARM AMBA AXI4 Spec (Phase 2) | Handshake, burst type, ID |
+| 🔴 심화 | TPU 논문 §3 — DMA & UB 구조 (Phase 5) | 산업적 multi-channel DMA |
+| 🔴 심화 | "FlashAttention" Dao et al. NeurIPS'22 (Phase 5) | 메모리 계층 인지 알고리즘 — DMA 패턴이 알고리즘을 결정 |
 
 ---
 

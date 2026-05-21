@@ -6,6 +6,27 @@
 
 ---
 
+## 📚 학술적 배경: 왜 FP16이 ML의 표준이 되었나
+
+> Micikevicius, P. et al. — "Mixed Precision Training", *ICLR 2018* (NVIDIA).
+
+ML에서 FP16(half-precision)이 standard가 된 것은 NVIDIA Volta(V100, 2017)부터입니다. 핵심 트레이드오프:
+
+| 정밀도 | bit 분해 | dynamic range | 에너지 (45nm 기준, Sze Ch.7) | 사용처 |
+|---|---|---|---|---|
+| FP32 | 1+8+23 | $\pm 10^{38}$ | 3.7 pJ/MAC | training "황금 표준" |
+| **FP16 (이 PE)** | **1+5+10** | $\pm 6.5\times 10^4$ | **1.1 pJ/MAC** | mixed-precision training, inference |
+| BF16 (Brain FP) | 1+8+7 | FP32와 동일 | 1.0 pJ/MAC | TPU, A100 — gradient에 유리 |
+| INT8 | 8 (정수) | $\pm 127$ | 0.2 pJ/MAC | inference only |
+
+**FP16 한계**: dynamic range가 작아서 gradient underflow 발생 가능 → "loss scaling" trick 필요 (Micikevicius ICLR'18). BF16는 FP32와 같은 exponent (8-bit)이라 underflow 없음 — 그래서 TPU/A100이 BF16을 native로 지원.
+
+**이 NPU의 위치**: FP16 (학습/추론 모두) + INT8 (추론 only) 두 경로 제공. 산업계 추세는 BF16+INT8 또는 FP8(NVIDIA H100, 2022). FP16은 여전히 polyfill로 유효.
+
+📖 더 깊이: [전문가 학습 로드맵](../전문가_학습_로드맵.md) Phase 3 (Sze Ch.7), Phase 5 (NVIDIA A100 white paper). [`fp16_multiplier.sv`](../../../rtl/arithmetic/fp16_multiplier.sv) 학습 가이드 [09](../03_rtl_arithmetic/09_fp16_multiplier.md)에서 IEEE 754 비트 레벨 처리.
+
+---
+
 ## INT8 PE와의 차이점
 
 | 항목 | `mac_pe_int8` | `mac_pe` (이 파일) |

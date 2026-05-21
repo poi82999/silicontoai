@@ -13,6 +13,52 @@
 
 ---
 
+## 📚 학술적 배경: Cost model은 컴파일러의 두뇌
+
+### 1. Instruction Scheduling의 진화 — Hennessy & Gross (1983 → 현재)
+
+> Hennessy, J., Gross, T. — "Postpass Code Optimization of Pipeline Constraints", *ACM TOPLAS* 5(3), 1983.
+
+CPU 컴파일러: instruction을 reorder해서 pipeline stall 회피. 알고리즘:
+- **List scheduling** (heuristic, polynomial time)
+- **Optimal scheduling** (NP-hard, ILP)
+
+이 NPU의 `reorder_tiles`는 list scheduling의 ML 버전:
+- 각 tile = "instruction"
+- "Pipeline stall" = weight reload latency
+- Heuristic: 같은 weight를 쓰는 tile을 인접하게 → reload 회수 감소
+
+### 2. Weight-reuse가 만드는 시간 절약 (정량 분석)
+
+```
+Default (m → n → k):
+  tile (m=0, n=0, k=0):  weight load + execute  = 16 + 16 = 32 cycle
+  tile (m=0, n=0, k=1):  weight load + execute  = 32 cycle  (다른 weight)
+  ...
+  
+Weight-reuse (n → m → k):
+  tile (n=0, m=0, k=0):  weight load + execute  = 32 cycle
+  tile (n=0, m=1, k=0):  weight reuse (already loaded) + execute = 0 + 16 = 16 cycle
+                                                                  ↑ 16 cycle 절약!
+```
+
+→ N×M GEMM에서 weight-reuse는 weight load를 N번에서 1번으로 줄임. ResNet-50 fc layer (M=2048, N=1000)에서 **수만 cycle 절약**. 이것이 transformer FFN에서 critical.
+
+### 3. Cost model의 두 종류
+
+| 모델 | 정확도 | 비용 | 사용처 |
+|---|---|---|---|
+| **Analytical (이 파일)** | ±5-15% | μs 단위 | auto-tuning에서 가지치기 |
+| **Cycle-accurate ([cycle_sim](48_cycle_sim.md))** | ±2-5% | ms 단위 | 최종 schedule 검증 |
+| ML-based (Ansor TenSet) | ±1-3% | 학습 후 빠름 | TVM 산업 사용 |
+| **RTL simulation** | 100% | 분~시간 | sign-off |
+
+이 프로젝트는 analytical + cycle-accurate. 다음 진화 step: ML-based (TenSet 같은 cost model을 학습해서 더 정확하게).
+
+📖 참고: Cooper & Torczon Ch.12 "Instruction Scheduling" (Phase 3), Zheng et al. — "TenSet: A Large-scale Program Performance Dataset for Learned Tensor Compilers" (NeurIPS Datasets'21).
+
+---
+
 ## 큰 그림: 4개 섹션
 
 ```

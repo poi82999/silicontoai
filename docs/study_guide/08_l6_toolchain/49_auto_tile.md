@@ -13,6 +13,58 @@
 
 ---
 
+## 📚 학술적 배경: Auto-tuning은 ML 컴파일러의 차별 영역
+
+### 1. ATLAS / OpenBLAS의 시작 — Whaley & Dongarra (SC 2001)
+
+> Whaley, R.C., Dongarra, J. — "Automatically Tuned Linear Algebra Software", *SC 2001*.
+
+ATLAS(Automatically Tuned Linear Algebra Software): BLAS의 GEMM kernel을 **target machine마다 auto-tune**. 탐색 공간 = block size, register tile, instruction order. 결과: hand-tuned vendor BLAS 대비 90~110% 성능. **수동 튜닝의 시대를 끝낸 작품**.
+
+이 프로젝트의 `auto_tile.py`가 ATLAS의 ML 가속기 버전. Search space:
+- `tile_m × tile_k × tile_n`의 Cartesian product
+- 각 후보 evaluate = analytical cost model
+
+### 2. Halide auto-scheduler — Mullapudi et al. (SIGGRAPH 2016)
+
+> Mullapudi, R.T. et al. — "Automatically Scheduling Halide Image Processing Pipelines", *SIGGRAPH 2016*.
+
+Halide 출시 직후 schedule 작성이 어렵다는 한계 → auto-scheduler 도입. 알고리즘:
+- Greedy stage-by-stage decision
+- Cost model = analytical (cache miss + arith ops)
+
+이 프로젝트와 거의 동일 구조. ML 컴파일러는 이 패턴을 직접 계승.
+
+### 3. Ansor (TVM) — Zheng et al. (OSDI 2020)
+
+> Zheng, L. et al. — "Ansor: Generating High-Performance Tensor Programs for Deep Learning", *OSDI 2020*.
+
+산업급 auto-tuner. 차이점:
+- **Random sampling** (이 프로젝트와 동일) → 후보 수천 개 생성
+- **Evolutionary search**: 우수 후보를 mutate해서 더 좋은 쪽 탐색
+- **ML cost model** (XGBoost, MLP): 실측 데이터로 학습된 cycle predictor
+
+이 프로젝트의 진화 path:
+1. Current: grid search + analytical cost (~수백 후보)
+2. Next: random search 추가 (~수천 후보)  
+3. Future: ML cost model + evolutionary (~수십만 후보)
+
+📖 참고: ATLAS SC'01, Halide auto-scheduler SIGGRAPH'16, Ansor OSDI'20 (Phase 7), [`auto_tile.py`](../../../l6/src/l6_toolchain/auto_tile.py) 는 1단계의 직접 구현.
+
+### 4. Search space의 실전 트레이드오프
+
+| 변수 | 후보 수 | exploration 시간 |
+|---|---|---|
+| `tile_m × tile_k × tile_n` | ~7 × 5 × 4 = **140** | ms 단위 |
+| + Loop order (3중 루프) | × 6 = **840** | ms |
+| + Split-K dim 선택 | × 4 = **3,360** | s |
+| + Pipeline overlap factor | × 8 = **27,000** | 분 |
+| Ansor full space | 수백만 | 시간~일 |
+
+이 프로젝트는 첫 단계만. Ansor/AutoTVM의 본질은 **이 폭발적 search space를 ML로 가지치기**. 다음 phase에서 추가될 핵심 기능.
+
+---
+
 ## 큰 그림
 
 ```
