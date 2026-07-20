@@ -1,0 +1,42 @@
+# 세션 종료 시 여기만 갱신하면 랜딩의 "현재 위치"와 진도바가 바뀐다.
+current:
+  node: "노드 1 — 성능 모델 (Roofline · SIMD/DLP)"
+  week: "R1 · 7/20 ~ 7/26"
+  task: "브리프 #01 실행 — H&P 4.8 Roofline 심화 + roofline.py 줄 단위 정독 + matplotlib Roofline 그래프 (실습 1)"
+
+nodes:
+  - emoji: "✅"
+    name: "0. 이미 보유한 자산"
+    note: "NPU 풀스택 완주 · CS230 · 자료구조·알고리즘 · 디지털설계"
+    status: done
+    pct: 100
+  - emoji: "📐"
+    name: "1. 성능 모델"
+    note: "Roofline · SIMD/DLP — Peak 51.2 GOPS · Ridge 16 검증 완료"
+    status: active
+    pct: 50
+  - emoji: "🏗️"
+    name: "2. 컴퓨터구조"
+    note: "파이프라인·메모리 계층 — 방학엔 실습, 본편은 CS311(가을)"
+    status: planned
+    pct: 0
+  - emoji: "🚀"
+    name: "3. AI 가속기 아키텍처"
+    note: "TPU·Eyeriss·dataflow + LLM-decode 렌즈 (R3)"
+    status: planned
+    pct: 0
+  - emoji: "⚙️"
+    name: "4. 컴파일러 코어"
+    note: "IR·최적화·codegen — 본편은 CS420(가을)"
+    status: planned
+    pct: 0
+  - emoji: "⭐"
+    name: "5. l6 내부 정복"
+    note: "내가 만든 컴파일러의 이론적 재해석 — 유일무이한 차별점"
+    status: planned
+    pct: 0
+  - emoji: "🌌"
+    name: "6. Co-design 확장"
+    note: "양자화 · MLIR/TVM · CUDA/GPU — 겨울방학~4학년"
+    status: planned
+    pct: 0

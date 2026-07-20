@@ -1,14 +1,23 @@
 title: SiliconToAI — NPU 풀스택 학습 로그
-description: 16×16 Systolic Array NPU를 밑바닥부터 만들고, 그 위에서 컴퓨터구조·ML 컴파일러를 공부하는 기록
+description: 16×16 Systolic Array NPU를 밑바닥부터 만들고, 그 위에서 컴퓨터구조·ML 컴파일러를 공부하는 기록. HW를 아는 ML 컴파일러/아키텍트가 되는 과정.
 lang: ko
-theme: jekyll-theme-cayman
+url: "https://poi82999.github.io"
+baseurl: "/silicontoai"
 
 plugins:
   - jekyll-relative-links
   - jekyll-optional-front-matter
   - jekyll-readme-index
   - jekyll-titles-from-headings
+  - jekyll-default-layout
+  - jekyll-seo-tag
 
 relative_links:
   enabled: true
   collections: true
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default

@@ -1,0 +1,124 @@
+---
+layout: default
+hero: true
+title: SiliconToAI — NPU 풀스택 학습 로그
+---
+
+<section class="hero">
+  <span class="kicker">HW-SW CO-DESIGN TRACK</span>
+  <h1>NPU를 <span class="grad">밑바닥부터</span> 만들고,<br>그 위에서 <span class="grad">컴파일러</span>를 공부한다</h1>
+  <p class="lead">
+    KAIST 전산학부 학부생의 공개 학습 로그. 16×16 Weight-Stationary Systolic Array NPU 풀스택
+    (SystemVerilog RTL → Python 컴파일러 → UVM 검증 → FPGA 브링업)을 직접 완주하고,
+    이제 그 위에서 컴퓨터구조와 ML 컴파일러 이론을 검증하며 "하드웨어를 아는 ML 컴파일러 엔지니어"로 갑니다.
+  </p>
+  <div class="stat-chips">
+    <span>16×16 MAC array</span>
+    <span>Peak 51.2 GOPS</span>
+    <span>Ridge 16 ops/byte</span>
+    <span>Sprint 12 완주</span>
+    <span>학습 가이드 52편</span>
+  </div>
+  <div class="cta-row">
+    <a class="btn primary" href="{{ '/study_guide/roadmap_index.html' | relative_url }}">학습 지도 보기</a>
+    <a class="btn ghost" href="https://github.com/poi82999/silicontoai" target="_blank" rel="noopener">코드 저장소 ↗</a>
+  </div>
+</section>
+
+<section class="section">
+  <h2>📍 지금 여기</h2>
+  <div class="now-card">
+    <div class="now-head">
+      <span class="now-node">{{ site.data.roadmap.current.node }}</span>
+      <span class="now-week">{{ site.data.roadmap.current.week }}</span>
+    </div>
+    <p class="now-task">{{ site.data.roadmap.current.task }}</p>
+  </div>
+</section>
+
+<section class="section">
+  <h2>🏗️ 무엇을 만들었나</h2>
+  <p class="sec-sub">이론을 남의 예제가 아니라 직접 만든 칩과 컴파일러로 검증합니다.</p>
+  <div class="grid">
+    <div class="card">
+      <div class="card-emoji">🧮</div>
+      <h3>NPU RTL</h3>
+      <p>16×16 Weight-Stationary systolic array, INT8/FP16 MAC, 더블버퍼 SRAM 뱅크, AXI DMA — SystemVerilog로 직접 설계.</p>
+      <a class="card-link" href="https://github.com/poi82999/silicontoai/tree/main/rtl" target="_blank" rel="noopener">rtl/ ↗</a>
+    </div>
+    <div class="card">
+      <div class="card-emoji">⚙️</div>
+      <h3>l6 컴파일러</h3>
+      <p>PyTorch 모델 → tracer → IR → fusion → lowering → scheduler → emitter. Roofline 분석기와 사이클 시뮬레이터 내장.</p>
+      <a class="card-link" href="https://github.com/poi82999/silicontoai/tree/main/l6" target="_blank" rel="noopener">l6/ ↗</a>
+    </div>
+    <div class="card">
+      <div class="card-emoji">🧪</div>
+      <h3>검증 인프라</h3>
+      <p>UVM 테스트벤치 + system replay — 컴파일러 골든 출력과 RTL 시뮬레이션을 자동 대조.</p>
+      <a class="card-link" href="https://github.com/poi82999/silicontoai/tree/main/tb" target="_blank" rel="noopener">tb/ ↗</a>
+    </div>
+    <div class="card">
+      <div class="card-emoji">📡</div>
+      <h3>FPGA 브링업</h3>
+      <p>PYNQ-Z2 보드에 오버레이 탑재, 호스트 런타임으로 실보드 실행까지 엔드투엔드 확인.</p>
+      <a class="card-link" href="https://github.com/poi82999/silicontoai/tree/main/vivado" target="_blank" rel="noopener">vivado/ ↗</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h2>🧭 학습 백본</h2>
+  <p class="sec-sub">
+    백본 6노드를 순서대로 정면 돌파(push)하고, 기초는 필요할 때 당겨쓴다(pull).
+    전체 구조는 <a href="{{ '/study_guide/roadmap_index.html' | relative_url }}">로드맵 인덱스</a>,
+    주차별 일정은 <a href="{{ '/study_guide/personal_roadmap_2026.html' | relative_url }}">2026 시간표</a> 참고.
+  </p>
+  <div class="node-list">
+    {% for n in site.data.roadmap.nodes %}
+    <div class="node-row{% if n.status == 'active' %} active{% endif %}">
+      <div class="n-emoji">{{ n.emoji }}</div>
+      <div class="n-body">
+        <div class="n-title">{{ n.name }}</div>
+        <div class="n-note">{{ n.note }}</div>
+      </div>
+      <div class="n-right">
+        {% if n.status == 'done' %}<span class="pill done">완료</span>
+        {% elsif n.status == 'active' %}<span class="pill active">진행 중</span>
+        {% else %}<span class="pill planned">예정</span>{% endif %}
+        <div class="bar"><i style="width: {{ n.pct }}%"></i></div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="section">
+  <h2>📔 최근 학습 일기</h2>
+  <p class="sec-sub">모든 세션은 "무엇을 배웠고, 왜 그 결정을 내렸는가"를 남깁니다. — <a href="{{ '/study_guide/journal/' | relative_url }}">전체 보기</a></p>
+  <div class="timeline">
+    {% assign entries = site.pages
+        | where_exp: "p", "p.path contains 'study_guide/journal/'"
+        | where_exp: "p", "p.name != 'index.md'"
+        | sort: "name" | reverse %}
+    {% for p in entries limit: 3 %}
+      {% assign key = p.name | remove: ".md" %}
+      {% assign meta = site.data.journal[key] %}
+      <div class="t-item">
+        <div class="t-date mono">{{ key }}</div>
+        <a class="t-title" href="{{ p.url | relative_url }}">{{ meta.title | default: p.title | default: key }}</a>
+        {% if meta.summary %}<p class="t-sum">{{ meta.summary }}</p>{% endif %}
+      </div>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="section">
+  <h2>⚖️ 운영 원칙</h2>
+  <div class="principles">
+    <div class="principle"><b>1 · 백본은 push</b><span>성능모델 → 아키텍처 → 컴파일러 → 내 컴파일러 l6 순서로 정면 돌파. 곁가지로 새지 않는다.</span></div>
+    <div class="principle"><b>2 · 기초는 pull</b><span>이미 배운 자료구조·알고리즘은 재수강하지 않는다. 백본에서 필요해진 순간 10~30분만 당겨쓴다.</span></div>
+    <div class="principle"><b>3 · 학교 중복은 스킵</b><span>CS311·CS420이 다룰 내용은 학교에 맡기고, 학교가 안 다루는 것(논문·l6 내부)에 deep time을 쓴다.</span></div>
+    <div class="principle"><b>4 · 일기 없는 학습은 없다</b><span>모든 세션을 기록하고, 모든 결정에 이유를 적는다. 미래의 내가 검증할 수 있도록.</span></div>
+  </div>
+</section>
