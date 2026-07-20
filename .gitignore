@@ -85,3 +85,6 @@ docs/*.png
 
 # Claude Code local config
 .claude/
+
+# Copyrighted papers - keep local only (public repo)
+papers/
