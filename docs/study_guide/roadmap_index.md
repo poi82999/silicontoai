@@ -73,7 +73,8 @@ flowchart TD
 | 항목 | 자료 | 상태 |
 |---|---|---|
 | Roofline 기본 + 이 NPU 정량화 (Peak 51.2 GOPS / BW 3.2 GB/s / Ridge 16) | Williams CACM'09 → [roofline_summary.md](roofline_summary.md) | ✅ 5/29 |
-| Roofline 심화 (Hierarchical, 축 선택) + roofline.py 정독 + 그래프 실습 1 | [브리프 #01](gemini_teaching/brief_01_roofline_deep.md) ← **지금 할 일** | 🔥 R1 |
+| Roofline 심화 + roofline.py 정독 + **그래프 실습 1** | [필기 notes/01](notes/01_roofline.md) · [실습 roofline_analysis.md](../roofline_analysis.md) | ✅ 7/23 |
+| Roofline hierarchical (Q1: SRAM/off-chip 축) | H&P Quantitative 4.8 | 🔥 R2 |
 | SIMD/DLP 이론 | H&P Quantitative 4.1-4.4 | 🟥 R2 |
 
 산출물: `docs/roofline_analysis.md`, SIMD 정리 1쪽.
@@ -153,5 +154,5 @@ flowchart TD
 
 ## 현재 위치와 다음 액션
 
-- **현재 위치:** 🔥 노드 1 (R1 주차, 2026-07-20~26)
-- **다음 액션 단 하나:** [브리프 #01](gemini_teaching/brief_01_roofline_deep.md)의 `=== PROMPT ===` 블록을 Gemini에 붙여넣고 세션 시작 → 끝나면 요약을 Claude에 전달
+- **현재 위치:** 🔥 노드 1 (R1→R2, 2026-07-20~26) — Roofline 정리·실습 1 완료([roofline_analysis.md](../roofline_analysis.md))
+- **다음 액션:** ① SIMD/DLP (H&P 4.1–4.4, 노드 1 나머지 절반, 산출물 SIMD 정리 1쪽) ② Q1 hierarchical roofline (H&P 4.8, SRAM 천장 그림 1장)

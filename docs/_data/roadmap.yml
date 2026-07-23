@@ -1,8 +1,8 @@
 # 세션 종료 시 여기만 갱신하면 랜딩의 "현재 위치"와 진도바가 바뀐다.
 current:
   node: "노드 1 — 성능 모델 (Roofline · SIMD/DLP)"
-  week: "R1 · 7/20 ~ 7/26"
-  task: "브리프 #01 실행 — H&P 4.8 Roofline 심화 + roofline.py 줄 단위 정독 + matplotlib Roofline 그래프 (실습 1)"
+  week: "R1→R2 · 7/20 ~ 7/26"
+  task: "Roofline 정리·실습 1 완료(roofline_analysis.md + 그래프) · 다음: SIMD/DLP(R2, H&P 4.1–4.4) + Q1 hierarchical roofline(H&P 4.8)"
 
 nodes:
   - emoji: "✅"
@@ -12,9 +12,9 @@ nodes:
     pct: 100
   - emoji: "📐"
     name: "1. 성능 모델"
-    note: "Roofline · SIMD/DLP — Peak 51.2 GOPS · Ridge 16 검증 완료"
+    note: "Roofline 정리·실습 완료(그래프+분석, PYNQ 오버레이) · 남음: SIMD/DLP + hierarchical(Q1)"
     status: active
-    pct: 50
+    pct: 60
   - emoji: "🏗️"
     name: "2. 컴퓨터구조"
     note: "파이프라인·메모리 계층 — 방학엔 실습, 본편은 CS311(가을)"

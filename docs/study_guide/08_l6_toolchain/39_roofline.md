@@ -70,7 +70,7 @@ def analyze_roofline(shape, *, dma_bandwidth_gbps, mac_throughput, clock_mhz,
     total_bytes = m*k*ie + k*n*we + m*n*oe      # ② 총 메모리 전송량
     oi = total_ops / total_bytes                # ③ OI
 
-    peak_compute_gops = mac_throughput * clock_mhz / 1000.0    # ④ 계산 한계
+    peak_compute_gops = mac_throughput * 2 * clock_mhz / 1000.0  # ④ 계산 한계 (1 MAC=2 ops)
     peak_bandwidth_bps = dma_bandwidth_gbps * 1e9 / 8.0        # ⑤ 대역폭 한계 (B/s)
     memory_roof_ops_per_sec = peak_bandwidth_bps * oi
     memory_roof_gops = memory_roof_ops_per_sec / 1e9
@@ -86,16 +86,16 @@ def analyze_roofline(shape, *, dma_bandwidth_gbps, mac_throughput, clock_mhz,
 
 - `mac_throughput`: cycle당 MAC 수 (NPU=256)
 - `clock_mhz`: 클럭 (100MHz)
-- `peak_compute_gops = 256 × 100 / 1000 = 25.6 GOPS`
+- `peak_compute_gops = 256 × 2 × 100 / 1000 = 51.2 GOPS` (1 MAC = 2 ops, 그래서 ×2)
 - `dma_bandwidth_gbps`: Gbit/s로 받음, 내부에서 byte/s로 변환
 
 ### 예시
 
 | Shape | OI | bottleneck | utilization |
 |---|---|---|---|
-| 16×16×16 | 4 ops/B | memory | 3% |
+| 16×16×16 | 4 ops/B | memory | 25% |
 | 256×256×256 | 64 ops/B | compute | ~100% |
-| 16×512×16 | 28.4 ops/B | memory or compute | 중간 |
+| 16×512×16 | ~7.8 ops/B | memory | ~48% |
 
 → 작은 GEMM은 memory-bound, 큰 GEMM일수록 compute-bound. 일반적으로 OI를 높여야 utilization이 올라감.
 
